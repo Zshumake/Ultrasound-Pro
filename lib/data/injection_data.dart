@@ -35,8 +35,16 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '3cc/5cc Syringe',
       '25G 1.5" Needle (or 22G for larger patients)',
+      '18G Drawing Needle',
       '1% Lidocaine (4–8 mL)',
+      '1cc Kenalog (40mg/ml) or Dexamethasone',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
       'Sterile probe cover & gel'
     ],
     // To add real pictures, just place them in assets/images/ and add the path here:
@@ -75,10 +83,18 @@ final List<InjectionTechnique> injectionData = [
     ],
     supplies: [
       '10cc Syringe',
-      '22G 1.5" or 3.5" Spinal Needle (depending on habitus)',
+      '22G 1.5" or 3.5" Spinal Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (5-10 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -106,9 +122,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '10cc Syringe',
       '22G 1.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (5-10 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -133,9 +157,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '3cc Syringe',
       '25G or 27G 1" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (0.5–1 mL)',
+      '0.5cc Kenalog or Dexamethasone',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -163,9 +195,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '5cc Syringe',
       '25G 1.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (3-4 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
 
@@ -192,9 +232,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '5cc Syringe',
       '22G or 25G 1.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (2-4 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -220,9 +268,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '3cc Syringe',
       '25G or 27G 1" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (1-2 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -248,9 +304,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '3cc Syringe',
       '25G or 27G 1" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (1-2 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
 
@@ -280,9 +344,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '3cc/5cc Syringe',
       '25G or 27G 1.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (2-5 mL)',
+      '1cc Kenalog or Dexamethasone',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -312,9 +384,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '3cc Syringe',
       '27G 0.5" or 1" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (2-3 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -339,9 +419,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '3cc Syringe',
       '27G 0.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (0.5–1 mL)',
+      '0.5cc Kenalog or Dexamethasone',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
 
@@ -370,9 +458,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '10cc Syringe',
       '22G 3.5" Spinal Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (5-10 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -399,9 +495,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '10cc Syringe',
       '22G 1.5" or 3.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (5-10 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -436,9 +540,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '10cc Syringe',
       '22G 3.5" Spinal Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (5-10 mL)',
+      '1cc Kenalog or Botulinum toxin',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -469,9 +581,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '5cc Syringe',
       '22G 1.5" or 3.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (2-3 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
 
@@ -505,11 +625,19 @@ final List<InjectionTechnique> injectionData = [
       'Approach lateral-to-medial: it keeps you away from sensitive medial structures and ensures the most perpendicular view of the needle.',
     ],
     supplies: [
-      '20cc Syringe (if aspirating) or 10cc',
+      '10cc or 20cc Syringe',
       '21G or 22G 1.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (5-10 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterilization kit'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
 
@@ -538,9 +666,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '5cc Syringe',
       '25G 1.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (3-5 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -567,9 +703,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '5cc Syringe',
       '25G 1.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (3-5 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -596,9 +740,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '5cc Syringe',
       '25G or 27G 1.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (3-5 mL)',
+      '1cc Kenalog or Dexamethasone',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -631,8 +783,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '3cc Syringe',
       '27G 0.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (1-2 mL)',
-      'Betadine/Chloraprep / Ethyl Chloride spray'
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
+      'Betadine/Chloraprep / Ethyl Chloride spray',
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -665,9 +826,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '3cc Syringe',
       '27G 1" or 1.5" Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (2-3 mL)',
+      '1cc Kenalog or Dexamethasone',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
   InjectionTechnique(
@@ -700,9 +869,17 @@ final List<InjectionTechnique> injectionData = [
     supplies: [
       '10cc Syringe',
       '22G 3.5" Spinal Needle',
+      '18G Drawing Needle',
       '1% Lidocaine (5-8 mL)',
+      '1cc Kenalog (40mg/ml)',
+      'Alcohol Swabs (vial tops)',
       'Betadine/Chloraprep',
-      'Sterile probe cover'
+      'Sterile 4x4 Gauze Pads',
+      'Sterile Towels & Drapes',
+      'Adhesive Bandage (Band-Aid)',
+      'Washcloth/Towel (gel cleanup)',
+      'Needle Disposal Safety Cap',
+      'Sterile probe cover & gel'
     ],
   ),
 ];
