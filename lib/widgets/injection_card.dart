@@ -26,15 +26,35 @@ class InjectionCard extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(16),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: 48,
+                width: 65,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
+                  color: Theme.of(context).primaryColor.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: Theme.of(context).primaryColor.withValues(alpha: 0.3),
+                    width: 1,
+                  ),
                 ),
-                child: Icon(Icons.medical_services_outlined, color: Theme.of(context).primaryColor, size: 20),
+                alignment: Alignment.center,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    child: Text(
+                      technique.category.toUpperCase(),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 12,
+                        color: Theme.of(context).primaryColor,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(width: 12),
               Expanded(
