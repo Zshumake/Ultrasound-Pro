@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guide to Ultrasound‑Guided Injections — Resident Teaching Manual (with Piriformis & SIJ)</title>
+<style>
+:root { --bg:#fff; --fg:#0b1220; --muted:#5a6270; --accent:#1f6feb; --card:#f8fafc; --border:#e5e7eb; }
+@media (prefers-color-scheme: dark){ :root{ --bg:#0b1220; --fg:#e6edf3; --muted:#9aa4b2; --accent:#58a6ff; --card:#0f172a; --border:#1f2937; } }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,0));backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+.hstack{display:flex;gap:.75rem;align-items:center}
+header h1{font-size:1.1rem;margin:0}
+#search{flex:1;padding:.5rem .75rem;border:1px solid var(--border);border-radius:.5rem;background:var(--card);color:var(--fg)}
+.btn{padding:.5rem .75rem;border:1px solid var(--border);background:var(--card);color:var(--fg);border-radius:.5rem;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.badge{display:inline-block;padding:.15rem .5rem;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--muted);font-size:.75rem}
+main{display:grid;grid-template-columns:260px 1fr;gap:1.25rem;padding:1rem}
+#toc{position:sticky;top:3.5rem;height:calc(100vh - 4rem);overflow:auto;border-right:1px dashed var(--border);padding-right:1rem}
+#toc h2{font-size:.9rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:0}
+#toc a{display:block;color:var(--fg);text-decoration:none;padding:.35rem .25rem;border-radius:.35rem}
+#toc a:hover{background:var(--card)}
+.section{border:1px solid var(--border);border-radius:.75rem;background:var(--card);overflow:hidden}
+.section .title{padding:1rem;border-bottom:1px solid var(--border);display:flex;gap:.75rem;flex-wrap:wrap;align-items:baseline}
+.section .title h3{margin:0;font-size:1.1rem}
+.section .body{padding:1rem;display:grid;gap:1rem}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem 1rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem 1rem}
+.block{border:1px solid var(--border);border-radius:.5rem;padding:.75rem .9rem;background:var(--bg)}
+.block h4{margin:.2rem 0 .5rem;font-size:.95rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.block ul{margin:.25rem 0 .25rem 1.05rem}
+.block li{margin:.15rem 0}
+.callout{border-left:4px solid var(--accent)}
+.placeholder{border:2px dashed var(--border);border-radius:.5rem;min-height:160px;padding:.5rem .75rem;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(128,128,128,.05) 10px,rgba(128,128,128,.05) 20px)}
+.placeholder .label{font-size:.9rem}
+@media print{header,#toc,#controls{display:none!important}main{display:block}.section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container hstack" id="controls">
+    <h1>US‑Guided Injections — Resident Teaching Manual</h1>
+    <input id="search" type="search" placeholder="Search joints, structures, steps… (e.g., 'rotator interval', 'suprapatellar fat pad')" />
+    <button class="btn" id="expand">Expand all</button>
+    <button class="btn" id="collapse">Collapse all</button>
+  </div>
+</header>
+<main class="container">
+  <nav id="toc">
+    <h2>Contents</h2>
+    <div id="toc-links"></div>
+  </nav>
+  <section id="content"></section>
+</main>
+<footer class="container">© 2026 — Resident‑friendly guide. Add images into the gray placeholders.</footer>
+<script>
+const data = [
+  // SHOULDER
+  {id:'shoulder-sasd',title:'Shoulder — Subacromial–Subdeltoid Bursa Injection',tags:['shoulder','subacromial','bursa','subdeltoid','impingement','rotator cuff'],
+   treats:['Shoulder impingement syndromes','Rotator cuff–related pain with bursitis','Primary or secondary subacromial–subdeltoid bursitis'],
+   positioning:['Patient supine; head of bed about 30°','Arm relaxed at the side; support forearm as needed'],
+   probe:['High‑frequency linear probe (best for superficial structures)'],
+   landmarking:['Place the probe just anterior to the lateral acromial edge on top of the shoulder.','Slide anterior ↔ posterior to identify the supraspinatus tendon as it passes under the acromion.','Translate medially ↔ laterally to position the lateral acromion at screen edge while keeping supraspinatus in long‑axis.','Identify the bursal plane: a thin dark stripe between the deltoid (superficial) and supraspinatus tendon (deep).'],
+   correctImage:['Acromion at screen edge; supraspinatus fibers parallel and uniform','Bursal stripe widens slightly with gentle probe pressure'],
+   corridor:['Between deltoid (above) and supraspinatus tendon (below)—inject into the thin bursal stripe'],
+   avoid:['Cephalic vein near anterior deltoid','Intratendinous rotator cuff injection'],
+   steps:['Use an in‑plane anterolateral → posteromedial approach to keep the entire needle visible.','Touch the bursal plane and inject a tiny test amount to confirm plane separation.','Inject 4–8 mL while watching for smooth medial spread beneath the acromion.'],
+   tips:['If you lose the needle, stop and realign before advancing','Adhesions may require gentle needle‑tip redirection']},
+
+  {id:'shoulder-gh-posterior',title:'Shoulder — Glenohumeral Joint Injection (Posterior Approach)',tags:['shoulder','glenohumeral','posterior','labrum','capsule','adhesive capsulitis'],
+   treats:['Adhesive capsulitis','Glenohumeral osteoarthritis/synovitis','Diagnostic intra‑articular anesthesia'],
+   positioning:['Lateral decubitus; affected shoulder up; arm relaxed in neutral'],
+   probe:['Curvilinear preferred for a steeper, controllable needle angle (linear acceptable if needed)'],
+   landmarking:['Place the probe along the spine of the scapula to find the flat bright bony line.','Slide inferiorly off the spine to visualize the infraspinatus muscle.','Slide laterally until the humeral head faces the glenoid rim with the bright triangular labrum.','Tilt (“fan”) to open the thin dark joint space between cartilage and capsule.'],
+   correctImage:['Humeral head in lower third; glenoid rim medially; continuous dark intra‑articular line'],
+   corridor:['Through infraspinatus (entry) → subcapsular space just superficial to humeral head cartilage (target)'],
+   avoid:['Axillary nerve/arterial branches medially/inferiorly—stay lateral with a steep trajectory','Intralabral needle placement'],
+   steps:['Advance in‑plane from posterolateral → anteromedial at a steep angle.','Contact capsule and inject a test bolus to confirm capsular lift.','Inject 4–10 mL; gently rotate the shoulder to confirm intra‑articular spread.'],
+   tips:['Steeper angles are easier to correct than shallow ones']},
+
+  {id:'shoulder-gh-anterior',title:'Shoulder — Glenohumeral Joint Injection (Anterior Rotator Interval)',tags:['shoulder','glenohumeral','anterior','rotator interval','biceps'],
+   treats:['Same as posterior approach; convenient when combining with subacromial injection'],
+   positioning:['Supine; head elevated ~30°; arm relaxed'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Place probe transversely over anterior shoulder to locate the bicipital groove with the long head of the biceps.','Rotate into long‑axis of the biceps tendon.','Tilt slightly cephalad to visualize the rotator interval and capsule above the tendon.'],
+   correctImage:['Biceps centered in groove; thin capsule above with potential dark joint space deep to capsule'],
+   corridor:['Under rotator‑interval capsule (above) along humeral head/neck (below)'],
+   avoid:['Branches of the anterior humeral circumflex artery—screen with Doppler if uncertain'],
+   steps:['Advance in‑plane beneath capsule into joint; confirm flow along intra‑articular biceps; inject 4–10 mL'],
+   tips:['You can treat SA/SD bursa and GH joint through one skin entry by syringe swap']},
+
+  {id:'shoulder-ac',title:'Shoulder — Acromioclavicular (AC) Joint Injection',tags:['shoulder','ac joint','distal clavicle','sprain'],
+   treats:['AC joint arthritis/sprain','Distal clavicle osteolysis','Isolated AC pain'],
+   positioning:['Supine; head slightly elevated'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Start mid‑clavicle; slide laterally to the gap; continue to acromion; translate to center the joint gap'],
+   correctImage:['Two flat bones (clavicle/acromion) with thin dark joint line centered'],
+   corridor:['Between superior capsule (below) and subcutaneous tissue (above) → tiny joint space'],
+   avoid:['Acromial branch of thoracoacromial artery; overfilling (very small capacity)'],
+   steps:['In‑plane anterior → posterior into joint; inject 0.5–1 mL and stop if resistance or pain rises'],
+   tips:['Use minimal local anesthetic to save space for steroid if used']},
+
+  {id:'shoulder-biceps',title:'Shoulder — Long Head of the Biceps Tendon Sheath Injection',tags:['shoulder','biceps','sheath','tenosynovitis'],
+   treats:['Biceps tendon sheath inflammation','Diagnostic sheath injection'],
+   positioning:['Supine; head elevated; forearm supinated (palm up)'],
+   probe:['High‑frequency linear probe (short footprint helpful)'],
+   landmarking:['Place probe transversely over proximal humerus; sweep medially into bicipital groove.','Confirm tendon by rocking—moves as a single unit in the groove.','Survey with Doppler for anterior humeral circumflex artery or variants crossing the sheath.'],
+   correctImage:['Round/oval tendon centered in groove; thin dark rim around it = sheath'],
+   corridor:['Lateral → medial path into the thin dark rim around tendon (not intratendinous)'],
+   avoid:['Arterial variants; intratendinous steroid'],
+   steps:['Advance in‑plane; inject a tiny test amount for circumferential “target sign”; inject 3–4 mL once confirmed'],
+   tips:['If fluid collects above tendon or into SA space, you are in the wrong layer—readjust before steroid']},
+
+  // ELBOW
+  {id:'elbow-radiocapitellar',title:'Elbow — Radiocapitellar Joint Injection (Lateral Elbow)',tags:['elbow','radiocapitellar','arthritis','synovitis'],
+   treats:['Elbow arthritis','Lateral elbow joint pain','Synovitis/effusion','Diagnostic anesthetic'],
+   positioning:['Supine; elbow flexed 20–40°; hand on abdomen; small pillow under elbow'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Find lateral epicondyle → slide distally to radial head → tilt anteriorly to view capitellum → identify wedge‑shaped joint space'],
+   correctImage:['Clear radial head–capitellum interface with a thin dark joint space'],
+   corridor:['Posterior → anterior path between triceps expansion/skin (above) and radial head/capitellum (below)'],
+   avoid:['Variants (vessels/nerves) — scan first'],
+   steps:['Out‑of‑plane posterior entry; gentle walk‑down to joint; test inject; inject 2–4 mL'],
+   tips:['Advance in small increments to avoid bone contact; if no expansion with test inject, adjust depth']},
+
+  {id:'elbow-cet',title:'Elbow — Common Extensor Tendon Origin Injection (Lateral Epicondyle)',tags:['elbow','tennis elbow','CET'],
+   treats:['Lateral epicondylitis with tendon surface pain or degeneration'],
+   positioning:['Supine; elbow 20–40° flexed; hand on abdomen'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Probe over lateral epicondyle → identify bright fibrillar tendon footprint → note radial collateral ligament deep (30–50%) → map radial nerve and radial recurrent artery'],
+   correctImage:['Crisp fibrillar tendon superficial to thin bright ligament band'],
+   corridor:['Distal → proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous'],
+   avoid:['Radial nerve','Radial recurrent artery','Intratendinous steroid'],
+   steps:['In‑plane distal → proximal; position superficial to tendon; inject small aliquots along footprint'],
+   tips:['For regenerative injectates, target intratendinous diseased zones; avoid steroid in fibers']},
+
+  {id:'elbow-cfet',title:'Elbow — Common Flexor Tendon Origin Injection (Medial Epicondyle)',tags:['elbow','golfer elbow','CFET'],
+   treats:['Medial epicondylitis with pain at flexor origin'],
+   positioning:['Supine; arm slightly abducted/external rotation; elbow ~20°; forearm supinated'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Locate medial epicondyle → slide distally to visualize fibrillar flexor tendon → rock posteriorly to find ulnar nerve → survey median nerve and brachial artery anteriorly'],
+   correctImage:['Fibrillar tendon superficial to trochlea/ulna; ulnar nerve identified posterior to epicondyle'],
+   corridor:['Distal → proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous'],
+   avoid:['Ulnar nerve (may sublux anteriorly)','Median nerve','Brachial artery'],
+   steps:['In‑plane distal → proximal to tendon surface; inject small aliquots to form peritendinous halo'],
+   tips:['If approaching proximal → distal, re‑confirm ulnar nerve immediately pre‑entry']},
+
+  // WRIST & HAND
+  {id:'wrist-carpal',title:'Wrist — Carpal Tunnel Injection',tags:['wrist','carpal tunnel','median nerve'],
+   treats:['Median nerve compression (carpal tunnel syndrome)'],
+   positioning:['Seated preferred (or supine if vasovagal); forearm supinated; wrist slightly extended'],
+   probe:['High‑frequency linear probe; short footprint helpful'],
+   landmarking:['Probe transversely at proximal wrist crease → identify median nerve under retinaculum → identify flexor tendons → map ulnar bundle → check for bifid nerve/persistent median artery'],
+   correctImage:['Median nerve centered; retinaculum as bright roof; adequate perineural space'],
+   corridor:['Ulnar → radial path under retinaculum beside the median nerve (hydrodissect above/below nerve if safe)'],
+   avoid:['Ulnar nerve/artery','Persistent median artery','Intraneural injection'],
+   steps:['In‑plane ulnar entry; position beside nerve; inject 1–2 mL to create circumferential target‑sign spread'],
+   tips:['Use low volume; confirm small fluid rings around nerve']},
+
+  {id:'wrist-dequervain',title:'Wrist — First Dorsal Compartment Injection (De Quervain’s)',tags:['wrist','de quervain','APL','EPB'],
+   treats:['De Quervain’s tenosynovitis (APL/EPB)'],
+   positioning:['Seated or supine; forearm neutral; thumb up'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Probe over radial styloid in short‑axis → identify APL/EPB → look for vertical septum → map superficial radial nerve branches'],
+   correctImage:['Two tendons within sheath; septum visible if present'],
+   corridor:['Often volar → dorsal path into sheath: skin/fat (above), sheath (below)'],
+   avoid:['Superficial radial nerve','Radial artery (deep/volar)'],
+   steps:['In‑plane into sheath; inject 2–3 mL; ensure spread around BOTH tendons; redirect past septum if needed'],
+   tips:['Always identify superficial radial nerve first and adjust approach']},
+
+  {id:'hand-1stmcp',title:'Hand — First Metacarpophalangeal (MCP) Joint Injection (Thumb Base)',tags:['hand','MCP','thumb','arthritis'],
+   treats:['Thumb MCP arthritis or synovitis'],
+   positioning:['Hand supported flat; palm down'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Dorsal probe over MCP → identify metacarpal head and proximal phalanx → thin dark line between = joint space → map tiny dorsal vessels with Doppler'],
+   correctImage:['Parallel cartilage surfaces with thin anechoic joint line'],
+   corridor:['Dorsal in‑plane approach parallel to cartilage surfaces'],
+   avoid:['Digital arteries and dorsal sensory branches'],
+   steps:['Advance in‑plane into joint; inject up to 1 mL slowly'],
+   tips:['Tiny joint—advance delicately and stay parallel to cartilage']},
+
+  // HIP
+  {id:'hip-anterior',title:'Hip — Anterior Intra‑articular Injection (Femoral Head–Neck Junction)',tags:['hip','intra-articular','iliopsoas','lfca'],
+   treats:['Hip osteoarthritis','Labral irritation','Diagnostic anesthetic'],
+   positioning:['Supine; hip neutral (often ~20° abduction)'],
+   probe:['Low‑frequency curvilinear probe'],
+   landmarking:['Probe transversely at groin → rotate to align with head–neck junction (oblique) → identify capsule and iliopsoas → scan medially for femoral NV bundle and LFCA branch'],
+   correctImage:['Round head narrowing into neck; thin capsule; iliopsoas superficial'],
+   corridor:['Inferolateral → superomedial under iliopsoas (above) to capsule at head–neck junction (below)'],
+   avoid:['Femoral nerve/artery/vein medially','Ascending branch of lateral femoral circumflex artery'],
+   steps:['In‑plane to capsule; test inject to lift capsule; complete injection as indicated'],
+   tips:['Continuously track needle tip; small tilts help follow it through iliopsoas']},
+
+  {id:'hip-gtb',title:'Hip — Greater Trochanteric Bursa Injection',tags:['hip','gt bursa','gluteus medius','it band'],
+   treats:['Greater trochanteric pain syndrome (bursal inflammation)'],
+   positioning:['Side‑lying, symptomatic side up'],
+   probe:['Linear or curvilinear depending on habitus'],
+   landmarking:['Probe on lateral hip → identify bright convex greater trochanter → slide posteriorly to gluteus medius tendon → find dark plane between IT band/GMx (superficial) and gluteus medius tendon (deep)'],
+   correctImage:['Distinct dark plane separating superficial IT band/GMx from deep gluteus medius tendon'],
+   corridor:['Posterior → anterior into bursal plane: IT band/GMx (above), gluteus medius tendon (below)'],
+   avoid:['Typically no major NV structures, but survey for variants'],
+   steps:['In‑plane into bursal plane; inject 4–10 mL until plane opens and spreads laterally'],
+   tips:['Slight rotation in line with GMx fibers may increase conspicuity']},
+
+  // KNEE
+  {id:'knee-suprapatellar',title:'Knee — Suprapatellar Recess (or Medial Parapatellar) Injection',tags:['knee','suprapatellar','recess','fat pad','prefemoral','quadriceps'],
+   treats:['Knee osteoarthritis','Synovitis/effusion','Diagnostic anesthetic'],
+   positioning:['Supine; small towel under knee for slight flexion'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Long‑axis over distal femur → identify femoral cortex → prefemoral fat pad above → suprapatellar recess (target) above that → quadriceps fat pad and quadriceps tendon above → rotate to short‑axis to find largest pocket, then optimize entry view'],
+   correctImage:['Two fat pads with dark space between — quadriceps fat pad (above), prefemoral fat pad (below), recess in the middle'],
+   corridor:['Lateral → medial (or medial → lateral) in‑plane into the recess between quadriceps fat pad/tendon (above) and prefemoral fat pad/femur (below)'],
+   avoid:['Genicular vessels — use Doppler if unsure'],
+   steps:['In‑plane into recess; test inject to confirm pocket expansion; inject slowly; larger needle if aspirating'],
+   tips:['Gentle probe compression pools fluid at your entry site; keep needle parallel to cartilage']},
+
+  // ANKLE & FOOT
+  {id:'ankle-ttj',title:'Ankle — Tibiotalar (Ankle) Joint Injection',tags:['ankle','tibiotalar','dorsalis pedis','deep peroneal'],
+   treats:['Ankle osteoarthritis','Synovitis','Diagnostic anesthetic'],
+   positioning:['Supine; knee ~90°; foot flat; ankle slightly plantarflexed'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Probe on anterior ankle → identify curved talar dome → find thin capsular line above → map deep peroneal nerve and dorsalis pedis artery (deep to EHL)'],
+   correctImage:['Curved talar dome with distinct dark capsular line; tendons superficial and out of path'],
+   corridor:['Medial → lateral path deep to anterior tendons (above) and superficial to capsule/cartilage (below)'],
+   avoid:['Deep peroneal nerve and dorsalis pedis artery; avoid traversing EHL if possible'],
+   steps:['In‑plane; hug capsule superficial to cartilage; inject as indicated; confirm intra‑articular distension'],
+   tips:['Small tilts separate capsule from cartilage and improve needle visualization']},
+
+  {id:'ankle-peroneal',title:'Ankle — Peroneal Tendon Sheath Injection',tags:['ankle','peroneal','retinaculum','brevis','longus'],
+   treats:['Peroneal tendinopathy (peroneus longus/brevis)'],
+   positioning:['Side‑lying with symptomatic ankle up'],
+   probe:['High‑frequency linear probe (short footprint ideal)'],
+   landmarking:['Probe over posterior aspect of lateral malleolus → identify peroneus longus and brevis tendons sharing a sheath → see superior peroneal retinaculum overlying'],
+   correctImage:['Two tendons in shared anechoic rim (sheath) behind the fibula'],
+   corridor:['Anterior → posterior under retinaculum (above) into sheath around tendons (below)'],
+   avoid:['Sural nerve posteriorly (usually not in path, but confirm)'],
+   steps:['In‑plane into sheath; surround both tendons with injectate; redirect if only one tendon fills'],
+   tips:['Short needle gives fine control; low volumes suffice']},
+
+  {id:'foot-plantar',title:'Foot — Plantar Fascia (Perifascial) Injection',tags:['foot','plantar fascia','calcaneus','heel','fat pad'],
+   treats:['Plantar fasciitis (heel pain) requiring perifascial therapy'],
+   positioning:['Side‑lying with symptomatic foot dependent or off table edge'],
+   probe:['High‑frequency linear probe'],
+   landmarking:['Short‑axis over plantar heel at calcaneal origin → identify bright plantar fascia on calcaneus → find thin dark plane between fascia and fat pad'],
+   correctImage:['Bright fascia with thin anechoic plane separating it from fat pad'],
+   corridor:['Medial → lateral within thin plane: fat pad (above), plantar fascia (below) — do not enter fascia'],
+   avoid:['Intrafascial steroid (rupture risk)','Injection into fat pad (atrophy risk)','Medial neurovascular bundle'],
+   steps:['In‑plane into plane; inject small volumes to expand plane without entering fascia'],
+   tips:['Use smallest effective volume; stop if resistance — correct plane opens smoothly']},
+
+  // HIP — ADDITIONS (Piriformis & SIJ)
+  {id:'hip-piriformis',title:'Hip — Piriformis Injection (Ultrasound‑Guided)',tags:['hip','piriformis','sciatic nerve','deep gluteal pain'],
+   treats:['Piriformis syndrome with sciatic irritation','Deep gluteal pain / non‑spinal sciatica'],
+   positioning:['Prone with neutral pelvis; pillow under iliac crests to improve visualization'],
+   probe:['Curvilinear probe (5–1 MHz) for depth; low‑frequency linear in thin patients'],
+   landmarking:['Probe over PSIS → slide inferior to see sacrum medially and PIIS laterally','Continue distally until ilium disappears (greater sciatic notch)','Identify piriformis deep to gluteus maximus, coursing sacrum → greater trochanter','Internally/externally rotate hip to confirm piriformis motion','Identify sciatic nerve deep/inferior to piriformis before injection'],
+   correctImage:['Gluteus maximus superficial; fusiform piriformis belly oblique; sciatic nerve deep (honeycomb)'],
+   corridor:['Between gluteus maximus (above) and piriformis (below); avoid sciatic nerve'],
+   avoid:['Sciatic nerve; inferior gluteal vessels (use Doppler initially)'],
+   steps:['Advance in‑plane (lateral → medial) under real‑time US','Stop at piriformis belly or perifascial plane; aspirate gently','Test inject a small bolus; then inject anesthetic ± steroid or botulinum toxin as indicated'],
+   tips:['Map vessels with Doppler; if nerve not clearly visualized, do not inject']},
+
+  {id:'si-joint',title:'Sacroiliac (SI) Joint Injection — Ultrasound‑Guided',tags:['si joint','sacroiliac','low back pain','diagnostic injection'],
+   treats:['Suspected SIJ‑mediated pain (diagnostic gold standard)','Therapeutic injection after failed conservative care'],
+   positioning:['Prone'],
+   probe:['Curvilinear 4–5 MHz; linear may suffice in thin patients'],
+   landmarking:['Method 1: Transverse over sacral hiatus to see cornua → move laterally to sacral edge → follow cephalad until ilium appears → cleft between = SIJ','Method 2: Find sacral ala → translate laterally to posterior SI region → tilt/rock to visualize synovial cleft (often inferiorly)'],
+   correctImage:['Two bony lines (sacrum medial, ilium lateral) with a cleft between; posterior ligaments superficial'],
+   corridor:['In‑plane lateral → medial through posterior ligaments into synovial cleft (inferior half most accessible)'],
+   avoid:['Dorsal sacral foramina medially; gluteal vessels/nerves laterally'],
+   steps:['Advance in‑plane to joint cleft; test inject a small bolus for separation','Inject therapeutic volume (often ~1–2 mL) under real‑time visualization'],
+   tips:['Success improves with experience; aim for inferior synovial region if cleft is narrowed in older adults']}
+];
+
+function el(tag, attrs={}, ...children){ const e=document.createElement(tag); for(const[k,v] of Object.entries(attrs)){ if(k==='class') e.className=v; else if(k==='html') e.innerHTML=v; else e.setAttribute(k,v);} for(const c of children){ if(c==null) continue; if(typeof c==='string') e.appendChild(document.createTextNode(c)); else e.appendChild(c);} return e; }
+function block(title, content){ const b=el('div',{class:'block'}); b.appendChild(el('h4',{},title)); b.appendChild(content); return b; }
+function list(items){ const ul=el('ul'); (items||[]).forEach(x=>ul.appendChild(el('li',{},x))); return ul; }
+function listNumbered(items){ const ol=el('ol'); (items||[]).forEach(x=>ol.appendChild(el('li',{},x))); return ol; }
+function placeholder(label){ const d=el('div',{class:'placeholder'}); d.appendChild(el('div',{class:'label'}, `[IMAGE: ${label} — 4.5" × 2"]`)); return d; }
+
+function renderSection(item){
+  const section = el('article',{class:'section',id:item.id,'data-tags':(item.tags||[]).join(' ')});
+  const title = el('div',{class:'title'}, el('h3',{},item.title), el('span',{class:'badge'}, (item.tags||[]).join(' · ')) );
+  const body = el('div',{class:'body'});
+  const top = el('div',{class:'grid-3'});
+  top.appendChild(block('What this treats', list(item.treats)));
+  top.appendChild(block('How to position the patient', list(item.positioning)));
+  top.appendChild(block('Which ultrasound probe to use', list(item.probe)));
+  const lm = el('div',{class:'block callout'});
+  lm.appendChild(el('h4',{},'How to FIND the correct ultrasound view (landmarking)'));
+  lm.appendChild(listNumbered(item.landmarking));
+  const ph = el('div',{class:'grid-2'});
+  ph.appendChild(placeholder('Patient Position'));
+  ph.appendChild(placeholder('Probe Type'));
+  ph.appendChild(placeholder('Probe Positioning on Skin'));
+  ph.appendChild(placeholder('Target Ultrasound View Before Needle Entry'));
+  lm.appendChild(ph);
+  const mid = el('div',{class:'grid-2'});
+  mid.appendChild(block('What a CORRECT image looks like', list(item.correctImage)));
+  mid.appendChild(block('Needle CORRIDOR (what you pass BETWEEN)', list(item.corridor)));
+  const bot = el('div',{class:'grid-2'});
+  bot.appendChild(block('Important structures to AVOID', list(item.avoid)));
+  bot.appendChild(block('Step‑by‑step INJECTION', listNumbered(item.steps)));
+  const tips = el('div',{class:'block'}); tips.appendChild(el('h4',{},'Helpful TIPS')); tips.appendChild(list(item.tips));
+  body.append(top,lm,mid,bot,tips); section.append(title,body); return section;
+}
+
+const content=document.querySelector('#content'); const toc=document.querySelector('#toc-links');
+data.forEach(item=>{ const sec=renderSection(item); content.appendChild(sec); toc.appendChild(el('a',{href:'#'+item.id}, item.title)); });
+
+function setSections(open){ document.querySelectorAll('.section').forEach(s=>{ if(open){s.classList.add('open')} else {s.classList.remove('open')} }) }
+const q=document.querySelector('#search'); q.addEventListener('input',()=>{ const term=q.value.toLowerCase(); document.querySelectorAll('.section').forEach(sec=>{ const hay=(sec.textContent+' '+(sec.dataset.tags||'')).toLowerCase(); sec.style.display = hay.includes(term)?'':''; }); });
+document.querySelector('#expand').addEventListener('click',()=>setSections(true));
+document.querySelector('#collapse').addEventListener('click',()=>setSections(false));
+</script>
+</body>
+</html>
