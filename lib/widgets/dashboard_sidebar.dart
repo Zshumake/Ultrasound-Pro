@@ -149,7 +149,7 @@ class DashboardSidebar extends StatelessWidget {
               children: [
                 const Text('Resident', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                 Text(
-                  'Manual v2.0',
+                  'Manual v2.1',
                   style: TextStyle(color: Theme.of(context).textTheme.bodySmall?.color, fontSize: 12),
                 ),
               ],
