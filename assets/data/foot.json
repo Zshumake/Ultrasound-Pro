@@ -1,0 +1,160 @@
+[
+  {
+    "id": "ankle-ttj",
+    "title": "Tibiotalar (Ankle) Joint Injection",
+    "category": "Foot",
+    "tags": ["ankle", "tibiotalar", "dorsalis pedis", "deep peroneal"],
+    "treats": ["Ankle osteoarthritis", "Synovitis", "Diagnostic anesthetic"],
+    "positioning": ["Supine; knee ~90\u00b0; foot flat; ankle slightly plantarflexed"],
+    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "landmarking": [
+      "Visual Cue: The \u201cTalar Dome Profile\u201d\u2014identify the smooth convex curve of the talus.",
+      "Short-Axis Scan: identify the anterior tendons (TA, EHL, EDL).",
+      "Doppler Survey: Map the \u201cNo-Fly Zone\u201d\u2014deep peroneal nerve and dorsalis pedis artery.",
+      "Identify the joint capsule as a distinct dark plane just above the talar cartilage."
+    ],
+    "correctImage": ["Identify the talar dome (curved line) with distinct dark capsular line above; tendons are superficial and out of path"],
+    "corridor": ["Medial \u2192 lateral path deep to anterior tendons (above) and superficial to capsule/cartilage (below)"],
+    "avoid": ["Deep peroneal nerve and dorsalis pedis artery; avoid traversing EHL if possible"],
+    "steps": ["In\u2011plane; hug capsule superficial to cartilage; inject as indicated; confirm intra\u2011articular distension"],
+    "tips": ["Small tilts separate capsule from cartilage and improve needle visualization"],
+    "pearls": [
+      "Advance medial-to-lateral deep to the anterior tendons.",
+      "Identify the deep peroneal nerve and dorsalis pedis artery; they lie just lateral to the EHL tendon.",
+      "The target is the space between the joint capsule and the talar hyaline cartilage."
+    ],
+    "supplies": [
+      "5cc Syringe",
+      "25G 1.5\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (3-5 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  },
+  {
+    "id": "ankle-peroneal",
+    "title": "Peroneal Tendon Sheath Injection",
+    "category": "Foot",
+    "tags": ["ankle", "peroneal", "retinaculum", "brevis", "longus"],
+    "treats": ["Peroneal tendinopathy (peroneus longus/brevis)"],
+    "positioning": ["Side\u2011lying with symptomatic ankle up"],
+    "probe": ["High\u2011frequency linear probe (6-13 MHz) (short footprint ideal)"],
+    "landmarking": [
+      "Probe over posterior aspect of lateral malleolus \u2192 identify peroneus longus and brevis tendons sharing a sheath \u2192 see superior peroneal retinaculum overlying"
+    ],
+    "correctImage": ["Two tendons in shared anechoic rim (sheath) behind the fibula"],
+    "corridor": ["Anterior \u2192 posterior under retinaculum (above) into sheath around tendons (below)"],
+    "avoid": ["Sural nerve posteriorly (usually not in path, but confirm)"],
+    "steps": ["In\u2011plane into sheath; surround both tendons with injectate; redirect if only one tendon fills"],
+    "tips": ["Short needle gives fine control; low volumes suffice"],
+    "pearls": [
+      "Approach anterior-to-posterior under the superior peroneal retinaculum.",
+      "Ensure injectate surrounds both the longus and brevis tendons in their shared sheath.",
+      "Always survey for the sural nerve posteriorly to ensure it's out of your path."
+    ],
+    "supplies": [
+      "5cc Syringe",
+      "25G 1.5\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (3-5 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  },
+  {
+    "id": "foot-plantar",
+    "title": "Plantar Fascia (Perifascial) Injection",
+    "category": "Foot",
+    "tags": ["foot", "plantar fascia", "calcaneus", "heel", "fat pad"],
+    "treats": ["Plantar fasciitis (heel pain) requiring perifascial therapy"],
+    "positioning": ["Side\u2011lying with symptomatic foot dependent or off table edge"],
+    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "landmarking": [
+      "Short\u2011axis over plantar heel at calcaneal origin \u2192 identify bright plantar fascia on calcaneus \u2192 find thin dark plane between fascia and fat pad"
+    ],
+    "correctImage": ["Bright fascia with thin anechoic plane separating it from fat pad"],
+    "corridor": ["Medial \u2192 lateral within thin plane: fat pad (above), plantar fascia (below) \u2014 do not enter fascia"],
+    "avoid": ["Intrafascial steroid (rupture risk)", "Injection into fat pad (atrophy risk)", "Medial neurovascular bundle"],
+    "steps": ["In\u2011plane into plane; inject small volumes to expand plane without entering fascia"],
+    "tips": ["Use smallest effective volume; stop if resistance \u2014 correct plane opens smoothly"],
+    "pearls": [
+      "The target is the hypoechoic plane between the fat pad (superficial) and fascia (deep).",
+      "Avoid intrafascial or fat pad injection to prevent rupture or atrophy.",
+      "Approach medial-to-lateral to avoid the medial neurovascular bundle."
+    ],
+    "supplies": [
+      "5cc Syringe",
+      "25G or 27G 1.5\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (5-8 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  },
+  {
+    "id": "foot-mortons-neuroma",
+    "title": "Morton's Neuroma Injection (Dorsal Approach)",
+    "category": "Foot",
+    "tags": ["foot", "morton's neuroma", "metatarsal", "web space"],
+    "treats": ["Interdigital neuralgia (Morton's neuroma)", "Intermetatarsal bursitis"],
+    "positioning": ["Supine; foot resting on table; toes slightly flexed"],
+    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "landmarking": [
+      "Visual Cue: The \u201cMulder's Click\u201d\u2014apply plantar-to-dorsal pressure to displace the neuroma between metatarsal heads.",
+      "Transverse Scan: Identify the target web space (usually 2nd-3rd or 3rd-4th).",
+      "Identify the hypoechoic \u201cdumbbell\u201d or round mass as it \u201cpops\u201d dorsally during compression.",
+      "Identify and avoid the intermetatarsal bursa, which often sits just superficial to the neuroma."
+    ],
+    "correctImage": ["Hypoechoic mass in the intermetatarsal space; metatarsal heads on either side."],
+    "corridor": ["Dorsal in-plane approach directly into the intermetatarsal space."],
+    "avoid": ["Deep plantar vessels.", "Digital nerves."],
+    "steps": [
+      "Advance dorsal-to-plantar under real-time US.",
+      "Target the center of the hypoechoic mass.",
+      "Inject 2-3 mL; watch for fluid surrounding the neuroma."
+    ],
+    "tips": ["Dorsal approach is safer and avoids painful plantar weight-bearing skin."],
+    "pearls": [
+      "Use the plantar \u201csqueeze test\u201d (Mulder's maneuver) while scanning to confirm the neuroma pops up.",
+      "Identify and avoid the intermetatarsal bursa, which may also be inflamed.",
+      "Steroid in the plantar fat pad can cause atrophy\u2014the dorsal approach minimizes this risk."
+    ],
+    "supplies": [
+      "3cc Syringe",
+      "27G 1\" or 1.5\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (2-3 mL)",
+      "1cc Kenalog or Dexamethasone",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  }
+]

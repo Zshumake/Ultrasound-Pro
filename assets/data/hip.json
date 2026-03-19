@@ -1,0 +1,213 @@
+[
+  {
+    "id": "hip-anterior",
+    "title": "Anterior Intra\u2011articular Injection (Femoral Head\u2013Neck Junction)",
+    "category": "Hip",
+    "tags": ["hip", "intra-articular", "iliopsoas", "lfca"],
+    "treats": ["Hip osteoarthritis", "Labral irritation", "Diagnostic anesthetic"],
+    "positioning": ["Supine; hip neutral (often ~20\u00b0 abduction)"],
+    "probe": ["Low\u2011frequency curvilinear probe (2-5 MHz)"],
+    "landmarking": [
+      "Visual Cue: The \u201cHead-Neck Slope\u201d\u2014identify the round femoral head transitioning into the flatter neck.",
+      "Identify the iliopsoas muscle/tendon directly superficial to the capsule.",
+      "Oblique Transverse Scan: Align the probe with the long-axis of the femoral neck.",
+      "Doppler Survey: Identify the ascending branch of the lateral femoral circumflex artery (LFCA)."
+    ],
+    "correctImage": ["Round head narrowing into neck; thin capsule; iliopsoas superficial"],
+    "corridor": ["Inferolateral \u2192 superomedial under iliopsoas (above) to capsule at head\u2013neck junction (below)"],
+    "avoid": ["Femoral nerve/artery/vein medially", "Ascending branch of lateral femoral circumflex artery"],
+    "steps": ["In\u2011plane to capsule; test inject to lift capsule; complete injection as indicated"],
+    "tips": ["Continuously track needle tip; small tilts help follow it through iliopsoas"],
+    "pearls": [
+      "Visualizing Depth: Use a spinal needle (22G 3.5\") for adults; the depth can be surprising. If the needle disappears, use a slight \u201cjiggle\u201d to find it in the iliopsoas.",
+      "Scan the femoral head-neck junction using an oblique transverse plane.",
+      "Identify the ascending branch of the lateral femoral circumflex artery with Doppler before entry."
+    ],
+    "supplies": [
+      "10cc Syringe",
+      "22G 3.5\" Spinal Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (5-10 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  },
+  {
+    "id": "hip-gtb",
+    "title": "Greater Trochanteric Bursa Injection",
+    "category": "Hip",
+    "tags": ["hip", "gt bursa", "gluteus medius", "it band"],
+    "treats": ["Greater trochanteric pain syndrome (bursal inflammation)"],
+    "positioning": ["Side\u2011lying, symptomatic side up"],
+    "probe": ["Linear or curvilinear depending on habitus"],
+    "landmarking": [
+      "Visual Cue: The \u201cApex of the Hill\u201d\u2014Identify the bright convex prominence of the greater trochanter.",
+      "Slide posteriorly to visualize the gluteus medius and minimus tendons.",
+      "Identify the IT Band as the superficial \u201croof\u201d over the trochanteric hill.",
+      "Find the hypoechoic plane (the bursa) between the IT band and the GMx/GMed tendons."
+    ],
+    "correctImage": ["Distinct dark plane separating superficial IT band/GMx from deep gluteus medius tendon"],
+    "corridor": ["Posterior \u2192 anterior into bursal plane: IT band/GMx (above), gluteus medius tendon (below)"],
+    "avoid": ["Typically no major NV structures, but survey for variants"],
+    "steps": ["In\u2011plane into bursal plane; inject 4\u201310 mL until plane opens and spreads laterally"],
+    "tips": ["Slight rotation in line with GMx fibers may increase conspicuity"],
+    "pearls": [
+      "The bursa is the hypoechoic plane between the IT band and the gluteus medius tendon.",
+      "Rotate the probe to align with Glute Maximus fibers to see the bursa more clearly.",
+      "Ensure the IT band \u201clifts off\u201d the tendon during injection."
+    ],
+    "supplies": [
+      "10cc Syringe",
+      "22G 1.5\" or 3.5\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (5-10 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  },
+  {
+    "id": "hip-piriformis",
+    "title": "Piriformis Injection",
+    "category": "Hip",
+    "tags": ["hip", "piriformis", "sciatic nerve", "deep gluteal pain"],
+    "treats": ["Piriformis syndrome with sciatic irritation", "Deep gluteal pain / non\u2011spinal sciatica"],
+    "positioning": ["Prone with neutral pelvis; pillow under iliac crests to improve visualization"],
+    "probe": ["Curvilinear probe (2-5 MHz) for depth; low\u2011frequency linear in thin patients"],
+    "landmarking": [
+      "Probe over PSIS \u2192 slide inferior to see sacrum medially and PIIS laterally",
+      "Continue distally until ilium disappears (greater sciatic notch)",
+      "Identify piriformis deep to gluteus maximus, coursing sacrum \u2192 greater trochanter",
+      "Internally/externally rotate hip to confirm piriformis motion",
+      "Identify sciatic nerve deep/inferior to piriformis before injection"
+    ],
+    "correctImage": ["Gluteus maximus superficial; fusiform piriformis belly oblique; sciatic nerve deep (honeycomb)"],
+    "corridor": ["Between gluteus maximus (above) and piriformis (below); avoid sciatic nerve"],
+    "avoid": ["Sciatic nerve; inferior gluteal vessels (use Doppler initially)"],
+    "steps": [
+      "Advance in\u2011plane (lateral \u2192 medial) under real\u2011time US",
+      "Stop at piriformis belly or perifascial plane; aspirate gently",
+      "Test inject a small bolus; then inject anesthetic \u00b1 steroid or botulinum toxin as indicated"
+    ],
+    "tips": ["Map vessels with Doppler; if nerve not clearly visualized, do not inject"],
+    "pearls": [
+      "The sciatic nerve is usually deep to the piriformis belly\u2014always identify it first.",
+      "Confirm the piriformis muscle by having the patient internally/externally rotate the hip.",
+      "Approach lateral-to-medial to keep the needle away from the sciatic notch."
+    ],
+    "supplies": [
+      "10cc Syringe",
+      "22G 3.5\" Spinal Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (5-10 mL)",
+      "1cc Kenalog or Botulinum toxin",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  },
+  {
+    "id": "si-joint",
+    "title": "Sacroiliac (SI) Joint Injection",
+    "category": "Hip",
+    "tags": ["hip", "si joint", "sacroiliac", "low back pain", "diagnostic injection"],
+    "treats": ["Suspected SIJ\u2011mediated pain (diagnostic gold standard)", "Therapeutic injection after failed conservative care"],
+    "positioning": ["Prone; pillow under abdomen to minimize lumbar lordosis"],
+    "probe": ["Curvilinear 2-5 MHz; linear may suffice in thin patients"],
+    "landmarking": [
+      "Visual Cue: The \u201cSynovial Cleft\u201d\u2014Identify the sacroiliac gap in the inferior 1/3 of the joint.",
+      "Transverse over sacral hiatus \u2192 move laterally to sacral edge \u2192 follow cephalad to find the ilium.",
+      "Rock the probe to maximize the \u201copening\u201d of the posterior joint cleft.",
+      "Identify the thick posterior sacroiliac ligaments overlying the cleft."
+    ],
+    "correctImage": ["Two bony lines (sacrum medial, ilium lateral) with a cleft between; posterior ligaments superficial"],
+    "corridor": ["In\u2011plane lateral \u2192 medial through posterior ligaments into synovial cleft (inferior half most accessible)"],
+    "avoid": ["Dorsal sacral foramina medially; gluteal vessels/nerves laterally"],
+    "steps": [
+      "Advance in\u2011plane to joint cleft; test inject a small bolus for separation",
+      "Inject therapeutic volume (often ~1\u20132 mL) under real\u2011time visualization"
+    ],
+    "tips": ["Success improves with experience; aim for inferior synovial region if cleft is narrowed in older adults"],
+    "pearls": [
+      "Approach lateral-to-medial through the posterior ligaments.",
+      "The inferior synovial cleft is the most reproducible entry point.",
+      "Confirm positioning by visualizing the cleft opening during test bolus."
+    ],
+    "supplies": [
+      "5cc Syringe",
+      "22G 1.5\" or 3.5\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (2-3 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  },
+  {
+    "id": "hip-hamstring-proximal",
+    "title": "Proximal Hamstring (Ischial Tuberosity) Injection",
+    "category": "Hip",
+    "tags": ["hip", "hamstring", "ischial tuberosity", "tendinopathy"],
+    "treats": ["Proximal hamstring tendinopathy", "Ischiogluteal bursitis"],
+    "positioning": ["Prone; leg slightly abducted and neutral"],
+    "probe": ["Curvilinear probe (2-5 MHz) for depth."],
+    "landmarking": [
+      "Transverse over the gluteal fold to identify the bright curved ischial tuberosity.",
+      "Identify the conjoined tendon (Biceps Femoris/Semitendinosus) originating from the lateral tuberosity.",
+      "Locate the Sciatic Nerve lateral and posterior to the hamstring origin."
+    ],
+    "correctImage": ["Hyperechoic bony tuberosity with thick fibrillar tendon origin; Sciatic nerve clear laterally."],
+    "corridor": ["In-plane lateral-to-medial or caudal-to-cranial approach."],
+    "avoid": ["Sciatic nerve (lateral).", "Inferior gluteal artery (Doppler survey)."],
+    "steps": [
+      "Identify the sciatic nerve first and stay medial to it.",
+      "Advance to the tendon origin or the bursa superficial to it.",
+      "Inject 4-6 mL; confirm spread at the bone-tendon interface."
+    ],
+    "tips": ["A longer spinal needle (22G 3.5\") is often required for the gluteal depth."],
+    "pearls": [
+      "The Sciatic Nerve is your \u201cNo-Fly Zone\u201d\u2014always keep it in view and stay medial.",
+      "The ischial tuberosity shadows heavily; use this shadow to orient your depth.",
+      "Differentiating between tendonopathy and ischiogluteal bursitis is key for therapeutic effect."
+    ],
+    "supplies": [
+      "10cc Syringe",
+      "22G 3.5\" Spinal Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (5-8 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  }
+]

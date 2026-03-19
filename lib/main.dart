@@ -1,49 +1,40 @@
 import 'package:flutter/material.dart';
-import 'screens/dashboard_page.dart';
+import 'package:provider/provider.dart';
+import 'data/injection_provider.dart';
+import 'router.dart';
 import 'theme/app_theme.dart';
 import 'theme/theme_manager.dart';
 import 'theme/favorites_manager.dart';
-
-final themeManager = ThemeManager();
-final favoritesManager = FavoritesManager();
+import 'theme/recently_viewed_manager.dart';
 
 void main() {
-  runApp(const USGuidedInjectionsApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeManager()),
+        ChangeNotifierProvider(create: (_) => FavoritesManager()),
+        ChangeNotifierProvider(create: (_) => RecentlyViewedManager()),
+        ChangeNotifierProvider(create: (_) => InjectionDataProvider()),
+      ],
+      child: const USGuidedInjectionsApp(),
+    ),
+  );
 }
 
-class USGuidedInjectionsApp extends StatefulWidget {
+class USGuidedInjectionsApp extends StatelessWidget {
   const USGuidedInjectionsApp({super.key});
 
   @override
-  State<USGuidedInjectionsApp> createState() => _USGuidedInjectionsAppState();
-}
-
-class _USGuidedInjectionsAppState extends State<USGuidedInjectionsApp> {
-  @override
-  void initState() {
-    super.initState();
-    themeManager.addListener(_update);
-    favoritesManager.addListener(_update);
-  }
-
-  void _update() => setState(() {});
-
-  @override
-  void dispose() {
-    themeManager.removeListener(_update);
-    favoritesManager.removeListener(_update);
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    final themeManager = context.watch<ThemeManager>();
+
+    return MaterialApp.router(
       title: 'US Guided Injections Manual',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeManager.themeMode,
-      home: const DashboardPage(),
+      routerConfig: router,
     );
   }
 }

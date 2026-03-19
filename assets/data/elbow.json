@@ -1,0 +1,115 @@
+[
+  {
+    "id": "elbow-radiocapitellar",
+    "title": "Radiocapitellar Joint Injection (Lateral Elbow)",
+    "category": "Elbow",
+    "tags": ["elbow", "radiocapitellar", "arthritis", "synovitis"],
+    "treats": ["Elbow arthritis", "Lateral elbow joint pain", "Synovitis/effusion", "Diagnostic anesthetic"],
+    "positioning": ["Supine; elbow flexed 20\u201340\u00b0; hand on abdomen; small pillow under elbow"],
+    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "landmarking": ["Find lateral epicondyle \u2192 slide distally to radial head \u2192 tilt anteriorly to view capitellum \u2192 identify wedge\u2011shaped joint space"],
+    "correctImage": ["Clear radial head\u2013capitellum interface with a thin dark joint space"],
+    "corridor": ["Posterior \u2192 anterior path between triceps expansion/skin (above) and radial head/capitellum (below)"],
+    "avoid": ["Variants (vessels/nerves) \u2014 scan first"],
+    "steps": ["Out\u2011of\u2011plane posterior entry; gentle walk\u2011down to joint; test inject; inject 2\u20134 mL"],
+    "tips": ["Advance in small increments to avoid bone contact; if no expansion with test inject, adjust depth"],
+    "pearls": [
+      "Visual Orientation: Think of the joint as a \u201ccleft\u201d between two hills. The capitellum is the rounded hill, and the radial head is the flatter hill.",
+      "Use the \u201cWalkdown\u201d technique for this out-of-plane approach: touch the bone superficially first, then gently \u201cwalk\u201d the needle tip down the slope into the joint.",
+      "Pronate/supinate the forearm to confirm the radial head moves while the lateral epicondyle stays stationary."
+    ],
+    "supplies": [
+      "5cc Syringe",
+      "22G or 25G 1.5\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (2-4 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  },
+  {
+    "id": "elbow-cet",
+    "title": "Common Extensor Tendon Origin Injection (Lateral Epicondyle)",
+    "category": "Elbow",
+    "tags": ["elbow", "tennis elbow", "CET"],
+    "treats": ["Lateral epicondylitis with tendon surface pain or degeneration"],
+    "positioning": ["Supine; elbow 20\u201340\u00b0 flexed; hand on abdomen"],
+    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "landmarking": [
+      "Visual Cue: The \u201cFibrillar Footprint\u201d\u2014Identify the bright, organized fibers of the CET attaching to the lateral epicondyle.",
+      "Slide the probe slightly anteriorly to identify the landmark bony contour of the radial head.",
+      "Check for any hypoechoic \u201ctears\u201d or calcifications within the footprint.",
+      "Map the radial nerve and the radial recurrent artery before choosing your needle path."
+    ],
+    "correctImage": ["Crisp fibrillar tendon superficial to thin bright ligament band"],
+    "corridor": ["Distal \u2192 proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous"],
+    "avoid": ["Radial nerve", "Radial recurrent artery", "Intratendinous steroid"],
+    "steps": ["In\u2011plane distal \u2192 proximal; position superficial to tendon; inject small aliquots along footprint"],
+    "tips": ["For regenerative injectates, target intratendinous diseased zones; avoid steroid in fibers"],
+    "pearls": [
+      "The radial collateral ligament is deep\u2014forming the deep 30\u201350% of this region.",
+      "Avoid placing corticosteroid directly into the tendon fibers to prevent future rupture."
+    ],
+    "supplies": [
+      "3cc Syringe",
+      "25G or 27G 1\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (1-2 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  },
+  {
+    "id": "elbow-cfet",
+    "title": "Common Flexor Tendon Origin Injection (Medial Epicondyle)",
+    "category": "Elbow",
+    "tags": ["elbow", "golfer elbow", "CFET"],
+    "treats": ["Medial epicondylitis with pain at flexor origin"],
+    "positioning": ["Supine; arm slightly abducted/external rotation; elbow ~20\u00b0; forearm supinated"],
+    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "landmarking": [
+      "Visual Cue: The \u201cUlnar Nerve Notch\u201d\u2014Identify the medial epicondyle and the bony groove behind it.",
+      "Maneuver: Have the patient slowly flex/extend the elbow to check for ulnar nerve subluxation.",
+      "Identify the fibrillar common flexor tendon attaching to the epicondyle.",
+      "Identify and map the median nerve and brachial artery anteriorly."
+    ],
+    "correctImage": ["Fibrillar tendon superficial to trochlea/ulna; ulnar nerve identified posterior to epicondyle"],
+    "corridor": ["Distal \u2192 proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous"],
+    "avoid": ["Ulnar nerve (may sublux anteriorly)", "Median nerve", "Brachial artery"],
+    "steps": ["In\u2011plane distal \u2192 proximal to tendon surface; inject small aliquots to form peritendinous halo"],
+    "tips": ["If approaching proximal \u2192 distal, re\u2011confirm ulnar nerve immediately pre\u2011entry"],
+    "pearls": [
+      "The ulnar nerve is often posterior to the medial epicondyle but can sublux over the top\u2014always locate it first.",
+      "Identify the median nerve and brachial artery during pre-procedure scanning to ensure clear path."
+    ],
+    "supplies": [
+      "3cc Syringe",
+      "25G or 27G 1\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (1-2 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  }
+]

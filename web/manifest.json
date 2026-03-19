@@ -1,13 +1,14 @@
 {
-    "name": "us_guided_injections",
-    "short_name": "us_guided_injections",
+    "name": "US Guided Injections Manual",
+    "short_name": "US Guided",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#0F172A",
+    "theme_color": "#007AFF",
+    "description": "Ultrasound-guided injection reference for sports medicine residents",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
+    "categories": ["medical", "education"],
     "icons": [
         {
             "src": "icons/Icon-192.png",

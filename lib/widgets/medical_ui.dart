@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../theme/app_theme.dart';
 
+/// Monospaced, all-caps section header — like instrument panel labels
 class MedicalSectionHeader extends StatelessWidget {
   final String title;
   final double fontSize;
@@ -8,49 +11,67 @@ class MedicalSectionHeader extends StatelessWidget {
   const MedicalSectionHeader({
     super.key,
     required this.title,
-    this.fontSize = 14,
+    this.fontSize = 10,
     this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title.toUpperCase(),
-      style: TextStyle(
-        color: color ?? Theme.of(context).textTheme.bodySmall?.color,
-        fontWeight: FontWeight.w800,
-        fontSize: fontSize,
-        letterSpacing: 1.2,
-      ),
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Row(
+      children: [
+        Container(
+          width: 12,
+          height: 1.5,
+          color: color ?? AppTheme.cyan.withValues(alpha: 0.5),
+        ),
+        const SizedBox(width: 10),
+        Text(
+          title.toUpperCase(),
+          style: GoogleFonts.jetBrainsMono(
+            color: color ?? (isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight),
+            fontWeight: FontWeight.w700,
+            fontSize: fontSize,
+            letterSpacing: 2.0,
+          ),
+        ),
+      ],
     );
   }
 }
 
+/// Small tag pill with category-aware color
 class MedicalTag extends StatelessWidget {
   final String text;
+  final Color? color;
 
-  const MedicalTag({super.key, required this.text});
+  const MedicalTag({super.key, required this.text, this.color});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final c = color ?? AppTheme.cyan;
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor.withValues(alpha: 0.08),
-        borderRadius: BorderRadius.circular(8),
+        color: c.withValues(alpha: isDark ? 0.08 : 0.06),
+        borderRadius: BorderRadius.circular(4),
+        border: Border.all(color: c.withValues(alpha: 0.15), width: 0.5),
       ),
       child: Text(
         text.toUpperCase(),
-        style: TextStyle(
-          color: Theme.of(context).primaryColor,
-          fontSize: 10,
-          fontWeight: FontWeight.bold,
+        style: GoogleFonts.jetBrainsMono(
+          color: c.withValues(alpha: 0.8),
+          fontSize: 9,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0.5,
         ),
       ),
     );
   }
 }
 
+/// Info panel with icon, title, and body text
 class MedicalInfoBox extends StatelessWidget {
   final String title;
   final String text;
@@ -67,36 +88,42 @@ class MedicalInfoBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeColor = color ?? Theme.of(context).primaryColor;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final c = color ?? AppTheme.cyan;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: themeColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: themeColor.withValues(alpha: 0.1)),
+        color: c.withValues(alpha: isDark ? 0.04 : 0.03),
+        borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+        border: Border.all(color: c.withValues(alpha: 0.12), width: 1),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: themeColor, size: 20),
-          const SizedBox(width: 16),
+          Container(
+            padding: const EdgeInsets.all(6),
+            decoration: BoxDecoration(
+              color: c.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child: Icon(icon, color: c, size: 16),
+          ),
+          const SizedBox(width: 14),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title.toUpperCase(),
-                  style: TextStyle(
-                    color: themeColor,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 11,
+                  style: GoogleFonts.jetBrainsMono(
+                    color: c,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 9,
+                    letterSpacing: 1.5,
                   ),
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  text,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
+                const SizedBox(height: 6),
+                Text(text, style: Theme.of(context).textTheme.bodyMedium),
               ],
             ),
           ),
@@ -106,6 +133,7 @@ class MedicalInfoBox extends StatelessWidget {
   }
 }
 
+/// Image placeholder with scanning-line aesthetic
 class MedicalPlaceholderImage extends StatelessWidget {
   final String label;
   final double height;
@@ -122,60 +150,95 @@ class MedicalPlaceholderImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: double.infinity,
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
-        color: isMain ? Theme.of(context).cardColor : Theme.of(context).dividerColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: isMain 
-            ? Theme.of(context).primaryColor.withValues(alpha: 0.2) 
-            : Theme.of(context).dividerColor, 
-          width: 1.5,
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final accentColor = isMain ? AppTheme.cyan : (isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight);
+
+    return Semantics(
+      image: true,
+      label: imagePath != null ? label : 'Placeholder: $label',
+      child: Container(
+        height: height,
+        width: double.infinity,
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          color: isDark ? AppTheme.surfaceElevated : const Color(0xFFF5F7FA),
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+          border: Border.all(
+            color: isMain
+                ? AppTheme.cyan.withValues(alpha: 0.2)
+                : (isDark ? AppTheme.borderDark : AppTheme.borderLight),
+            width: 1,
+          ),
         ),
+        child: imagePath != null
+            ? Image.asset(
+                imagePath!,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => _buildPlaceholder(context, accentColor, isDark),
+              )
+            : _buildPlaceholder(context, accentColor, isDark),
       ),
-      child: imagePath != null 
-        ? Image.asset(
-            imagePath!,
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) => _buildPlaceholder(context),
-          )
-        : _buildPlaceholder(context),
     );
   }
 
-  Widget _buildPlaceholder(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            isMain ? Icons.monitor_heart_outlined : Icons.add_photo_alternate_outlined,
-            color: isMain 
-              ? Theme.of(context).primaryColor.withValues(alpha: 0.3) 
-              : Theme.of(context).textTheme.bodySmall?.color?.withValues(alpha: 0.4),
-            size: isMain ? 48 : 32,
+  Widget _buildPlaceholder(BuildContext context, Color accentColor, bool isDark) {
+    return Stack(
+      children: [
+        // Grid pattern background
+        if (isMain)
+          Positioned.fill(
+            child: CustomPaint(painter: _GridPainter(color: accentColor.withValues(alpha: 0.06))),
           ),
-          const SizedBox(height: 12),
-          Text(
-            label,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: isMain 
-                ? Theme.of(context).primaryColor.withValues(alpha: 0.4) 
-                : Theme.of(context).textTheme.bodySmall?.color?.withValues(alpha: 0.5),
-              fontSize: 11,
-              fontWeight: FontWeight.bold,
-            ),
+        Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                isMain ? Icons.monitor_heart_outlined : Icons.add_photo_alternate_outlined,
+                color: accentColor.withValues(alpha: 0.3),
+                size: isMain ? 36 : 24,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.jetBrainsMono(
+                  color: accentColor.withValues(alpha: 0.4),
+                  fontSize: 9,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1.0,
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
 
+/// Grid background painter for US-view placeholder
+class _GridPainter extends CustomPainter {
+  final Color color;
+  _GridPainter({required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color..strokeWidth = 0.5;
+    const spacing = 20.0;
+    for (double x = 0; x < size.width; x += spacing) {
+      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
+    }
+    for (double y = 0; y < size.height; y += spacing) {
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+/// Bullet list item
 class BulletPointItem extends StatelessWidget {
   final String text;
 
@@ -189,15 +252,19 @@ class BulletPointItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 6),
-            child: Icon(Icons.circle, size: 6, color: Theme.of(context).primaryColor),
+            padding: const EdgeInsets.only(top: 7),
+            child: Container(
+              width: 4,
+              height: 4,
+              decoration: BoxDecoration(
+                color: AppTheme.cyan.withValues(alpha: 0.6),
+                shape: BoxShape.circle,
+              ),
+            ),
           ),
           const SizedBox(width: 12),
           Expanded(
-            child: Text(
-              text,
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
+            child: Text(text, style: Theme.of(context).textTheme.bodyLarge),
           ),
         ],
       ),
@@ -205,45 +272,51 @@ class BulletPointItem extends StatelessWidget {
   }
 }
 
+/// Numbered step with accent circle badge
 class NumberedStepItem extends StatelessWidget {
   final int number;
   final String text;
+  final Color? color;
 
   const NumberedStepItem({
     super.key,
     required this.number,
     required this.text,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final c = color ?? AppTheme.cyan;
     return Padding(
       padding: const EdgeInsets.only(top: 12),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 24,
-            height: 24,
+            width: 22,
+            height: 22,
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              shape: BoxShape.circle,
+              color: c.withValues(alpha: isDark ? 0.12 : 0.08),
+              borderRadius: BorderRadius.circular(6),
+              border: Border.all(color: c.withValues(alpha: 0.2), width: 1),
             ),
             alignment: Alignment.center,
             child: Text(
               '$number',
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
+              style: GoogleFonts.jetBrainsMono(
+                color: c,
+                fontSize: 10,
+                fontWeight: FontWeight.w700,
               ),
             ),
           ),
           const SizedBox(width: 12),
           Expanded(
-            child: Text(
-              text,
-              style: Theme.of(context).textTheme.bodyLarge,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 2),
+              child: Text(text, style: Theme.of(context).textTheme.bodyLarge),
             ),
           ),
         ],

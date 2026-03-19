@@ -1,0 +1,47 @@
+[
+  {
+    "id": "knee-suprapatellar",
+    "title": "Suprapatellar Recess Injection",
+    "category": "Knee",
+    "tags": ["knee", "suprapatellar", "recess", "fat pad", "prefemoral", "quadriceps"],
+    "treats": ["Knee osteoarthritis", "Synovitis/effusion", "Diagnostic anesthetic"],
+    "positioning": ["Supine; small towel under knee for 20-30\u00b0 flexion"],
+    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "landmarking": [
+      "Long\u2011axis over distal femur \u2192 identify femoral cortex \u2192 prefemoral fat pad above \u2192 suprapatellar recess (target) above that \u2192 quadriceps fat pad and quadriceps tendon above.",
+      "Slide the probe laterally to find the deepest part of the recess for easier access."
+    ],
+    "correctImage": ["Two distinct fat pads with anechoic space between \u2014 quadriceps fat pad (above) and prefemoral fat pad (below)."],
+    "corridor": ["Lateral \u2192 medial in\u2011plane approach into the deepest part of the suprapatellar recess."],
+    "avoid": ["Avoid traversing the quadriceps tendon or patellar tendon.", "Genicular vessels (screen with Doppler)."],
+    "steps": [
+      "Position patient supine with knee in 20-30\u00b0 flexion.",
+      "Place probe in long-axis (sagittal) over the suprapatellar region.",
+      "Identify the anechoic effusion or the hypoechoic plane between fat pads.",
+      "Advance in\u2011plane from the lateral side into the recess.",
+      "Confirm spread with a small test bolus of local anesthetic."
+    ],
+    "tips": ["Gentle probe compression pools fluid at your entry site; keep needle parallel to cartilage"],
+    "pearls": [
+      "The \u201cTwo-Pad Sandwich\u201d: The target is the \u201cfilling\u201d between the Quadriceps Fat Pad (the top bun) and Prefemoral Fat Pad (the bottom bun).",
+      "20-30\u00b0 Flexion: This \u201cpools\u201d fluid into the suprapatellar space and relaxes the quad tendon.",
+      "The \u201cLateral Approach\u201d: Landmarking from the lateral side ensures the needle is perpendicular to the beam for maximum brightness.",
+      "Gentle pressure with the probe can \u201cmilk\u201d fluid towards your needle tip."
+    ],
+    "supplies": [
+      "10cc or 20cc Syringe",
+      "21G or 22G 1.5\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (5-10 mL)",
+      "1cc Kenalog (40mg/ml)",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ]
+  }
+]
