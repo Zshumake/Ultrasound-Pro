@@ -21,6 +21,9 @@ class InjectionTechnique {
   final String? landmarkImg;
   final String? ultrasoundImg;
 
+  // Optional video URL for procedure demonstration
+  final String? videoUrl;
+
   InjectionTechnique({
     required this.id,
     required this.title,
@@ -41,6 +44,7 @@ class InjectionTechnique {
     this.probeImg,
     this.landmarkImg,
     this.ultrasoundImg,
+    this.videoUrl,
   });
 
   factory InjectionTechnique.fromJson(Map<String, dynamic> json) {
@@ -64,6 +68,7 @@ class InjectionTechnique {
       probeImg: json['probeImg'] as String?,
       landmarkImg: json['landmarkImg'] as String?,
       ultrasoundImg: json['ultrasoundImg'] as String?,
+      videoUrl: json['videoUrl'] as String?,
     );
   }
 }

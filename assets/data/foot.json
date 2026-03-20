@@ -3,6 +3,7 @@
     "id": "ankle-ttj",
     "title": "Tibiotalar (Ankle) Joint Injection",
     "category": "Foot",
+    "videoUrl": "https://www.youtube.com/watch?v=9BgGRJn4WWw",
     "tags": ["ankle", "tibiotalar", "dorsalis pedis", "deep peroneal"],
     "treats": ["Ankle osteoarthritis", "Synovitis", "Diagnostic anesthetic"],
     "positioning": ["Supine; knee ~90\u00b0; foot flat; ankle slightly plantarflexed"],
@@ -42,6 +43,7 @@
   {
     "id": "ankle-peroneal",
     "title": "Peroneal Tendon Sheath Injection",
+    "videoUrl": "https://www.youtube.com/watch?v=zvBQ-Y2-F70",
     "category": "Foot",
     "tags": ["ankle", "peroneal", "retinaculum", "brevis", "longus"],
     "treats": ["Peroneal tendinopathy (peroneus longus/brevis)"],
@@ -79,6 +81,7 @@
   {
     "id": "foot-plantar",
     "title": "Plantar Fascia (Perifascial) Injection",
+    "videoUrl": "https://www.youtube.com/watch?v=SUfulHTSdzo",
     "category": "Foot",
     "tags": ["foot", "plantar fascia", "calcaneus", "heel", "fat pad"],
     "treats": ["Plantar fasciitis (heel pain) requiring perifascial therapy"],
@@ -116,6 +119,7 @@
   {
     "id": "foot-mortons-neuroma",
     "title": "Morton's Neuroma Injection (Dorsal Approach)",
+    "videoUrl": "https://www.youtube.com/watch?v=jCGBsovcvEE",
     "category": "Foot",
     "tags": ["foot", "morton's neuroma", "metatarsal", "web space"],
     "treats": ["Interdigital neuralgia (Morton's neuroma)", "Intermetatarsal bursitis"],

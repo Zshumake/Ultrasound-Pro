@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../models/injection_technique.dart';
 import '../widgets/medical_ui.dart';
 import '../widgets/resident_pearls_card.dart';
+import '../widgets/youtube_player.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
 import '../theme/recently_viewed_manager.dart';
@@ -79,6 +80,10 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                       _buildProcedureSection(context),
                       const SizedBox(height: 32),
                       ResidentPearlsCard(pearls: widget.technique.pearls),
+                      if (widget.technique.videoUrl != null) ...[
+                        const SizedBox(height: 32),
+                        _buildVideoSection(context, catColor, isDark),
+                      ],
                       const SizedBox(height: 64),
                     ],
                   ),
@@ -578,6 +583,30 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
               )),
         ],
       ),
+    );
+  }
+
+  Widget _buildVideoSection(BuildContext context, Color catColor, bool isDark) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const MedicalSectionHeader(title: 'VIDEO DEMONSTRATION'),
+        const SizedBox(height: 16),
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+            border: Border.all(
+              color: catColor.withValues(alpha: 0.2),
+              width: 1,
+            ),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: YouTubePlayer(
+            videoUrl: widget.technique.videoUrl!,
+            accentColor: catColor,
+          ),
+        ),
+      ],
     );
   }
 

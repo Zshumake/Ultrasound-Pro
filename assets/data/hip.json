@@ -3,6 +3,7 @@
     "id": "hip-anterior",
     "title": "Anterior Intra\u2011articular Injection (Femoral Head\u2013Neck Junction)",
     "category": "Hip",
+    "videoUrl": "https://www.youtube.com/watch?v=L49oCzvpBmE",
     "tags": ["hip", "intra-articular", "iliopsoas", "lfca"],
     "treats": ["Hip osteoarthritis", "Labral irritation", "Diagnostic anesthetic"],
     "positioning": ["Supine; hip neutral (often ~20\u00b0 abduction)"],
@@ -42,6 +43,7 @@
   {
     "id": "hip-gtb",
     "title": "Greater Trochanteric Bursa Injection",
+    "videoUrl": "https://www.youtube.com/watch?v=4IRnvNuiUJo",
     "category": "Hip",
     "tags": ["hip", "gt bursa", "gluteus medius", "it band"],
     "treats": ["Greater trochanteric pain syndrome (bursal inflammation)"],
@@ -82,6 +84,7 @@
   {
     "id": "hip-piriformis",
     "title": "Piriformis Injection",
+    "videoUrl": "https://www.youtube.com/watch?v=sPwfzRaLbM8",
     "category": "Hip",
     "tags": ["hip", "piriformis", "sciatic nerve", "deep gluteal pain"],
     "treats": ["Piriformis syndrome with sciatic irritation", "Deep gluteal pain / non\u2011spinal sciatica"],
@@ -127,6 +130,7 @@
   {
     "id": "si-joint",
     "title": "Sacroiliac (SI) Joint Injection",
+    "videoUrl": "https://www.youtube.com/watch?v=7G56DN38mz8",
     "category": "Hip",
     "tags": ["hip", "si joint", "sacroiliac", "low back pain", "diagnostic injection"],
     "treats": ["Suspected SIJ\u2011mediated pain (diagnostic gold standard)", "Therapeutic injection after failed conservative care"],
@@ -170,6 +174,7 @@
   {
     "id": "hip-hamstring-proximal",
     "title": "Proximal Hamstring (Ischial Tuberosity) Injection",
+    "videoUrl": "https://www.youtube.com/watch?v=RoGaUdmQJL8",
     "category": "Hip",
     "tags": ["hip", "hamstring", "ischial tuberosity", "tendinopathy"],
     "treats": ["Proximal hamstring tendinopathy", "Ischiogluteal bursitis"],
