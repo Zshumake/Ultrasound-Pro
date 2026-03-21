@@ -9,9 +9,11 @@ import '../widgets/youtube_player.dart';
 import '../widgets/sketchfab_viewer.dart';
 import '../widgets/us_image_gallery.dart';
 import '../widgets/anatomy_diagram.dart';
+import '../widgets/procedure_mode_view.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
 import '../theme/recently_viewed_manager.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class InjectionDetailPage extends StatefulWidget {
   final InjectionTechnique technique;
@@ -25,6 +27,7 @@ class InjectionDetailPage extends StatefulWidget {
 class _InjectionDetailPageState extends State<InjectionDetailPage>
     with SingleTickerProviderStateMixin {
   final Set<int> _checkedSupplies = {};
+  bool _isProcedureMode = false;
   late final AnimationController _entryController;
   late final Animation<double> _fadeIn;
 
@@ -37,9 +40,25 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
     )..forward();
     _fadeIn = CurvedAnimation(parent: _entryController, curve: Curves.easeOut);
 
+    _loadProcedureModePref();
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<RecentlyViewedManager>().recordView(widget.technique.id);
     });
+  }
+
+  Future<void> _loadProcedureModePref() async {
+    final prefs = await SharedPreferences.getInstance();
+    if (mounted) {
+      setState(() => _isProcedureMode = prefs.getBool('procedure_mode') ?? false);
+    }
+  }
+
+  Future<void> _toggleProcedureMode() async {
+    final newValue = !_isProcedureMode;
+    setState(() => _isProcedureMode = newValue);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('procedure_mode', newValue);
   }
 
   @override
@@ -57,66 +76,114 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
 
     return Scaffold(
       backgroundColor: isDark ? AppTheme.bgDark : AppTheme.bgLight,
-      body: CustomScrollView(
-        slivers: [
-          _buildSliverAppBar(context, isFav, favManager, catColor, isDark),
-          SliverToBoxAdapter(
-            child: FadeTransition(
-              opacity: _fadeIn,
-              child: Center(
-                child: Container(
-                  constraints: const BoxConstraints(maxWidth: 800),
-                  padding: const EdgeInsets.all(24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildIntroSection(context, catColor, isDark),
+      body: _isProcedureMode
+          ? _buildProcedureModeScaffold(context, isFav, favManager, catColor, isDark)
+          : _buildStudyModeScaffold(context, isFav, favManager, catColor, isDark),
+      floatingActionButton: _buildModeToggleFab(isDark),
+    );
+  }
+
+  Widget _buildModeToggleFab(bool isDark) {
+    final catColor = AppTheme.categoryColor(widget.technique.category);
+    return FloatingActionButton.extended(
+      onPressed: _toggleProcedureMode,
+      backgroundColor: _isProcedureMode
+          ? AppTheme.vitalGreen
+          : (isDark ? AppTheme.surfaceElevated : AppTheme.surfaceLight),
+      foregroundColor: _isProcedureMode
+          ? Colors.black
+          : catColor,
+      elevation: _isProcedureMode ? 6 : 2,
+      icon: Icon(
+        _isProcedureMode ? Icons.menu_book_rounded : Icons.bolt_rounded,
+        size: 16,
+      ),
+      label: Text(
+        _isProcedureMode ? 'STUDY MODE' : 'PROCEDURE MODE',
+        style: GoogleFonts.jetBrainsMono(
+          fontSize: 9,
+          fontWeight: FontWeight.w700,
+          letterSpacing: 1.2,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildProcedureModeScaffold(BuildContext context, bool isFav, FavoritesManager favManager, Color catColor, bool isDark) {
+    return CustomScrollView(
+      slivers: [
+        _buildSliverAppBar(context, isFav, favManager, catColor, isDark),
+        SliverFillRemaining(
+          hasScrollBody: true,
+          child: ProcedureModeView(
+            technique: widget.technique,
+            catColor: catColor,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildStudyModeScaffold(BuildContext context, bool isFav, FavoritesManager favManager, Color catColor, bool isDark) {
+    return CustomScrollView(
+      slivers: [
+        _buildSliverAppBar(context, isFav, favManager, catColor, isDark),
+        SliverToBoxAdapter(
+          child: FadeTransition(
+            opacity: _fadeIn,
+            child: Center(
+              child: Container(
+                constraints: const BoxConstraints(maxWidth: 800),
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildIntroSection(context, catColor, isDark),
+                    const SizedBox(height: 32),
+                    _buildSupplySection(context, isDark),
+                    const SizedBox(height: 32),
+                    _buildVisualSetupGrid(context),
+                    const SizedBox(height: 32),
+                    _buildLandmarkingSection(context),
+                    const SizedBox(height: 32),
+                    _buildUSViewSection(context),
+                    const SizedBox(height: 32),
+                    _buildProcedureSection(context),
+                    const SizedBox(height: 32),
+                    ResidentPearlsCard(pearls: widget.technique.pearls),
+                    const SizedBox(height: 32),
+                    AnatomyDiagram(
+                      probePositionImg: widget.technique.landmarkImg,
+                      expectedSonoImg: widget.technique.ultrasoundImg,
+                      accentColor: catColor,
+                      procedureTitle: widget.technique.title,
+                    ),
+                    const SizedBox(height: 32),
+                    USImageGallery(
+                      imagePaths: widget.technique.usGalleryImages,
+                      imageLabels: widget.technique.usGalleryLabels,
+                      accentColor: catColor,
+                    ),
+                    if (widget.technique.anatomyModelId != null) ...[
                       const SizedBox(height: 32),
-                      _buildSupplySection(context, isDark),
-                      const SizedBox(height: 32),
-                      _buildVisualSetupGrid(context),
-                      const SizedBox(height: 32),
-                      _buildLandmarkingSection(context),
-                      const SizedBox(height: 32),
-                      _buildUSViewSection(context),
-                      const SizedBox(height: 32),
-                      _buildProcedureSection(context),
-                      const SizedBox(height: 32),
-                      ResidentPearlsCard(pearls: widget.technique.pearls),
-                      const SizedBox(height: 32),
-                      AnatomyDiagram(
-                        probePositionImg: widget.technique.landmarkImg,
-                        expectedSonoImg: widget.technique.ultrasoundImg,
+                      SketchfabViewer(
+                        modelId: widget.technique.anatomyModelId!,
+                        modelTitle: widget.technique.anatomyModelTitle,
                         accentColor: catColor,
-                        procedureTitle: widget.technique.title,
                       ),
-                      const SizedBox(height: 32),
-                      USImageGallery(
-                        imagePaths: widget.technique.usGalleryImages,
-                        imageLabels: widget.technique.usGalleryLabels,
-                        accentColor: catColor,
-                      ),
-                      if (widget.technique.anatomyModelId != null) ...[
-                        const SizedBox(height: 32),
-                        SketchfabViewer(
-                          modelId: widget.technique.anatomyModelId!,
-                          modelTitle: widget.technique.anatomyModelTitle,
-                          accentColor: catColor,
-                        ),
-                      ],
-                      if (widget.technique.videoUrl != null) ...[
-                        const SizedBox(height: 32),
-                        _buildVideoSection(context, catColor, isDark),
-                      ],
-                      const SizedBox(height: 64),
                     ],
-                  ),
+                    if (widget.technique.videoUrl != null) ...[
+                      const SizedBox(height: 32),
+                      _buildVideoSection(context, catColor, isDark),
+                    ],
+                    const SizedBox(height: 64),
+                  ],
                 ),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
