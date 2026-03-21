@@ -6,6 +6,9 @@ import '../models/injection_technique.dart';
 import '../widgets/medical_ui.dart';
 import '../widgets/resident_pearls_card.dart';
 import '../widgets/youtube_player.dart';
+import '../widgets/sketchfab_viewer.dart';
+import '../widgets/us_image_gallery.dart';
+import '../widgets/anatomy_diagram.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
 import '../theme/recently_viewed_manager.dart';
@@ -80,6 +83,27 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                       _buildProcedureSection(context),
                       const SizedBox(height: 32),
                       ResidentPearlsCard(pearls: widget.technique.pearls),
+                      const SizedBox(height: 32),
+                      AnatomyDiagram(
+                        probePositionImg: widget.technique.landmarkImg,
+                        expectedSonoImg: widget.technique.ultrasoundImg,
+                        accentColor: catColor,
+                        procedureTitle: widget.technique.title,
+                      ),
+                      const SizedBox(height: 32),
+                      USImageGallery(
+                        imagePaths: widget.technique.usGalleryImages,
+                        imageLabels: widget.technique.usGalleryLabels,
+                        accentColor: catColor,
+                      ),
+                      if (widget.technique.anatomyModelId != null) ...[
+                        const SizedBox(height: 32),
+                        SketchfabViewer(
+                          modelId: widget.technique.anatomyModelId!,
+                          modelTitle: widget.technique.anatomyModelTitle,
+                          accentColor: catColor,
+                        ),
+                      ],
                       if (widget.technique.videoUrl != null) ...[
                         const SizedBox(height: 32),
                         _buildVideoSection(context, catColor, isDark),

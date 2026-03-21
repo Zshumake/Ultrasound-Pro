@@ -24,6 +24,14 @@ class InjectionTechnique {
   // Optional video URL for procedure demonstration
   final String? videoUrl;
 
+  // Optional Sketchfab 3D anatomy model embed ID
+  final String? anatomyModelId;
+  final String? anatomyModelTitle;
+
+  // Optional US image gallery paths (user-uploaded clinical images)
+  final List<String> usGalleryImages;
+  final List<String> usGalleryLabels;
+
   InjectionTechnique({
     required this.id,
     required this.title,
@@ -45,6 +53,10 @@ class InjectionTechnique {
     this.landmarkImg,
     this.ultrasoundImg,
     this.videoUrl,
+    this.anatomyModelId,
+    this.anatomyModelTitle,
+    this.usGalleryImages = const [],
+    this.usGalleryLabels = const [],
   });
 
   factory InjectionTechnique.fromJson(Map<String, dynamic> json) {
@@ -69,6 +81,14 @@ class InjectionTechnique {
       landmarkImg: json['landmarkImg'] as String?,
       ultrasoundImg: json['ultrasoundImg'] as String?,
       videoUrl: json['videoUrl'] as String?,
+      anatomyModelId: json['anatomyModelId'] as String?,
+      anatomyModelTitle: json['anatomyModelTitle'] as String?,
+      usGalleryImages: json['usGalleryImages'] != null
+          ? List<String>.from(json['usGalleryImages'])
+          : const [],
+      usGalleryLabels: json['usGalleryLabels'] != null
+          ? List<String>.from(json['usGalleryLabels'])
+          : const [],
     );
   }
 }
