@@ -30,6 +30,8 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
   bool _isProcedureMode = false;
   late final AnimationController _entryController;
   late final Animation<double> _fadeIn;
+  final _videoSectionKey = GlobalKey();
+  final _playerKey = GlobalKey<YouTubePlayerState>();
 
   @override
   void initState() {
@@ -118,6 +120,7 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
           child: ProcedureModeView(
             technique: widget.technique,
             catColor: catColor,
+            onTimestampTap: _scrollToVideoAndPlay,
           ),
         ),
       ],
@@ -184,6 +187,58 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
           ),
         ),
       ],
+    );
+  }
+
+  List<VideoTimestamp> _timestampsForSection(String section) {
+    return widget.technique.videoTimestamps
+        .where((t) => t.section == section)
+        .toList();
+  }
+
+  void _scrollToVideoAndPlay(int seconds) {
+    final ctx = _videoSectionKey.currentContext;
+    if (ctx != null) {
+      Scrollable.ensureVisible(
+        ctx,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeOut,
+      ).then((_) {
+        _playerKey.currentState?.seekAndPlay(seconds);
+      });
+    }
+  }
+
+  Widget _buildTimestampBadge(String section, Color catColor) {
+    final timestamps = _timestampsForSection(section);
+    if (timestamps.isEmpty || widget.technique.videoUrl == null) {
+      return const SizedBox.shrink();
+    }
+    final ts = timestamps.first;
+    return InkWell(
+      onTap: () => _scrollToVideoAndPlay(ts.seconds),
+      borderRadius: BorderRadius.circular(4),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+        decoration: BoxDecoration(
+          color: catColor.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(4),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.play_circle_outline_rounded, size: 12, color: catColor),
+            const SizedBox(width: 3),
+            Text(
+              ts.formattedTime,
+              style: GoogleFonts.jetBrainsMono(
+                fontSize: 9,
+                color: catColor,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -456,10 +511,16 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
 
   Widget _buildVisualSetupGrid(BuildContext context) {
     final bool isMobile = MediaQuery.of(context).size.width < 600;
+    final catColor = AppTheme.categoryColor(widget.technique.category);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const MedicalSectionHeader(title: 'PATIENT & EQUIPMENT SETUP'),
+        Row(
+          children: [
+            const Expanded(child: MedicalSectionHeader(title: 'PATIENT & EQUIPMENT SETUP')),
+            _buildTimestampBadge('positioning', catColor),
+          ],
+        ),
         const SizedBox(height: 16),
         if (isMobile) ...[
           _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg),
@@ -480,10 +541,16 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
 
   Widget _buildLandmarkingSection(BuildContext context) {
     final bool isMobile = MediaQuery.of(context).size.width < 700;
+    final catColor = AppTheme.categoryColor(widget.technique.category);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const MedicalSectionHeader(title: 'FINDING THE VIEW'),
+        Row(
+          children: [
+            const Expanded(child: MedicalSectionHeader(title: 'FINDING THE VIEW')),
+            _buildTimestampBadge('landmarking', catColor),
+          ],
+        ),
         const SizedBox(height: 16),
         if (isMobile) ...[
           MedicalPlaceholderImage(label: 'Probe Positioning on Skin', height: 200, imagePath: widget.technique.landmarkImg),
@@ -519,10 +586,16 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
   }
 
   Widget _buildUSViewSection(BuildContext context) {
+    final catColor = AppTheme.categoryColor(widget.technique.category);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const MedicalSectionHeader(title: 'TARGET ULTRASOUND VIEW'),
+        Row(
+          children: [
+            const Expanded(child: MedicalSectionHeader(title: 'TARGET ULTRASOUND VIEW')),
+            _buildTimestampBadge('us_view', catColor),
+          ],
+        ),
         const SizedBox(height: 16),
         MedicalPlaceholderImage(label: 'Main Ultrasound Target View', height: 300, isMain: true, imagePath: widget.technique.ultrasoundImg),
         const SizedBox(height: 16),
@@ -532,10 +605,16 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
   }
 
   Widget _buildProcedureSection(BuildContext context) {
+    final catColor = AppTheme.categoryColor(widget.technique.category);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const MedicalSectionHeader(title: 'INJECTION PROCEDURE'),
+        Row(
+          children: [
+            const Expanded(child: MedicalSectionHeader(title: 'INJECTION PROCEDURE')),
+            _buildTimestampBadge('steps', catColor),
+          ],
+        ),
         const SizedBox(height: 16),
         MedicalInfoBox(
           title: 'NEEDLE CORRIDOR',
@@ -679,6 +758,7 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
 
   Widget _buildVideoSection(BuildContext context, Color catColor, bool isDark) {
     return Column(
+      key: _videoSectionKey,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const MedicalSectionHeader(title: 'VIDEO DEMONSTRATION'),
@@ -693,8 +773,10 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
           ),
           clipBehavior: Clip.antiAlias,
           child: YouTubePlayer(
+            key: _playerKey,
             videoUrl: widget.technique.videoUrl!,
             accentColor: catColor,
+            timestamps: widget.technique.videoTimestamps,
           ),
         ),
       ],

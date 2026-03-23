@@ -1,3 +1,29 @@
+class VideoTimestamp {
+  final String label;
+  final String section;
+  final int seconds;
+
+  const VideoTimestamp({
+    required this.label,
+    required this.section,
+    required this.seconds,
+  });
+
+  factory VideoTimestamp.fromJson(Map<String, dynamic> json) {
+    return VideoTimestamp(
+      label: json['label'] as String,
+      section: json['section'] as String,
+      seconds: json['seconds'] as int,
+    );
+  }
+
+  String get formattedTime {
+    final m = seconds ~/ 60;
+    final s = seconds % 60;
+    return '$m:${s.toString().padLeft(2, '0')}';
+  }
+}
+
 class InjectionTechnique {
   final String id;
   final String title;
@@ -32,6 +58,9 @@ class InjectionTechnique {
   final List<String> usGalleryImages;
   final List<String> usGalleryLabels;
 
+  // Video chapter timestamps
+  final List<VideoTimestamp> videoTimestamps;
+
   InjectionTechnique({
     required this.id,
     required this.title,
@@ -57,6 +86,7 @@ class InjectionTechnique {
     this.anatomyModelTitle,
     this.usGalleryImages = const [],
     this.usGalleryLabels = const [],
+    this.videoTimestamps = const [],
   });
 
   factory InjectionTechnique.fromJson(Map<String, dynamic> json) {
@@ -88,6 +118,11 @@ class InjectionTechnique {
           : const [],
       usGalleryLabels: json['usGalleryLabels'] != null
           ? List<String>.from(json['usGalleryLabels'])
+          : const [],
+      videoTimestamps: json['videoTimestamps'] != null
+          ? (json['videoTimestamps'] as List)
+              .map((e) => VideoTimestamp.fromJson(e as Map<String, dynamic>))
+              .toList()
           : const [],
     );
   }

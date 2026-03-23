@@ -9,11 +9,13 @@ import '../theme/app_theme.dart';
 class ProcedureModeView extends StatefulWidget {
   final InjectionTechnique technique;
   final Color catColor;
+  final void Function(int seconds)? onTimestampTap;
 
   const ProcedureModeView({
     super.key,
     required this.technique,
     required this.catColor,
+    this.onTimestampTap,
   });
 
   @override
@@ -66,6 +68,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 label: 'PATIENT POSITIONING',
                 icon: Icons.person_pin_outlined,
                 color: catColor,
+                sectionId: 'positioning',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -83,6 +86,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 label: 'PROBE PLACEMENT',
                 icon: Icons.sensors_outlined,
                 color: catColor,
+                sectionId: 'probe',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -100,6 +104,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 label: 'FIND THE VIEW',
                 icon: Icons.search_rounded,
                 color: catColor,
+                sectionId: 'landmarking',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: t.landmarking.asMap().entries.map((e) =>
@@ -115,6 +120,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 label: 'CORRECT US IMAGE',
                 icon: Icons.monitor_heart_outlined,
                 color: catColor,
+                sectionId: 'us_view',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -132,6 +138,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 label: 'NEEDLE CORRIDOR',
                 icon: Icons.straighten_outlined,
                 color: AppTheme.accentTeal,
+                sectionId: 'corridor',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: t.corridor.map((c) => _compactBullet(c, isDark)).toList(),
@@ -308,7 +315,13 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
     required IconData icon,
     required Color color,
     required Widget child,
+    String? sectionId,
   }) {
+    final timestamps = sectionId != null
+        ? t.videoTimestamps.where((ts) => ts.section == sectionId).toList()
+        : <VideoTimestamp>[];
+    final hasTimestamp = timestamps.isNotEmpty && widget.onTimestampTap != null;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 14),
       child: Container(
@@ -328,15 +341,40 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
               children: [
                 Icon(icon, size: 12, color: color),
                 const SizedBox(width: 6),
-                Text(
-                  label,
-                  style: GoogleFonts.jetBrainsMono(
-                    fontSize: 9,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 1.5,
-                    color: color,
+                Expanded(
+                  child: Text(
+                    label,
+                    style: GoogleFonts.jetBrainsMono(
+                      fontSize: 9,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.5,
+                      color: color,
+                    ),
                   ),
                 ),
+                if (hasTimestamp)
+                  InkWell(
+                    onTap: () => widget.onTimestampTap!(timestamps.first.seconds),
+                    borderRadius: BorderRadius.circular(4),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: color.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.play_circle_outline_rounded, size: 12, color: color),
+                          const SizedBox(width: 3),
+                          Text(
+                            timestamps.first.formattedTime,
+                            style: GoogleFonts.jetBrainsMono(fontSize: 9, color: color),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
               ],
             ),
             const SizedBox(height: 8),

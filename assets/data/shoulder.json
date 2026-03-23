@@ -4,6 +4,15 @@
     "title": "Subacromial\u2013Subdeltoid Bursa Injection",
     "category": "Shoulder",
     "videoUrl": "https://www.youtube.com/watch?v=_rQx6mXq698",
+    "videoTimestamps": [
+      {"label": "Patient Position", "section": "positioning", "seconds": 10},
+      {"label": "Probe Placement", "section": "probe", "seconds": 30},
+      {"label": "Finding the View", "section": "landmarking", "seconds": 55},
+      {"label": "US Image", "section": "us_view", "seconds": 90},
+      {"label": "Needle Insertion", "section": "steps", "seconds": 140},
+      {"label": "Needle Corridor", "section": "corridor", "seconds": 130},
+      {"label": "Structures to Avoid", "section": "avoid", "seconds": 170}
+    ],
     "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
     "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
     "tags": ["shoulder", "subacromial", "bursa", "subdeltoid", "impingement", "rotator cuff"],
@@ -52,6 +61,14 @@
     "title": "Glenohumeral Joint Injection (Posterior Approach)",
     "category": "Shoulder",
     "videoUrl": "https://www.youtube.com/watch?v=uQO6DxfHTkw",
+    "videoTimestamps": [
+      {"label": "Patient Position", "section": "positioning", "seconds": 8},
+      {"label": "Probe Setup", "section": "probe", "seconds": 25},
+      {"label": "Finding the View", "section": "landmarking", "seconds": 45},
+      {"label": "US Image", "section": "us_view", "seconds": 75},
+      {"label": "Injection Steps", "section": "steps", "seconds": 120},
+      {"label": "Avoid", "section": "avoid", "seconds": 155}
+    ],
     "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
     "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
     "tags": ["shoulder", "glenohumeral", "posterior", "labrum", "capsule", "adhesive capsulitis"],

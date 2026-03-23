@@ -4,6 +4,14 @@
     "title": "Suprapatellar Recess Injection",
     "category": "Knee",
     "videoUrl": "https://www.youtube.com/watch?v=2s2bZGDcT7M",
+    "videoTimestamps": [
+      {"label": "Patient Position", "section": "positioning", "seconds": 5},
+      {"label": "Probe Setup", "section": "probe", "seconds": 20},
+      {"label": "Finding the View", "section": "landmarking", "seconds": 40},
+      {"label": "US Image", "section": "us_view", "seconds": 65},
+      {"label": "Injection Steps", "section": "steps", "seconds": 100},
+      {"label": "Avoid", "section": "avoid", "seconds": 135}
+    ],
     "anatomyModelId": "0a2d68c6ec1f4ca783336c96f3c0a5fd",
     "anatomyModelTitle": "Knee Anatomy (University of Dundee)",
     "tags": ["knee", "suprapatellar", "recess", "fat pad", "prefemoral", "quadriceps"],
