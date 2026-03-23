@@ -6,22 +6,44 @@
     "videoUrl": "https://www.youtube.com/watch?v=0jJADAb2oXA",
     "anatomyModelId": "abe41da6b7c245a09f90fd52cb9c31e0",
     "anatomyModelTitle": "Carpal Tunnel (Bluelink — U of Michigan)",
-    "tags": ["wrist", "carpal tunnel", "median nerve"],
-    "treats": ["Median nerve compression (carpal tunnel syndrome)"],
-    "positioning": ["Seated preferred (or supine if vasovagal); forearm supinated; wrist slightly extended"],
-    "probe": ["High\u2011frequency linear probe; short footprint helpful"],
-    "landmarking": [
-      "Probe transversely at proximal wrist crease \u2192 identify median nerve under retinaculum \u2192 identify flexor tendons \u2192 map ulnar bundle \u2192 check for bifid nerve/persistent median artery"
+    "tags": [
+      "wrist",
+      "carpal tunnel",
+      "median nerve"
     ],
-    "correctImage": ["Median nerve centered; retinaculum as bright roof; adequate perineural space"],
-    "corridor": ["Ulnar \u2192 radial path under retinaculum beside the median nerve (hydrodissect above/below nerve if safe)"],
-    "avoid": ["Ulnar nerve/artery", "Persistent median artery", "Intraneural injection"],
-    "steps": ["In\u2011plane ulnar entry; position beside nerve; inject 1\u20132 mL to create circumferential target\u2011sign spread"],
-    "tips": ["Use low volume; confirm small fluid rings around nerve"],
+    "treats": [
+      "Median nerve compression (carpal tunnel syndrome)"
+    ],
+    "positioning": [
+      "Seated preferred (or supine if vasovagal); forearm supinated; wrist slightly extended"
+    ],
+    "probe": [
+      "High‑frequency linear probe; short footprint helpful"
+    ],
+    "landmarking": [
+      "Probe transversely at proximal wrist crease → identify median nerve under retinaculum → identify flexor tendons → map ulnar bundle → check for bifid nerve/persistent median artery"
+    ],
+    "correctImage": [
+      "Median nerve centered; retinaculum as bright roof; adequate perineural space"
+    ],
+    "corridor": [
+      "Ulnar → radial path under retinaculum beside the median nerve (hydrodissect above/below nerve if safe)"
+    ],
+    "avoid": [
+      "Ulnar nerve/artery",
+      "Persistent median artery",
+      "Intraneural injection"
+    ],
+    "steps": [
+      "In‑plane ulnar entry; position beside nerve; inject 1–2 mL to create circumferential target‑sign spread"
+    ],
+    "tips": [
+      "Use low volume; confirm small fluid rings around nerve"
+    ],
     "pearls": [
-      "The \u201cOven Mitt\u201d Rule: The flexor retinaculum is a tight mitt. Your goal is to slide the needle *under* the mitt, not into the hand (nerve).",
+      "The “Oven Mitt” Rule: The flexor retinaculum is a tight mitt. Your goal is to slide the needle *under* the mitt, not into the hand (nerve).",
       "Target Sign: Create a circumferential halo by hydrodissecting above and below the nerve.",
-      "Identify the \u201cBifid\u201d variant or a persistent median artery before entry.",
+      "Identify the “Bifid” variant or a persistent median artery before entry.",
       "The ulnar approach (medial-to-lateral) is safest to avoid the radial neurovascular bundle."
     ],
     "supplies": [
@@ -38,30 +60,89 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 10
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 42
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 77
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 134
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 194
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 218
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 282
+      }
     ]
   },
   {
     "id": "wrist-dequervain",
-    "title": "First Dorsal Compartment Injection (De Quervain\u2019s)",
+    "title": "First Dorsal Compartment Injection (De Quervain’s)",
     "category": "Hand",
     "videoUrl": "https://www.youtube.com/watch?v=_myDpBZAF78",
     "anatomyModelId": "1704c8bec5db422fbe17c1e9650c293a",
     "anatomyModelTitle": "Hand & Wrist Bones (Soma3D)",
-    "tags": ["wrist", "de quervain", "APL", "EPB"],
-    "treats": ["De Quervain\u2019s tenosynovitis (APL/EPB)"],
-    "positioning": ["Seated or supine; forearm neutral; thumb up"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
-    "landmarking": [
-      "Visual Cue: \u201cTwo eyes in one socket\u201d\u2014identify the APL and EPB tendons together in short-axis over the radial styloid.",
-      "Slide the probe slightly proximal and distal to identify any vertical septum (a wall) between the tendons.",
-      "Check for any small fluid collections or \u201chalo\u201d around the pair.",
-      "Map the superficial radial nerve branches\u2014they are frequently very close to the entry site."
+    "tags": [
+      "wrist",
+      "de quervain",
+      "APL",
+      "EPB"
     ],
-    "correctImage": ["Two tendons within sheath; septum visible if present"],
-    "corridor": ["Often volar \u2192 dorsal path into sheath: skin/fat (above), sheath (below)"],
-    "avoid": ["Superficial radial nerve", "Radial artery (deep/volar)"],
-    "steps": ["In\u2011plane into sheath; inject 2\u20133 mL; ensure spread around BOTH tendons; redirect past septum if needed"],
-    "tips": ["Always identify superficial radial nerve first and adjust approach"],
+    "treats": [
+      "De Quervain’s tenosynovitis (APL/EPB)"
+    ],
+    "positioning": [
+      "Seated or supine; forearm neutral; thumb up"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz)"
+    ],
+    "landmarking": [
+      "Visual Cue: “Two eyes in one socket”—identify the APL and EPB tendons together in short-axis over the radial styloid.",
+      "Slide the probe slightly proximal and distal to identify any vertical septum (a wall) between the tendons.",
+      "Check for any small fluid collections or “halo” around the pair.",
+      "Map the superficial radial nerve branches—they are frequently very close to the entry site."
+    ],
+    "correctImage": [
+      "Two tendons within sheath; septum visible if present"
+    ],
+    "corridor": [
+      "Often volar → dorsal path into sheath: skin/fat (above), sheath (below)"
+    ],
+    "avoid": [
+      "Superficial radial nerve",
+      "Radial artery (deep/volar)"
+    ],
+    "steps": [
+      "In‑plane into sheath; inject 2–3 mL; ensure spread around BOTH tendons; redirect past septum if needed"
+    ],
+    "tips": [
+      "Always identify superficial radial nerve first and adjust approach"
+    ],
     "pearls": [
       "A vertical septum (sub-compartmentalization) is common; you MUST ensure spread around BOTH tendons.",
       "Use a short 27G needle for better control in this superficial space.",
@@ -81,6 +162,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 5
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 20
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 38
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 66
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 95
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 107
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 139
+      }
     ]
   },
   {
@@ -90,26 +208,49 @@
     "videoUrl": "https://www.youtube.com/watch?v=FS0cBmUFoVc",
     "anatomyModelId": "1704c8bec5db422fbe17c1e9650c293a",
     "anatomyModelTitle": "Hand & Wrist Bones (Soma3D)",
-    "tags": ["hand", "MCP", "thumb", "arthritis"],
-    "treats": ["Thumb MCP arthritis or synovitis"],
-    "positioning": ["Hand supported flat; palm down"],
-    "probe": ["High\u2011frequency linear probe"],
-    "landmarking": ["Dorsal probe over MCP \u2192 identify metacarpal head and proximal phalanx \u2192 thin dark line between = joint space \u2192 map tiny dorsal vessels with Doppler"],
-    "correctImage": ["Parallel cartilage surfaces with thin anechoic joint line"],
-    "corridor": ["Dorsal in\u2011plane approach parallel to cartilage surfaces"],
-    "avoid": ["Digital arteries and dorsal sensory branches"],
-    "steps": ["Advance in\u2011plane into joint; inject up to 1 mL slowly"],
-    "tips": ["Tiny joint\u2014advance delicately and stay parallel to cartilage"],
+    "tags": [
+      "hand",
+      "MCP",
+      "thumb",
+      "arthritis"
+    ],
+    "treats": [
+      "Thumb MCP arthritis or synovitis"
+    ],
+    "positioning": [
+      "Hand supported flat; palm down"
+    ],
+    "probe": [
+      "High‑frequency linear probe"
+    ],
+    "landmarking": [
+      "Dorsal probe over MCP → identify metacarpal head and proximal phalanx → thin dark line between = joint space → map tiny dorsal vessels with Doppler"
+    ],
+    "correctImage": [
+      "Parallel cartilage surfaces with thin anechoic joint line"
+    ],
+    "corridor": [
+      "Dorsal in‑plane approach parallel to cartilage surfaces"
+    ],
+    "avoid": [
+      "Digital arteries and dorsal sensory branches"
+    ],
+    "steps": [
+      "Advance in‑plane into joint; inject up to 1 mL slowly"
+    ],
+    "tips": [
+      "Tiny joint—advance delicately and stay parallel to cartilage"
+    ],
     "pearls": [
       "Identify the 1st CMC joint by sliding distal to the radial styloid; avoid the radial artery.",
-      "The target is the \u201cjoint gap\u201d\u2014confirm flow with capsular distension.",
+      "The target is the “joint gap”—confirm flow with capsular distension.",
       "Limited volume: don't waste space with too much local first."
     ],
     "supplies": [
       "3cc Syringe",
       "27G 0.5\" Needle",
       "18G Drawing Needle",
-      "1% Lidocaine (0.5\u20131 mL)",
+      "1% Lidocaine (0.5–1 mL)",
       "0.5cc Kenalog or Dexamethasone",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
@@ -119,6 +260,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 10
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 42
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 78
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 136
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 196
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 221
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 286
+      }
     ]
   },
   {
@@ -128,24 +306,45 @@
     "videoUrl": "https://www.youtube.com/watch?v=RD_Z-cAHd20",
     "anatomyModelId": "cfe197a0e2054cc2ac4fae85f96258d4",
     "anatomyModelTitle": "Hand Pulleys & Tendons (A1-A5)",
-    "tags": ["hand", "trigger finger", "A1 pulley", "flexor tendon"],
-    "treats": ["Trigger finger (stenosing tenosynovitis)", "Tendon locking/catching"],
-    "positioning": ["Hand supinated; arm on table; fingers extended"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz) (short footprint ideal)"],
+    "tags": [
+      "hand",
+      "trigger finger",
+      "A1 pulley",
+      "flexor tendon"
+    ],
+    "treats": [
+      "Trigger finger (stenosing tenosynovitis)",
+      "Tendon locking/catching"
+    ],
+    "positioning": [
+      "Hand supinated; arm on table; fingers extended"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz) (short footprint ideal)"
+    ],
     "landmarking": [
       "Short-axis over the MCP head to identify the FDS/FDP tendons.",
       "The A1 pulley is the thickened hyperechoic band just superficial to the tendons.",
-      "Use dynamic flexion/extension to witness \u201ctriggering\u201d and tendon nodularity."
+      "Use dynamic flexion/extension to witness “triggering” and tendon nodularity."
     ],
-    "correctImage": ["Thickened A1 pulley centered over the round flexor tendons in short-axis."],
-    "corridor": ["In-plane approach aiming for the space between the pulley and the tendon."],
-    "avoid": ["Digital nerves/arteries on the radial/ulnar sides of the tendon.", "Intratendinous injection."],
+    "correctImage": [
+      "Thickened A1 pulley centered over the round flexor tendons in short-axis."
+    ],
+    "corridor": [
+      "In-plane approach aiming for the space between the pulley and the tendon."
+    ],
+    "avoid": [
+      "Digital nerves/arteries on the radial/ulnar sides of the tendon.",
+      "Intratendinous injection."
+    ],
     "steps": [
       "Advance in-plane in short-axis.",
       "Direct the needle between the pulley and the tendon.",
       "Inject 1-2 mL; confirm synovial sheath distension."
     ],
-    "tips": ["If you meet resistance, you are likely in the tendon\u2014re-position."],
+    "tips": [
+      "If you meet resistance, you are likely in the tendon—re-position."
+    ],
     "pearls": [
       "Dynamic visualization is diagnostic: look for disconjugate tendon motion or nodule catching.",
       "Injecting the synovial sheath is the goal; the steroid will track to the pulley.",
@@ -165,6 +364,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 3
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 15
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 29
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 50
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 73
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 82
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 106
+      }
     ]
   }
 ]

@@ -6,21 +6,44 @@
     "videoUrl": "https://www.youtube.com/watch?v=9BgGRJn4WWw",
     "anatomyModelId": "2e2d0f64ecb743c8844304ff5cf693cf",
     "anatomyModelTitle": "Foot, Ankle & Ligaments (Soma3D)",
-    "tags": ["ankle", "tibiotalar", "dorsalis pedis", "deep peroneal"],
-    "treats": ["Ankle osteoarthritis", "Synovitis", "Diagnostic anesthetic"],
-    "positioning": ["Supine; knee ~90\u00b0; foot flat; ankle slightly plantarflexed"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "tags": [
+      "ankle",
+      "tibiotalar",
+      "dorsalis pedis",
+      "deep peroneal"
+    ],
+    "treats": [
+      "Ankle osteoarthritis",
+      "Synovitis",
+      "Diagnostic anesthetic"
+    ],
+    "positioning": [
+      "Supine; knee ~90°; foot flat; ankle slightly plantarflexed"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz)"
+    ],
     "landmarking": [
-      "Visual Cue: The \u201cTalar Dome Profile\u201d\u2014identify the smooth convex curve of the talus.",
+      "Visual Cue: The “Talar Dome Profile”—identify the smooth convex curve of the talus.",
       "Short-Axis Scan: identify the anterior tendons (TA, EHL, EDL).",
-      "Doppler Survey: Map the \u201cNo-Fly Zone\u201d\u2014deep peroneal nerve and dorsalis pedis artery.",
+      "Doppler Survey: Map the “No-Fly Zone”—deep peroneal nerve and dorsalis pedis artery.",
       "Identify the joint capsule as a distinct dark plane just above the talar cartilage."
     ],
-    "correctImage": ["Identify the talar dome (curved line) with distinct dark capsular line above; tendons are superficial and out of path"],
-    "corridor": ["Medial \u2192 lateral path deep to anterior tendons (above) and superficial to capsule/cartilage (below)"],
-    "avoid": ["Deep peroneal nerve and dorsalis pedis artery; avoid traversing EHL if possible"],
-    "steps": ["In\u2011plane; hug capsule superficial to cartilage; inject as indicated; confirm intra\u2011articular distension"],
-    "tips": ["Small tilts separate capsule from cartilage and improve needle visualization"],
+    "correctImage": [
+      "Identify the talar dome (curved line) with distinct dark capsular line above; tendons are superficial and out of path"
+    ],
+    "corridor": [
+      "Medial → lateral path deep to anterior tendons (above) and superficial to capsule/cartilage (below)"
+    ],
+    "avoid": [
+      "Deep peroneal nerve and dorsalis pedis artery; avoid traversing EHL if possible"
+    ],
+    "steps": [
+      "In‑plane; hug capsule superficial to cartilage; inject as indicated; confirm intra‑articular distension"
+    ],
+    "tips": [
+      "Small tilts separate capsule from cartilage and improve needle visualization"
+    ],
     "pearls": [
       "Advance medial-to-lateral deep to the anterior tendons.",
       "Identify the deep peroneal nerve and dorsalis pedis artery; they lie just lateral to the EHL tendon.",
@@ -40,6 +63,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 6
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 24
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 45
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 79
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 114
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 128
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 166
+      }
     ]
   },
   {
@@ -49,18 +109,40 @@
     "anatomyModelId": "2e2d0f64ecb743c8844304ff5cf693cf",
     "anatomyModelTitle": "Foot, Ankle & Ligaments (Soma3D)",
     "category": "Foot",
-    "tags": ["ankle", "peroneal", "retinaculum", "brevis", "longus"],
-    "treats": ["Peroneal tendinopathy (peroneus longus/brevis)"],
-    "positioning": ["Side\u2011lying with symptomatic ankle up"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz) (short footprint ideal)"],
-    "landmarking": [
-      "Probe over posterior aspect of lateral malleolus \u2192 identify peroneus longus and brevis tendons sharing a sheath \u2192 see superior peroneal retinaculum overlying"
+    "tags": [
+      "ankle",
+      "peroneal",
+      "retinaculum",
+      "brevis",
+      "longus"
     ],
-    "correctImage": ["Two tendons in shared anechoic rim (sheath) behind the fibula"],
-    "corridor": ["Anterior \u2192 posterior under retinaculum (above) into sheath around tendons (below)"],
-    "avoid": ["Sural nerve posteriorly (usually not in path, but confirm)"],
-    "steps": ["In\u2011plane into sheath; surround both tendons with injectate; redirect if only one tendon fills"],
-    "tips": ["Short needle gives fine control; low volumes suffice"],
+    "treats": [
+      "Peroneal tendinopathy (peroneus longus/brevis)"
+    ],
+    "positioning": [
+      "Side‑lying with symptomatic ankle up"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz) (short footprint ideal)"
+    ],
+    "landmarking": [
+      "Probe over posterior aspect of lateral malleolus → identify peroneus longus and brevis tendons sharing a sheath → see superior peroneal retinaculum overlying"
+    ],
+    "correctImage": [
+      "Two tendons in shared anechoic rim (sheath) behind the fibula"
+    ],
+    "corridor": [
+      "Anterior → posterior under retinaculum (above) into sheath around tendons (below)"
+    ],
+    "avoid": [
+      "Sural nerve posteriorly (usually not in path, but confirm)"
+    ],
+    "steps": [
+      "In‑plane into sheath; surround both tendons with injectate; redirect if only one tendon fills"
+    ],
+    "tips": [
+      "Short needle gives fine control; low volumes suffice"
+    ],
     "pearls": [
       "Approach anterior-to-posterior under the superior peroneal retinaculum.",
       "Ensure injectate surrounds both the longus and brevis tendons in their shared sheath.",
@@ -80,6 +162,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 5
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 20
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 36
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 63
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 91
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 103
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 133
+      }
     ]
   },
   {
@@ -89,18 +208,42 @@
     "anatomyModelId": "fb4f3aefda654bffbac2510ed7869871",
     "anatomyModelTitle": "Human Foot Anatomy (3dPiX)",
     "category": "Foot",
-    "tags": ["foot", "plantar fascia", "calcaneus", "heel", "fat pad"],
-    "treats": ["Plantar fasciitis (heel pain) requiring perifascial therapy"],
-    "positioning": ["Side\u2011lying with symptomatic foot dependent or off table edge"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
-    "landmarking": [
-      "Short\u2011axis over plantar heel at calcaneal origin \u2192 identify bright plantar fascia on calcaneus \u2192 find thin dark plane between fascia and fat pad"
+    "tags": [
+      "foot",
+      "plantar fascia",
+      "calcaneus",
+      "heel",
+      "fat pad"
     ],
-    "correctImage": ["Bright fascia with thin anechoic plane separating it from fat pad"],
-    "corridor": ["Medial \u2192 lateral within thin plane: fat pad (above), plantar fascia (below) \u2014 do not enter fascia"],
-    "avoid": ["Intrafascial steroid (rupture risk)", "Injection into fat pad (atrophy risk)", "Medial neurovascular bundle"],
-    "steps": ["In\u2011plane into plane; inject small volumes to expand plane without entering fascia"],
-    "tips": ["Use smallest effective volume; stop if resistance \u2014 correct plane opens smoothly"],
+    "treats": [
+      "Plantar fasciitis (heel pain) requiring perifascial therapy"
+    ],
+    "positioning": [
+      "Side‑lying with symptomatic foot dependent or off table edge"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz)"
+    ],
+    "landmarking": [
+      "Short‑axis over plantar heel at calcaneal origin → identify bright plantar fascia on calcaneus → find thin dark plane between fascia and fat pad"
+    ],
+    "correctImage": [
+      "Bright fascia with thin anechoic plane separating it from fat pad"
+    ],
+    "corridor": [
+      "Medial → lateral within thin plane: fat pad (above), plantar fascia (below) — do not enter fascia"
+    ],
+    "avoid": [
+      "Intrafascial steroid (rupture risk)",
+      "Injection into fat pad (atrophy risk)",
+      "Medial neurovascular bundle"
+    ],
+    "steps": [
+      "In‑plane into plane; inject small volumes to expand plane without entering fascia"
+    ],
+    "tips": [
+      "Use smallest effective volume; stop if resistance — correct plane opens smoothly"
+    ],
     "pearls": [
       "The target is the hypoechoic plane between the fat pad (superficial) and fascia (deep).",
       "Avoid intrafascial or fat pad injection to prevent rupture or atrophy.",
@@ -120,6 +263,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 4
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 18
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 34
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 58
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 85
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 96
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 124
+      }
     ]
   },
   {
@@ -129,29 +309,50 @@
     "anatomyModelId": "fb4f3aefda654bffbac2510ed7869871",
     "anatomyModelTitle": "Human Foot Anatomy (3dPiX)",
     "category": "Foot",
-    "tags": ["foot", "morton's neuroma", "metatarsal", "web space"],
-    "treats": ["Interdigital neuralgia (Morton's neuroma)", "Intermetatarsal bursitis"],
-    "positioning": ["Supine; foot resting on table; toes slightly flexed"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "tags": [
+      "foot",
+      "morton's neuroma",
+      "metatarsal",
+      "web space"
+    ],
+    "treats": [
+      "Interdigital neuralgia (Morton's neuroma)",
+      "Intermetatarsal bursitis"
+    ],
+    "positioning": [
+      "Supine; foot resting on table; toes slightly flexed"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz)"
+    ],
     "landmarking": [
-      "Visual Cue: The \u201cMulder's Click\u201d\u2014apply plantar-to-dorsal pressure to displace the neuroma between metatarsal heads.",
+      "Visual Cue: The “Mulder's Click”—apply plantar-to-dorsal pressure to displace the neuroma between metatarsal heads.",
       "Transverse Scan: Identify the target web space (usually 2nd-3rd or 3rd-4th).",
-      "Identify the hypoechoic \u201cdumbbell\u201d or round mass as it \u201cpops\u201d dorsally during compression.",
+      "Identify the hypoechoic “dumbbell” or round mass as it “pops” dorsally during compression.",
       "Identify and avoid the intermetatarsal bursa, which often sits just superficial to the neuroma."
     ],
-    "correctImage": ["Hypoechoic mass in the intermetatarsal space; metatarsal heads on either side."],
-    "corridor": ["Dorsal in-plane approach directly into the intermetatarsal space."],
-    "avoid": ["Deep plantar vessels.", "Digital nerves."],
+    "correctImage": [
+      "Hypoechoic mass in the intermetatarsal space; metatarsal heads on either side."
+    ],
+    "corridor": [
+      "Dorsal in-plane approach directly into the intermetatarsal space."
+    ],
+    "avoid": [
+      "Deep plantar vessels.",
+      "Digital nerves."
+    ],
     "steps": [
       "Advance dorsal-to-plantar under real-time US.",
       "Target the center of the hypoechoic mass.",
       "Inject 2-3 mL; watch for fluid surrounding the neuroma."
     ],
-    "tips": ["Dorsal approach is safer and avoids painful plantar weight-bearing skin."],
+    "tips": [
+      "Dorsal approach is safer and avoids painful plantar weight-bearing skin."
+    ],
     "pearls": [
-      "Use the plantar \u201csqueeze test\u201d (Mulder's maneuver) while scanning to confirm the neuroma pops up.",
+      "Use the plantar “squeeze test” (Mulder's maneuver) while scanning to confirm the neuroma pops up.",
       "Identify and avoid the intermetatarsal bursa, which may also be inflamed.",
-      "Steroid in the plantar fat pad can cause atrophy\u2014the dorsal approach minimizes this risk."
+      "Steroid in the plantar fat pad can cause atrophy—the dorsal approach minimizes this risk."
     ],
     "supplies": [
       "3cc Syringe",
@@ -167,6 +368,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 5
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 21
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 38
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 67
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 97
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 109
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 141
+      }
     ]
   }
 ]

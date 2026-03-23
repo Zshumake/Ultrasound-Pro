@@ -6,19 +6,45 @@
     "videoUrl": "https://www.youtube.com/watch?v=SBvRoFX9bGU",
     "anatomyModelId": "2ec88c6b414643bc86b0191d24b7f0cc",
     "anatomyModelTitle": "Elbow Joint — Bones & Ligaments",
-    "tags": ["elbow", "radiocapitellar", "arthritis", "synovitis"],
-    "treats": ["Elbow arthritis", "Lateral elbow joint pain", "Synovitis/effusion", "Diagnostic anesthetic"],
-    "positioning": ["Supine; elbow flexed 20\u201340\u00b0; hand on abdomen; small pillow under elbow"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
-    "landmarking": ["Find lateral epicondyle \u2192 slide distally to radial head \u2192 tilt anteriorly to view capitellum \u2192 identify wedge\u2011shaped joint space"],
-    "correctImage": ["Clear radial head\u2013capitellum interface with a thin dark joint space"],
-    "corridor": ["Posterior \u2192 anterior path between triceps expansion/skin (above) and radial head/capitellum (below)"],
-    "avoid": ["Variants (vessels/nerves) \u2014 scan first"],
-    "steps": ["Out\u2011of\u2011plane posterior entry; gentle walk\u2011down to joint; test inject; inject 2\u20134 mL"],
-    "tips": ["Advance in small increments to avoid bone contact; if no expansion with test inject, adjust depth"],
+    "tags": [
+      "elbow",
+      "radiocapitellar",
+      "arthritis",
+      "synovitis"
+    ],
+    "treats": [
+      "Elbow arthritis",
+      "Lateral elbow joint pain",
+      "Synovitis/effusion",
+      "Diagnostic anesthetic"
+    ],
+    "positioning": [
+      "Supine; elbow flexed 20–40°; hand on abdomen; small pillow under elbow"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz)"
+    ],
+    "landmarking": [
+      "Find lateral epicondyle → slide distally to radial head → tilt anteriorly to view capitellum → identify wedge‑shaped joint space"
+    ],
+    "correctImage": [
+      "Clear radial head–capitellum interface with a thin dark joint space"
+    ],
+    "corridor": [
+      "Posterior → anterior path between triceps expansion/skin (above) and radial head/capitellum (below)"
+    ],
+    "avoid": [
+      "Variants (vessels/nerves) — scan first"
+    ],
+    "steps": [
+      "Out‑of‑plane posterior entry; gentle walk‑down to joint; test inject; inject 2–4 mL"
+    ],
+    "tips": [
+      "Advance in small increments to avoid bone contact; if no expansion with test inject, adjust depth"
+    ],
     "pearls": [
-      "Visual Orientation: Think of the joint as a \u201ccleft\u201d between two hills. The capitellum is the rounded hill, and the radial head is the flatter hill.",
-      "Use the \u201cWalkdown\u201d technique for this out-of-plane approach: touch the bone superficially first, then gently \u201cwalk\u201d the needle tip down the slope into the joint.",
+      "Visual Orientation: Think of the joint as a “cleft” between two hills. The capitellum is the rounded hill, and the radial head is the flatter hill.",
+      "Use the “Walkdown” technique for this out-of-plane approach: touch the bone superficially first, then gently “walk” the needle tip down the slope into the joint.",
       "Pronate/supinate the forearm to confirm the radial head moves while the lateral epicondyle stays stationary."
     ],
     "supplies": [
@@ -35,6 +61,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 5
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 23
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 42
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 72
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 105
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 119
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 153
+      }
     ]
   },
   {
@@ -44,23 +107,45 @@
     "videoUrl": "https://www.youtube.com/watch?v=JB0sXcILavE",
     "anatomyModelId": "6dd851d018f34892800b83ca418ccb52",
     "anatomyModelTitle": "Shoulder, Arm & Forearm Muscles (SGU)",
-    "tags": ["elbow", "tennis elbow", "CET"],
-    "treats": ["Lateral epicondylitis with tendon surface pain or degeneration"],
-    "positioning": ["Supine; elbow 20\u201340\u00b0 flexed; hand on abdomen"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "tags": [
+      "elbow",
+      "tennis elbow",
+      "CET"
+    ],
+    "treats": [
+      "Lateral epicondylitis with tendon surface pain or degeneration"
+    ],
+    "positioning": [
+      "Supine; elbow 20–40° flexed; hand on abdomen"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz)"
+    ],
     "landmarking": [
-      "Visual Cue: The \u201cFibrillar Footprint\u201d\u2014Identify the bright, organized fibers of the CET attaching to the lateral epicondyle.",
+      "Visual Cue: The “Fibrillar Footprint”—Identify the bright, organized fibers of the CET attaching to the lateral epicondyle.",
       "Slide the probe slightly anteriorly to identify the landmark bony contour of the radial head.",
-      "Check for any hypoechoic \u201ctears\u201d or calcifications within the footprint.",
+      "Check for any hypoechoic “tears” or calcifications within the footprint.",
       "Map the radial nerve and the radial recurrent artery before choosing your needle path."
     ],
-    "correctImage": ["Crisp fibrillar tendon superficial to thin bright ligament band"],
-    "corridor": ["Distal \u2192 proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous"],
-    "avoid": ["Radial nerve", "Radial recurrent artery", "Intratendinous steroid"],
-    "steps": ["In\u2011plane distal \u2192 proximal; position superficial to tendon; inject small aliquots along footprint"],
-    "tips": ["For regenerative injectates, target intratendinous diseased zones; avoid steroid in fibers"],
+    "correctImage": [
+      "Crisp fibrillar tendon superficial to thin bright ligament band"
+    ],
+    "corridor": [
+      "Distal → proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous"
+    ],
+    "avoid": [
+      "Radial nerve",
+      "Radial recurrent artery",
+      "Intratendinous steroid"
+    ],
+    "steps": [
+      "In‑plane distal → proximal; position superficial to tendon; inject small aliquots along footprint"
+    ],
+    "tips": [
+      "For regenerative injectates, target intratendinous diseased zones; avoid steroid in fibers"
+    ],
     "pearls": [
-      "The radial collateral ligament is deep\u2014forming the deep 30\u201350% of this region.",
+      "The radial collateral ligament is deep—forming the deep 30–50% of this region.",
       "Avoid placing corticosteroid directly into the tendon fibers to prevent future rupture."
     ],
     "supplies": [
@@ -77,6 +162,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 7
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 29
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 54
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 94
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 136
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 154
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 199
+      }
     ]
   },
   {
@@ -86,23 +208,45 @@
     "videoUrl": "https://www.youtube.com/watch?v=GTye33TzKkY",
     "anatomyModelId": "6dd851d018f34892800b83ca418ccb52",
     "anatomyModelTitle": "Shoulder, Arm & Forearm Muscles (SGU)",
-    "tags": ["elbow", "golfer elbow", "CFET"],
-    "treats": ["Medial epicondylitis with pain at flexor origin"],
-    "positioning": ["Supine; arm slightly abducted/external rotation; elbow ~20\u00b0; forearm supinated"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "tags": [
+      "elbow",
+      "golfer elbow",
+      "CFET"
+    ],
+    "treats": [
+      "Medial epicondylitis with pain at flexor origin"
+    ],
+    "positioning": [
+      "Supine; arm slightly abducted/external rotation; elbow ~20°; forearm supinated"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz)"
+    ],
     "landmarking": [
-      "Visual Cue: The \u201cUlnar Nerve Notch\u201d\u2014Identify the medial epicondyle and the bony groove behind it.",
+      "Visual Cue: The “Ulnar Nerve Notch”—Identify the medial epicondyle and the bony groove behind it.",
       "Maneuver: Have the patient slowly flex/extend the elbow to check for ulnar nerve subluxation.",
       "Identify the fibrillar common flexor tendon attaching to the epicondyle.",
       "Identify and map the median nerve and brachial artery anteriorly."
     ],
-    "correctImage": ["Fibrillar tendon superficial to trochlea/ulna; ulnar nerve identified posterior to epicondyle"],
-    "corridor": ["Distal \u2192 proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous"],
-    "avoid": ["Ulnar nerve (may sublux anteriorly)", "Median nerve", "Brachial artery"],
-    "steps": ["In\u2011plane distal \u2192 proximal to tendon surface; inject small aliquots to form peritendinous halo"],
-    "tips": ["If approaching proximal \u2192 distal, re\u2011confirm ulnar nerve immediately pre\u2011entry"],
+    "correctImage": [
+      "Fibrillar tendon superficial to trochlea/ulna; ulnar nerve identified posterior to epicondyle"
+    ],
+    "corridor": [
+      "Distal → proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous"
+    ],
+    "avoid": [
+      "Ulnar nerve (may sublux anteriorly)",
+      "Median nerve",
+      "Brachial artery"
+    ],
+    "steps": [
+      "In‑plane distal → proximal to tendon surface; inject small aliquots to form peritendinous halo"
+    ],
+    "tips": [
+      "If approaching proximal → distal, re‑confirm ulnar nerve immediately pre‑entry"
+    ],
     "pearls": [
-      "The ulnar nerve is often posterior to the medial epicondyle but can sublux over the top\u2014always locate it first.",
+      "The ulnar nerve is often posterior to the medial epicondyle but can sublux over the top—always locate it first.",
       "Identify the median nerve and brachial artery during pre-procedure scanning to ensure clear path."
     ],
     "supplies": [
@@ -119,6 +263,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 9
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 38
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 69
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 120
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 174
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 196
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 253
+      }
     ]
   }
 ]

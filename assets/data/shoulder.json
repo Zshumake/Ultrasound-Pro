@@ -1,50 +1,105 @@
 [
   {
     "id": "shoulder-sasd",
-    "title": "Subacromial\u2013Subdeltoid Bursa Injection",
+    "title": "Subacromial–Subdeltoid Bursa Injection",
     "category": "Shoulder",
     "videoUrl": "https://www.youtube.com/watch?v=_rQx6mXq698",
     "videoTimestamps": [
-      {"label": "Patient Position", "section": "positioning", "seconds": 10},
-      {"label": "Probe Placement", "section": "probe", "seconds": 30},
-      {"label": "Finding the View", "section": "landmarking", "seconds": 55},
-      {"label": "US Image", "section": "us_view", "seconds": 90},
-      {"label": "Needle Insertion", "section": "steps", "seconds": 140},
-      {"label": "Needle Corridor", "section": "corridor", "seconds": 130},
-      {"label": "Structures to Avoid", "section": "avoid", "seconds": 170}
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 10
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 30
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 55
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 90
+      },
+      {
+        "label": "Needle Insertion",
+        "section": "steps",
+        "seconds": 140
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 130
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 170
+      }
     ],
     "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
     "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
-    "tags": ["shoulder", "subacromial", "bursa", "subdeltoid", "impingement", "rotator cuff"],
-    "treats": ["Shoulder impingement syndromes", "Rotator cuff\u2013related pain with bursitis", "Primary or secondary subacromial\u2013subdeltoid bursitis"],
-    "positioning": ["Patient supine; head of bed about 30\u00b0", "Arm relaxed at the side; support forearm as needed"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz) (best for superficial structures)"],
+    "tags": [
+      "shoulder",
+      "subacromial",
+      "bursa",
+      "subdeltoid",
+      "impingement",
+      "rotator cuff"
+    ],
+    "treats": [
+      "Shoulder impingement syndromes",
+      "Rotator cuff–related pain with bursitis",
+      "Primary or secondary subacromial–subdeltoid bursitis"
+    ],
+    "positioning": [
+      "Patient supine; head of bed about 30°",
+      "Arm relaxed at the side; support forearm as needed"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz) (best for superficial structures)"
+    ],
     "landmarking": [
       "Place the probe transversely just anterior to the lateral acromial edge.",
       "Slide anterior-posterior to find the supraspinatus tendon passing under the acromion.",
       "Center the lateral acromion at the screen edge while keeping the tendon in long-axis.",
-      "Identify the \u201cBursal Stripe\u201d: the thin hypoechoic plane between the deltoid and supraspinatus."
+      "Identify the “Bursal Stripe”: the thin hypoechoic plane between the deltoid and supraspinatus."
     ],
-    "correctImage": ["Acromion at screen edge; supraspinatus fibers parallel and uniform", "Bursal stripe widens slightly with gentle probe pressure"],
-    "corridor": ["Between deltoid (above) and supraspinatus tendon (below)\u2014inject into the thin bursal stripe"],
-    "avoid": ["Cephalic vein near anterior deltoid", "Intratendinous rotator cuff injection"],
+    "correctImage": [
+      "Acromion at screen edge; supraspinatus fibers parallel and uniform",
+      "Bursal stripe widens slightly with gentle probe pressure"
+    ],
+    "corridor": [
+      "Between deltoid (above) and supraspinatus tendon (below)—inject into the thin bursal stripe"
+    ],
+    "avoid": [
+      "Cephalic vein near anterior deltoid",
+      "Intratendinous rotator cuff injection"
+    ],
     "steps": [
-      "Use an in\u2011plane anterolateral \u2192 posteromedial approach to keep the entire needle visible.",
+      "Use an in‑plane anterolateral → posteromedial approach to keep the entire needle visible.",
       "Touch the bursal plane and inject a tiny test amount to confirm plane separation.",
-      "Inject 4\u20138 mL while watching for smooth medial spread beneath the acromion."
+      "Inject 4–8 mL while watching for smooth medial spread beneath the acromion."
     ],
-    "tips": ["If you lose the needle, stop and realign before advancing", "Adhesions may require gentle needle\u2011tip redirection"],
+    "tips": [
+      "If you lose the needle, stop and realign before advancing",
+      "Adhesions may require gentle needle‑tip redirection"
+    ],
     "pearls": [
-      "Think of the bursa as a \u201cpotential space\u201d\u2014like a balloon that has been stepped on. It only opens up once you start injecting.",
+      "Think of the bursa as a “potential space”—like a balloon that has been stepped on. It only opens up once you start injecting.",
       "Dissect the plane with local anesthetic first to confirm you are in the bursa before injecting steroid.",
-      "Check for a \u201cbursogram\u201d post-injection; if injectate is in the tendon, it suggests a rotator cuff tear.",
-      "The bursa extends beyond the supraspinatus footprint\u2014use this to differentiate layers."
+      "Check for a “bursogram” post-injection; if injectate is in the tendon, it suggests a rotator cuff tear.",
+      "The bursa extends beyond the supraspinatus footprint—use this to differentiate layers."
     ],
     "supplies": [
       "3cc/5cc Syringe",
       "25G 1.5\" Needle (or 22G for larger patients)",
       "18G Drawing Needle",
-      "1% Lidocaine (4\u20138 mL)",
+      "1% Lidocaine (4–8 mL)",
       "1cc Kenalog (40mg/ml) or Dexamethasone",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
@@ -62,37 +117,85 @@
     "category": "Shoulder",
     "videoUrl": "https://www.youtube.com/watch?v=uQO6DxfHTkw",
     "videoTimestamps": [
-      {"label": "Patient Position", "section": "positioning", "seconds": 8},
-      {"label": "Probe Setup", "section": "probe", "seconds": 25},
-      {"label": "Finding the View", "section": "landmarking", "seconds": 45},
-      {"label": "US Image", "section": "us_view", "seconds": 75},
-      {"label": "Injection Steps", "section": "steps", "seconds": 120},
-      {"label": "Avoid", "section": "avoid", "seconds": 155}
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 8
+      },
+      {
+        "label": "Probe Setup",
+        "section": "probe",
+        "seconds": 25
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 45
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 75
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 120
+      },
+      {
+        "label": "Avoid",
+        "section": "avoid",
+        "seconds": 155
+      }
     ],
     "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
     "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
-    "tags": ["shoulder", "glenohumeral", "posterior", "labrum", "capsule", "adhesive capsulitis"],
-    "treats": ["Adhesive capsulitis", "Glenohumeral osteoarthritis/synovitis", "Diagnostic intra\u2011articular anesthesia"],
-    "positioning": ["Lateral decubitus; affected shoulder up; arm relaxed in neutral"],
-    "probe": ["Curvilinear preferred for a steeper, controllable needle angle (linear acceptable if needed)"],
+    "tags": [
+      "shoulder",
+      "glenohumeral",
+      "posterior",
+      "labrum",
+      "capsule",
+      "adhesive capsulitis"
+    ],
+    "treats": [
+      "Adhesive capsulitis",
+      "Glenohumeral osteoarthritis/synovitis",
+      "Diagnostic intra‑articular anesthesia"
+    ],
+    "positioning": [
+      "Lateral decubitus; affected shoulder up; arm relaxed in neutral"
+    ],
+    "probe": [
+      "Curvilinear preferred for a steeper, controllable needle angle (linear acceptable if needed)"
+    ],
     "landmarking": [
-      "Visual Cue: The \u201cWine Glass\u201d\u2014The humeral head is the wine, the glenoid/labrum is the rim/stem.",
+      "Visual Cue: The “Wine Glass”—The humeral head is the wine, the glenoid/labrum is the rim/stem.",
       "Slide inferiorly off the scapular spine to find the infraspinatus belly.",
       "Slide laterally until the round humeral head meets the triangular labrum.",
-      "Tilt the probe (\u201cfan\u201d) to open the thin dark joint space between cartilage and capsule."
+      "Tilt the probe (“fan”) to open the thin dark joint space between cartilage and capsule."
     ],
-    "correctImage": ["Humeral head in lower third; glenoid rim medially; continuous dark intra\u2011articular line"],
-    "corridor": ["Through infraspinatus (entry) \u2192 subcapsular space just superficial to humeral head cartilage (target)"],
-    "avoid": ["Axillary nerve/arterial branches medially/inferiorly\u2014stay lateral with a steep trajectory", "Intralabral needle placement"],
+    "correctImage": [
+      "Humeral head in lower third; glenoid rim medially; continuous dark intra‑articular line"
+    ],
+    "corridor": [
+      "Through infraspinatus (entry) → subcapsular space just superficial to humeral head cartilage (target)"
+    ],
+    "avoid": [
+      "Axillary nerve/arterial branches medially/inferiorly—stay lateral with a steep trajectory",
+      "Intralabral needle placement"
+    ],
     "steps": [
-      "Advance in\u2011plane from posterolateral \u2192 anteromedial at a steep angle.",
+      "Advance in‑plane from posterolateral → anteromedial at a steep angle.",
       "Contact capsule and inject a test bolus to confirm capsular lift.",
-      "Inject 4\u201310 mL; gently rotate the shoulder to confirm intra\u2011articular spread."
+      "Inject 4–10 mL; gently rotate the shoulder to confirm intra‑articular spread."
     ],
-    "tips": ["Steeper angles are easier to correct than shallow ones"],
+    "tips": [
+      "Steeper angles are easier to correct than shallow ones"
+    ],
     "pearls": [
       "Steeper is better: it is easier to shallow out an angle than to correct one that is too medial.",
-      "The needle naturally pulls medially as it passes the capsule\u2014anticipate this.",
+      "The needle naturally pulls medially as it passes the capsule—anticipate this.",
       "Perform internal/external rotation post-injection to confirm the iatrogenic effusion is intra-articular."
     ],
     "supplies": [
@@ -118,22 +221,44 @@
     "videoUrl": "https://www.youtube.com/watch?v=nwoxhdMNlYM",
     "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
     "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
-    "tags": ["shoulder", "glenohumeral", "anterior", "rotator interval", "biceps"],
-    "treats": ["Same as posterior approach; convenient when combining with subacromial injection"],
-    "positioning": ["Supine; head elevated ~30\u00b0; arm relaxed"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "tags": [
+      "shoulder",
+      "glenohumeral",
+      "anterior",
+      "rotator interval",
+      "biceps"
+    ],
+    "treats": [
+      "Same as posterior approach; convenient when combining with subacromial injection"
+    ],
+    "positioning": [
+      "Supine; head elevated ~30°; arm relaxed"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz)"
+    ],
     "landmarking": [
       "Place probe transversely over anterior shoulder to locate the bicipital groove with the long head of the biceps.",
-      "Rotate into long\u2011axis of the biceps tendon.",
+      "Rotate into long‑axis of the biceps tendon.",
       "Tilt slightly cephalad to visualize the rotator interval and capsule above the tendon."
     ],
-    "correctImage": ["Biceps centered in groove; thin capsule above with potential dark joint space deep to capsule"],
-    "corridor": ["Under rotator\u2011interval capsule (above) along humeral head/neck (below)"],
-    "avoid": ["Branches of the anterior humeral circumflex artery\u2014screen with Doppler if uncertain"],
-    "steps": ["Advance in\u2011plane beneath capsule into joint; confirm flow along intra\u2011articular biceps; inject 4\u201310 mL"],
-    "tips": ["You can treat SA/SD bursa and GH joint through one skin entry by syringe swap"],
+    "correctImage": [
+      "Biceps centered in groove; thin capsule above with potential dark joint space deep to capsule"
+    ],
+    "corridor": [
+      "Under rotator‑interval capsule (above) along humeral head/neck (below)"
+    ],
+    "avoid": [
+      "Branches of the anterior humeral circumflex artery—screen with Doppler if uncertain"
+    ],
+    "steps": [
+      "Advance in‑plane beneath capsule into joint; confirm flow along intra‑articular biceps; inject 4–10 mL"
+    ],
+    "tips": [
+      "You can treat SA/SD bursa and GH joint through one skin entry by syringe swap"
+    ],
     "pearls": [
-      "The needle courses through the subacromial bursa on the way to the rotator interval\u2014allows \u201c2-in-1\u201d injection.",
+      "The needle courses through the subacromial bursa on the way to the rotator interval—allows “2-in-1” injection.",
       "Identify the coracohumeral ligament; the target is deep to this structure."
     ],
     "supplies": [
@@ -150,6 +275,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 7
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 31
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 57
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 99
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 144
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 163
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 210
+      }
     ]
   },
   {
@@ -159,18 +321,43 @@
     "videoUrl": "https://www.youtube.com/watch?v=8xfcDMERiBQ",
     "anatomyModelId": "5d5c63b3469a4db0b8a3f659a1848d56",
     "anatomyModelTitle": "Shoulder Girdle Ligaments (AC Joint)",
-    "tags": ["shoulder", "ac joint", "distal clavicle", "sprain"],
-    "treats": ["AC joint arthritis/sprain", "Distal clavicle osteolysis", "Isolated AC pain"],
-    "positioning": ["Supine; head slightly elevated"],
-    "probe": ["High\u2011frequency linear probe (10-15 MHz)"],
-    "landmarking": ["Start mid\u2011clavicle; slide laterally to the gap; continue to acromion; translate to center the joint gap"],
-    "correctImage": ["Two flat bones (clavicle/acromion) with thin dark joint line centered"],
-    "corridor": ["Between superior capsule (below) and subcutaneous tissue (above) \u2192 tiny joint space"],
-    "avoid": ["Acromial branch of thoracoacromial artery; overfilling (very small capacity)"],
-    "steps": ["In\u2011plane anterior \u2192 posterior into joint; inject 0.5\u20131 mL and stop if resistance or pain rises"],
-    "tips": ["Use minimal local anesthetic to save space for steroid if used"],
+    "tags": [
+      "shoulder",
+      "ac joint",
+      "distal clavicle",
+      "sprain"
+    ],
+    "treats": [
+      "AC joint arthritis/sprain",
+      "Distal clavicle osteolysis",
+      "Isolated AC pain"
+    ],
+    "positioning": [
+      "Supine; head slightly elevated"
+    ],
+    "probe": [
+      "High‑frequency linear probe (10-15 MHz)"
+    ],
+    "landmarking": [
+      "Start mid‑clavicle; slide laterally to the gap; continue to acromion; translate to center the joint gap"
+    ],
+    "correctImage": [
+      "Two flat bones (clavicle/acromion) with thin dark joint line centered"
+    ],
+    "corridor": [
+      "Between superior capsule (below) and subcutaneous tissue (above) → tiny joint space"
+    ],
+    "avoid": [
+      "Acromial branch of thoracoacromial artery; overfilling (very small capacity)"
+    ],
+    "steps": [
+      "In‑plane anterior → posterior into joint; inject 0.5–1 mL and stop if resistance or pain rises"
+    ],
+    "tips": [
+      "Use minimal local anesthetic to save space for steroid if used"
+    ],
     "pearls": [
-      "Don't \u201cfill up\u201d the joint with local if you plan to use steroid; the capacity is often < 1mL.",
+      "Don't “fill up” the joint with local if you plan to use steroid; the capacity is often < 1mL.",
       "If pressure is low, the capsule may be incompetent (post-trauma/surgery), leaking into SA space.",
       "Look for the Geyser sign: fluid tracking from GH joint up through the AC joint."
     ],
@@ -178,7 +365,7 @@
       "3cc Syringe",
       "25G or 27G 1\" Needle",
       "18G Drawing Needle",
-      "1% Lidocaine (0.5\u20131 mL)",
+      "1% Lidocaine (0.5–1 mL)",
       "0.5cc Kenalog or Dexamethasone",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
@@ -188,6 +375,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 2
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 10
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 19
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 33
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 48
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 54
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 70
+      }
     ]
   },
   {
@@ -197,24 +421,46 @@
     "videoUrl": "https://www.youtube.com/watch?v=_sU4Eg20P7g",
     "anatomyModelId": "ac22f1038e1a479d86f3853934c7a617",
     "anatomyModelTitle": "Shoulder Muscles — Biceps & Rotator Cuff",
-    "tags": ["shoulder", "biceps", "sheath", "tenosynovitis"],
-    "treats": ["Biceps tendon sheath inflammation", "Diagnostic sheath injection"],
-    "positioning": ["Supine; head elevated; forearm supinated (palm up)"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz) (short footprint helpful)"],
+    "tags": [
+      "shoulder",
+      "biceps",
+      "sheath",
+      "tenosynovitis"
+    ],
+    "treats": [
+      "Biceps tendon sheath inflammation",
+      "Diagnostic sheath injection"
+    ],
+    "positioning": [
+      "Supine; head elevated; forearm supinated (palm up)"
+    ],
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz) (short footprint helpful)"
+    ],
     "landmarking": [
-      "Visual Cue: The \u201cBicipital Valley\u201d\u2014Identify the deep bony groove between the greater and lesser tuberosities.",
+      "Visual Cue: The “Bicipital Valley”—Identify the deep bony groove between the greater and lesser tuberosities.",
       "Center the round, hyperechoic biceps tendon within the groove.",
-      "Rotate 90\u00b0 into long-axis to confirm the tendon is intact and not subluxed.",
+      "Rotate 90° into long-axis to confirm the tendon is intact and not subluxed.",
       "Doppler Survey: Identify the ascending branch of the anterior humeral circumflex artery."
     ],
-    "correctImage": ["Round/oval tendon centered in groove; thin dark rim around it = sheath"],
-    "corridor": ["Lateral \u2192 medial path into the thin dark rim around tendon (not intratendinous)"],
-    "avoid": ["Arterial variants; intratendinous steroid"],
-    "steps": ["Advance in\u2011plane; inject a tiny test amount for circumferential \u201ctarget sign\u201d; inject 3\u20134 mL once confirmed"],
-    "tips": ["If fluid collects above tendon or into SA space, you are in the wrong layer\u2014readjust before steroid"],
+    "correctImage": [
+      "Round/oval tendon centered in groove; thin dark rim around it = sheath"
+    ],
+    "corridor": [
+      "Lateral → medial path into the thin dark rim around tendon (not intratendinous)"
+    ],
+    "avoid": [
+      "Arterial variants; intratendinous steroid"
+    ],
+    "steps": [
+      "Advance in‑plane; inject a tiny test amount for circumferential “target sign”; inject 3–4 mL once confirmed"
+    ],
+    "tips": [
+      "If fluid collects above tendon or into SA space, you are in the wrong layer—readjust before steroid"
+    ],
     "pearls": [
-      "Create a \u201ctest effusion\u201d with local to confirm circumferential spread around the tendon.",
-      "The ascending branch of the anterior humeral circumflex artery typically lies lateral in the groove\u2014check with Doppler."
+      "Create a “test effusion” with local to confirm circumferential spread around the tendon.",
+      "The ascending branch of the anterior humeral circumflex artery typically lies lateral in the groove—check with Doppler."
     ],
     "supplies": [
       "5cc Syringe",
@@ -230,6 +476,43 @@
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 3
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 13
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 24
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 42
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 61
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 69
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 89
+      }
     ]
   }
 ]
