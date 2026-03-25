@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../data/injection_provider.dart';
 import '../theme/app_theme.dart';
+import '../theme/favorites_manager.dart';
+import '../theme/recently_viewed_manager.dart';
 import '../theme/theme_manager.dart';
 
 class DashboardSidebar extends StatelessWidget {
@@ -17,6 +20,19 @@ class DashboardSidebar extends StatelessWidget {
     required this.onCategorySelected,
     this.isMobile = false,
   });
+
+  int _getCategoryCount(BuildContext context, String cat) {
+    final dataProvider = context.watch<InjectionDataProvider>();
+    if (!dataProvider.isLoaded) return 0;
+    final favManager = context.watch<FavoritesManager>();
+    final recentManager = context.watch<RecentlyViewedManager>();
+    switch (cat) {
+      case 'All': return dataProvider.injections.length;
+      case 'Favorites': return favManager.favoriteIds.where((id) => dataProvider.findById(id) != null).length;
+      case 'Recent': return recentManager.recentIds.where((id) => dataProvider.findById(id) != null).length;
+      default: return dataProvider.injections.where((i) => i.category == cat).length;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -175,6 +191,16 @@ class DashboardSidebar extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
+              Builder(builder: (ctx) {
+                final count = _getCategoryCount(ctx, title);
+                return Text(
+                  '$count',
+                  style: GoogleFonts.jetBrainsMono(
+                    fontSize: 10,
+                    color: isSelected ? catColor.withValues(alpha: 0.7) : (isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight),
+                  ),
+                );
+              }),
             ],
           ),
         ),
@@ -233,24 +259,13 @@ class DashboardSidebar extends StatelessWidget {
             ),
           ),
           // Theme toggle
-          Semantics(
-            button: true,
-            label: isDark ? 'Switch to light mode' : 'Switch to dark mode',
-            child: InkWell(
-              borderRadius: BorderRadius.circular(AppTheme.radiusSm),
-              onTap: () => tm.toggleTheme(!isDark),
-              child: Container(
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  color: (isDark ? AppTheme.borderDark : AppTheme.borderLight),
-                  borderRadius: BorderRadius.circular(AppTheme.radiusSm),
-                ),
-                child: Icon(
-                  isDark ? Icons.light_mode_rounded : Icons.dark_mode_rounded,
-                  size: 16,
-                  color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight,
-                ),
-              ),
+          IconButton(
+            tooltip: isDark ? 'Switch to light mode' : 'Switch to dark mode',
+            onPressed: () => tm.toggleTheme(!isDark),
+            icon: Icon(
+              isDark ? Icons.light_mode_rounded : Icons.dark_mode_rounded,
+              size: 16,
+              color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight,
             ),
           ),
         ],

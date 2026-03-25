@@ -175,8 +175,13 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
             ),
             const Spacer(),
             if (_checkedSupplies.isNotEmpty)
-              GestureDetector(
-                onTap: () => setState(() => _checkedSupplies.clear()),
+              TextButton(
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  minimumSize: const Size(44, 36),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                onPressed: () => setState(() => _checkedSupplies.clear()),
                 child: Text('Reset', style: GoogleFonts.inter(fontSize: 10, color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight)),
               ),
           ],
@@ -195,7 +200,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
         // Compact list
         ...supplies.asMap().entries.map((e) {
           final isChecked = _checkedSupplies.contains(e.key);
-          return GestureDetector(
+          return InkWell(
             onTap: () => setState(() {
               if (isChecked) {
                 _checkedSupplies.remove(e.key);
@@ -203,20 +208,20 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 _checkedSupplies.add(e.key);
               }
             }),
+            borderRadius: BorderRadius.circular(4),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 2),
+              padding: const EdgeInsets.symmetric(vertical: 4),
               child: Row(
                 children: [
                   SizedBox(
-                    width: 18,
-                    height: 18,
+                    width: 20,
+                    height: 20,
                     child: Checkbox(
                       value: isChecked,
                       onChanged: (val) => setState(() {
                         if (val == true) { _checkedSupplies.add(e.key); }
                         else { _checkedSupplies.remove(e.key); }
                       }),
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
                   ),
                   const SizedBox(width: 6),
@@ -353,25 +358,24 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                   ),
                 ),
                 if (hasTimestamp)
-                  InkWell(
-                    onTap: () => widget.onTimestampTap!(timestamps.first.seconds),
-                    borderRadius: BorderRadius.circular(4),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: color.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(Icons.play_circle_outline_rounded, size: 12, color: color),
-                          const SizedBox(width: 3),
-                          Text(
-                            timestamps.first.formattedTime,
-                            style: GoogleFonts.jetBrainsMono(fontSize: 9, color: color),
-                          ),
-                        ],
+                  Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => widget.onTimestampTap!(timestamps.first.seconds),
+                      borderRadius: BorderRadius.circular(6),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.play_circle_outline_rounded, size: 14, color: color),
+                            const SizedBox(width: 4),
+                            Text(
+                              timestamps.first.formattedTime,
+                              style: GoogleFonts.jetBrainsMono(fontSize: 10, color: color),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

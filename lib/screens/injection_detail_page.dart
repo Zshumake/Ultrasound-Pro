@@ -39,12 +39,17 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
     _entryController = AnimationController(
       duration: const Duration(milliseconds: 500),
       vsync: this,
-    )..forward();
+    );
     _fadeIn = CurvedAnimation(parent: _entryController, curve: Curves.easeOut);
 
     _loadProcedureModePref();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (MediaQuery.of(context).disableAnimations) {
+        _entryController.value = 1.0;
+      } else {
+        _entryController.forward();
+      }
       context.read<RecentlyViewedManager>().recordView(widget.technique.id);
     });
   }
@@ -98,12 +103,12 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
       elevation: _isProcedureMode ? 6 : 2,
       icon: Icon(
         _isProcedureMode ? Icons.menu_book_rounded : Icons.bolt_rounded,
-        size: 16,
+        size: 18,
       ),
       label: Text(
         _isProcedureMode ? 'STUDY MODE' : 'PROCEDURE MODE',
         style: GoogleFonts.jetBrainsMono(
-          fontSize: 9,
+          fontSize: 11,
           fontWeight: FontWeight.w700,
           letterSpacing: 1.2,
         ),
@@ -142,19 +147,19 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildIntroSection(context, catColor, isDark),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 48),
                     _buildSupplySection(context, isDark),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 48),
                     _buildVisualSetupGrid(context),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 24),
                     _buildLandmarkingSection(context),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 48),
                     _buildUSViewSection(context),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 48),
                     _buildProcedureSection(context),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 48),
                     ResidentPearlsCard(pearls: widget.technique.pearls),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 48),
                     AnatomyDiagram(
                       probePositionImg: widget.technique.landmarkImg,
                       expectedSonoImg: widget.technique.ultrasoundImg,
@@ -168,7 +173,7 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                       accentColor: catColor,
                     ),
                     if (widget.technique.anatomyModelId != null) ...[
-                      const SizedBox(height: 32),
+                      const SizedBox(height: 48),
                       SketchfabViewer(
                         modelId: widget.technique.anatomyModelId!,
                         modelTitle: widget.technique.anatomyModelTitle,
@@ -176,10 +181,10 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                       ),
                     ],
                     if (widget.technique.videoUrl != null) ...[
-                      const SizedBox(height: 32),
+                      const SizedBox(height: 48),
                       _buildVideoSection(context, catColor, isDark),
                     ],
-                    const SizedBox(height: 64),
+                    const SizedBox(height: 100),
                   ],
                 ),
               ),
@@ -215,28 +220,27 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
       return const SizedBox.shrink();
     }
     final ts = timestamps.first;
-    return InkWell(
-      onTap: () => _scrollToVideoAndPlay(ts.seconds),
-      borderRadius: BorderRadius.circular(4),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-        decoration: BoxDecoration(
-          color: catColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(4),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.play_circle_outline_rounded, size: 12, color: catColor),
-            const SizedBox(width: 3),
-            Text(
-              ts.formattedTime,
-              style: GoogleFonts.jetBrainsMono(
-                fontSize: 9,
-                color: catColor,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () => _scrollToVideoAndPlay(ts.seconds),
+        borderRadius: BorderRadius.circular(6),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.play_circle_outline_rounded, size: 14, color: catColor),
+              const SizedBox(width: 4),
+              Text(
+                ts.formattedTime,
+                style: GoogleFonts.jetBrainsMono(
+                  fontSize: 10,
+                  color: catColor,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -452,7 +456,7 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: MediaQuery.of(context).size.width > 600 ? 2 : 1,
-              mainAxisExtent: 34,
+              mainAxisExtent: 40,
               crossAxisSpacing: 12,
             ),
             itemCount: supplies.length,
@@ -470,8 +474,8 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                 child: Row(
                   children: [
                     SizedBox(
-                      width: 20,
-                      height: 20,
+                      width: 24,
+                      height: 24,
                       child: Checkbox(
                         value: isChecked,
                         onChanged: (val) => setState(() {
@@ -481,7 +485,6 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                             _checkedSupplies.remove(index);
                           }
                         }),
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                     ),
                     const SizedBox(width: 8),

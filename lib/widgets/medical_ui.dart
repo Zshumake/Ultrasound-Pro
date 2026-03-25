@@ -18,24 +18,30 @@ class MedicalSectionHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Row(
-      children: [
-        Container(
-          width: 12,
-          height: 1.5,
-          color: color ?? AppTheme.cyan.withValues(alpha: 0.5),
-        ),
-        const SizedBox(width: 10),
-        Text(
-          title.toUpperCase(),
-          style: GoogleFonts.jetBrainsMono(
-            color: color ?? (isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight),
-            fontWeight: FontWeight.w700,
-            fontSize: fontSize,
-            letterSpacing: 2.0,
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Row(
+        children: [
+          Container(
+            width: 20,
+            height: 2,
+            decoration: BoxDecoration(
+              color: color ?? AppTheme.cyan.withValues(alpha: 0.6),
+              borderRadius: BorderRadius.circular(1),
+            ),
           ),
-        ),
-      ],
+          const SizedBox(width: 10),
+          Text(
+            title.toUpperCase(),
+            style: GoogleFonts.jetBrainsMono(
+              color: color ?? (isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight),
+              fontWeight: FontWeight.w700,
+              fontSize: fontSize > 10 ? fontSize : 11,
+              letterSpacing: 2.0,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -61,8 +67,8 @@ class MedicalTag extends StatelessWidget {
       child: Text(
         text.toUpperCase(),
         style: GoogleFonts.jetBrainsMono(
-          color: c.withValues(alpha: 0.8),
-          fontSize: 9,
+          color: c,
+          fontSize: 10,
           fontWeight: FontWeight.w600,
           letterSpacing: 0.5,
         ),

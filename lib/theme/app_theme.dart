@@ -20,8 +20,8 @@ class AppTheme {
   static const Color borderDark = Color(0xFF1E293B);    // Subtle panel edges
   static const Color borderGlow = Color(0xFF00D4FF);    // Glow accent
   static const Color textPrimary = Color(0xFFE8ECF4);   // High-contrast body
-  static const Color textSecondary = Color(0xFF6B7A99);  // Muted labels
-  static const Color textTertiary = Color(0xFF3D4B66);   // Faintest labels
+  static const Color textSecondary = Color(0xFF8A96B0);  // Muted labels (4.5:1 on dark)
+  static const Color textTertiary = Color(0xFF5A6A85);   // Faintest labels (3:1 on dark)
 
   // ── Light mode ────────────────────────────────────────────────
   static const Color bgLight = Color(0xFFF0F2F5);

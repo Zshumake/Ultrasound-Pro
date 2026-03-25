@@ -37,6 +37,7 @@ class _DashboardPageState extends State<DashboardPage> {
   void initState() {
     super.initState();
     _selectedCategory = widget.initialCategory ?? 'All';
+    _searchFocusNode.addListener(() => setState(() {}));
   }
 
   @override
@@ -198,18 +199,40 @@ class _DashboardPageState extends State<DashboardPage> {
           backgroundColor: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
           elevation: 0,
           scrolledUnderElevation: 0,
-          title: Text(
-            'US GUIDED',
-            style: GoogleFonts.jetBrainsMono(
-              fontWeight: FontWeight.w800,
-              fontSize: 14,
-              letterSpacing: 1.5,
-              color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight,
-            ),
+          title: Row(
+            children: [
+              Icon(Icons.monitor_heart_outlined, color: AppTheme.cyan, size: 18),
+              const SizedBox(width: 8),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'US GUIDED',
+                    style: GoogleFonts.jetBrainsMono(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 13,
+                      letterSpacing: 1.5,
+                      color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight,
+                    ),
+                  ),
+                  Text(
+                    'INJECTION MANUAL',
+                    style: GoogleFonts.jetBrainsMono(
+                      fontSize: 8,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: 2.0,
+                      color: AppTheme.cyan.withValues(alpha: 0.6),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
           leading: Builder(
             builder: (context) => IconButton(
               icon: Icon(Icons.menu_rounded, color: isDark ? AppTheme.cyan : AppTheme.cyanDim, size: 20),
+              tooltip: 'Open navigation menu',
               onPressed: () => Scaffold.of(context).openDrawer(),
             ),
           ),
@@ -322,7 +345,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   );
                 },
               ),
-              // Empty state
+              // Context-aware empty state
               if (injections.isEmpty)
                 Padding(
                   padding: const EdgeInsets.only(top: 60),
@@ -330,16 +353,41 @@ class _DashboardPageState extends State<DashboardPage> {
                     child: Column(
                       children: [
                         Icon(
-                          Icons.search_off_rounded,
+                          _selectedCategory == 'Favorites'
+                              ? Icons.star_outline_rounded
+                              : _selectedCategory == 'Recent'
+                                  ? Icons.history_rounded
+                                  : Icons.search_off_rounded,
                           size: 40,
                           color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
                         ),
                         const SizedBox(height: 12),
                         Text(
-                          'No procedures found',
+                          _selectedCategory == 'Favorites'
+                              ? 'No favorites yet'
+                              : _selectedCategory == 'Recent'
+                                  ? 'No recently viewed procedures'
+                                  : _searchQuery.isNotEmpty
+                                      ? 'No results for "$_searchQuery"'
+                                      : 'No procedures found',
                           style: GoogleFonts.inter(
                             fontSize: 14,
+                            fontWeight: FontWeight.w500,
                             color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          _selectedCategory == 'Favorites'
+                              ? 'Tap the star on any procedure to save it here'
+                              : _selectedCategory == 'Recent'
+                                  ? 'Procedures you open will appear here'
+                                  : _searchQuery.isNotEmpty
+                                      ? 'Try a different search term'
+                                      : '',
+                          style: GoogleFonts.inter(
+                            fontSize: 12,
+                            color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
                           ),
                         ),
                       ],
