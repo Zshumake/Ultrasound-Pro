@@ -23,16 +23,14 @@ class SketchfabViewer extends StatefulWidget {
 }
 
 class _SketchfabViewerState extends State<SketchfabViewer> {
-  late final String _viewType;
-  bool _isLoaded = false;
+  bool _activated = false;
+  String? _viewType;
+  bool _iframeLoaded = false;
 
-  @override
-  void initState() {
-    super.initState();
-    _viewType = 'sketchfab-viewer-${widget.modelId}-$hashCode';
-
+  void _activate() {
+    final viewType = 'sketchfab-viewer-${widget.modelId}-$hashCode';
     ui_web.platformViewRegistry.registerViewFactory(
-      _viewType,
+      viewType,
       (int viewId) {
         final iframe = html.IFrameElement()
           ..src =
@@ -44,11 +42,15 @@ class _SketchfabViewerState extends State<SketchfabViewer> {
           ..allow = 'autoplay; fullscreen; xr-spatial-tracking'
           ..setAttribute('allowfullscreen', 'true');
         iframe.onLoad.listen((_) {
-          if (mounted) setState(() => _isLoaded = true);
+          if (mounted) setState(() => _iframeLoaded = true);
         });
         return iframe;
       },
     );
+    setState(() {
+      _viewType = viewType;
+      _activated = true;
+    });
   }
 
   @override
@@ -96,10 +98,115 @@ class _SketchfabViewerState extends State<SketchfabViewer> {
                 ],
               ),
             ),
+            if (_activated)
+              Text(
+                'Drag to rotate',
+                style: GoogleFonts.jetBrainsMono(
+                  fontSize: 9,
+                  color: isDark
+                      ? AppTheme.textTertiary
+                      : AppTheme.textSecondaryLight,
+                ),
+              ),
+          ],
+        ),
+        const SizedBox(height: 12),
+        if (_activated)
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+              border: Border.all(
+                color: widget.accentColor.withValues(alpha: 0.2),
+                width: 1,
+              ),
+            ),
+            clipBehavior: Clip.antiAlias,
+            child: Stack(
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  height: 400,
+                  child: HtmlElementView(viewType: _viewType!),
+                ),
+                if (!_iframeLoaded)
+                  Positioned.fill(
+                    child: Container(
+                      color: isDark
+                          ? AppTheme.surfaceDark
+                          : AppTheme.surfaceLight,
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SizedBox(
+                              width: 24,
+                              height: 24,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                color: widget.accentColor,
+                              ),
+                            ),
+                            const SizedBox(height: 12),
+                            Text(
+                              'Loading 3D model...',
+                              style: GoogleFonts.jetBrainsMono(
+                                fontSize: 10,
+                                color: isDark
+                                    ? AppTheme.textTertiary
+                                    : AppTheme.textSecondaryLight,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          )
+        else
+          _buildLoadButton(isDark),
+      ],
+    );
+  }
+
+  Widget _buildLoadButton(bool isDark) {
+    return InkWell(
+      onTap: _activate,
+      borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+      child: Container(
+        width: double.infinity,
+        height: 120,
+        decoration: BoxDecoration(
+          color: isDark ? AppTheme.surfaceDark : AppTheme.bgLight,
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+          border: Border.all(
+            color: widget.accentColor.withValues(alpha: 0.2),
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.view_in_ar_rounded,
+              color: widget.accentColor.withValues(alpha: 0.5),
+              size: 32,
+            ),
+            const SizedBox(height: 10),
             Text(
-              'Drag to rotate',
+              'TAP TO LOAD 3D MODEL',
               style: GoogleFonts.jetBrainsMono(
-                fontSize: 9,
+                fontSize: 10,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 1.5,
+                color: widget.accentColor,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Interactive anatomy viewer',
+              style: GoogleFonts.inter(
+                fontSize: 11,
                 color: isDark
                     ? AppTheme.textTertiary
                     : AppTheme.textSecondaryLight,
@@ -107,58 +214,7 @@ class _SketchfabViewerState extends State<SketchfabViewer> {
             ),
           ],
         ),
-        const SizedBox(height: 12),
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-            border: Border.all(
-              color: widget.accentColor.withValues(alpha: 0.2),
-              width: 1,
-            ),
-          ),
-          clipBehavior: Clip.antiAlias,
-          child: Stack(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                height: 400,
-                child: HtmlElementView(viewType: _viewType),
-              ),
-              if (!_isLoaded)
-                Positioned.fill(
-                  child: Container(
-                    color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
-                    child: Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(
-                            width: 24,
-                            height: 24,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: widget.accentColor,
-                            ),
-                          ),
-                          const SizedBox(height: 12),
-                          Text(
-                            'Loading 3D model...',
-                            style: GoogleFonts.jetBrainsMono(
-                              fontSize: 10,
-                              color: isDark
-                                  ? AppTheme.textTertiary
-                                  : AppTheme.textSecondaryLight,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-            ],
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

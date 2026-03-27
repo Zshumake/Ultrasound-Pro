@@ -83,7 +83,12 @@ class _DashboardPageState extends State<DashboardPage> {
     return inj.title.toLowerCase().contains(q) ||
         inj.category.toLowerCase().contains(q) ||
         inj.tags.any((tag) => tag.toLowerCase().contains(q)) ||
-        inj.treats.any((c) => c.toLowerCase().contains(q));
+        inj.treats.any((c) => c.toLowerCase().contains(q)) ||
+        inj.landmarking.any((l) => l.toLowerCase().contains(q)) ||
+        inj.corridor.any((c) => c.toLowerCase().contains(q)) ||
+        inj.avoid.any((a) => a.toLowerCase().contains(q)) ||
+        inj.steps.any((s) => s.toLowerCase().contains(q)) ||
+        inj.pearls.any((p) => p.toLowerCase().contains(q));
   }
 
   void _handleKeyEvent(KeyEvent event) {
