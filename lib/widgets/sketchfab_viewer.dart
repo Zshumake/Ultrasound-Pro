@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// ignore: avoid_web_libraries_in_flutter
-// ignore: deprecated_member_use
+// ignore: deprecated_member_use, avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'dart:ui_web' as ui_web;
 import 'package:google_fonts/google_fonts.dart';

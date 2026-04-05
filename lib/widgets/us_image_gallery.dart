@@ -99,7 +99,7 @@ class _USImageGalleryState extends State<USImageGallery> {
               Image.asset(
                 widget.imagePaths[_selectedIndex],
                 fit: BoxFit.contain,
-                errorBuilder: (_, __, ___) => Center(
+                errorBuilder: (_, _, _) => Center(
                   child: Icon(Icons.broken_image_outlined,
                       color: AppTheme.textTertiary, size: 48),
                 ),
@@ -144,7 +144,7 @@ class _USImageGalleryState extends State<USImageGallery> {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: widget.imagePaths.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 6),
+              separatorBuilder: (_, _) => const SizedBox(width: 6),
               itemBuilder: (context, index) {
                 final isActive = index == _selectedIndex;
                 return GestureDetector(
@@ -166,7 +166,7 @@ class _USImageGalleryState extends State<USImageGallery> {
                     child: Image.asset(
                       widget.imagePaths[index],
                       fit: BoxFit.cover,
-                      errorBuilder: (_, __, ___) => Container(
+                      errorBuilder: (_, _, _) => Container(
                         color: isDark
                             ? AppTheme.surfaceDark
                             : AppTheme.bgLight,

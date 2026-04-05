@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// ignore: avoid_web_libraries_in_flutter
-// ignore: deprecated_member_use
+// ignore: deprecated_member_use, avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'dart:ui_web' as ui_web;
 import 'dart:convert';
@@ -28,7 +27,6 @@ class YouTubePlayerState extends State<YouTubePlayer> {
   bool _activated = false;
   String? _viewType;
   html.IFrameElement? _iframe;
-  int? _pendingSeek;
 
   String? _extractVideoId(String url) {
     final uri = Uri.tryParse(url);
@@ -132,7 +130,7 @@ class YouTubePlayerState extends State<YouTubePlayer> {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: widget.timestamps.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 6),
+              separatorBuilder: (_, _) => const SizedBox(width: 6),
               itemBuilder: (context, index) {
                 final ts = widget.timestamps[index];
                 return InkWell(

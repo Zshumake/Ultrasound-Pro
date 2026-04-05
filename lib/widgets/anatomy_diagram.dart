@@ -171,7 +171,7 @@ class AnatomyDiagram extends StatelessWidget {
               child: Image.asset(
                 imagePath,
                 fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) =>
+                errorBuilder: (_, _, _) =>
                     _placeholderContent(isDark, placeholderText),
               ),
             )
