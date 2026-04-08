@@ -5,56 +5,37 @@
     "category": "Shoulder",
     "videoUrl": "https://www.youtube.com/watch?v=_rQx6mXq698",
     "videoTimestamps": [
-      {
-        "label": "Patient Position",
-        "section": "positioning",
-        "seconds": 10
-      },
-      {
-        "label": "Probe Placement",
-        "section": "probe",
-        "seconds": 30
-      },
-      {
-        "label": "Finding the View",
-        "section": "landmarking",
-        "seconds": 55
-      },
-      {
-        "label": "US Image",
-        "section": "us_view",
-        "seconds": 90
-      },
-      {
-        "label": "Needle Insertion",
-        "section": "steps",
-        "seconds": 140
-      },
-      {
-        "label": "Needle Corridor",
-        "section": "corridor",
-        "seconds": 130
-      },
-      {
-        "label": "Structures to Avoid",
-        "section": "avoid",
-        "seconds": 170
-      }
+      { "label": "Patient Position", "section": "positioning", "seconds": 10 },
+      { "label": "Probe Placement", "section": "probe", "seconds": 30 },
+      { "label": "Finding the View", "section": "landmarking", "seconds": 55 },
+      { "label": "US Image", "section": "us_view", "seconds": 90 },
+      { "label": "Needle Insertion", "section": "steps", "seconds": 140 },
+      { "label": "Needle Corridor", "section": "corridor", "seconds": 130 },
+      { "label": "Structures to Avoid", "section": "avoid", "seconds": 170 }
     ],
     "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
     "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
-    "tags": [
-      "shoulder",
-      "subacromial",
-      "bursa",
-      "subdeltoid",
-      "impingement",
-      "rotator cuff"
-    ],
+    "tags": ["shoulder", "subacromial", "bursa", "subdeltoid", "impingement"],
     "treats": [
       "Shoulder impingement syndromes",
       "Rotator cuff–related pain with bursitis",
       "Primary or secondary subacromial–subdeltoid bursitis"
+    ],
+    "contraindications": [
+      "Active local skin infection or cellulitis at the entry site (absolute)",
+      "Suspected septic bursa (absolute — aspirate first, do not inject steroid)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep (absolute for that agent)",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative — steroid raises glucose for 3-5 days)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark site with patient awake",
+      "Review allergies (anesthetic, steroid, latex, chlorhexidine, iodine)",
+      "Review anticoagulation status",
+      "Confirm informed consent",
+      "Pre-scan to confirm anatomy and rule out variants",
+      "Time-out immediately before needle entry"
     ],
     "positioning": [
       "Patient supine; head of bed about 30°",
@@ -74,41 +55,57 @@
       "Bursal stripe widens slightly with gentle probe pressure"
     ],
     "corridor": [
-      "Between deltoid (above) and supraspinatus tendon (below)—inject into the thin bursal stripe"
+      "Between deltoid (above) and supraspinatus tendon (below) — inject into the thin bursal stripe"
     ],
     "avoid": [
       "Cephalic vein near anterior deltoid",
       "Intratendinous rotator cuff injection"
     ],
     "steps": [
-      "Use an in‑plane anterolateral → posteromedial approach to keep the entire needle visible.",
+      "Use an in-plane lateral-to-medial approach along the probe long-axis (parallel to supraspinatus fibers), advancing from distal-lateral under the deltoid into the bursal plane under the acromion.",
       "Touch the bursal plane and inject a tiny test amount to confirm plane separation.",
-      "Inject 4–8 mL while watching for smooth medial spread beneath the acromion."
+      "Inject the planned volume slowly while watching for smooth medial spread beneath the acromion.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations — withdraw 1-2 mm and reposition before any further injection."
     ],
     "tips": [
-      "If you lose the needle, stop and realign before advancing",
-      "Adhesions may require gentle needle‑tip redirection"
+      "If you lose the needle, stop and realign before advancing.",
+      "Adhesions may require gentle needle-tip redirection.",
+      "Monitor injection pressure throughout — if resistance rises sharply before reaching target volume, stop. Overdistension can rupture the bursal wall into surrounding tissue.",
+      "Limit corticosteroid injection to ≤ 3 per joint/site per year.",
+      "If pre-scan or color Doppler shows an artery directly in the planned needle path, abandon and re-plan from a different angle."
     ],
     "pearls": [
-      "Think of the bursa as a “potential space”—like a balloon that has been stepped on. It only opens up once you start injecting.",
+      "Think of the bursa as a “potential space” — like a balloon that has been stepped on. It only opens up once you start injecting.",
       "Dissect the plane with local anesthetic first to confirm you are in the bursa before injecting steroid.",
       "Check for a “bursogram” post-injection; if injectate is in the tendon, it suggests a rotator cuff tear.",
-      "The bursa extends beyond the supraspinatus footprint—use this to differentiate layers."
+      "The bursa extends beyond the supraspinatus footprint — use this to differentiate layers.",
+      "For DIAGNOSTIC SASD blocks, limit to ≤ 5 mL anesthetic to avoid anesthetizing the GH joint or AC joint and confounding the pain-generator localization."
     ],
     "supplies": [
-      "3cc/5cc Syringe",
+      "3 mL or 5 mL Syringe",
       "25G 1.5\" Needle (or 22G for larger patients)",
       "18G Drawing Needle",
-      "1% Lidocaine (4–8 mL)",
-      "1cc Kenalog (40mg/ml) or Dexamethasone",
+      "1% Lidocaine (3-5 mL)",
+      "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
+      "Sterile Gloves",
       "Sterile 4x4 Gauze Pads",
       "Sterile Towels & Drapes",
       "Adhesive Bandage (Band-Aid)",
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic provides relief for 1-4 hours; pain may return before steroid takes effect.",
+      "Steroid effect typically begins 24-72 hours after injection.",
+      "Steroid 'flare' (transient worsening for 24-48 hours) occurs in ~10% — manage with ice and acetaminophen.",
+      "Rest the shoulder for 24-48 hours; resume normal activity as tolerated thereafter.",
+      "Return immediately for: spreading redness, increasing swelling, fever, or pain disproportionate to expected (concern for infection).",
+      "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
+      "Maximum frequency: typically no more than 3 injections per shoulder per year."
     ]
   },
   {
@@ -117,101 +114,102 @@
     "category": "Shoulder",
     "videoUrl": "https://www.youtube.com/watch?v=uQO6DxfHTkw",
     "videoTimestamps": [
-      {
-        "label": "Patient Position",
-        "section": "positioning",
-        "seconds": 8
-      },
-      {
-        "label": "Probe Setup",
-        "section": "probe",
-        "seconds": 25
-      },
-      {
-        "label": "Finding the View",
-        "section": "landmarking",
-        "seconds": 45
-      },
-      {
-        "label": "US Image",
-        "section": "us_view",
-        "seconds": 75
-      },
-      {
-        "label": "Injection Steps",
-        "section": "steps",
-        "seconds": 120
-      },
-      {
-        "label": "Avoid",
-        "section": "avoid",
-        "seconds": 155
-      }
+      { "label": "Patient Position", "section": "positioning", "seconds": 8 },
+      { "label": "Probe Setup", "section": "probe", "seconds": 25 },
+      { "label": "Finding the View", "section": "landmarking", "seconds": 45 },
+      { "label": "US Image", "section": "us_view", "seconds": 75 },
+      { "label": "Injection Steps", "section": "steps", "seconds": 120 },
+      { "label": "Avoid", "section": "avoid", "seconds": 155 }
     ],
     "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
     "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
-    "tags": [
-      "shoulder",
-      "glenohumeral",
-      "posterior",
-      "labrum",
-      "capsule",
-      "adhesive capsulitis"
-    ],
+    "tags": ["shoulder", "glenohumeral", "posterior", "labrum", "capsule", "adhesive capsulitis"],
     "treats": [
       "Adhesive capsulitis",
       "Glenohumeral osteoarthritis/synovitis",
-      "Diagnostic intra‑articular anesthesia"
+      "Diagnostic intra-articular anesthesia"
+    ],
+    "contraindications": [
+      "Active local skin infection or cellulitis at the entry site (absolute)",
+      "Suspected septic joint (absolute — aspirate first, do not inject steroid)",
+      "Bacteremia (absolute for joint injection)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep (absolute for that agent)",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)",
+      "Prosthetic shoulder at the target site (relative — coordinate with orthopedics)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark site with patient awake",
+      "Review allergies",
+      "Review anticoagulation status",
+      "Confirm informed consent",
+      "Pre-scan to confirm capsule depth — if > 3 cm, use 22G 3.5\" spinal needle",
+      "Time-out immediately before needle entry"
     ],
     "positioning": [
       "Lateral decubitus; affected shoulder up; arm relaxed in neutral"
     ],
     "probe": [
-      "Curvilinear preferred for a steeper, controllable needle angle (linear acceptable if needed)"
+      "High-frequency linear probe (9-15 MHz) as default for most adults; switch to curvilinear (5-8 MHz) only if joint depth exceeds linear penetration (obese patients)."
     ],
     "landmarking": [
-      "Visual Cue: The “Wine Glass”—The humeral head is the wine, the glenoid/labrum is the rim/stem.",
-      "Slide inferiorly off the scapular spine to find the infraspinatus belly.",
+      "Visual Cue: The “Wine Glass” — the humeral head sits in the cup; the glenoid/labrum form the rim/stem.",
+      "Start on the scapular spine and slide LATERALLY along its inferior edge to position the probe over the infraspinatus muscle belly overlying the humeral head.",
       "Slide laterally until the round humeral head meets the triangular labrum.",
       "Tilt the probe (“fan”) to open the thin dark joint space between cartilage and capsule."
     ],
     "correctImage": [
-      "Humeral head in lower third; glenoid rim medially; continuous dark intra‑articular line"
+      "Humeral head in lower third; glenoid rim medially; continuous dark intra-articular line"
     ],
     "corridor": [
-      "Through infraspinatus (entry) → subcapsular space just superficial to humeral head cartilage (target)"
+      "Through the infraspinatus muscle → posterior glenohumeral joint recess (intra-articular), with the needle tip at the junction of the humeral head cartilage and posterior labrum, deep to the posterior capsule."
     ],
     "avoid": [
-      "Axillary nerve/arterial branches medially/inferiorly—stay lateral with a steep trajectory",
+      "Axillary nerve/arterial branches medially/inferiorly — stay lateral with a steep trajectory",
       "Intralabral needle placement"
     ],
     "steps": [
-      "Advance in‑plane from posterolateral → anteromedial at a steep angle.",
+      "Advance in-plane from posterolateral → anteromedial at a steep angle.",
       "Contact capsule and inject a test bolus to confirm capsular lift.",
-      "Inject 4–10 mL; gently rotate the shoulder to confirm intra‑articular spread."
+      "Inject the planned volume slowly; gently rotate the shoulder to confirm intra-articular spread.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations — withdraw 1-2 mm and reposition before further injection."
     ],
     "tips": [
-      "Steeper angles are easier to correct than shallow ones"
+      "Steeper angles are easier to correct than shallow ones.",
+      "Limit corticosteroid injection to ≤ 3 per joint per year.",
+      "If pre-scan shows an artery directly in the planned needle path, abandon and re-plan."
     ],
     "pearls": [
       "Steeper is better: it is easier to shallow out an angle than to correct one that is too medial.",
-      "The needle naturally pulls medially as it passes the capsule—anticipate this.",
+      "The needle naturally pulls medially as it passes the capsule — anticipate this.",
       "Perform internal/external rotation post-injection to confirm the iatrogenic effusion is intra-articular."
     ],
     "supplies": [
-      "10cc Syringe",
-      "22G 1.5\" or 3.5\" Spinal Needle",
+      "10 mL Syringe",
+      "22G 3.5\" Spinal Needle (default for most adults; 1.5\" only if pre-scan confirms capsule depth < 3 cm)",
       "18G Drawing Needle",
       "1% Lidocaine (5-10 mL)",
-      "1cc Kenalog (40mg/ml)",
+      "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
+      "Sterile Gloves",
       "Sterile 4x4 Gauze Pads",
       "Sterile Towels & Drapes",
       "Adhesive Bandage (Band-Aid)",
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic provides relief for 1-4 hours; pain may return before steroid takes effect.",
+      "Steroid effect typically begins 24-72 hours after injection.",
+      "Steroid 'flare' (transient worsening for 24-48 hours) occurs in ~10% — manage with ice and acetaminophen.",
+      "Rest the shoulder for 24-48 hours; resume normal activity as tolerated thereafter.",
+      "Return immediately for: spreading redness, increasing swelling, fever, or pain disproportionate to expected.",
+      "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
+      "Maximum frequency: typically no more than 3 injections per joint per year."
     ]
   },
   {
@@ -221,54 +219,69 @@
     "videoUrl": "https://www.youtube.com/watch?v=nwoxhdMNlYM",
     "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
     "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
-    "tags": [
-      "shoulder",
-      "glenohumeral",
-      "anterior",
-      "rotator interval",
-      "biceps"
-    ],
+    "tags": ["shoulder", "glenohumeral", "anterior", "rotator interval", "biceps"],
     "treats": [
-      "Same as posterior approach; convenient when combining with subacromial injection"
+      "Same as posterior approach; convenient when combining with biceps sheath injection"
+    ],
+    "contraindications": [
+      "Active local skin infection or cellulitis at the entry site (absolute)",
+      "Suspected septic joint (absolute — aspirate first)",
+      "Bacteremia (absolute for joint injection)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan to confirm depth and Doppler the AHC artery branches",
+      "Time-out immediately before needle entry"
     ],
     "positioning": [
       "Supine; head elevated ~30°; arm relaxed"
     ],
     "probe": [
-      "High‑frequency linear probe (6-13 MHz)"
+      "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
       "Place probe transversely over anterior shoulder to locate the bicipital groove with the long head of the biceps.",
-      "Rotate into long‑axis of the biceps tendon.",
+      "Rotate into long-axis of the biceps tendon.",
       "Tilt slightly cephalad to visualize the rotator interval and capsule above the tendon."
     ],
     "correctImage": [
       "Biceps centered in groove; thin capsule above with potential dark joint space deep to capsule"
     ],
     "corridor": [
-      "Under rotator‑interval capsule (above) along humeral head/neck (below)"
+      "Under rotator-interval capsule (above) along humeral head/neck (below)"
     ],
     "avoid": [
-      "Branches of the anterior humeral circumflex artery—screen with Doppler if uncertain"
+      "Ascending branch of the anterior humeral circumflex artery (runs transverse across the bicipital groove — Doppler before every entry)",
+      "Cephalic vein (medial deltopectoral groove)",
+      "Intratendinous subscapularis or long head biceps placement"
     ],
     "steps": [
-      "Advance in‑plane beneath capsule into joint; confirm flow along intra‑articular biceps; inject 4–10 mL"
+      "Advance in-plane beneath capsule into joint; confirm flow along intra-articular biceps; inject planned volume slowly.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations — withdraw and reposition."
     ],
     "tips": [
-      "You can treat SA/SD bursa and GH joint through one skin entry by syringe swap"
+      "The anterior rotator interval approach does not reliably traverse the SASD bursa — if treating both bursa and GH joint, perform sequential injections.",
+      "Limit corticosteroid to ≤ 3 per joint per year.",
+      "If color Doppler shows the AHC artery in the planned path, abandon and re-plan."
     ],
     "pearls": [
-      "The needle courses through the subacromial bursa on the way to the rotator interval—allows “2-in-1” injection.",
       "Identify the coracohumeral ligament; the target is deep to this structure."
     ],
     "supplies": [
-      "10cc Syringe",
-      "22G 1.5\" Needle",
+      "10 mL Syringe",
+      "22G 1.5\" Needle (standard); 22G 2.5-3.5\" spinal if pre-scan shows rotator interval depth > 3 cm",
       "18G Drawing Needle",
       "1% Lidocaine (5-10 mL)",
-      "1cc Kenalog (40mg/ml)",
+      "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
+      "Sterile Gloves",
       "Sterile 4x4 Gauze Pads",
       "Sterile Towels & Drapes",
       "Adhesive Bandage (Band-Aid)",
@@ -276,42 +289,23 @@
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
     ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in ~10% — manage with ice and acetaminophen.",
+      "Rest 24-48 hours.",
+      "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per joint per year."
+    ],
     "videoTimestamps": [
-      {
-        "label": "Patient Position",
-        "section": "positioning",
-        "seconds": 7
-      },
-      {
-        "label": "Probe Placement",
-        "section": "probe",
-        "seconds": 31
-      },
-      {
-        "label": "Finding the View",
-        "section": "landmarking",
-        "seconds": 57
-      },
-      {
-        "label": "US Image",
-        "section": "us_view",
-        "seconds": 99
-      },
-      {
-        "label": "Needle Corridor",
-        "section": "corridor",
-        "seconds": 144
-      },
-      {
-        "label": "Injection Steps",
-        "section": "steps",
-        "seconds": 163
-      },
-      {
-        "label": "Structures to Avoid",
-        "section": "avoid",
-        "seconds": 210
-      }
+      { "label": "Patient Position", "section": "positioning", "seconds": 7 },
+      { "label": "Probe Placement", "section": "probe", "seconds": 31 },
+      { "label": "Finding the View", "section": "landmarking", "seconds": 57 },
+      { "label": "US Image", "section": "us_view", "seconds": 99 },
+      { "label": "Needle Corridor", "section": "corridor", "seconds": 144 },
+      { "label": "Injection Steps", "section": "steps", "seconds": 163 },
+      { "label": "Structures to Avoid", "section": "avoid", "seconds": 210 }
     ]
   },
   {
@@ -321,54 +315,72 @@
     "videoUrl": "https://www.youtube.com/watch?v=8xfcDMERiBQ",
     "anatomyModelId": "5d5c63b3469a4db0b8a3f659a1848d56",
     "anatomyModelTitle": "Shoulder Girdle Ligaments (AC Joint)",
-    "tags": [
-      "shoulder",
-      "ac joint",
-      "distal clavicle",
-      "sprain"
-    ],
+    "tags": ["shoulder", "ac joint", "distal clavicle", "sprain"],
     "treats": [
       "AC joint arthritis/sprain",
       "Distal clavicle osteolysis",
       "Isolated AC pain"
     ],
+    "contraindications": [
+      "Active local skin infection or cellulitis at the entry site (absolute)",
+      "Suspected septic joint (absolute)",
+      "Bacteremia (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan to confirm joint orientation and rule out incompetent capsule",
+      "Time-out immediately before needle entry"
+    ],
     "positioning": [
       "Supine; head slightly elevated"
     ],
     "probe": [
-      "High‑frequency linear probe (10-15 MHz)"
+      "High-frequency linear probe (10-15 MHz)"
     ],
     "landmarking": [
-      "Start mid‑clavicle; slide laterally to the gap; continue to acromion; translate to center the joint gap"
+      "Start mid-clavicle; slide laterally to the gap; continue to acromion; translate to center the joint gap"
     ],
     "correctImage": [
       "Two flat bones (clavicle/acromion) with thin dark joint line centered"
     ],
     "corridor": [
-      "Between superior capsule (below) and subcutaneous tissue (above) → tiny joint space"
+      "Superior approach: between superior capsule (below) and subcutaneous tissue (above) → tiny joint space, angled to match the oblique joint plane"
     ],
     "avoid": [
-      "Acromial branch of thoracoacromial artery; overfilling (very small capacity)"
+      "Acromial branch of thoracoacromial artery",
+      "Overfilling (very small capacity)"
     ],
     "steps": [
-      "In‑plane anterior → posterior into joint; inject 0.5–1 mL and stop if resistance or pain rises"
+      "In-plane SUPERIOR approach along the oblique joint plane; angle the needle to match the joint line rather than the skin surface.",
+      "Confirm trajectory by tilting probe to reveal the joint cleft orientation before entry.",
+      "Inject 0.5-1 mL total; stop if resistance or pain rises.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
     "tips": [
-      "Use minimal local anesthetic to save space for steroid if used"
+      "Use minimal local anesthetic to save space for steroid.",
+      "Limit corticosteroid to ≤ 3 per joint per year."
     ],
     "pearls": [
-      "Don't “fill up” the joint with local if you plan to use steroid; the capacity is often < 1mL.",
+      "Don't 'fill up' the joint with local if you plan to use steroid; the capacity is often < 1 mL.",
+      "Total injectate volume ≤ 1 mL — pre-mix steroid and small lidocaine aliquot in the same syringe before approaching the joint.",
       "If pressure is low, the capsule may be incompetent (post-trauma/surgery), leaking into SA space.",
       "Look for the Geyser sign: fluid tracking from GH joint up through the AC joint."
     ],
     "supplies": [
-      "3cc Syringe",
-      "25G or 27G 1\" Needle",
+      "3 mL Syringe",
+      "25G 1.5\" Needle (default); 27G 1\" only for lean patients — 27G deflects before reaching the joint in larger patients",
       "18G Drawing Needle",
-      "1% Lidocaine (0.5–1 mL)",
-      "0.5cc Kenalog or Dexamethasone",
+      "1% Lidocaine (0.5 mL)",
+      "Triamcinolone 20-40 mg OR Dexamethasone 4 mg (0.25-0.5 mL)",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
+      "Sterile Gloves",
       "Sterile 4x4 Gauze Pads",
       "Sterile Towels & Drapes",
       "Adhesive Bandage (Band-Aid)",
@@ -376,42 +388,23 @@
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
     ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in ~10% — manage with ice and acetaminophen.",
+      "Rest 24-48 hours.",
+      "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per joint per year."
+    ],
     "videoTimestamps": [
-      {
-        "label": "Patient Position",
-        "section": "positioning",
-        "seconds": 2
-      },
-      {
-        "label": "Probe Placement",
-        "section": "probe",
-        "seconds": 10
-      },
-      {
-        "label": "Finding the View",
-        "section": "landmarking",
-        "seconds": 19
-      },
-      {
-        "label": "US Image",
-        "section": "us_view",
-        "seconds": 33
-      },
-      {
-        "label": "Needle Corridor",
-        "section": "corridor",
-        "seconds": 48
-      },
-      {
-        "label": "Injection Steps",
-        "section": "steps",
-        "seconds": 54
-      },
-      {
-        "label": "Structures to Avoid",
-        "section": "avoid",
-        "seconds": 70
-      }
+      { "label": "Patient Position", "section": "positioning", "seconds": 2 },
+      { "label": "Probe Placement", "section": "probe", "seconds": 10 },
+      { "label": "Finding the View", "section": "landmarking", "seconds": 19 },
+      { "label": "US Image", "section": "us_view", "seconds": 33 },
+      { "label": "Needle Corridor", "section": "corridor", "seconds": 48 },
+      { "label": "Injection Steps", "section": "steps", "seconds": 54 },
+      { "label": "Structures to Avoid", "section": "avoid", "seconds": 70 }
     ]
   },
   {
@@ -421,55 +414,72 @@
     "videoUrl": "https://www.youtube.com/watch?v=_sU4Eg20P7g",
     "anatomyModelId": "ac22f1038e1a479d86f3853934c7a617",
     "anatomyModelTitle": "Shoulder Muscles — Biceps & Rotator Cuff",
-    "tags": [
-      "shoulder",
-      "biceps",
-      "sheath",
-      "tenosynovitis"
-    ],
+    "tags": ["shoulder", "biceps", "sheath", "tenosynovitis"],
     "treats": [
       "Biceps tendon sheath inflammation",
       "Diagnostic sheath injection"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic tenosynovitis (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)",
+      "Recent biceps tendon rupture or high-grade tear (relative — particulate steroid increases re-rupture risk)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan with Doppler to identify the AHC artery position in the groove",
+      "Time-out immediately before needle entry"
     ],
     "positioning": [
       "Supine; head elevated; forearm supinated (palm up)"
     ],
     "probe": [
-      "High‑frequency linear probe (6-13 MHz) (short footprint helpful)"
+      "High-frequency linear probe (6-13 MHz) (short footprint helpful)"
     ],
     "landmarking": [
-      "Visual Cue: The “Bicipital Valley”—Identify the deep bony groove between the greater and lesser tuberosities.",
+      "Visual Cue: The “Bicipital Valley” — identify the deep bony groove between the greater and lesser tuberosities.",
       "Center the round, hyperechoic biceps tendon within the groove.",
       "Rotate 90° into long-axis to confirm the tendon is intact and not subluxed.",
-      "Doppler Survey: Identify the ascending branch of the anterior humeral circumflex artery."
+      "Doppler Survey: Identify the ascending branch of the anterior humeral circumflex artery (typically transverse across the groove, often visualized medial in the groove near the lesser tuberosity)."
     ],
     "correctImage": [
       "Round/oval tendon centered in groove; thin dark rim around it = sheath"
     ],
     "corridor": [
-      "Lateral → medial path into the thin dark rim around tendon (not intratendinous)"
+      "Lateral → medial path (from greater tuberosity side) into the thin dark rim around tendon — stop the tip in the sheath BEFORE reaching the medial groove wall where the AHC artery typically lies. Not intratendinous."
     ],
     "avoid": [
-      "Arterial variants; intratendinous steroid"
+      "Ascending branch of the anterior humeral circumflex artery (Doppler before every entry — if it sits in the planned path, re-plan)",
+      "Intratendinous steroid"
     ],
     "steps": [
-      "Advance in‑plane; inject a tiny test amount for circumferential “target sign”; inject 3–4 mL once confirmed"
+      "Advance in-plane lateral-to-medial; inject a tiny test amount for circumferential 'target sign'; inject the planned volume once confirmed.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
     "tips": [
-      "If fluid collects above tendon or into SA space, you are in the wrong layer—readjust before steroid"
+      "If fluid collects above tendon or into SA space, you are in the wrong layer — readjust before steroid.",
+      "The biceps sheath communicates with the GH joint — anticipate some intra-articular steroid spread. Lower doses reduce systemic load and rupture risk.",
+      "Limit to ≤ 3 injections per year per tendon."
     ],
     "pearls": [
       "Create a “test effusion” with local to confirm circumferential spread around the tendon.",
-      "The ascending branch of the anterior humeral circumflex artery typically lies lateral in the groove—check with Doppler."
+      "Always Doppler before entry — the AHC artery position varies; if it sits in the planned path, re-plan.",
+      "Total injectate (anesthetic + steroid) ≤ 3 mL to avoid overfilling the sheath and retrograde GH joint tracking."
     ],
     "supplies": [
-      "5cc Syringe",
+      "5 mL Syringe",
       "25G 1.5\" Needle",
       "18G Drawing Needle",
-      "1% Lidocaine (3-4 mL)",
-      "1cc Kenalog (40mg/ml)",
+      "1% Lidocaine (1-2 mL)",
+      "Triamcinolone 20-40 mg OR Dexamethasone 4-8 mg",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
+      "Sterile Gloves",
       "Sterile 4x4 Gauze Pads",
       "Sterile Towels & Drapes",
       "Adhesive Bandage (Band-Aid)",
@@ -477,42 +487,23 @@
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
     ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in ~10% — manage with ice and acetaminophen.",
+      "Rest the shoulder 24-48 hours; avoid heavy lifting for 1 week.",
+      "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per tendon per year."
+    ],
     "videoTimestamps": [
-      {
-        "label": "Patient Position",
-        "section": "positioning",
-        "seconds": 3
-      },
-      {
-        "label": "Probe Placement",
-        "section": "probe",
-        "seconds": 13
-      },
-      {
-        "label": "Finding the View",
-        "section": "landmarking",
-        "seconds": 24
-      },
-      {
-        "label": "US Image",
-        "section": "us_view",
-        "seconds": 42
-      },
-      {
-        "label": "Needle Corridor",
-        "section": "corridor",
-        "seconds": 61
-      },
-      {
-        "label": "Injection Steps",
-        "section": "steps",
-        "seconds": 69
-      },
-      {
-        "label": "Structures to Avoid",
-        "section": "avoid",
-        "seconds": 89
-      }
+      { "label": "Patient Position", "section": "positioning", "seconds": 3 },
+      { "label": "Probe Placement", "section": "probe", "seconds": 13 },
+      { "label": "Finding the View", "section": "landmarking", "seconds": 24 },
+      { "label": "US Image", "section": "us_view", "seconds": 42 },
+      { "label": "Needle Corridor", "section": "corridor", "seconds": 61 },
+      { "label": "Injection Steps", "section": "steps", "seconds": 69 },
+      { "label": "Structures to Avoid", "section": "avoid", "seconds": 89 }
     ]
   }
 ]

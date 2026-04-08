@@ -5,54 +5,129 @@
     "category": "Knee",
     "videoUrl": "https://www.youtube.com/watch?v=2s2bZGDcT7M",
     "videoTimestamps": [
-      {"label": "Patient Position", "section": "positioning", "seconds": 5},
-      {"label": "Probe Setup", "section": "probe", "seconds": 20},
-      {"label": "Finding the View", "section": "landmarking", "seconds": 40},
-      {"label": "US Image", "section": "us_view", "seconds": 65},
-      {"label": "Injection Steps", "section": "steps", "seconds": 100},
-      {"label": "Avoid", "section": "avoid", "seconds": 135}
+      { "label": "Patient Position", "section": "positioning", "seconds": 5 },
+      { "label": "Probe Setup", "section": "probe", "seconds": 20 },
+      { "label": "Finding the View", "section": "landmarking", "seconds": 40 },
+      { "label": "US Image", "section": "us_view", "seconds": 65 },
+      { "label": "Injection Steps", "section": "steps", "seconds": 100 },
+      { "label": "Avoid", "section": "avoid", "seconds": 135 }
     ],
+    "anatomicalPlacement": {
+      "baseSvgName": "full_body_anterior_clean",
+      "focusRegion": [300, 600, 400, 300],
+      "steps": [
+        {
+          "description": "1. Place probe in short-axis (transverse) across the suprapatellar recess just proximal to the patella.",
+          "probeX": 450,
+          "probeY": 350,
+          "probeRotationDegrees": 90
+        },
+        {
+          "description": "2. Slide the probe to find the deepest part of the recess.",
+          "probeX": 400,
+          "probeY": 350,
+          "probeRotationDegrees": 90
+        },
+        {
+          "description": "3. Advance needle in-plane from the lateral side under the probe.",
+          "probeX": 400,
+          "probeY": 350,
+          "probeRotationDegrees": 90,
+          "needleX": 600,
+          "needleY": 350,
+          "needleRotationDegrees": -90
+        }
+      ]
+    },
     "anatomyModelId": "0a2d68c6ec1f4ca783336c96f3c0a5fd",
     "anatomyModelTitle": "Knee Anatomy (University of Dundee)",
     "tags": ["knee", "suprapatellar", "recess", "fat pad", "prefemoral", "quadriceps"],
-    "treats": ["Knee osteoarthritis", "Synovitis/effusion", "Diagnostic anesthetic"],
-    "positioning": ["Supine; small towel under knee for 20-30\u00b0 flexion"],
-    "probe": ["High\u2011frequency linear probe (6-13 MHz)"],
+    "treats": [
+      "Knee osteoarthritis",
+      "Synovitis/effusion",
+      "Diagnostic anesthetic"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic joint (absolute — aspirate first, do not inject steroid)",
+      "Bacteremia (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)",
+      "Knee prosthesis at the target site (relative — coordinate with orthopedics)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan: identify quadriceps fat pad, prefemoral fat pad, and the recess between them; Doppler genicular vessels",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Supine; small towel under knee for 20-30° flexion"
+    ],
+    "probe": [
+      "High-frequency linear probe (6-13 MHz)"
+    ],
     "landmarking": [
-      "Long\u2011axis over distal femur \u2192 identify femoral cortex \u2192 prefemoral fat pad above \u2192 suprapatellar recess (target) above that \u2192 quadriceps fat pad and quadriceps tendon above.",
-      "Slide the probe laterally to find the deepest part of the recess for easier access."
+      "Short-axis (transverse) probe across the suprapatellar recess just proximal to the patella → identify femoral cortex deep, prefemoral fat pad above, suprapatellar recess (target) above that, quadriceps fat pad and quadriceps tendon most superficial.",
+      "Slide the probe to find the deepest part of the recess for easier access."
     ],
-    "correctImage": ["Two distinct fat pads with anechoic space between \u2014 quadriceps fat pad (above) and prefemoral fat pad (below)."],
-    "corridor": ["Lateral \u2192 medial in\u2011plane approach into the deepest part of the suprapatellar recess."],
-    "avoid": ["Avoid traversing the quadriceps tendon or patellar tendon.", "Genicular vessels (screen with Doppler)."],
+    "correctImage": [
+      "Two distinct fat pads with anechoic space between — quadriceps fat pad (above) and prefemoral fat pad (below)."
+    ],
+    "corridor": [
+      "Lateral → medial in-plane approach across the recess (with probe in transverse / short-axis orientation)"
+    ],
+    "avoid": [
+      "Avoid traversing the quadriceps tendon or patellar tendon",
+      "Genicular vessels (screen with Doppler)"
+    ],
     "steps": [
-      "Position patient supine with knee in 20-30\u00b0 flexion.",
-      "Place probe in long-axis (sagittal) over the suprapatellar region.",
+      "Position patient supine with knee in 20-30° flexion.",
+      "Place probe in SHORT-AXIS (transverse) orientation across the suprapatellar recess just proximal to the patella.",
       "Identify the anechoic effusion or the hypoechoic plane between fat pads.",
-      "Advance in\u2011plane from the lateral side into the recess.",
-      "Confirm spread with a small test bolus of local anesthetic."
+      "Advance in-plane LATERAL → MEDIAL across the recess.",
+      "Confirm spread with a small test bolus of local anesthetic.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
-    "tips": ["Gentle probe compression pools fluid at your entry site; keep needle parallel to cartilage"],
+    "tips": [
+      "Gentle probe compression pools fluid at your entry site; keep needle parallel to cartilage.",
+      "Limit corticosteroid to ≤ 3 per joint per year.",
+      "If color Doppler shows a genicular vessel directly in the planned path, abandon and re-plan."
+    ],
     "pearls": [
-      "The \u201cTwo-Pad Sandwich\u201d: The target is the \u201cfilling\u201d between the Quadriceps Fat Pad (the top bun) and Prefemoral Fat Pad (the bottom bun).",
-      "20-30\u00b0 Flexion: This \u201cpools\u201d fluid into the suprapatellar space and relaxes the quad tendon.",
-      "The \u201cLateral Approach\u201d: Landmarking from the lateral side ensures the needle is perpendicular to the beam for maximum brightness.",
-      "Gentle pressure with the probe can \u201cmilk\u201d fluid towards your needle tip."
+      "The 'Two-Pad Sandwich': The target is the 'filling' between the Quadriceps Fat Pad (the top bun) and Prefemoral Fat Pad (the bottom bun).",
+      "20-30° Flexion: This 'pools' fluid into the suprapatellar space and relaxes the quad tendon.",
+      "Short-axis transverse probe + lateral-to-medial in-plane = the standard approach. (A long-axis sagittal probe would require a superior-to-inferior in-plane entry instead — choose one, do not mix.)",
+      "Gentle pressure with the probe can 'milk' fluid towards your needle tip."
     ],
     "supplies": [
-      "10cc or 20cc Syringe",
-      "21G or 22G 1.5\" Needle",
+      "For aspiration + injection: 18G or 20G 1.5\" needle (large bore for viscous synovial fluid)",
+      "For injection only (no aspiration): 25G 1.5\" needle",
+      "10 mL or 20 mL Syringe",
       "18G Drawing Needle",
       "1% Lidocaine (5-10 mL)",
-      "1cc Kenalog (40mg/ml)",
+      "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
+      "Sterile Gloves",
       "Sterile 4x4 Gauze Pads",
       "Sterile Towels & Drapes",
       "Adhesive Bandage (Band-Aid)",
       "Washcloth/Towel (gel cleanup)",
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in ~10% — manage with ice and acetaminophen.",
+      "Rest the knee 24-48 hours; resume normal activity as tolerated thereafter.",
+      "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per joint per year."
     ]
   }
 ]

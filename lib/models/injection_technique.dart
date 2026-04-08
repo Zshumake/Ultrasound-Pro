@@ -24,6 +24,62 @@ class VideoTimestamp {
   }
 }
 
+class AnatomicalPlacementStep {
+  final double probeX;
+  final double probeY;
+  final double probeRotationDegrees;
+  final double? needleX;
+  final double? needleY;
+  final double? needleRotationDegrees;
+  final String description;
+
+  const AnatomicalPlacementStep({
+    required this.probeX,
+    required this.probeY,
+    required this.probeRotationDegrees,
+    this.needleX,
+    this.needleY,
+    this.needleRotationDegrees,
+    this.description = '',
+  });
+
+  factory AnatomicalPlacementStep.fromJson(Map<String, dynamic> json) {
+    return AnatomicalPlacementStep(
+      probeX: (json['probeX'] as num).toDouble(),
+      probeY: (json['probeY'] as num).toDouble(),
+      probeRotationDegrees: (json['probeRotationDegrees'] as num).toDouble(),
+      needleX: json['needleX'] != null ? (json['needleX'] as num).toDouble() : null,
+      needleY: json['needleY'] != null ? (json['needleY'] as num).toDouble() : null,
+      needleRotationDegrees: json['needleRotationDegrees'] != null ? (json['needleRotationDegrees'] as num).toDouble() : null,
+      description: json['description'] as String? ?? '',
+    );
+  }
+}
+
+class AnatomicalPlacement {
+  final String baseSvgName;
+  final List<double>? focusRegion;
+  final List<AnatomicalPlacementStep> steps;
+
+  const AnatomicalPlacement({
+    required this.baseSvgName,
+    this.focusRegion,
+    required this.steps,
+  });
+
+  factory AnatomicalPlacement.fromJson(Map<String, dynamic> json) {
+    return AnatomicalPlacement(
+      baseSvgName: json['baseSvgName'] as String,
+      focusRegion: json['focusRegion'] != null 
+          ? (json['focusRegion'] as List).map((e) => (e as num).toDouble()).toList() 
+          : null,
+      steps: (json['steps'] as List)
+          .map((e) => AnatomicalPlacementStep.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+  }
+}
+
 class InjectionTechnique {
   final String id;
   final String title;
@@ -61,6 +117,14 @@ class InjectionTechnique {
   // Video chapter timestamps
   final List<VideoTimestamp> videoTimestamps;
 
+  // Interactive anatomical placement
+  final AnatomicalPlacement? anatomicalPlacement;
+
+  // Safety scaffolding (added 2026-04-08 from medical audit)
+  final List<String> contraindications;
+  final List<String> preChecklist;
+  final List<String> postProcedure;
+
   InjectionTechnique({
     required this.id,
     required this.title,
@@ -87,6 +151,10 @@ class InjectionTechnique {
     this.usGalleryImages = const [],
     this.usGalleryLabels = const [],
     this.videoTimestamps = const [],
+    this.anatomicalPlacement,
+    this.contraindications = const [],
+    this.preChecklist = const [],
+    this.postProcedure = const [],
   });
 
   factory InjectionTechnique.fromJson(Map<String, dynamic> json) {
@@ -123,6 +191,18 @@ class InjectionTechnique {
           ? (json['videoTimestamps'] as List)
               .map((e) => VideoTimestamp.fromJson(e as Map<String, dynamic>))
               .toList()
+          : const [],
+      anatomicalPlacement: json['anatomicalPlacement'] != null
+          ? AnatomicalPlacement.fromJson(json['anatomicalPlacement'] as Map<String, dynamic>)
+          : null,
+      contraindications: json['contraindications'] != null
+          ? List<String>.from(json['contraindications'])
+          : const [],
+      preChecklist: json['preChecklist'] != null
+          ? List<String>.from(json['preChecklist'])
+          : const [],
+      postProcedure: json['postProcedure'] != null
+          ? List<String>.from(json['postProcedure'])
           : const [],
     );
   }

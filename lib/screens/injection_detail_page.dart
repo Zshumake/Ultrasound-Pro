@@ -10,6 +10,7 @@ import '../widgets/sketchfab_viewer.dart';
 import '../widgets/us_image_gallery.dart';
 import '../widgets/anatomy_diagram.dart';
 import '../widgets/procedure_mode_view.dart';
+import '../widgets/interactive_anatomical_view.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
 import '../theme/recently_viewed_manager.dart';
@@ -148,6 +149,14 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                   children: [
                     _buildIntroSection(context, catColor, isDark),
                     const SizedBox(height: 48),
+                    if (widget.technique.contraindications.isNotEmpty) ...[
+                      _buildContraindicationsSection(context, isDark),
+                      const SizedBox(height: 48),
+                    ],
+                    if (widget.technique.preChecklist.isNotEmpty) ...[
+                      _buildPreChecklistSection(context, isDark),
+                      const SizedBox(height: 48),
+                    ],
                     _buildSupplySection(context, isDark),
                     const SizedBox(height: 48),
                     _buildVisualSetupGrid(context),
@@ -160,6 +169,25 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                     const SizedBox(height: 48),
                     ResidentPearlsCard(pearls: widget.technique.pearls),
                     const SizedBox(height: 48),
+                    if (widget.technique.postProcedure.isNotEmpty) ...[
+                      _buildPostProcedureSection(context, isDark),
+                      const SizedBox(height: 48),
+                    ],
+                    if (widget.technique.anatomicalPlacement != null) ...[
+                      const MedicalSectionHeader(title: 'ANATOMICAL PLACEMENT'),
+                      const SizedBox(height: 16),
+                      Container(
+                        height: 400,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: isDark ? AppTheme.surfaceDark.withValues(alpha: 0.5) : const Color(0xFFF9FAFB),
+                          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+                          border: Border.all(color: isDark ? AppTheme.borderDark : AppTheme.borderLight),
+                        ),
+                        child: InteractiveAnatomicalView(placement: widget.technique.anatomicalPlacement!),
+                      ),
+                      const SizedBox(height: 48),
+                    ],
                     AnatomyDiagram(
                       probePositionImg: widget.technique.landmarkImg,
                       expectedSonoImg: widget.technique.ultrasoundImg,
@@ -353,6 +381,118 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
         const SizedBox(height: 4),
         ...widget.technique.treats.map((item) => BulletPointItem(text: item)),
       ],
+    );
+  }
+
+  Widget _buildContraindicationsSection(BuildContext context, bool isDark) {
+    return _buildSafetyCard(
+      context: context,
+      isDark: isDark,
+      icon: Icons.warning_amber_rounded,
+      accentColor: AppTheme.surgicalRed,
+      label: 'CONTRAINDICATIONS',
+      items: widget.technique.contraindications,
+    );
+  }
+
+  Widget _buildPreChecklistSection(BuildContext context, bool isDark) {
+    return _buildSafetyCard(
+      context: context,
+      isDark: isDark,
+      icon: Icons.checklist_rounded,
+      accentColor: AppTheme.amber,
+      label: 'PRE-PROCEDURE TIMEOUT',
+      items: widget.technique.preChecklist,
+    );
+  }
+
+  Widget _buildPostProcedureSection(BuildContext context, bool isDark) {
+    return _buildSafetyCard(
+      context: context,
+      isDark: isDark,
+      icon: Icons.healing_rounded,
+      accentColor: AppTheme.vitalGreen,
+      label: 'POST-PROCEDURE COUNSELING',
+      items: widget.technique.postProcedure,
+    );
+  }
+
+  Widget _buildSafetyCard({
+    required BuildContext context,
+    required bool isDark,
+    required IconData icon,
+    required Color accentColor,
+    required String label,
+    required List<String> items,
+  }) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+        borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+        border: Border.all(
+          color: accentColor.withValues(alpha: 0.3),
+          width: 1,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  color: accentColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Icon(icon, color: accentColor, size: 16),
+              ),
+              const SizedBox(width: 12),
+              Text(
+                label,
+                style: GoogleFonts.jetBrainsMono(
+                  fontSize: 9,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.8,
+                  color: accentColor,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          ...items.map((item) => Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 7, right: 10),
+                      child: Container(
+                        width: 4,
+                        height: 4,
+                        decoration: BoxDecoration(
+                          color: accentColor.withValues(alpha: 0.6),
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        item,
+                        style: GoogleFonts.inter(
+                          fontSize: 13,
+                          height: 1.5,
+                          color: isDark ? AppTheme.textSecondary : AppTheme.textPrimaryLight,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+        ],
+      ),
     );
   }
 

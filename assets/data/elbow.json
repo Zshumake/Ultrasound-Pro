@@ -6,55 +6,72 @@
     "videoUrl": "https://www.youtube.com/watch?v=SBvRoFX9bGU",
     "anatomyModelId": "2ec88c6b414643bc86b0191d24b7f0cc",
     "anatomyModelTitle": "Elbow Joint — Bones & Ligaments",
-    "tags": [
-      "elbow",
-      "radiocapitellar",
-      "arthritis",
-      "synovitis"
-    ],
+    "tags": ["elbow", "radiocapitellar", "arthritis", "synovitis"],
     "treats": [
       "Elbow arthritis",
       "Lateral elbow joint pain",
       "Synovitis/effusion",
       "Diagnostic anesthetic"
     ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic joint (absolute — aspirate first)",
+      "Bacteremia (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan to identify and trace the radial nerve and PIN around the radial neck",
+      "Time-out immediately before needle entry"
+    ],
     "positioning": [
-      "Supine; elbow flexed 20–40°; hand on abdomen; small pillow under elbow"
+      "Supine; elbow flexed 20-40°; hand on abdomen; small pillow under elbow"
     ],
     "probe": [
-      "High‑frequency linear probe (6-13 MHz)"
+      "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
-      "Find lateral epicondyle → slide distally to radial head → tilt anteriorly to view capitellum → identify wedge‑shaped joint space"
+      "Find lateral epicondyle → slide distally to radial head → tilt anteriorly to view capitellum → identify wedge-shaped joint space"
     ],
     "correctImage": [
       "Clear radial head–capitellum interface with a thin dark joint space"
     ],
     "corridor": [
-      "Posterior → anterior path between triceps expansion/skin (above) and radial head/capitellum (below)"
+      "Preferred: in-plane lateral approach with the needle parallel to the probe long-axis, advancing into the joint cleft under continuous visualization."
     ],
     "avoid": [
-      "Variants (vessels/nerves) — scan first"
+      "Radial nerve and its posterior interosseous nerve (PIN) branch — the PIN wraps around the radial neck through the supinator (arcade of Frohse) immediately distal to the radiocapitellar joint. Identify and trace before needle entry.",
+      "Radial recurrent vessels"
     ],
     "steps": [
-      "Out‑of‑plane posterior entry; gentle walk‑down to joint; test inject; inject 2–4 mL"
+      "Preferred: in-plane lateral approach into the joint cleft. Out-of-plane walk-down is an alternative for clinicians comfortable with the technique.",
+      "Test inject; inject 2-3 mL total, stopping if capsular back-pressure is felt.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
     "tips": [
-      "Advance in small increments to avoid bone contact; if no expansion with test inject, adjust depth"
+      "Walk-down (when used) intentionally uses gentle periosteal contact on the capitellum to localize the joint cleft — this is different from advancing blindly through soft tissue. Never force against articular cartilage.",
+      "Pronate/supinate the forearm to confirm the radial head moves while the lateral epicondyle stays stationary.",
+      "Limit corticosteroid to ≤ 3 per joint per year.",
+      "If color Doppler shows a vessel directly in the planned path, abandon and re-plan."
     ],
     "pearls": [
       "Visual Orientation: Think of the joint as a “cleft” between two hills. The capitellum is the rounded hill, and the radial head is the flatter hill.",
-      "Use the “Walkdown” technique for this out-of-plane approach: touch the bone superficially first, then gently “walk” the needle tip down the slope into the joint.",
-      "Pronate/supinate the forearm to confirm the radial head moves while the lateral epicondyle stays stationary."
+      "Native radiocapitellar joint capacity is ~1-3 mL — total injectate ≤ 3 mL. Over-distension risks capsular rupture and steroid extravasation toward the PIN/radial nerve."
     ],
     "supplies": [
-      "5cc Syringe",
+      "5 mL Syringe",
       "22G or 25G 1.5\" Needle",
       "18G Drawing Needle",
-      "1% Lidocaine (2-4 mL)",
-      "1cc Kenalog (40mg/ml)",
+      "1% Lidocaine (1-2 mL)",
+      "Triamcinolone 20-40 mg OR Dexamethasone 4-10 mg",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
+      "Sterile Gloves",
       "Sterile 4x4 Gauze Pads",
       "Sterile Towels & Drapes",
       "Adhesive Bandage (Band-Aid)",
@@ -62,42 +79,23 @@
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
     ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in ~10% — manage with ice and acetaminophen.",
+      "Rest the elbow 24-48 hours.",
+      "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per joint per year."
+    ],
     "videoTimestamps": [
-      {
-        "label": "Patient Position",
-        "section": "positioning",
-        "seconds": 5
-      },
-      {
-        "label": "Probe Placement",
-        "section": "probe",
-        "seconds": 23
-      },
-      {
-        "label": "Finding the View",
-        "section": "landmarking",
-        "seconds": 42
-      },
-      {
-        "label": "US Image",
-        "section": "us_view",
-        "seconds": 72
-      },
-      {
-        "label": "Needle Corridor",
-        "section": "corridor",
-        "seconds": 105
-      },
-      {
-        "label": "Injection Steps",
-        "section": "steps",
-        "seconds": 119
-      },
-      {
-        "label": "Structures to Avoid",
-        "section": "avoid",
-        "seconds": 153
-      }
+      { "label": "Patient Position", "section": "positioning", "seconds": 5 },
+      { "label": "Probe Placement", "section": "probe", "seconds": 23 },
+      { "label": "Finding the View", "section": "landmarking", "seconds": 42 },
+      { "label": "US Image", "section": "us_view", "seconds": 72 },
+      { "label": "Needle Corridor", "section": "corridor", "seconds": 105 },
+      { "label": "Injection Steps", "section": "steps", "seconds": 119 },
+      { "label": "Structures to Avoid", "section": "avoid", "seconds": 153 }
     ]
   },
   {
@@ -107,22 +105,33 @@
     "videoUrl": "https://www.youtube.com/watch?v=JB0sXcILavE",
     "anatomyModelId": "6dd851d018f34892800b83ca418ccb52",
     "anatomyModelTitle": "Shoulder, Arm & Forearm Muscles (SGU)",
-    "tags": [
-      "elbow",
-      "tennis elbow",
-      "CET"
-    ],
+    "tags": ["elbow", "tennis elbow", "cet"],
     "treats": [
       "Lateral epicondylitis with tendon surface pain or degeneration"
     ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)",
+      "High-grade tendon tear (relative — favor regenerative injectate over steroid)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan to map radial nerve and radial recurrent artery",
+      "Time-out immediately before needle entry"
+    ],
     "positioning": [
-      "Supine; elbow 20–40° flexed; hand on abdomen"
+      "Supine; elbow 20-40° flexed; hand on abdomen"
     ],
     "probe": [
-      "High‑frequency linear probe (6-13 MHz)"
+      "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
-      "Visual Cue: The “Fibrillar Footprint”—Identify the bright, organized fibers of the CET attaching to the lateral epicondyle.",
+      "Visual Cue: The “Fibrillar Footprint” — Identify the bright, organized fibers of the CET attaching to the lateral epicondyle.",
       "Slide the probe slightly anteriorly to identify the landmark bony contour of the radial head.",
       "Check for any hypoechoic “tears” or calcifications within the footprint.",
       "Map the radial nerve and the radial recurrent artery before choosing your needle path."
@@ -131,7 +140,7 @@
       "Crisp fibrillar tendon superficial to thin bright ligament band"
     ],
     "corridor": [
-      "Distal → proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous"
+      "Distal → proximal path between skin/fat (above) and tendon surface (below) for peritendinous steroid"
     ],
     "avoid": [
       "Radial nerve",
@@ -139,23 +148,28 @@
       "Intratendinous steroid"
     ],
     "steps": [
-      "In‑plane distal → proximal; position superficial to tendon; inject small aliquots along footprint"
+      "Peritendinous steroid: deposit aliquots in the plane BETWEEN the fascial/fat layer and the tendon surface — NOT within the fibrillar tendon itself.",
+      "For regenerative injectates (PRP, percutaneous tenotomy), target intratendinous diseased zones — this is a different technique and not for steroid.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
     "tips": [
-      "For regenerative injectates, target intratendinous diseased zones; avoid steroid in fibers"
+      "Limit corticosteroid to ≤ 3 per site per year — and consider non-steroid alternatives first (see pearls).",
+      "If color Doppler shows the radial recurrent artery in the planned path, abandon and re-plan."
     ],
     "pearls": [
-      "The radial collateral ligament is deep—forming the deep 30–50% of this region.",
+      "Corticosteroid for tendinopathy provides short-term relief but is associated with WORSE long-term outcomes in published RCTs (Coombes BK et al. JAMA 2013;309:461). Consider PRP, percutaneous tenotomy, or peritendinous saline as alternatives. If steroid is used, single low-dose injection only.",
+      "The radial collateral ligament is deep — forming the deep 30-50% of this region.",
       "Avoid placing corticosteroid directly into the tendon fibers to prevent future rupture."
     ],
     "supplies": [
-      "3cc Syringe",
+      "3 mL Syringe",
       "25G or 27G 1\" Needle",
       "18G Drawing Needle",
       "1% Lidocaine (1-2 mL)",
-      "1cc Kenalog (40mg/ml)",
+      "Triamcinolone 20 mg OR Dexamethasone 4 mg (single low-dose, peritendinous only)",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
+      "Sterile Gloves",
       "Sterile 4x4 Gauze Pads",
       "Sterile Towels & Drapes",
       "Adhesive Bandage (Band-Aid)",
@@ -163,42 +177,23 @@
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
     ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in ~10% — manage with ice and acetaminophen.",
+      "Rest the forearm 24-48 hours; avoid heavy gripping for 1 week.",
+      "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 1-2 steroid injections at this site lifetime — recurrent dosing worsens outcomes."
+    ],
     "videoTimestamps": [
-      {
-        "label": "Patient Position",
-        "section": "positioning",
-        "seconds": 7
-      },
-      {
-        "label": "Probe Placement",
-        "section": "probe",
-        "seconds": 29
-      },
-      {
-        "label": "Finding the View",
-        "section": "landmarking",
-        "seconds": 54
-      },
-      {
-        "label": "US Image",
-        "section": "us_view",
-        "seconds": 94
-      },
-      {
-        "label": "Needle Corridor",
-        "section": "corridor",
-        "seconds": 136
-      },
-      {
-        "label": "Injection Steps",
-        "section": "steps",
-        "seconds": 154
-      },
-      {
-        "label": "Structures to Avoid",
-        "section": "avoid",
-        "seconds": 199
-      }
+      { "label": "Patient Position", "section": "positioning", "seconds": 7 },
+      { "label": "Probe Placement", "section": "probe", "seconds": 29 },
+      { "label": "Finding the View", "section": "landmarking", "seconds": 54 },
+      { "label": "US Image", "section": "us_view", "seconds": 94 },
+      { "label": "Needle Corridor", "section": "corridor", "seconds": 136 },
+      { "label": "Injection Steps", "section": "steps", "seconds": 154 },
+      { "label": "Structures to Avoid", "section": "avoid", "seconds": 199 }
     ]
   },
   {
@@ -208,55 +203,73 @@
     "videoUrl": "https://www.youtube.com/watch?v=GTye33TzKkY",
     "anatomyModelId": "6dd851d018f34892800b83ca418ccb52",
     "anatomyModelTitle": "Shoulder, Arm & Forearm Muscles (SGU)",
-    "tags": [
-      "elbow",
-      "golfer elbow",
-      "CFET"
-    ],
+    "tags": ["elbow", "golfer elbow", "cfet"],
     "treats": [
       "Medial epicondylitis with pain at flexor origin"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)",
+      "High-grade tendon tear (relative)",
+      "Pre-existing ulnar neuropathy (relative — review approach with attending)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "REQUIRED: have the patient slowly flex/extend the elbow under live US to check for ulnar nerve subluxation",
+      "Pre-scan orientation: identify median nerve and brachial artery anteriorly (not in path but useful orientation)",
+      "Time-out immediately before needle entry"
     ],
     "positioning": [
       "Supine; arm slightly abducted/external rotation; elbow ~20°; forearm supinated"
     ],
     "probe": [
-      "High‑frequency linear probe (6-13 MHz)"
+      "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
-      "Visual Cue: The “Ulnar Nerve Notch”—Identify the medial epicondyle and the bony groove behind it.",
-      "Maneuver: Have the patient slowly flex/extend the elbow to check for ulnar nerve subluxation.",
+      "Visual Cue: The “Ulnar Nerve Notch” — Identify the medial epicondyle and the bony groove behind it.",
+      "REQUIRED MANEUVER: Have the patient slowly flex/extend the elbow to check for ulnar nerve subluxation. If the nerve subluxes anteriorly over the medial epicondyle, abandon any approach that crosses the epicondylar groove and re-plan with the nerve in its subluxed position.",
       "Identify the fibrillar common flexor tendon attaching to the epicondyle.",
-      "Identify and map the median nerve and brachial artery anteriorly."
+      "Pre-scan orientation: locate median nerve and brachial artery anteriorly (1.5-3 cm anteromedial — useful orientation but not in path)."
     ],
     "correctImage": [
       "Fibrillar tendon superficial to trochlea/ulna; ulnar nerve identified posterior to epicondyle"
     ],
     "corridor": [
-      "Distal → proximal path between skin/fat (above) and tendon surface (below) for steroid/peritendinous"
+      "Distal → proximal path between skin/fat (above) and tendon surface (below) for peritendinous steroid"
     ],
     "avoid": [
-      "Ulnar nerve (may sublux anteriorly)",
-      "Median nerve",
-      "Brachial artery"
+      "Ulnar nerve (may sublux anteriorly — re-confirm position immediately pre-entry)",
+      "Medial antebrachial cutaneous nerve (superficial)"
     ],
     "steps": [
-      "In‑plane distal → proximal to tendon surface; inject small aliquots to form peritendinous halo"
+      "In-plane distal → proximal to tendon surface; inject small aliquots to form peritendinous halo.",
+      "Stay peritendinous — do not push steroid into the tendon fibers.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
     "tips": [
-      "If approaching proximal → distal, re‑confirm ulnar nerve immediately pre‑entry"
+      "If approaching proximal → distal, re-confirm ulnar nerve immediately pre-entry.",
+      "Limit corticosteroid to ≤ 1-2 per site lifetime — tendinopathy outcomes worsen with repeat steroid.",
+      "If color Doppler shows a vessel in the planned path, abandon and re-plan."
     ],
     "pearls": [
-      "The ulnar nerve is often posterior to the medial epicondyle but can sublux over the top—always locate it first.",
-      "Identify the median nerve and brachial artery during pre-procedure scanning to ensure clear path."
+      "The ulnar nerve is often posterior to the medial epicondyle but can sublux over the top — always locate it first and re-check with elbow flexion.",
+      "Approximately 16% of the population has a subluxing ulnar nerve — a subluxing nerve is a contraindication to a posterior-to-anterior approach without re-mapping in the flexed position.",
+      "Like CET, corticosteroid for medial epicondylitis offers short-term relief but worse long-term outcomes — consider PRP or non-injection options first."
     ],
     "supplies": [
-      "3cc Syringe",
-      "25G or 27G 1\" Needle",
+      "3 mL Syringe",
+      "25G 1.5\" Needle (default; 1\" only if pre-scan depth < 1.5 cm)",
       "18G Drawing Needle",
       "1% Lidocaine (1-2 mL)",
-      "1cc Kenalog (40mg/ml)",
+      "Triamcinolone 20 mg OR Dexamethasone 4 mg (single low-dose, peritendinous only)",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
+      "Sterile Gloves",
       "Sterile 4x4 Gauze Pads",
       "Sterile Towels & Drapes",
       "Adhesive Bandage (Band-Aid)",
@@ -264,42 +277,23 @@
       "Needle Disposal Safety Cap",
       "Sterile probe cover & gel"
     ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in ~10% — manage with ice and acetaminophen.",
+      "Rest the forearm 24-48 hours; avoid heavy gripping for 1 week.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, or new ulnar nerve symptoms (pinky/ring finger numbness or weakness).",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 1-2 steroid injections at this site lifetime."
+    ],
     "videoTimestamps": [
-      {
-        "label": "Patient Position",
-        "section": "positioning",
-        "seconds": 9
-      },
-      {
-        "label": "Probe Placement",
-        "section": "probe",
-        "seconds": 38
-      },
-      {
-        "label": "Finding the View",
-        "section": "landmarking",
-        "seconds": 69
-      },
-      {
-        "label": "US Image",
-        "section": "us_view",
-        "seconds": 120
-      },
-      {
-        "label": "Needle Corridor",
-        "section": "corridor",
-        "seconds": 174
-      },
-      {
-        "label": "Injection Steps",
-        "section": "steps",
-        "seconds": 196
-      },
-      {
-        "label": "Structures to Avoid",
-        "section": "avoid",
-        "seconds": 253
-      }
+      { "label": "Patient Position", "section": "positioning", "seconds": 9 },
+      { "label": "Probe Placement", "section": "probe", "seconds": 38 },
+      { "label": "Finding the View", "section": "landmarking", "seconds": 69 },
+      { "label": "US Image", "section": "us_view", "seconds": 120 },
+      { "label": "Needle Corridor", "section": "corridor", "seconds": 174 },
+      { "label": "Injection Steps", "section": "steps", "seconds": 196 },
+      { "label": "Structures to Avoid", "section": "avoid", "seconds": 253 }
     ]
   }
 ]
