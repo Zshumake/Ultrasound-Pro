@@ -147,17 +147,10 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // === STUDY SECTION (top) ===
+                    // Flow: Indications → Setup → Landmarking → US View →
+                    //       Anatomy/Placement/Gallery → Needle Procedure → Pearls → Video
                     _buildIntroSection(context, catColor, isDark),
-                    const SizedBox(height: 48),
-                    if (widget.technique.contraindications.isNotEmpty) ...[
-                      _buildContraindicationsSection(context, isDark),
-                      const SizedBox(height: 48),
-                    ],
-                    if (widget.technique.preChecklist.isNotEmpty) ...[
-                      _buildPreChecklistSection(context, isDark),
-                      const SizedBox(height: 48),
-                    ],
-                    _buildSupplySection(context, isDark),
                     const SizedBox(height: 48),
                     _buildVisualSetupGrid(context),
                     const SizedBox(height: 24),
@@ -165,14 +158,7 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                     const SizedBox(height: 48),
                     _buildUSViewSection(context),
                     const SizedBox(height: 48),
-                    _buildProcedureSection(context),
-                    const SizedBox(height: 48),
-                    ResidentPearlsCard(pearls: widget.technique.pearls),
-                    const SizedBox(height: 48),
-                    if (widget.technique.postProcedure.isNotEmpty) ...[
-                      _buildPostProcedureSection(context, isDark),
-                      const SizedBox(height: 48),
-                    ],
+                    // Anatomy & placement visuals — study these BEFORE needle insertion
                     if (widget.technique.anatomicalPlacement != null) ...[
                       const MedicalSectionHeader(title: 'ANATOMICAL PLACEMENT'),
                       const SizedBox(height: 16),
@@ -208,9 +194,42 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                         accentColor: catColor,
                       ),
                     ],
+                    const SizedBox(height: 48),
+                    // Needle insertion — comes after US views and anatomy
+                    _buildProcedureSection(context),
+                    const SizedBox(height: 48),
+                    ResidentPearlsCard(pearls: widget.technique.pearls),
                     if (widget.technique.videoUrl != null) ...[
                       const SizedBox(height: 48),
                       _buildVideoSection(context, catColor, isDark),
+                    ],
+                    // === PROCEDURE PREP SECTION (bottom) ===
+                    const SizedBox(height: 64),
+                    Divider(color: isDark ? AppTheme.borderDark : AppTheme.borderLight),
+                    const SizedBox(height: 16),
+                    Text(
+                      'PROCEDURE PREPARATION',
+                      style: GoogleFonts.jetBrainsMono(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 2,
+                        color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
+                      ),
+                    ),
+                    const SizedBox(height: 32),
+                    if (widget.technique.contraindications.isNotEmpty) ...[
+                      _buildContraindicationsSection(context, isDark),
+                      const SizedBox(height: 32),
+                    ],
+                    if (widget.technique.preChecklist.isNotEmpty) ...[
+                      _buildPreChecklistSection(context, isDark),
+                      const SizedBox(height: 32),
+                    ],
+                    _buildSupplySection(context, isDark),
+                    const SizedBox(height: 32),
+                    if (widget.technique.postProcedure.isNotEmpty) ...[
+                      _buildPostProcedureSection(context, isDark),
+                      const SizedBox(height: 32),
                     ],
                     const SizedBox(height: 100),
                   ],

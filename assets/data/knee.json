@@ -13,7 +13,7 @@
       { "label": "Avoid", "section": "avoid", "seconds": 135 }
     ],
     "anatomicalPlacement": {
-      "baseSvgName": "full_body_anterior_clean",
+      "baseSvgName": "bodyFemaleFront",
       "focusRegion": [300, 600, 400, 300],
       "steps": [
         {
