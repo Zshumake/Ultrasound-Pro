@@ -8,7 +8,6 @@ import '../widgets/resident_pearls_card.dart';
 import '../widgets/youtube_player.dart';
 import '../widgets/sketchfab_viewer.dart';
 import '../widgets/us_image_gallery.dart';
-import '../widgets/anatomy_diagram.dart';
 import '../widgets/procedure_mode_view.dart';
 import '../widgets/interactive_anatomical_view.dart';
 import '../theme/app_theme.dart';
@@ -174,13 +173,6 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                       ),
                       const SizedBox(height: 48),
                     ],
-                    AnatomyDiagram(
-                      probePositionImg: widget.technique.landmarkImg,
-                      expectedSonoImg: widget.technique.ultrasoundImg,
-                      accentColor: catColor,
-                      procedureTitle: widget.technique.title,
-                    ),
-                    const SizedBox(height: 32),
                     USImageGallery(
                       imagePaths: widget.technique.usGalleryImages,
                       imageLabels: widget.technique.usGalleryLabels,
