@@ -325,6 +325,11 @@ class _DashboardPageState extends State<DashboardPage> {
                   ],
                 ),
               ),
+              // Introduction to Ultrasound entry card — prominent above the grid.
+              Padding(
+                padding: const EdgeInsets.only(bottom: 16),
+                child: _UsIntroEntryCard(isDark: isDark),
+              ),
               // Grid
               GridView.builder(
                 shrinkWrap: true,
@@ -483,5 +488,129 @@ class _DashboardPageState extends State<DashboardPage> {
       case 'recent': return const Color(0xFF7B61FF);
       default: return AppTheme.categoryColor(_selectedCategory);
     }
+  }
+}
+
+/// Prominent entry card that links to the Introduction to Ultrasound primer.
+class _UsIntroEntryCard extends StatelessWidget {
+  final bool isDark;
+  const _UsIntroEntryCard({required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
+    final textSecondary =
+        isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight;
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(AppTheme.radiusLg),
+        onTap: () => context.go('/us-intro'),
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.fromLTRB(24, 28, 24, 24),
+          decoration: BoxDecoration(
+            color: AppTheme.cyan.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.circular(AppTheme.radiusLg),
+            border: Border.all(
+              color: AppTheme.cyan.withValues(alpha: 0.30),
+              width: 1.5,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Prerequisite badge
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                decoration: BoxDecoration(
+                  color: AppTheme.amber.withValues(alpha: 0.10),
+                  borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+                  border: Border.all(
+                    color: AppTheme.amber.withValues(alpha: 0.35),
+                    width: 1,
+                  ),
+                ),
+                child: Text(
+                  'REVIEW BEFORE INJECTIONS',
+                  style: GoogleFonts.jetBrainsMono(
+                    color: AppTheme.amber,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 9,
+                    letterSpacing: 2.0,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 18),
+              // Main title
+              Text(
+                'ULTRASOUND BASICS',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.jetBrainsMono(
+                  color:
+                      isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 24,
+                  letterSpacing: 2.5,
+                ),
+              ),
+              const SizedBox(height: 14),
+              // Body description
+              Text(
+                'Complete this primer before reviewing any injection procedure. '
+                'Covers probe selection, machine settings, tissue appearance, '
+                'artifacts, needle technique, viewing planes, probe movements, '
+                'safety protocols, and injectates.',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.inter(
+                  fontSize: 13.5,
+                  height: 1.6,
+                  color: textSecondary,
+                ),
+              ),
+              const SizedBox(height: 20),
+              // Footer row: section count + CTA
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '9 SECTIONS',
+                    style: GoogleFonts.jetBrainsMono(
+                      color: AppTheme.cyan,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 10,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Container(
+                    width: 1,
+                    height: 12,
+                    color: AppTheme.cyan.withValues(alpha: 0.30),
+                  ),
+                  const SizedBox(width: 12),
+                  Text(
+                    'START HERE',
+                    style: GoogleFonts.jetBrainsMono(
+                      color: AppTheme.cyan,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 10,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Icon(
+                    Icons.arrow_forward_rounded,
+                    color: AppTheme.cyan,
+                    size: 16,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
