@@ -330,8 +330,9 @@ class _DashboardPageState extends State<DashboardPage> {
                 padding: const EdgeInsets.only(bottom: 16),
                 child: _UsIntroEntryCard(isDark: isDark),
               ),
-              // Grid
+              // Grid — ValueKey forces re-stagger when category changes
               GridView.builder(
+                key: ValueKey(_selectedCategory),
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -459,20 +460,49 @@ class _DashboardPageState extends State<DashboardPage> {
                   ),
                 ),
               ),
-              // Keyboard shortcut hint
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                decoration: BoxDecoration(
-                  color: isDark ? AppTheme.borderDark : AppTheme.borderLight,
-                  borderRadius: BorderRadius.circular(4),
+              // Keyboard shortcut hint / animated clear button
+              AnimatedSwitcher(
+                duration: const Duration(milliseconds: 160),
+                transitionBuilder: (child, anim) => FadeTransition(
+                  opacity: anim,
+                  child: ScaleTransition(scale: anim, child: child),
                 ),
-                child: Text(
-                  '/',
-                  style: GoogleFonts.jetBrainsMono(
-                    fontSize: 11,
-                    color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
-                  ),
-                ),
+                child: _searchQuery.isEmpty
+                    ? Container(
+                        key: const ValueKey('slash'),
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: isDark ? AppTheme.borderDark : AppTheme.borderLight,
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          '/',
+                          style: GoogleFonts.jetBrainsMono(
+                            fontSize: 11,
+                            color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
+                          ),
+                        ),
+                      )
+                    : SizedBox(
+                        key: const ValueKey('clear'),
+                        width: 28,
+                        height: 28,
+                        child: IconButton(
+                          padding: EdgeInsets.zero,
+                          constraints: const BoxConstraints(minWidth: 28, minHeight: 28),
+                          icon: Icon(
+                            Icons.close_rounded,
+                            size: 14,
+                            color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
+                          ),
+                          tooltip: 'Clear search',
+                          onPressed: () => setState(() {
+                            _searchQuery = '';
+                            _searchController.clear();
+                            _selectedIndex = -1;
+                          }),
+                        ),
+                      ),
               ),
             ],
           ),
@@ -492,122 +522,165 @@ class _DashboardPageState extends State<DashboardPage> {
 }
 
 /// Prominent entry card that links to the Introduction to Ultrasound primer.
-class _UsIntroEntryCard extends StatelessWidget {
+class _UsIntroEntryCard extends StatefulWidget {
   final bool isDark;
   const _UsIntroEntryCard({required this.isDark});
 
   @override
+  State<_UsIntroEntryCard> createState() => _UsIntroEntryCardState();
+}
+
+class _UsIntroEntryCardState extends State<_UsIntroEntryCard> {
+  bool _isHovered = false;
+
+  @override
   Widget build(BuildContext context) {
+    final isDark = widget.isDark;
+    final reduceMotion = MediaQuery.of(context).disableAnimations;
     final textSecondary =
         isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight;
 
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(AppTheme.radiusLg),
-        onTap: () => context.go('/us-intro'),
-        child: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.fromLTRB(24, 28, 24, 24),
-          decoration: BoxDecoration(
-            color: AppTheme.cyan.withValues(alpha: 0.05),
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: reduceMotion ? Duration.zero : const Duration(milliseconds: 200),
+        curve: Curves.easeOut,
+        transform: _isHovered && !reduceMotion
+            // ignore: deprecated_member_use
+            ? (Matrix4.identity()..translate(0.0, -2.0))
+            : Matrix4.identity(),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
             borderRadius: BorderRadius.circular(AppTheme.radiusLg),
-            border: Border.all(
-              color: AppTheme.cyan.withValues(alpha: 0.30),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // Prerequisite badge
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                decoration: BoxDecoration(
-                  color: AppTheme.amber.withValues(alpha: 0.10),
-                  borderRadius: BorderRadius.circular(AppTheme.radiusSm),
-                  border: Border.all(
-                    color: AppTheme.amber.withValues(alpha: 0.35),
-                    width: 1,
-                  ),
+            onTap: () => context.go('/us-intro'),
+            hoverColor: Colors.transparent,
+            child: AnimatedContainer(
+              duration: reduceMotion ? Duration.zero : const Duration(milliseconds: 200),
+              curve: Curves.easeOut,
+              width: double.infinity,
+              padding: const EdgeInsets.fromLTRB(24, 28, 24, 24),
+              decoration: BoxDecoration(
+                color: AppTheme.cyan.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(AppTheme.radiusLg),
+                border: Border.all(
+                  color: AppTheme.cyan.withValues(alpha: _isHovered ? 0.55 : 0.30),
+                  width: 1.5,
                 ),
-                child: Text(
-                  'REVIEW BEFORE INJECTIONS',
-                  style: GoogleFonts.jetBrainsMono(
-                    color: AppTheme.amber,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 9,
-                    letterSpacing: 2.0,
-                  ),
-                ),
+                boxShadow: _isHovered
+                    ? [
+                        BoxShadow(
+                          color: AppTheme.cyan.withValues(alpha: 0.12),
+                          blurRadius: 24,
+                          offset: const Offset(0, 6),
+                        ),
+                      ]
+                    : [],
               ),
-              const SizedBox(height: 18),
-              // Main title
-              Text(
-                'ULTRASOUND BASICS',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.jetBrainsMono(
-                  color:
-                      isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 24,
-                  letterSpacing: 2.5,
-                ),
-              ),
-              const SizedBox(height: 14),
-              // Body description
-              Text(
-                'Complete this primer before reviewing any injection procedure. '
-                'Covers probe selection, machine settings, tissue appearance, '
-                'artifacts, needle technique, viewing planes, probe movements, '
-                'safety protocols, and injectates.',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
-                  fontSize: 13.5,
-                  height: 1.6,
-                  color: textSecondary,
-                ),
-              ),
-              const SizedBox(height: 20),
-              // Footer row: section count + CTA
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    '9 SECTIONS',
-                    style: GoogleFonts.jetBrainsMono(
-                      color: AppTheme.cyan,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 10,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  const SizedBox(width: 12),
+                  // Prerequisite badge
                   Container(
-                    width: 1,
-                    height: 12,
-                    color: AppTheme.cyan.withValues(alpha: 0.30),
-                  ),
-                  const SizedBox(width: 12),
-                  Text(
-                    'START HERE',
-                    style: GoogleFonts.jetBrainsMono(
-                      color: AppTheme.cyan,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 10,
-                      letterSpacing: 1.5,
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: AppTheme.amber.withValues(alpha: 0.10),
+                      borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+                      border: Border.all(
+                        color: AppTheme.amber.withValues(alpha: 0.35),
+                        width: 1,
+                      ),
+                    ),
+                    child: Text(
+                      'REVIEW BEFORE INJECTIONS',
+                      style: GoogleFonts.jetBrainsMono(
+                        color: AppTheme.amber,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 9,
+                        letterSpacing: 2.0,
+                      ),
                     ),
                   ),
-                  const SizedBox(width: 6),
-                  Icon(
-                    Icons.arrow_forward_rounded,
-                    color: AppTheme.cyan,
-                    size: 16,
+                  const SizedBox(height: 18),
+                  // Main title
+                  Text(
+                    'ULTRASOUND BASICS',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.jetBrainsMono(
+                      color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 24,
+                      letterSpacing: 2.5,
+                    ),
+                  ),
+                  const SizedBox(height: 14),
+                  // Body description
+                  Text(
+                    'Complete this primer before reviewing any injection procedure. '
+                    'Covers probe selection, machine settings, tissue appearance, '
+                    'artifacts, needle technique, viewing planes, probe movements, '
+                    'safety protocols, and injectates.',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.inter(
+                      fontSize: 13.5,
+                      height: 1.6,
+                      color: textSecondary,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  // Footer row: section count + CTA
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '9 SECTIONS',
+                        style: GoogleFonts.jetBrainsMono(
+                          color: AppTheme.cyan,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 10,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Container(
+                        width: 1,
+                        height: 12,
+                        color: AppTheme.cyan.withValues(alpha: 0.30),
+                      ),
+                      const SizedBox(width: 12),
+                      Text(
+                        'START HERE',
+                        style: GoogleFonts.jetBrainsMono(
+                          color: AppTheme.cyan,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 10,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      // Arrow nudges right on hover
+                      AnimatedContainer(
+                        duration: reduceMotion
+                            ? Duration.zero
+                            : const Duration(milliseconds: 200),
+                        curve: Curves.easeOut,
+                        transform: _isHovered && !reduceMotion
+                            // ignore: deprecated_member_use
+                            ? (Matrix4.identity()..translate(4.0, 0.0))
+                            : Matrix4.identity(),
+                        child: const Icon(
+                          Icons.arrow_forward_rounded,
+                          color: AppTheme.cyan,
+                          size: 16,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
+            ),
           ),
         ),
       ),

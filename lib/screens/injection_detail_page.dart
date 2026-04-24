@@ -31,6 +31,9 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
   late final Animation<double> _fadeIn;
   final _videoSectionKey = GlobalKey();
   final _playerKey = GlobalKey<YouTubePlayerState>();
+  final ScrollController _scrollController = ScrollController();
+  double _scrollProgress = 0.0;
+  bool _showScrollToTop = false;
 
   @override
   void initState() {
@@ -40,6 +43,7 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
       vsync: this,
     );
     _fadeIn = CurvedAnimation(parent: _entryController, curve: Curves.easeOut);
+    _scrollController.addListener(_onScroll);
 
     _loadProcedureModePref();
 
@@ -62,14 +66,35 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
 
   Future<void> _toggleProcedureMode() async {
     final newValue = !_isProcedureMode;
-    setState(() => _isProcedureMode = newValue);
+    setState(() {
+      _isProcedureMode = newValue;
+      _scrollProgress = 0.0;
+      _showScrollToTop = false;
+    });
+    // Jump to top after the new scroll view is mounted.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) _scrollController.jumpTo(0);
+    });
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('procedure_mode', newValue);
+  }
+
+  void _onScroll() {
+    if (!_scrollController.hasClients) return;
+    final pos = _scrollController.position;
+    final offset = _scrollController.offset.clamp(0.0, double.infinity);
+    final max = pos.maxScrollExtent;
+    setState(() {
+      _scrollProgress = max > 0 ? (offset / max).clamp(0.0, 1.0) : 0.0;
+      _showScrollToTop = offset > 400;
+    });
   }
 
   @override
   void dispose() {
     _entryController.dispose();
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -85,7 +110,29 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
       body: _isProcedureMode
           ? _buildProcedureModeScaffold(context, isFav, favManager, catColor, isDark)
           : _buildStudyModeScaffold(context, isFav, favManager, catColor, isDark),
-      floatingActionButton: _buildModeToggleFab(isDark),
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          if (_showScrollToTop) ...[
+            FloatingActionButton.small(
+              heroTag: 'scroll_to_top',
+              onPressed: () => _scrollController.animateTo(
+                0,
+                duration: const Duration(milliseconds: 400),
+                curve: Curves.easeOut,
+              ),
+              backgroundColor: isDark ? AppTheme.surfaceElevated : Colors.white,
+              foregroundColor: catColor,
+              elevation: 2,
+              tooltip: 'Back to top',
+              child: const Icon(Icons.keyboard_arrow_up_rounded, size: 20),
+            ),
+            const SizedBox(height: 8),
+          ],
+          _buildModeToggleFab(isDark),
+        ],
+      ),
     );
   }
 
@@ -117,8 +164,13 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
 
   Widget _buildProcedureModeScaffold(BuildContext context, bool isFav, FavoritesManager favManager, Color catColor, bool isDark) {
     return CustomScrollView(
+      controller: _scrollController,
       slivers: [
         _buildSliverAppBar(context, isFav, favManager, catColor, isDark),
+        SliverPersistentHeader(
+          pinned: true,
+          delegate: _ProgressDelegate(progress: _scrollProgress, color: catColor),
+        ),
         SliverFillRemaining(
           hasScrollBody: true,
           child: ProcedureModeView(
@@ -133,8 +185,13 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
 
   Widget _buildStudyModeScaffold(BuildContext context, bool isFav, FavoritesManager favManager, Color catColor, bool isDark) {
     return CustomScrollView(
+      controller: _scrollController,
       slivers: [
         _buildSliverAppBar(context, isFav, favManager, catColor, isDark),
+        SliverPersistentHeader(
+          pinned: true,
+          delegate: _ProgressDelegate(progress: _scrollProgress, color: catColor),
+        ),
         SliverToBoxAdapter(
           child: FadeTransition(
             opacity: _fadeIn,
@@ -986,4 +1043,36 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
       ),
     );
   }
+}
+
+/// Thin reading-progress bar that sits pinned just below the SliverAppBar.
+class _ProgressDelegate extends SliverPersistentHeaderDelegate {
+  final double progress;
+  final Color color;
+
+  const _ProgressDelegate({required this.progress, required this.color});
+
+  @override
+  double get minExtent => 2.0;
+
+  @override
+  double get maxExtent => 2.0;
+
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    return LinearProgressIndicator(
+      value: progress,
+      backgroundColor: Colors.transparent,
+      valueColor: AlwaysStoppedAnimation<Color>(color.withValues(alpha: 0.55)),
+      minHeight: 2.0,
+    );
+  }
+
+  @override
+  bool shouldRebuild(_ProgressDelegate old) =>
+      old.progress != progress || old.color != color;
 }

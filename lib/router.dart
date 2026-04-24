@@ -6,35 +6,61 @@ import 'screens/dashboard_page.dart';
 import 'screens/injection_detail_page.dart';
 import 'screens/us_intro_page.dart';
 
+/// Shared fade page transition used on all routes.
+CustomTransitionPage<void> _fadePage(GoRouterState state, Widget child) =>
+    CustomTransitionPage<void>(
+      key: state.pageKey,
+      child: child,
+      transitionDuration: const Duration(milliseconds: 220),
+      reverseTransitionDuration: const Duration(milliseconds: 180),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+          FadeTransition(
+        opacity: CurveTween(curve: Curves.easeOut).animate(animation),
+        child: child,
+      ),
+    );
+
 final router = GoRouter(
+  errorBuilder: (context, state) => Scaffold(
+    body: Center(
+      child: Text('Page not found: ${state.uri}'),
+    ),
+  ),
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const DashboardPage(),
+      pageBuilder: (context, state) =>
+          _fadePage(state, const DashboardPage()),
     ),
     GoRoute(
       path: '/category/:name',
-      builder: (context, state) {
+      pageBuilder: (context, state) {
         final name = state.pathParameters['name'] ?? 'All';
-        return DashboardPage(initialCategory: name);
+        return _fadePage(state, DashboardPage(initialCategory: name));
       },
     ),
     GoRoute(
       path: '/us-intro',
-      builder: (context, state) => const UsIntroPage(),
+      pageBuilder: (context, state) =>
+          _fadePage(state, const UsIntroPage()),
     ),
     GoRoute(
       path: '/procedure/:id',
-      builder: (context, state) {
+      pageBuilder: (context, state) {
         final id = state.pathParameters['id'] ?? '';
         final provider = context.read<InjectionDataProvider>();
         final technique = provider.findById(id);
         if (technique == null) {
-          return const Scaffold(
-            body: Center(child: Text('Procedure not found')),
+          return _fadePage(
+            state,
+            Scaffold(
+              body: Center(
+                child: Text('Procedure not found: $id'),
+              ),
+            ),
           );
         }
-        return InjectionDetailPage(technique: technique);
+        return _fadePage(state, InjectionDetailPage(technique: technique));
       },
     ),
   ],
