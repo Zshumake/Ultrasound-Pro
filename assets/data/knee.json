@@ -165,6 +165,7 @@
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
       "Maximum 3 injections per joint per year."
     ],
-    "positioningImg": "assets/images/positions/Supine knee flexed 30 degrees.png"
+    "positioningImg": "assets/images/positions/Supine knee flexed 30 degrees.png",
+    "probeImg": "assets/images/probes/Linear.png"
   }
 ]

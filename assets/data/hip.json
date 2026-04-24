@@ -136,7 +136,8 @@
         "seconds": 224
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png"
+    "positioningImg": "assets/images/positions/Lying Supine.png",
+    "probeImg": "assets/images/probes/Curvelinear.png"
   },
   {
     "id": "hip-gtb",
@@ -270,7 +271,8 @@
         "seconds": 160
       }
     ],
-    "positioningImg": "assets/images/positions/Patient lying on side.png"
+    "positioningImg": "assets/images/positions/Patient lying on side.png",
+    "probeImg": "assets/images/probes/Linear.png"
   },
   {
     "id": "hip-piriformis",
@@ -410,7 +412,8 @@
         "section": "avoid",
         "seconds": 216
       }
-    ]
+    ],
+    "probeImg": "assets/images/probes/Curvelinear.png"
   },
   {
     "id": "si-joint",
@@ -543,7 +546,8 @@
         "section": "avoid",
         "seconds": 293
       }
-    ]
+    ],
+    "probeImg": "assets/images/probes/Curvelinear.png"
   },
   {
     "id": "hip-hamstring-proximal",
@@ -677,6 +681,7 @@
         "section": "avoid",
         "seconds": 91
       }
-    ]
+    ],
+    "probeImg": "assets/images/probes/Curvelinear.png"
   }
 ]

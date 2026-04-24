@@ -133,7 +133,8 @@
         "seconds": 166
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png"
+    "positioningImg": "assets/images/positions/Lying Supine.png",
+    "probeImg": "assets/images/probes/Linear.png"
   },
   {
     "id": "ankle-peroneal",
@@ -266,7 +267,8 @@
         "seconds": 133
       }
     ],
-    "positioningImg": "assets/images/positions/Patient lying on side.png"
+    "positioningImg": "assets/images/positions/Patient lying on side.png",
+    "probeImg": "assets/images/probes/Narrow.png"
   },
   {
     "id": "foot-plantar",
@@ -401,7 +403,8 @@
         "seconds": 124
       }
     ],
-    "positioningImg": "assets/images/positions/Patient lying on side.png"
+    "positioningImg": "assets/images/positions/Patient lying on side.png",
+    "probeImg": "assets/images/probes/Linear.png"
   },
   {
     "id": "foot-mortons-neuroma",
@@ -537,6 +540,7 @@
         "seconds": 141
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png"
+    "positioningImg": "assets/images/positions/Lying Supine.png",
+    "probeImg": "assets/images/probes/Linear.png"
   }
 ]

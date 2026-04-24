@@ -130,7 +130,8 @@
         "seconds": 153
       }
     ],
-    "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).png"
+    "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).png",
+    "probeImg": "assets/images/probes/Linear.png"
   },
   {
     "id": "elbow-cet",
@@ -261,7 +262,8 @@
         "seconds": 199
       }
     ],
-    "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).png"
+    "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).png",
+    "probeImg": "assets/images/probes/Linear.png"
   },
   {
     "id": "elbow-cfet",
@@ -394,6 +396,7 @@
         "seconds": 253
       }
     ],
-    "positioningImg": "assets/images/positions/Supine arm supinated.png"
+    "positioningImg": "assets/images/positions/Supine arm supinated.png",
+    "probeImg": "assets/images/probes/Linear.png"
   }
 ]

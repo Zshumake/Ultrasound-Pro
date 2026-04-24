@@ -71,19 +71,19 @@
       "Pre-scan to confirm anatomy and rule out variants",
       "Time-out immediately before needle entry"
     ],
-    “positioning”: [
-      “Modified Crass (Kras) position: patient seated, place the palm of the ipsilateral hand flat on the iliac crest/waist, elbow directed posteriorly.”,
-      “This internally rotates and slightly extends the humerus, rotating the greater tuberosity anteriorly and pulling the supraspinatus footprint out from under the acromial shadow.”,
-      “Compared to the original Crass position (dorsum of hand on lumbar spine), this modified version is better tolerated in patients with painful or stiff shoulders while still providing adequate exposure of the supraspinatus critical zone.”
+    "positioning": [
+      "Modified Crass (Kras) position: patient seated, place the palm of the ipsilateral hand flat on the iliac crest/waist, elbow directed posteriorly.",
+      "This internally rotates and slightly extends the humerus, rotating the greater tuberosity anteriorly and pulling the supraspinatus footprint out from under the acromial shadow.",
+      "Compared to the original Crass position (dorsum of hand on lumbar spine), this modified version is better tolerated in patients with painful or stiff shoulders while still providing adequate exposure of the supraspinatus critical zone."
     ],
-    “probe”: [
-      “High‑frequency linear probe (6-13 MHz) (best for superficial structures)”
+    "probe": [
+      "High‑frequency linear probe (6-13 MHz) (best for superficial structures)"
     ],
-    “landmarking”: [
-      “Place the probe transversely just anterior to the lateral acromial edge.”,
-      “Slide anterior-posterior to find the supraspinatus tendon passing under the acromion.”,
-      “Center the lateral acromion at the screen edge while keeping the tendon in long-axis.”,
-      “Identify the “Bursal Stripe”: the thin hypoechoic plane between the deltoid and supraspinatus.”
+    "landmarking": [
+      "Place the probe transversely just anterior to the lateral acromial edge.",
+      "Slide anterior-posterior to find the supraspinatus tendon passing under the acromion.",
+      "Center the lateral acromion at the screen edge while keeping the tendon in long-axis.",
+      "Identify the \"Bursal Stripe\": the thin hypoechoic plane between the deltoid and supraspinatus."
     ],
     "correctImage": [
       "Acromion at screen edge; supraspinatus fibers parallel and uniform",
@@ -110,9 +110,9 @@
       "If pre-scan or color Doppler shows an artery directly in the planned needle path, abandon and re-plan from a different angle."
     ],
     "pearls": [
-      "Think of the bursa as a “potential space” — like a balloon that has been stepped on. It only opens up once you start injecting.",
+      "Think of the bursa as a \"potential space\" — like a balloon that has been stepped on. It only opens up once you start injecting.",
       "Dissect the plane with local anesthetic first to confirm you are in the bursa before injecting steroid.",
-      "Check for a “bursogram” post-injection; if injectate is in the tendon, it suggests a rotator cuff tear.",
+      "Check for a \"bursogram\" post-injection; if injectate is in the tendon, it suggests a rotator cuff tear.",
       "The bursa extends beyond the supraspinatus footprint — use this to differentiate layers.",
       "For DIAGNOSTIC SASD blocks, limit to ≤ 5 mL anesthetic to avoid anesthetizing the GH joint or AC joint and confounding the pain-generator localization."
     ],
@@ -142,7 +142,8 @@
       "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
       "Maximum frequency: typically no more than 3 injections per shoulder per year."
     ],
-    "positioningImg": "assets/images/positions/Modified Kras.png"
+    "positioningImg": "assets/images/positions/Modified Kras.png",
+    "probeImg": "assets/images/probes/Linear.png"
   },
   {
     "id": "shoulder-gh-posterior",
@@ -222,10 +223,10 @@
       "High-frequency linear probe (9-15 MHz) as default for most adults; switch to curvilinear (5-8 MHz) only if joint depth exceeds linear penetration (obese patients)."
     ],
     "landmarking": [
-      "Visual Cue: The “Wine Glass” — the humeral head sits in the cup; the glenoid/labrum form the rim/stem.",
+      "Visual Cue: The \"Wine Glass\" — the humeral head sits in the cup; the glenoid/labrum form the rim/stem.",
       "Start on the scapular spine and slide LATERALLY along its inferior edge to position the probe over the infraspinatus muscle belly overlying the humeral head.",
       "Slide laterally until the round humeral head meets the triangular labrum.",
-      "Tilt the probe (“fan”) to open the thin dark joint space between cartilage and capsule."
+      "Tilt the probe (\"fan\") to open the thin dark joint space between cartilage and capsule."
     ],
     "correctImage": [
       "Humeral head in lower third; glenoid rim medially; continuous dark intra-articular line"
@@ -279,7 +280,8 @@
       "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
       "Maximum frequency: typically no more than 3 injections per joint per year."
     ],
-    "positioningImg": "assets/images/positions/Seated facing away.png"
+    "positioningImg": "assets/images/positions/Seated facing away.png",
+    "probeImg": "assets/images/probes/Linear.png"
   },
   {
     "id": "shoulder-gh-anterior",
@@ -410,7 +412,8 @@
         "seconds": 210
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png"
+    "positioningImg": "assets/images/positions/Lying Supine.png",
+    "probeImg": "assets/images/probes/Linear.png"
   },
   {
     "id": "shoulder-ac",
@@ -543,7 +546,8 @@
         "seconds": 70
       }
     ],
-    "positioningImg": "assets/images/positions/Seated Patient.png"
+    "positioningImg": "assets/images/positions/Seated Patient.png",
+    "probeImg": "assets/images/probes/Linear.png"
   },
   {
     "id": "shoulder-biceps",
@@ -586,7 +590,7 @@
       "High-frequency linear probe (6-13 MHz) (short footprint helpful)"
     ],
     "landmarking": [
-      "Visual Cue: The “Bicipital Valley” — identify the deep bony groove between the greater and lesser tuberosities.",
+      "Visual Cue: The \"Bicipital Valley\" — identify the deep bony groove between the greater and lesser tuberosities.",
       "Center the round, hyperechoic biceps tendon within the groove.",
       "Rotate 90° into long-axis to confirm the tendon is intact and not subluxed.",
       "Doppler Survey: Identify the ascending branch of the anterior humeral circumflex artery (typically transverse across the groove, often visualized medial in the groove near the lesser tuberosity)."
@@ -611,7 +615,7 @@
       "Limit to ≤ 3 injections per year per tendon."
     ],
     "pearls": [
-      "Create a “test effusion” with local to confirm circumferential spread around the tendon.",
+      "Create a \"test effusion\" with local to confirm circumferential spread around the tendon.",
       "Always Doppler before entry — the AHC artery position varies; if it sits in the planned path, re-plan.",
       "Total injectate (anesthetic + steroid) ≤ 3 mL to avoid overfilling the sheath and retrograde GH joint tracking."
     ],
@@ -677,6 +681,7 @@
         "seconds": 89
       }
     ],
-    "positioningImg": "assets/images/positions/Seated hand supine.png"
+    "positioningImg": "assets/images/positions/Seated hand supine.png",
+    "probeImg": "assets/images/probes/Narrow.png"
   }
 ]
