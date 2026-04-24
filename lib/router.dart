@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'data/injection_provider.dart';
 import 'screens/dashboard_page.dart';
 import 'screens/injection_detail_page.dart';
+import 'screens/us_intro_page.dart';
 
 final router = GoRouter(
   routes: [
@@ -17,6 +18,10 @@ final router = GoRouter(
         final name = state.pathParameters['name'] ?? 'All';
         return DashboardPage(initialCategory: name);
       },
+    ),
+    GoRoute(
+      path: '/us-intro',
+      builder: (context, state) => const UsIntroPage(),
     ),
     GoRoute(
       path: '/procedure/:id',
