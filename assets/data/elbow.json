@@ -3,10 +3,15 @@
     "id": "elbow-radiocapitellar",
     "title": "Radiocapitellar Joint Injection (Lateral Elbow)",
     "category": "Elbow",
-    "videoUrl": "https://www.youtube.com/watch?v=SBvRoFX9bGU",
+    "videoUrl": null,
     "anatomyModelId": "2ec88c6b414643bc86b0191d24b7f0cc",
     "anatomyModelTitle": "Elbow Joint — Bones & Ligaments",
-    "tags": ["elbow", "radiocapitellar", "arthritis", "synovitis"],
+    "tags": [
+      "elbow",
+      "radiocapitellar",
+      "arthritis",
+      "synovitis"
+    ],
     "treats": [
       "Elbow arthritis",
       "Lateral elbow joint pain",
@@ -89,23 +94,56 @@
       "Maximum 3 injections per joint per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 5 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 23 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 42 },
-      { "label": "US Image", "section": "us_view", "seconds": 72 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 105 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 119 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 153 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 5
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 23
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 42
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 72
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 105
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 119
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 153
+      }
+    ],
+    "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).png"
   },
   {
     "id": "elbow-cet",
     "title": "Common Extensor Tendon Origin Injection (Lateral Epicondyle)",
     "category": "Elbow",
-    "videoUrl": "https://www.youtube.com/watch?v=JB0sXcILavE",
+    "videoUrl": null,
     "anatomyModelId": "6dd851d018f34892800b83ca418ccb52",
     "anatomyModelTitle": "Shoulder, Arm & Forearm Muscles (SGU)",
-    "tags": ["elbow", "tennis elbow", "cet"],
+    "tags": [
+      "elbow",
+      "tennis elbow",
+      "cet"
+    ],
     "treats": [
       "Lateral epicondylitis with tendon surface pain or degeneration"
     ],
@@ -187,23 +225,56 @@
       "Maximum 1-2 steroid injections at this site lifetime — recurrent dosing worsens outcomes."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 7 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 29 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 54 },
-      { "label": "US Image", "section": "us_view", "seconds": 94 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 136 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 154 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 199 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 7
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 29
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 54
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 94
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 136
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 154
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 199
+      }
+    ],
+    "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).png"
   },
   {
     "id": "elbow-cfet",
     "title": "Common Flexor Tendon Origin Injection (Medial Epicondyle)",
     "category": "Elbow",
-    "videoUrl": "https://www.youtube.com/watch?v=GTye33TzKkY",
+    "videoUrl": null,
     "anatomyModelId": "6dd851d018f34892800b83ca418ccb52",
     "anatomyModelTitle": "Shoulder, Arm & Forearm Muscles (SGU)",
-    "tags": ["elbow", "golfer elbow", "cfet"],
+    "tags": [
+      "elbow",
+      "golfer elbow",
+      "cfet"
+    ],
     "treats": [
       "Medial epicondylitis with pain at flexor origin"
     ],
@@ -287,13 +358,42 @@
       "Maximum 1-2 steroid injections at this site lifetime."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 9 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 38 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 69 },
-      { "label": "US Image", "section": "us_view", "seconds": 120 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 174 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 196 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 253 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 9
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 38
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 69
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 120
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 174
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 196
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 253
+      }
+    ],
+    "positioningImg": "assets/images/positions/Supine arm supinated.png"
   }
 ]

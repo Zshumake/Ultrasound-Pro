@@ -5,17 +5,51 @@
     "category": "Shoulder",
     "videoUrl": null,
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 10 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 30 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 55 },
-      { "label": "US Image", "section": "us_view", "seconds": 90 },
-      { "label": "Needle Insertion", "section": "steps", "seconds": 140 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 130 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 170 }
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 10
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 30
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 55
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 90
+      },
+      {
+        "label": "Needle Insertion",
+        "section": "steps",
+        "seconds": 140
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 130
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 170
+      }
     ],
     "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
     "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
-    "tags": ["shoulder", "subacromial", "bursa", "subdeltoid", "impingement"],
+    "tags": [
+      "shoulder",
+      "subacromial",
+      "bursa",
+      "subdeltoid",
+      "impingement"
+    ],
     "treats": [
       "Shoulder impingement syndromes",
       "Rotator cuff–related pain with bursitis",
@@ -106,7 +140,8 @@
       "Return immediately for: spreading redness, increasing swelling, fever, or pain disproportionate to expected (concern for infection).",
       "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
       "Maximum frequency: typically no more than 3 injections per shoulder per year."
-    ]
+    ],
+    "positioningImg": "assets/images/positions/Seated Patient.png"
   },
   {
     "id": "shoulder-gh-posterior",
@@ -114,16 +149,47 @@
     "category": "Shoulder",
     "videoUrl": null,
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 8 },
-      { "label": "Probe Setup", "section": "probe", "seconds": 25 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 45 },
-      { "label": "US Image", "section": "us_view", "seconds": 75 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 120 },
-      { "label": "Avoid", "section": "avoid", "seconds": 155 }
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 8
+      },
+      {
+        "label": "Probe Setup",
+        "section": "probe",
+        "seconds": 25
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 45
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 75
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 120
+      },
+      {
+        "label": "Avoid",
+        "section": "avoid",
+        "seconds": 155
+      }
     ],
     "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
     "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
-    "tags": ["shoulder", "glenohumeral", "posterior", "labrum", "capsule", "adhesive capsulitis"],
+    "tags": [
+      "shoulder",
+      "glenohumeral",
+      "posterior",
+      "labrum",
+      "capsule",
+      "adhesive capsulitis"
+    ],
     "treats": [
       "Adhesive capsulitis",
       "Glenohumeral osteoarthritis/synovitis",
@@ -211,7 +277,8 @@
       "Return immediately for: spreading redness, increasing swelling, fever, or pain disproportionate to expected.",
       "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
       "Maximum frequency: typically no more than 3 injections per joint per year."
-    ]
+    ],
+    "positioningImg": "assets/images/positions/Seated facing away.png"
   },
   {
     "id": "shoulder-gh-anterior",
@@ -220,7 +287,13 @@
     "videoUrl": null,
     "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
     "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
-    "tags": ["shoulder", "glenohumeral", "anterior", "rotator interval", "biceps"],
+    "tags": [
+      "shoulder",
+      "glenohumeral",
+      "anterior",
+      "rotator interval",
+      "biceps"
+    ],
     "treats": [
       "Same as posterior approach; convenient when combining with biceps sheath injection"
     ],
@@ -300,14 +373,43 @@
       "Maximum 3 injections per joint per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 7 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 31 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 57 },
-      { "label": "US Image", "section": "us_view", "seconds": 99 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 144 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 163 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 210 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 7
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 31
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 57
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 99
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 144
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 163
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 210
+      }
+    ],
+    "positioningImg": "assets/images/positions/Lying Supine.png"
   },
   {
     "id": "shoulder-ac",
@@ -316,7 +418,12 @@
     "videoUrl": null,
     "anatomyModelId": "5d5c63b3469a4db0b8a3f659a1848d56",
     "anatomyModelTitle": "Shoulder Girdle Ligaments (AC Joint)",
-    "tags": ["shoulder", "ac joint", "distal clavicle", "sprain"],
+    "tags": [
+      "shoulder",
+      "ac joint",
+      "distal clavicle",
+      "sprain"
+    ],
     "treats": [
       "AC joint arthritis/sprain",
       "Distal clavicle osteolysis",
@@ -399,14 +506,43 @@
       "Maximum 3 injections per joint per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 2 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 10 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 19 },
-      { "label": "US Image", "section": "us_view", "seconds": 33 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 48 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 54 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 70 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 2
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 10
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 19
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 33
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 48
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 54
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 70
+      }
+    ],
+    "positioningImg": "assets/images/positions/Seated Patient.png"
   },
   {
     "id": "shoulder-biceps",
@@ -415,7 +551,12 @@
     "videoUrl": null,
     "anatomyModelId": "ac22f1038e1a479d86f3853934c7a617",
     "anatomyModelTitle": "Shoulder Muscles — Biceps & Rotator Cuff",
-    "tags": ["shoulder", "biceps", "sheath", "tenosynovitis"],
+    "tags": [
+      "shoulder",
+      "biceps",
+      "sheath",
+      "tenosynovitis"
+    ],
     "treats": [
       "Biceps tendon sheath inflammation",
       "Diagnostic sheath injection"
@@ -499,13 +640,42 @@
       "Maximum 3 injections per tendon per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 3 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 13 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 24 },
-      { "label": "US Image", "section": "us_view", "seconds": 42 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 61 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 69 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 89 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 3
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 13
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 24
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 42
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 61
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 69
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 89
+      }
+    ],
+    "positioningImg": "assets/images/positions/Seated hand supine.png"
   }
 ]

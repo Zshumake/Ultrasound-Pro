@@ -3,10 +3,14 @@
     "id": "wrist-carpal",
     "title": "Carpal Tunnel Injection",
     "category": "Hand",
-    "videoUrl": "https://www.youtube.com/watch?v=0jJADAb2oXA",
+    "videoUrl": null,
     "anatomyModelId": "abe41da6b7c245a09f90fd52cb9c31e0",
     "anatomyModelTitle": "Carpal Tunnel (Bluelink — U of Michigan)",
-    "tags": ["wrist", "carpal tunnel", "median nerve"],
+    "tags": [
+      "wrist",
+      "carpal tunnel",
+      "median nerve"
+    ],
     "treats": [
       "Median nerve compression (carpal tunnel syndrome)"
     ],
@@ -90,23 +94,57 @@
       "Maximum 3 injections per year. If symptoms recur quickly, discuss surgical release."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 10 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 42 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 77 },
-      { "label": "US Image", "section": "us_view", "seconds": 134 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 194 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 218 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 282 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 10
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 42
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 77
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 134
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 194
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 218
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 282
+      }
+    ],
+    "positioningImg": "assets/images/positions/Supine arm supinated.png"
   },
   {
     "id": "wrist-dequervain",
     "title": "First Dorsal Compartment Injection (De Quervain's)",
     "category": "Hand",
-    "videoUrl": "https://www.youtube.com/watch?v=_myDpBZAF78",
+    "videoUrl": null,
     "anatomyModelId": "1704c8bec5db422fbe17c1e9650c293a",
     "anatomyModelTitle": "Hand & Wrist Bones (Soma3D)",
-    "tags": ["wrist", "de quervain", "apl", "epb"],
+    "tags": [
+      "wrist",
+      "de quervain",
+      "apl",
+      "epb"
+    ],
     "treats": [
       "De Quervain's tenosynovitis (APL/EPB)"
     ],
@@ -191,23 +229,58 @@
       "Maximum 1-2 injections per year at this site."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 5 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 20 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 38 },
-      { "label": "US Image", "section": "us_view", "seconds": 66 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 95 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 107 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 139 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 5
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 20
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 38
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 66
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 95
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 107
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 139
+      }
+    ],
+    "positioningImg": "assets/images/positions/Dequrevains positioning.png"
   },
   {
     "id": "hand-1stmcp",
     "title": "First Carpometacarpal (CMC) Joint Injection (Thumb Base / Basal Joint)",
     "category": "Hand",
-    "videoUrl": "https://www.youtube.com/watch?v=FS0cBmUFoVc",
+    "videoUrl": null,
     "anatomyModelId": "1704c8bec5db422fbe17c1e9650c293a",
     "anatomyModelTitle": "Hand & Wrist Bones (Soma3D)",
-    "tags": ["hand", "cmc", "thumb base", "basal joint", "arthritis"],
+    "tags": [
+      "hand",
+      "cmc",
+      "thumb base",
+      "basal joint",
+      "arthritis"
+    ],
     "treats": [
       "Thumb basal joint (1st CMC) arthritis or synovitis"
     ],
@@ -287,23 +360,57 @@
       "Maximum 3 injections per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 10 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 42 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 78 },
-      { "label": "US Image", "section": "us_view", "seconds": 136 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 196 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 221 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 286 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 10
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 42
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 78
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 136
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 196
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 221
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 286
+      }
+    ],
+    "positioningImg": "assets/images/positions/Dequrevains positioning.png"
   },
   {
     "id": "hand-trigger-finger",
     "title": "Trigger Finger (A1 Pulley) Injection",
     "category": "Hand",
-    "videoUrl": "https://www.youtube.com/watch?v=RD_Z-cAHd20",
+    "videoUrl": null,
     "anatomyModelId": "cfe197a0e2054cc2ac4fae85f96258d4",
     "anatomyModelTitle": "Hand Pulleys & Tendons (A1-A5)",
-    "tags": ["hand", "trigger finger", "a1 pulley", "flexor tendon"],
+    "tags": [
+      "hand",
+      "trigger finger",
+      "a1 pulley",
+      "flexor tendon"
+    ],
     "treats": [
       "Trigger finger (stenosing tenosynovitis)",
       "Tendon locking/catching"
@@ -390,13 +497,42 @@
       "Maximum 3 injections per finger per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 3 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 15 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 29 },
-      { "label": "US Image", "section": "us_view", "seconds": 50 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 73 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 82 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 106 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 3
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 15
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 29
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 50
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 73
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 82
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 106
+      }
+    ],
+    "positioningImg": "assets/images/positions/Seated Patient Supine Hand.png"
   }
 ]

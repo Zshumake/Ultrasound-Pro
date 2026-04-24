@@ -3,10 +3,15 @@
     "id": "hip-anterior",
     "title": "Anterior Intra-articular Injection (Femoral Head–Neck Junction)",
     "category": "Hip",
-    "videoUrl": "https://www.youtube.com/watch?v=L49oCzvpBmE",
+    "videoUrl": null,
     "anatomyModelId": "5dec1071aa9a472bb01fc140ed0edafb",
     "anatomyModelTitle": "Deep Hip Joint (UBC Medicine)",
-    "tags": ["hip", "intra-articular", "iliopsoas", "lfca"],
+    "tags": [
+      "hip",
+      "intra-articular",
+      "iliopsoas",
+      "lfca"
+    ],
     "treats": [
       "Hip osteoarthritis",
       "Labral irritation",
@@ -95,23 +100,57 @@
       "Maximum 3 injections per joint per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 8 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 33 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 61 },
-      { "label": "US Image", "section": "us_view", "seconds": 106 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 154 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 173 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 224 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 8
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 33
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 61
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 106
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 154
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 173
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 224
+      }
+    ],
+    "positioningImg": "assets/images/positions/Lying Supine.png"
   },
   {
     "id": "hip-gtb",
     "title": "Greater Trochanteric Pain Syndrome — Peritendinous Injection",
-    "videoUrl": "https://www.youtube.com/watch?v=4IRnvNuiUJo",
+    "videoUrl": null,
     "anatomyModelId": "e5f5ef787acc4bea8589949866e399fd",
     "anatomyModelTitle": "Hip Joint (Medical.Gallery)",
     "category": "Hip",
-    "tags": ["hip", "gluteus medius", "tendinopathy", "trochanteric"],
+    "tags": [
+      "hip",
+      "gluteus medius",
+      "tendinopathy",
+      "trochanteric"
+    ],
     "treats": [
       "Greater trochanteric pain syndrome (gluteus medius/minimus tendinopathy ± peritendinous fluid). True isolated bursitis is uncommon."
     ],
@@ -195,23 +234,57 @@
       "Maximum 3 injections per site per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 6 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 24 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 44 },
-      { "label": "US Image", "section": "us_view", "seconds": 76 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 110 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 124 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 160 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 6
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 24
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 44
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 76
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 110
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 124
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 160
+      }
+    ],
+    "positioningImg": "assets/images/positions/Patient lying on side.png"
   },
   {
     "id": "hip-piriformis",
     "title": "Piriformis Injection",
-    "videoUrl": "https://www.youtube.com/watch?v=sPwfzRaLbM8",
+    "videoUrl": null,
     "anatomyModelId": "a0648f5826594773aea233f9b9ee30d3",
     "anatomyModelTitle": "Piriformis Anatomy (Medical Univ of Lublin)",
     "category": "Hip",
-    "tags": ["hip", "piriformis", "sciatic nerve", "deep gluteal pain"],
+    "tags": [
+      "hip",
+      "piriformis",
+      "sciatic nerve",
+      "deep gluteal pain"
+    ],
     "treats": [
       "Piriformis syndrome with sciatic irritation",
       "Deep gluteal pain / non-spinal sciatica"
@@ -302,23 +375,57 @@
       "Maximum 3 injections per site per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 8 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 32 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 59 },
-      { "label": "US Image", "section": "us_view", "seconds": 102 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 148 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 167 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 216 }
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 8
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 32
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 59
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 102
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 148
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 167
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 216
+      }
     ]
   },
   {
     "id": "si-joint",
     "title": "Sacroiliac (SI) Joint Injection",
-    "videoUrl": "https://www.youtube.com/watch?v=7G56DN38mz8",
+    "videoUrl": null,
     "anatomyModelId": "cf5425eee19b449bb5bd83ccb81a5a7d",
     "anatomyModelTitle": "Pelvis & Sacroiliac Joint",
     "category": "Hip",
-    "tags": ["hip", "si joint", "sacroiliac", "low back pain", "diagnostic injection"],
+    "tags": [
+      "hip",
+      "si joint",
+      "sacroiliac",
+      "low back pain",
+      "diagnostic injection"
+    ],
     "treats": [
       "Suspected SIJ-mediated pain (single intra-articular block is one of several diagnostic tools — fluoroscopic confirmation with contrast remains more rigorous than US for true intra-articular placement)",
       "Therapeutic injection after failed conservative care"
@@ -401,23 +508,56 @@
       "Maximum 3 injections per joint per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 11 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 44 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 80 },
-      { "label": "US Image", "section": "us_view", "seconds": 139 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 201 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 227 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 293 }
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 11
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 44
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 80
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 139
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 201
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 227
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 293
+      }
     ]
   },
   {
     "id": "hip-hamstring-proximal",
     "title": "Proximal Hamstring (Ischial Tuberosity) Injection",
-    "videoUrl": "https://www.youtube.com/watch?v=RoGaUdmQJL8",
+    "videoUrl": null,
     "anatomyModelId": "842d6b871c4e4e00b212c8ee18290b75",
     "anatomyModelTitle": "Sacrotuberous Ligament & Ischial Tuberosity",
     "category": "Hip",
-    "tags": ["hip", "hamstring", "ischial tuberosity", "tendinopathy"],
+    "tags": [
+      "hip",
+      "hamstring",
+      "ischial tuberosity",
+      "tendinopathy"
+    ],
     "treats": [
       "Proximal hamstring tendinopathy",
       "Ischiogluteal bursitis"
@@ -502,13 +642,41 @@
       "Maximum 3 injections per site per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 3 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 13 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 25 },
-      { "label": "US Image", "section": "us_view", "seconds": 43 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 62 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 70 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 91 }
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 3
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 13
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 25
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 43
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 62
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 70
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 91
+      }
     ]
   }
 ]

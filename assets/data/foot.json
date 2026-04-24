@@ -3,10 +3,15 @@
     "id": "ankle-ttj",
     "title": "Tibiotalar (Ankle) Joint Injection",
     "category": "Foot",
-    "videoUrl": "https://www.youtube.com/watch?v=9BgGRJn4WWw",
+    "videoUrl": null,
     "anatomyModelId": "2e2d0f64ecb743c8844304ff5cf693cf",
     "anatomyModelTitle": "Foot, Ankle & Ligaments (Soma3D)",
-    "tags": ["ankle", "tibiotalar", "dorsalis pedis", "deep peroneal"],
+    "tags": [
+      "ankle",
+      "tibiotalar",
+      "dorsalis pedis",
+      "deep peroneal"
+    ],
     "treats": [
       "Ankle osteoarthritis",
       "Synovitis",
@@ -92,23 +97,58 @@
       "Maximum 3 injections per joint per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 6 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 24 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 45 },
-      { "label": "US Image", "section": "us_view", "seconds": 79 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 114 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 128 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 166 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 6
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 24
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 45
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 79
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 114
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 128
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 166
+      }
+    ],
+    "positioningImg": "assets/images/positions/Lying Supine.png"
   },
   {
     "id": "ankle-peroneal",
     "title": "Peroneal Tendon Sheath Injection",
-    "videoUrl": "https://www.youtube.com/watch?v=zvBQ-Y2-F70",
+    "videoUrl": null,
     "anatomyModelId": "2e2d0f64ecb743c8844304ff5cf693cf",
     "anatomyModelTitle": "Foot, Ankle & Ligaments (Soma3D)",
     "category": "Foot",
-    "tags": ["ankle", "peroneal", "retinaculum", "brevis", "longus"],
+    "tags": [
+      "ankle",
+      "peroneal",
+      "retinaculum",
+      "brevis",
+      "longus"
+    ],
     "treats": [
       "Peroneal tendinopathy (peroneus longus/brevis)"
     ],
@@ -190,23 +230,58 @@
       "Maximum 2-3 injections per tendon lifetime."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 5 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 20 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 36 },
-      { "label": "US Image", "section": "us_view", "seconds": 63 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 91 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 103 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 133 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 5
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 20
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 36
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 63
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 91
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 103
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 133
+      }
+    ],
+    "positioningImg": "assets/images/positions/Patient lying on side.png"
   },
   {
     "id": "foot-plantar",
     "title": "Plantar Fascia (Perifascial) Injection",
-    "videoUrl": "https://www.youtube.com/watch?v=SUfulHTSdzo",
+    "videoUrl": null,
     "anatomyModelId": "fb4f3aefda654bffbac2510ed7869871",
     "anatomyModelTitle": "Human Foot Anatomy (3dPiX)",
     "category": "Foot",
-    "tags": ["foot", "plantar fascia", "calcaneus", "heel", "fat pad"],
+    "tags": [
+      "foot",
+      "plantar fascia",
+      "calcaneus",
+      "heel",
+      "fat pad"
+    ],
     "treats": [
       "Plantar fasciitis (heel pain) requiring perifascial therapy",
       "NOT for plantar fibromatosis, retrocalcaneal bursitis, or tarsal tunnel syndrome — re-diagnose if US shows a mass lesion or tunnel-level pathology"
@@ -290,23 +365,57 @@
       "Maximum 1-2 steroid injections at this site lifetime."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 4 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 18 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 34 },
-      { "label": "US Image", "section": "us_view", "seconds": 58 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 85 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 96 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 124 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 4
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 18
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 34
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 58
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 85
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 96
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 124
+      }
+    ],
+    "positioningImg": "assets/images/positions/Patient lying on side.png"
   },
   {
     "id": "foot-mortons-neuroma",
     "title": "Morton's Neuroma Injection (Dorsal Approach)",
-    "videoUrl": "https://www.youtube.com/watch?v=jCGBsovcvEE",
+    "videoUrl": null,
     "anatomyModelId": "fb4f3aefda654bffbac2510ed7869871",
     "anatomyModelTitle": "Human Foot Anatomy (3dPiX)",
     "category": "Foot",
-    "tags": ["foot", "morton's neuroma", "metatarsal", "web space"],
+    "tags": [
+      "foot",
+      "morton's neuroma",
+      "metatarsal",
+      "web space"
+    ],
     "treats": [
       "Interdigital neuralgia (Morton's neuroma)",
       "Intermetatarsal bursitis"
@@ -392,13 +501,42 @@
       "Maximum 2-3 injections per site per year."
     ],
     "videoTimestamps": [
-      { "label": "Patient Position", "section": "positioning", "seconds": 5 },
-      { "label": "Probe Placement", "section": "probe", "seconds": 21 },
-      { "label": "Finding the View", "section": "landmarking", "seconds": 38 },
-      { "label": "US Image", "section": "us_view", "seconds": 67 },
-      { "label": "Needle Corridor", "section": "corridor", "seconds": 97 },
-      { "label": "Injection Steps", "section": "steps", "seconds": 109 },
-      { "label": "Structures to Avoid", "section": "avoid", "seconds": 141 }
-    ]
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 5
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 21
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 38
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 67
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 97
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 109
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 141
+      }
+    ],
+    "positioningImg": "assets/images/positions/Lying Supine.png"
   }
 ]
