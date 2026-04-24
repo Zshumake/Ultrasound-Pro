@@ -182,8 +182,8 @@
         "seconds": 155
       }
     ],
-    "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
-    "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
+    "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
+    "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
     "tags": [
       "shoulder",
       "glenohumeral",
@@ -288,8 +288,8 @@
     "title": "Glenohumeral Joint Injection (Anterior Rotator Interval)",
     "category": "Shoulder",
     "videoUrl": null,
-    "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
-    "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
+    "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
+    "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
     "tags": [
       "shoulder",
       "glenohumeral",
@@ -420,8 +420,8 @@
     "title": "Acromioclavicular (AC) Joint Injection",
     "category": "Shoulder",
     "videoUrl": null,
-    "anatomyModelId": "5d5c63b3469a4db0b8a3f659a1848d56",
-    "anatomyModelTitle": "Shoulder Girdle Ligaments (AC Joint)",
+    "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
+    "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
     "tags": [
       "shoulder",
       "ac joint",
@@ -554,8 +554,8 @@
     "title": "Long Head of the Biceps Tendon Sheath Injection",
     "category": "Shoulder",
     "videoUrl": null,
-    "anatomyModelId": "ac22f1038e1a479d86f3853934c7a617",
-    "anatomyModelTitle": "Shoulder Muscles — Biceps & Rotator Cuff",
+    "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
+    "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
     "tags": [
       "shoulder",
       "biceps",
