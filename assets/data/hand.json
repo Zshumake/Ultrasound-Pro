@@ -130,7 +130,7 @@
         "seconds": 282
       }
     ],
-    "positioningImg": "assets/images/positions/Supine arm supinated.png",
+    "positioningImg": "assets/images/positions/Seated hand supine hand on table.png",
     "probeImg": "assets/images/probes/Narrow.png"
   },
   {
@@ -536,7 +536,7 @@
         "seconds": 106
       }
     ],
-    "positioningImg": "assets/images/positions/Seated Patient Supine Hand.png",
+    "positioningImg": "assets/images/positions/Seated hand supine hand on table.png",
     "probeImg": "assets/images/probes/Narrow.png"
   }
 ]

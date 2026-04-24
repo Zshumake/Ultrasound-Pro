@@ -660,14 +660,14 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
         ),
         const SizedBox(height: 16),
         if (isMobile) ...[
-          _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg, imageAlignment: Alignment.topLeft),
+          _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg, imageAlignment: const Alignment(0.0, -0.3)),
           const SizedBox(height: 24),
           _buildInfoImagePair(context, 'Hardware', widget.technique.probe.join('\n'), 'Probe Image', Icons.sensors_outlined, widget.technique.probeImg),
         ] else
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(child: _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg, imageAlignment: Alignment.topLeft)),
+              Expanded(child: _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg, imageAlignment: const Alignment(0.0, -0.3))),
               const SizedBox(width: 16),
               Expanded(child: _buildInfoImagePair(context, 'Hardware', widget.technique.probe.join('\n'), 'Probe Image', Icons.sensors_outlined, widget.technique.probeImg)),
             ],
