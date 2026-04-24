@@ -1,7 +1,7 @@
 [
   {
     "id": "shoulder-sasd",
-    "title": "Subacromial–Subdeltoid Bursa Injection",
+    "title": "Subacromial\u2013Subdeltoid Bursa Injection",
     "category": "Shoulder",
     "videoUrl": null,
     "videoTimestamps": [
@@ -52,19 +52,19 @@
     ],
     "treats": [
       "Shoulder impingement syndromes",
-      "Rotator cuff–related pain with bursitis",
-      "Primary or secondary subacromial–subdeltoid bursitis"
+      "Rotator cuff\u2013related pain with bursitis",
+      "Primary or secondary subacromial\u2013subdeltoid bursitis"
     ],
     "contraindications": [
       "Active local skin infection or cellulitis at the entry site (absolute)",
-      "Suspected septic bursa (absolute — aspirate first, do not inject steroid)",
+      "Suspected septic bursa (absolute \u2014 aspirate first, do not inject steroid)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep (absolute for that agent)",
-      "Therapeutic anticoagulation — review case-by-case",
-      "Uncontrolled diabetes (relative — steroid raises glucose for 3-5 days)"
+      "Therapeutic anticoagulation \u2014 review case-by-case",
+      "Uncontrolled diabetes (relative \u2014 steroid raises glucose for 3-5 days)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
-      "Confirm procedure, side, and site — mark site with patient awake",
+      "Confirm procedure, side, and site \u2014 mark site with patient awake",
       "Review allergies (anesthetic, steroid, latex, chlorhexidine, iodine)",
       "Review anticoagulation status",
       "Confirm informed consent",
@@ -72,12 +72,11 @@
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Modified Crass (Kras) position: patient seated, place the palm of the ipsilateral hand flat on the iliac crest/waist, elbow directed posteriorly.",
-      "This internally rotates and slightly extends the humerus, rotating the greater tuberosity anteriorly and pulling the supraspinatus footprint out from under the acromial shadow.",
-      "Compared to the original Crass position (dorsum of hand on lumbar spine), this modified version is better tolerated in patients with painful or stiff shoulders while still providing adequate exposure of the supraspinatus critical zone."
+      "Modified Crass position: patient seated with palm of ipsilateral hand flat on the iliac crest, elbow directed posteriorly.",
+      "This internally rotates the humerus, bringing the supraspinatus footprint out from under the acromion."
     ],
     "probe": [
-      "High‑frequency linear probe (6-13 MHz) (best for superficial structures)"
+      "High\u2011frequency linear probe (6-13 MHz) (best for superficial structures)"
     ],
     "landmarking": [
       "Place the probe transversely just anterior to the lateral acromial edge.",
@@ -90,7 +89,7 @@
       "Bursal stripe widens slightly with gentle probe pressure"
     ],
     "corridor": [
-      "Between deltoid (above) and supraspinatus tendon (below) — inject into the thin bursal stripe"
+      "Between deltoid (above) and supraspinatus tendon (below) \u2014 inject into the thin bursal stripe"
     ],
     "avoid": [
       "Cephalic vein near anterior deltoid",
@@ -100,21 +99,21 @@
       "Use an in-plane lateral-to-medial approach along the probe long-axis (parallel to supraspinatus fibers), advancing from distal-lateral under the deltoid into the bursal plane under the acromion.",
       "Touch the bursal plane and inject a tiny test amount to confirm plane separation.",
       "Inject the planned volume slowly while watching for smooth medial spread beneath the acromion.",
-      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations — withdraw 1-2 mm and reposition before any further injection."
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations \u2014 withdraw 1-2 mm and reposition before any further injection."
     ],
     "tips": [
       "If you lose the needle, stop and realign before advancing.",
       "Adhesions may require gentle needle-tip redirection.",
-      "Monitor injection pressure throughout — if resistance rises sharply before reaching target volume, stop. Overdistension can rupture the bursal wall into surrounding tissue.",
-      "Limit corticosteroid injection to ≤ 3 per joint/site per year.",
+      "Monitor injection pressure throughout \u2014 if resistance rises sharply before reaching target volume, stop. Overdistension can rupture the bursal wall into surrounding tissue.",
+      "Limit corticosteroid injection to \u2264 3 per joint/site per year.",
       "If pre-scan or color Doppler shows an artery directly in the planned needle path, abandon and re-plan from a different angle."
     ],
     "pearls": [
-      "Think of the bursa as a \"potential space\" — like a balloon that has been stepped on. It only opens up once you start injecting.",
+      "Think of the bursa as a \"potential space\" \u2014 like a balloon that has been stepped on. It only opens up once you start injecting.",
       "Dissect the plane with local anesthetic first to confirm you are in the bursa before injecting steroid.",
       "Check for a \"bursogram\" post-injection; if injectate is in the tendon, it suggests a rotator cuff tear.",
-      "The bursa extends beyond the supraspinatus footprint — use this to differentiate layers.",
-      "For DIAGNOSTIC SASD blocks, limit to ≤ 5 mL anesthetic to avoid anesthetizing the GH joint or AC joint and confounding the pain-generator localization."
+      "The bursa extends beyond the supraspinatus footprint \u2014 use this to differentiate layers.",
+      "For DIAGNOSTIC SASD blocks, limit to \u2264 5 mL anesthetic to avoid anesthetizing the GH joint or AC joint and confounding the pain-generator localization."
     ],
     "supplies": [
       "3 mL or 5 mL Syringe",
@@ -136,7 +135,7 @@
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic provides relief for 1-4 hours; pain may return before steroid takes effect.",
       "Steroid effect typically begins 24-72 hours after injection.",
-      "Steroid 'flare' (transient worsening for 24-48 hours) occurs in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' (transient worsening for 24-48 hours) occurs in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest the shoulder for 24-48 hours; resume normal activity as tolerated thereafter.",
       "Return immediately for: spreading redness, increasing swelling, fever, or pain disproportionate to expected (concern for infection).",
       "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
@@ -199,20 +198,20 @@
     ],
     "contraindications": [
       "Active local skin infection or cellulitis at the entry site (absolute)",
-      "Suspected septic joint (absolute — aspirate first, do not inject steroid)",
+      "Suspected septic joint (absolute \u2014 aspirate first, do not inject steroid)",
       "Bacteremia (absolute for joint injection)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep (absolute for that agent)",
-      "Therapeutic anticoagulation — review case-by-case",
+      "Therapeutic anticoagulation \u2014 review case-by-case",
       "Uncontrolled diabetes (relative)",
-      "Prosthetic shoulder at the target site (relative — coordinate with orthopedics)"
+      "Prosthetic shoulder at the target site (relative \u2014 coordinate with orthopedics)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
-      "Confirm procedure, side, and site — mark site with patient awake",
+      "Confirm procedure, side, and site \u2014 mark site with patient awake",
       "Review allergies",
       "Review anticoagulation status",
       "Confirm informed consent",
-      "Pre-scan to confirm capsule depth — if > 3 cm, use 22G 3.5\" spinal needle",
+      "Pre-scan to confirm capsule depth \u2014 if > 3 cm, use 22G 3.5\" spinal needle",
       "Time-out immediately before needle entry"
     ],
     "positioning": [
@@ -223,7 +222,7 @@
       "High-frequency linear probe (9-15 MHz) as default for most adults; switch to curvilinear (5-8 MHz) only if joint depth exceeds linear penetration (obese patients)."
     ],
     "landmarking": [
-      "Visual Cue: The \"Wine Glass\" — the humeral head sits in the cup; the glenoid/labrum form the rim/stem.",
+      "Visual Cue: The \"Wine Glass\" \u2014 the humeral head sits in the cup; the glenoid/labrum form the rim/stem.",
       "Start on the scapular spine and slide LATERALLY along its inferior edge to position the probe over the infraspinatus muscle belly overlying the humeral head.",
       "Slide laterally until the round humeral head meets the triangular labrum.",
       "Tilt the probe (\"fan\") to open the thin dark joint space between cartilage and capsule."
@@ -232,26 +231,26 @@
       "Humeral head in lower third; glenoid rim medially; continuous dark intra-articular line"
     ],
     "corridor": [
-      "Through the infraspinatus muscle → posterior glenohumeral joint recess (intra-articular), with the needle tip at the junction of the humeral head cartilage and posterior labrum, deep to the posterior capsule."
+      "Through the infraspinatus muscle \u2192 posterior glenohumeral joint recess (intra-articular), with the needle tip at the junction of the humeral head cartilage and posterior labrum, deep to the posterior capsule."
     ],
     "avoid": [
-      "Axillary nerve/arterial branches medially/inferiorly — stay lateral with a steep trajectory",
+      "Axillary nerve/arterial branches medially/inferiorly \u2014 stay lateral with a steep trajectory",
       "Intralabral needle placement"
     ],
     "steps": [
-      "Advance in-plane from posterolateral → anteromedial at a steep angle.",
+      "Advance in-plane from posterolateral \u2192 anteromedial at a steep angle.",
       "Contact capsule and inject a test bolus to confirm capsular lift.",
       "Inject the planned volume slowly; gently rotate the shoulder to confirm intra-articular spread.",
-      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations — withdraw 1-2 mm and reposition before further injection."
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations \u2014 withdraw 1-2 mm and reposition before further injection."
     ],
     "tips": [
       "Steeper angles are easier to correct than shallow ones.",
-      "Limit corticosteroid injection to ≤ 3 per joint per year.",
+      "Limit corticosteroid injection to \u2264 3 per joint per year.",
       "If pre-scan shows an artery directly in the planned needle path, abandon and re-plan."
     ],
     "pearls": [
       "Steeper is better: it is easier to shallow out an angle than to correct one that is too medial.",
-      "The needle naturally pulls medially as it passes the capsule — anticipate this.",
+      "The needle naturally pulls medially as it passes the capsule \u2014 anticipate this.",
       "Perform internal/external rotation post-injection to confirm the iatrogenic effusion is intra-articular."
     ],
     "supplies": [
@@ -274,7 +273,7 @@
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic provides relief for 1-4 hours; pain may return before steroid takes effect.",
       "Steroid effect typically begins 24-72 hours after injection.",
-      "Steroid 'flare' (transient worsening for 24-48 hours) occurs in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' (transient worsening for 24-48 hours) occurs in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest the shoulder for 24-48 hours; resume normal activity as tolerated thereafter.",
       "Return immediately for: spreading redness, increasing swelling, fever, or pain disproportionate to expected.",
       "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
@@ -302,22 +301,22 @@
     ],
     "contraindications": [
       "Active local skin infection or cellulitis at the entry site (absolute)",
-      "Suspected septic joint (absolute — aspirate first)",
+      "Suspected septic joint (absolute \u2014 aspirate first)",
       "Bacteremia (absolute for joint injection)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation — review case-by-case",
+      "Therapeutic anticoagulation \u2014 review case-by-case",
       "Uncontrolled diabetes (relative)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
-      "Confirm procedure, side, and site — mark with patient awake",
+      "Confirm procedure, side, and site \u2014 mark with patient awake",
       "Review allergies and anticoagulation",
       "Confirm informed consent",
       "Pre-scan to confirm depth and Doppler the AHC artery branches",
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Supine; head elevated ~30°; arm relaxed"
+      "Supine; head elevated ~30\u00b0; arm relaxed"
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz)"
@@ -334,17 +333,17 @@
       "Under rotator-interval capsule (above) along humeral head/neck (below)"
     ],
     "avoid": [
-      "Ascending branch of the anterior humeral circumflex artery (runs transverse across the bicipital groove — Doppler before every entry)",
+      "Ascending branch of the anterior humeral circumflex artery (runs transverse across the bicipital groove \u2014 Doppler before every entry)",
       "Cephalic vein (medial deltopectoral groove)",
       "Intratendinous subscapularis or long head biceps placement"
     ],
     "steps": [
       "Advance in-plane beneath capsule into joint; confirm flow along intra-articular biceps; inject planned volume slowly.",
-      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations — withdraw and reposition."
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations \u2014 withdraw and reposition."
     ],
     "tips": [
-      "The anterior rotator interval approach does not reliably traverse the SASD bursa — if treating both bursa and GH joint, perform sequential injections.",
-      "Limit corticosteroid to ≤ 3 per joint per year.",
+      "The anterior rotator interval approach does not reliably traverse the SASD bursa \u2014 if treating both bursa and GH joint, perform sequential injections.",
+      "Limit corticosteroid to \u2264 3 per joint per year.",
       "If color Doppler shows the AHC artery in the planned path, abandon and re-plan."
     ],
     "pearls": [
@@ -369,7 +368,7 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest 24-48 hours.",
       "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
@@ -438,12 +437,12 @@
       "Suspected septic joint (absolute)",
       "Bacteremia (absolute)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation — review case-by-case",
+      "Therapeutic anticoagulation \u2014 review case-by-case",
       "Uncontrolled diabetes (relative)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
-      "Confirm procedure, side, and site — mark with patient awake",
+      "Confirm procedure, side, and site \u2014 mark with patient awake",
       "Review allergies and anticoagulation",
       "Confirm informed consent",
       "Pre-scan to confirm joint orientation and rule out incompetent capsule",
@@ -462,7 +461,7 @@
       "Two flat bones (clavicle/acromion) with thin dark joint line centered"
     ],
     "corridor": [
-      "Superior approach: between superior capsule (below) and subcutaneous tissue (above) → tiny joint space, angled to match the oblique joint plane"
+      "Superior approach: between superior capsule (below) and subcutaneous tissue (above) \u2192 tiny joint space, angled to match the oblique joint plane"
     ],
     "avoid": [
       "Acromial branch of thoracoacromial artery",
@@ -476,17 +475,17 @@
     ],
     "tips": [
       "Use minimal local anesthetic to save space for steroid.",
-      "Limit corticosteroid to ≤ 3 per joint per year."
+      "Limit corticosteroid to \u2264 3 per joint per year."
     ],
     "pearls": [
       "Don't 'fill up' the joint with local if you plan to use steroid; the capacity is often < 1 mL.",
-      "Total injectate volume ≤ 1 mL — pre-mix steroid and small lidocaine aliquot in the same syringe before approaching the joint.",
+      "Total injectate volume \u2264 1 mL \u2014 pre-mix steroid and small lidocaine aliquot in the same syringe before approaching the joint.",
       "If pressure is low, the capsule may be incompetent (post-trauma/surgery), leaking into SA space.",
       "Look for the Geyser sign: fluid tracking from GH joint up through the AC joint."
     ],
     "supplies": [
       "3 mL Syringe",
-      "25G 1.5\" Needle (default); 27G 1\" only for lean patients — 27G deflects before reaching the joint in larger patients",
+      "25G 1.5\" Needle (default); 27G 1\" only for lean patients \u2014 27G deflects before reaching the joint in larger patients",
       "18G Drawing Needle",
       "1% Lidocaine (0.5 mL)",
       "Triamcinolone 20-40 mg OR Dexamethasone 4 mg (0.25-0.5 mL)",
@@ -503,7 +502,7 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest 24-48 hours.",
       "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
@@ -570,9 +569,9 @@
       "Active local skin infection at entry site (absolute)",
       "Suspected septic tenosynovitis (absolute)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation — review case-by-case",
+      "Therapeutic anticoagulation \u2014 review case-by-case",
       "Uncontrolled diabetes (relative)",
-      "Recent biceps tendon rupture or high-grade tear (relative — particulate steroid increases re-rupture risk)"
+      "Recent biceps tendon rupture or high-grade tear (relative \u2014 particulate steroid increases re-rupture risk)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
@@ -590,19 +589,19 @@
       "High-frequency linear probe (6-13 MHz) (short footprint helpful)"
     ],
     "landmarking": [
-      "Visual Cue: The \"Bicipital Valley\" — identify the deep bony groove between the greater and lesser tuberosities.",
+      "Visual Cue: The \"Bicipital Valley\" \u2014 identify the deep bony groove between the greater and lesser tuberosities.",
       "Center the round, hyperechoic biceps tendon within the groove.",
-      "Rotate 90° into long-axis to confirm the tendon is intact and not subluxed.",
+      "Rotate 90\u00b0 into long-axis to confirm the tendon is intact and not subluxed.",
       "Doppler Survey: Identify the ascending branch of the anterior humeral circumflex artery (typically transverse across the groove, often visualized medial in the groove near the lesser tuberosity)."
     ],
     "correctImage": [
       "Round/oval tendon centered in groove; thin dark rim around it = sheath"
     ],
     "corridor": [
-      "Lateral → medial path (from greater tuberosity side) into the thin dark rim around tendon — stop the tip in the sheath BEFORE reaching the medial groove wall where the AHC artery typically lies. Not intratendinous."
+      "Lateral \u2192 medial path (from greater tuberosity side) into the thin dark rim around tendon \u2014 stop the tip in the sheath BEFORE reaching the medial groove wall where the AHC artery typically lies. Not intratendinous."
     ],
     "avoid": [
-      "Ascending branch of the anterior humeral circumflex artery (Doppler before every entry — if it sits in the planned path, re-plan)",
+      "Ascending branch of the anterior humeral circumflex artery (Doppler before every entry \u2014 if it sits in the planned path, re-plan)",
       "Intratendinous steroid"
     ],
     "steps": [
@@ -610,14 +609,14 @@
       "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
     "tips": [
-      "If fluid collects above tendon or into SA space, you are in the wrong layer — readjust before steroid.",
-      "The biceps sheath communicates with the GH joint — anticipate some intra-articular steroid spread. Lower doses reduce systemic load and rupture risk.",
-      "Limit to ≤ 3 injections per year per tendon."
+      "If fluid collects above tendon or into SA space, you are in the wrong layer \u2014 readjust before steroid.",
+      "The biceps sheath communicates with the GH joint \u2014 anticipate some intra-articular steroid spread. Lower doses reduce systemic load and rupture risk.",
+      "Limit to \u2264 3 injections per year per tendon."
     ],
     "pearls": [
       "Create a \"test effusion\" with local to confirm circumferential spread around the tendon.",
-      "Always Doppler before entry — the AHC artery position varies; if it sits in the planned path, re-plan.",
-      "Total injectate (anesthetic + steroid) ≤ 3 mL to avoid overfilling the sheath and retrograde GH joint tracking."
+      "Always Doppler before entry \u2014 the AHC artery position varies; if it sits in the planned path, re-plan.",
+      "Total injectate (anesthetic + steroid) \u2264 3 mL to avoid overfilling the sheath and retrograde GH joint tracking."
     ],
     "supplies": [
       "5 mL Syringe",
@@ -638,7 +637,7 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest the shoulder 24-48 hours; avoid heavy lifting for 1 week.",
       "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
