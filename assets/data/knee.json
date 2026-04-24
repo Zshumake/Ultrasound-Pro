@@ -165,8 +165,8 @@
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
       "Maximum 3 injections per joint per year."
     ],
-    "positioningImg": "assets/images/positions/Supine knee flexed 30 degrees.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Supine knee flexed 30 degrees.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "knee-itband",
@@ -341,8 +341,8 @@
       "Maximum of 3 corticosteroid injections per year at the same site, separated by at least 3 months.",
       "Follow-up at 4\u20136 weeks to reassess, confirm PT adherence, and plan next steps."
     ],
-    "positioningImg": "assets/images/positions/Patient lying on side.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Patient lying on side.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "knee-pes-anserine",
@@ -452,7 +452,7 @@
     ],
     "avoid": [
       "Saphenous vein \u2014 superficial and anterior to the pes insertion; compressible on US, map with color Doppler",
-      "Saphenous nerve (infrapatellar branch) \u2014 travels with the saphenous vein; inadvertent intraneural injection causes severe neuralgia",
+      "Saphenous nerve \u2014 sartorial branch travels with the saphenous vein anteriorly; infrapatellar branch crosses the medial knee at the joint line. Both are at risk from anterior trajectories \u2014 use posteromedial approach.",
       "Superficial MCL \u2014 the 'floor' of the bursa; do not pierce it. If the needle dimples MCL fibers, withdraw 1\u20132 mm.",
       "Medial meniscus and medial joint capsule \u2014 more proximal and deeper; avoid advancing too proximally",
       "Inferior medial genicular artery and vein \u2014 near the joint line; visible with Doppler in thin patients",
@@ -481,7 +481,7 @@
     ],
     "pearls": [
       "\"Say Grace before Tea\" \u2014 Sartorius (anterior/superficial), Gracilis (middle), semiTendinosus (posterior/deepest). The bursa lies deep to all three at their common tibial insertion.",
-      "Pes pain is 5\u20137 cm BELOW the medial joint line \u2014 lower than most residents expect. Medial joint line tenderness = meniscus or MCL, not pes. Palpating 4 fingerbreadths below the joint line along the anteromedial tibia reliably identifies the pes.",
+      "Pes pain is 4\u20136 cm BELOW the medial joint line \u2014 lower than most residents expect. Medial joint line tenderness = meniscus or MCL, not pes. Palpating 4 fingerbreadths below the joint line along the anteromedial tibia reliably identifies the pes.",
       "'Knees touching on the mattress' at night is a classic pes anserine history \u2014 the patient reports nocturnal medial knee pain when the painful knee presses into the bed or the other knee. A useful screening question.",
       "The bursa is often NOT visible on US even in symptomatic patients \u2014 a normal-appearing pes on ultrasound does not exclude bursitis. Correlate with the clinical exam and reproduction of the patient's pain.",
       "The superficial MCL is your floor \u2014 if your needle is above the MCL and the bursal space distends with your test bolus, you are in the correct plane. MCL fibers deforming = too deep, pull back 1\u20132 mm."
@@ -516,7 +516,7 @@
       "Limit corticosteroid injections at this site to no more than 3 per year, separated by at least 3 months.",
       "Follow-up at 4\u20136 weeks. If <50% relief and exam still localizes to the pes, repeat ultrasound for occult pathology or reconsider alternate diagnosis."
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   }
 ]

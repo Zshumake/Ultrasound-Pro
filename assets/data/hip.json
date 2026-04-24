@@ -54,7 +54,7 @@
       "Inferolateral \u2192 superomedial under iliopsoas (above) to capsule at head-neck junction (below)"
     ],
     "avoid": [
-      "Femoral nerve/artery/vein medially (NAVEL: lateral-to-medial = nerve, artery, vein, empty space, lymphatics)",
+      "Femoral nerve, artery, vein (medial to needle entry) \u2014 NAVEL lateral-to-medial: Nerve \u00b7 Artery \u00b7 Vein \u00b7 Empty space \u00b7 Lymphatics",
       "Ascending branch of lateral femoral circumflex artery"
     ],
     "steps": [
@@ -136,8 +136,8 @@
         "seconds": 224
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png",
-    "probeImg": "assets/images/probes/Curvelinear.png"
+    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "probeImg": "assets/images/probes/Curvelinear.webp"
   },
   {
     "id": "hip-gtb",
@@ -271,8 +271,8 @@
         "seconds": 160
       }
     ],
-    "positioningImg": "assets/images/positions/Patient lying on side.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Patient lying on side.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "hip-piriformis",
@@ -413,7 +413,7 @@
         "seconds": 216
       }
     ],
-    "probeImg": "assets/images/probes/Curvelinear.png"
+    "probeImg": "assets/images/probes/Curvelinear.webp"
   },
   {
     "id": "si-joint",
@@ -487,7 +487,7 @@
     ],
     "supplies": [
       "5 mL Syringe",
-      "22G 1.5\" or 3.5\" Needle",
+      "22G 3.5\" (89 mm) spinal needle \u2014 standard for SI joint depth in most adults",
       "18G Drawing Needle",
       "1% Lidocaine (1-2 mL)",
       "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
@@ -547,7 +547,7 @@
         "seconds": 293
       }
     ],
-    "probeImg": "assets/images/probes/Curvelinear.png"
+    "probeImg": "assets/images/probes/Curvelinear.webp"
   },
   {
     "id": "hip-hamstring-proximal",
@@ -682,6 +682,6 @@
         "seconds": 91
       }
     ],
-    "probeImg": "assets/images/probes/Curvelinear.png"
+    "probeImg": "assets/images/probes/Curvelinear.webp"
   }
 ]

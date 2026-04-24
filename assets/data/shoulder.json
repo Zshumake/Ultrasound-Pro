@@ -141,8 +141,8 @@
       "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
       "Maximum frequency: typically no more than 3 injections per shoulder per year."
     ],
-    "positioningImg": "assets/images/positions/Modified Kras.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Modified Kras.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "shoulder-gh-posterior",
@@ -219,7 +219,7 @@
       "Slight internal rotation opens the posterior joint recess"
     ],
     "probe": [
-      "High-frequency linear probe (9-15 MHz) as default for most adults; switch to curvilinear (5-8 MHz) only if joint depth exceeds linear penetration (obese patients)."
+      "Linear 6\u20139 MHz as default (posterior GH joint 3\u20135 cm deep in most adults); curvilinear 2\u20135 MHz if BMI elevated or depth >4 cm; 9\u201315 MHz only for very lean patients for most adults; switch to curvilinear (5-8 MHz) only if joint depth exceeds linear penetration (obese patients)."
     ],
     "landmarking": [
       "Visual Cue: The \"Wine Glass\" \u2014 the humeral head sits in the cup; the glenoid/labrum form the rim/stem.",
@@ -279,8 +279,8 @@
       "Diabetics: expect a glucose rise of 50-100 mg/dL for 3-5 days.",
       "Maximum frequency: typically no more than 3 injections per joint per year."
     ],
-    "positioningImg": "assets/images/positions/Seated facing away.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Seated facing away.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "shoulder-gh-anterior",
@@ -411,8 +411,8 @@
         "seconds": 210
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "shoulder-ac",
@@ -545,8 +545,8 @@
         "seconds": 70
       }
     ],
-    "positioningImg": "assets/images/positions/Seated Patient.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Seated Patient.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "shoulder-biceps",
@@ -680,7 +680,7 @@
         "seconds": 89
       }
     ],
-    "positioningImg": "assets/images/positions/Seated Patient Supine Hand Bicep.png",
-    "probeImg": "assets/images/probes/Narrow.png"
+    "positioningImg": "assets/images/positions/Seated Patient Supine Hand Bicep.webp",
+    "probeImg": "assets/images/probes/Narrow.webp"
   }
 ]

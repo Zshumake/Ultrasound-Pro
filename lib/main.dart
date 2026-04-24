@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'data/injection_provider.dart';
 import 'router.dart';
@@ -8,6 +9,11 @@ import 'theme/favorites_manager.dart';
 import 'theme/recently_viewed_manager.dart';
 
 void main() {
+  // Use bundled font files instead of fetching from Google CDN at runtime.
+  // Fonts are declared in pubspec.yaml — eliminates 2 blocking network
+  // requests per cold load, and works on hospital networks that block gstatic.
+  GoogleFonts.config.allowRuntimeFetching = false;
+
   runApp(
     MultiProvider(
       providers: [

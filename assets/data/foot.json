@@ -50,7 +50,7 @@
       "Identify the talar dome (curved line) with distinct dark capsular line above; tendons are superficial and out of path"
     ],
     "corridor": [
-      "Anteromedial entry, MEDIAL TO THE TIBIALIS ANTERIOR TENDON, in-plane along the medial gutter. Keep the deep peroneal nerve and dorsalis pedis artery (lying between EHL and EDL on the lateral side) OUT of the needle path \u2014 do not advance toward the lateral compartment."
+      "Anteromedial entry, MEDIAL TO THE TIBIALIS ANTERIOR TENDON, in-plane along the medial gutter. Keep the deep peroneal nerve and dorsalis pedis artery (lying just lateral to EHL \u2014 stay medial to tibialis anterior throughout) OUT of the needle path \u2014 do not advance toward the lateral compartment."
     ],
     "avoid": [
       "Deep peroneal nerve and dorsalis pedis artery (lateral to EHL \u2014 stay medial of them throughout)",
@@ -133,8 +133,8 @@
         "seconds": 166
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "ankle-peroneal",
@@ -267,8 +267,8 @@
         "seconds": 133
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png",
-    "probeImg": "assets/images/probes/Narrow.png"
+    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "probeImg": "assets/images/probes/Narrow.webp"
   },
   {
     "id": "foot-plantar",
@@ -304,7 +304,7 @@
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Side-lying with symptomatic foot dependent or off table edge"
+      "Supine with hip externally rotated (frog-leg) so the medial heel faces up, OR prone with foot off the bed edge \u2014 either exposes the medial calcaneal insertion for the medial-to-lateral needle approach."
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz)"
@@ -403,8 +403,8 @@
         "seconds": 124
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "foot-mortons-neuroma",
@@ -540,7 +540,7 @@
         "seconds": 141
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   }
 ]
