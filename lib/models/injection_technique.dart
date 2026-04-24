@@ -11,9 +11,9 @@ class VideoTimestamp {
 
   factory VideoTimestamp.fromJson(Map<String, dynamic> json) {
     return VideoTimestamp(
-      label: json['label'] as String,
-      section: json['section'] as String,
-      seconds: json['seconds'] as int,
+      label: json['label'] as String? ?? '',
+      section: json['section'] as String? ?? '',
+      seconds: (json['seconds'] as num?)?.toInt() ?? 0,
     );
   }
 
@@ -157,23 +157,26 @@ class InjectionTechnique {
     this.postProcedure = const [],
   });
 
+  static List<String> _strings(dynamic val) =>
+      val != null ? List<String>.from(val as List) : const [];
+
   factory InjectionTechnique.fromJson(Map<String, dynamic> json) {
     return InjectionTechnique(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      category: json['category'] as String,
-      tags: List<String>.from(json['tags']),
-      treats: List<String>.from(json['treats']),
-      positioning: List<String>.from(json['positioning']),
-      probe: List<String>.from(json['probe']),
-      landmarking: List<String>.from(json['landmarking']),
-      correctImage: List<String>.from(json['correctImage']),
-      corridor: List<String>.from(json['corridor']),
-      avoid: List<String>.from(json['avoid']),
-      steps: List<String>.from(json['steps']),
-      tips: List<String>.from(json['tips']),
-      pearls: List<String>.from(json['pearls']),
-      supplies: List<String>.from(json['supplies']),
+      id: json['id'] as String? ?? '',
+      title: json['title'] as String? ?? '',
+      category: json['category'] as String? ?? '',
+      tags: _strings(json['tags']),
+      treats: _strings(json['treats']),
+      positioning: _strings(json['positioning']),
+      probe: _strings(json['probe']),
+      landmarking: _strings(json['landmarking']),
+      correctImage: _strings(json['correctImage']),
+      corridor: _strings(json['corridor']),
+      avoid: _strings(json['avoid']),
+      steps: _strings(json['steps']),
+      tips: _strings(json['tips']),
+      pearls: _strings(json['pearls']),
+      supplies: _strings(json['supplies']),
       positioningImg: json['positioningImg'] as String?,
       probeImg: json['probeImg'] as String?,
       landmarkImg: json['landmarkImg'] as String?,

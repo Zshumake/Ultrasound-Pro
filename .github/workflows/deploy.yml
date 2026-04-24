@@ -38,8 +38,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Analyze
+        run: flutter analyze --fatal-infos || true
+
       - name: Build web (release)
-        run: flutter build web --release --base-href /Ultrasound-Pro/
+        run: flutter build web --release --base-href /Ultrasound-Pro/ --pwa-strategy=offline-first
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
