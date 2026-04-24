@@ -3,7 +3,7 @@
     "id": "shoulder-sasd",
     "title": "Subacromial–Subdeltoid Bursa Injection",
     "category": "Shoulder",
-    "videoUrl": "https://www.youtube.com/watch?v=_rQx6mXq698",
+    "videoUrl": null,
     "videoTimestamps": [
       { "label": "Patient Position", "section": "positioning", "seconds": 10 },
       { "label": "Probe Placement", "section": "probe", "seconds": 30 },
@@ -38,8 +38,8 @@
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Patient supine; head of bed about 30°",
-      "Arm relaxed at the side; support forearm as needed"
+      "Patient seated; arm relaxed at side hanging naturally",
+      "Support the forearm on the patient's thigh or a rolled towel if needed"
     ],
     "probe": [
       "High‑frequency linear probe (6-13 MHz) (best for superficial structures)"
@@ -112,7 +112,7 @@
     "id": "shoulder-gh-posterior",
     "title": "Glenohumeral Joint Injection (Posterior Approach)",
     "category": "Shoulder",
-    "videoUrl": "https://www.youtube.com/watch?v=uQO6DxfHTkw",
+    "videoUrl": null,
     "videoTimestamps": [
       { "label": "Patient Position", "section": "positioning", "seconds": 8 },
       { "label": "Probe Setup", "section": "probe", "seconds": 25 },
@@ -148,7 +148,8 @@
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Lateral decubitus; affected shoulder up; arm relaxed in neutral"
+      "Patient seated; arm adducted and resting across the lap or on the thigh",
+      "Slight internal rotation opens the posterior joint recess"
     ],
     "probe": [
       "High-frequency linear probe (9-15 MHz) as default for most adults; switch to curvilinear (5-8 MHz) only if joint depth exceeds linear penetration (obese patients)."
@@ -216,7 +217,7 @@
     "id": "shoulder-gh-anterior",
     "title": "Glenohumeral Joint Injection (Anterior Rotator Interval)",
     "category": "Shoulder",
-    "videoUrl": "https://www.youtube.com/watch?v=nwoxhdMNlYM",
+    "videoUrl": null,
     "anatomyModelId": "25816dd910324d2d813d40030f7f7927",
     "anatomyModelTitle": "Glenohumeral Joint (AUmedart)",
     "tags": ["shoulder", "glenohumeral", "anterior", "rotator interval", "biceps"],
@@ -312,7 +313,7 @@
     "id": "shoulder-ac",
     "title": "Acromioclavicular (AC) Joint Injection",
     "category": "Shoulder",
-    "videoUrl": "https://www.youtube.com/watch?v=8xfcDMERiBQ",
+    "videoUrl": null,
     "anatomyModelId": "5d5c63b3469a4db0b8a3f659a1848d56",
     "anatomyModelTitle": "Shoulder Girdle Ligaments (AC Joint)",
     "tags": ["shoulder", "ac joint", "distal clavicle", "sprain"],
@@ -411,7 +412,7 @@
     "id": "shoulder-biceps",
     "title": "Long Head of the Biceps Tendon Sheath Injection",
     "category": "Shoulder",
-    "videoUrl": "https://www.youtube.com/watch?v=_sU4Eg20P7g",
+    "videoUrl": null,
     "anatomyModelId": "ac22f1038e1a479d86f3853934c7a617",
     "anatomyModelTitle": "Shoulder Muscles — Biceps & Rotator Cuff",
     "tags": ["shoulder", "biceps", "sheath", "tenosynovitis"],
@@ -436,7 +437,8 @@
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Supine; head elevated; forearm supinated (palm up)"
+      "Patient seated; forearm supinated and resting on the lap or a table (palm up)",
+      "Slight external rotation of the shoulder brings the bicipital groove anterior and accessible"
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz) (short footprint helpful)"
