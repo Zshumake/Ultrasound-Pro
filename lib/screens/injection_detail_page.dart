@@ -9,7 +9,6 @@ import '../widgets/youtube_player.dart';
 import '../widgets/sketchfab_viewer.dart';
 import '../widgets/us_image_gallery.dart';
 import '../widgets/procedure_mode_view.dart';
-import '../widgets/body_viewer_3d.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
 import '../theme/recently_viewed_manager.dart';
@@ -660,13 +659,6 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
           ],
         ),
         const SizedBox(height: 16),
-        // 3D Body Viewer — interactive patient positioning & probe placement
-        BodyViewer3D(
-          procedureId: widget.technique.id,
-          accentColor: catColor,
-          label: widget.technique.positioning.join(' | '),
-        ),
-        const SizedBox(height: 24),
         if (isMobile) ...[
           _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg, imageAlignment: Alignment.topLeft),
           const SizedBox(height: 24),
