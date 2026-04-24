@@ -9,7 +9,7 @@ import '../widgets/youtube_player.dart';
 import '../widgets/sketchfab_viewer.dart';
 import '../widgets/us_image_gallery.dart';
 import '../widgets/procedure_mode_view.dart';
-import '../widgets/interactive_anatomical_view.dart';
+import '../widgets/body_viewer_3d.dart';
 import '../theme/app_theme.dart';
 import '../theme/favorites_manager.dart';
 import '../theme/recently_viewed_manager.dart';
@@ -157,22 +157,6 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                     const SizedBox(height: 48),
                     _buildUSViewSection(context),
                     const SizedBox(height: 48),
-                    // Anatomy & placement visuals — study these BEFORE needle insertion
-                    if (widget.technique.anatomicalPlacement != null) ...[
-                      const MedicalSectionHeader(title: 'ANATOMICAL PLACEMENT'),
-                      const SizedBox(height: 16),
-                      Container(
-                        height: 400,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: isDark ? AppTheme.surfaceDark.withValues(alpha: 0.5) : const Color(0xFFF9FAFB),
-                          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-                          border: Border.all(color: isDark ? AppTheme.borderDark : AppTheme.borderLight),
-                        ),
-                        child: InteractiveAnatomicalView(placement: widget.technique.anatomicalPlacement!),
-                      ),
-                      const SizedBox(height: 48),
-                    ],
                     USImageGallery(
                       imagePaths: widget.technique.usGalleryImages,
                       imageLabels: widget.technique.usGalleryLabels,
@@ -676,15 +660,22 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
           ],
         ),
         const SizedBox(height: 16),
+        // 3D Body Viewer — interactive patient positioning & probe placement
+        BodyViewer3D(
+          procedureId: widget.technique.id,
+          accentColor: catColor,
+          label: widget.technique.positioning.join(' | '),
+        ),
+        const SizedBox(height: 24),
         if (isMobile) ...[
-          _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg),
+          _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg, imageAlignment: Alignment.topLeft),
           const SizedBox(height: 24),
           _buildInfoImagePair(context, 'Hardware', widget.technique.probe.join('\n'), 'Probe Image', Icons.sensors_outlined, widget.technique.probeImg),
         ] else
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(child: _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg)),
+              Expanded(child: _buildInfoImagePair(context, 'Positioning', widget.technique.positioning.join('\n'), 'Position Image', Icons.person_pin_outlined, widget.technique.positioningImg, imageAlignment: Alignment.topLeft)),
               const SizedBox(width: 16),
               Expanded(child: _buildInfoImagePair(context, 'Hardware', widget.technique.probe.join('\n'), 'Probe Image', Icons.sensors_outlined, widget.technique.probeImg)),
             ],
@@ -786,12 +777,12 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
     );
   }
 
-  Widget _buildInfoImagePair(BuildContext context, String title, String text, String placeholderLabel, IconData icon, String? imagePath) {
+  Widget _buildInfoImagePair(BuildContext context, String title, String text, String placeholderLabel, IconData icon, String? imagePath, {Alignment imageAlignment = Alignment.center}) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        MedicalPlaceholderImage(label: placeholderLabel, height: 120, imagePath: imagePath),
+        MedicalPlaceholderImage(label: placeholderLabel, height: 200, imagePath: imagePath, alignment: imageAlignment),
         const SizedBox(height: 10),
         Row(
           children: [

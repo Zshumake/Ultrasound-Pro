@@ -145,6 +145,7 @@ class MedicalPlaceholderImage extends StatelessWidget {
   final double height;
   final bool isMain;
   final String? imagePath;
+  final Alignment alignment;
 
   const MedicalPlaceholderImage({
     super.key,
@@ -152,6 +153,7 @@ class MedicalPlaceholderImage extends StatelessWidget {
     this.height = 150,
     this.isMain = false,
     this.imagePath,
+    this.alignment = Alignment.center,
   });
 
   @override
@@ -180,6 +182,7 @@ class MedicalPlaceholderImage extends StatelessWidget {
             ? Image.asset(
                 imagePath!,
                 fit: BoxFit.cover,
+                alignment: alignment,
                 errorBuilder: (context, error, stackTrace) => _buildPlaceholder(context, accentColor, isDark),
               )
             : _buildPlaceholder(context, accentColor, isDark),

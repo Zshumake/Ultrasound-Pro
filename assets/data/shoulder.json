@@ -71,18 +71,19 @@
       "Pre-scan to confirm anatomy and rule out variants",
       "Time-out immediately before needle entry"
     ],
-    "positioning": [
-      "Patient seated; arm relaxed at side hanging naturally",
-      "Support the forearm on the patient's thigh or a rolled towel if needed"
+    “positioning”: [
+      “Modified Crass (Kras) position: patient seated, place the palm of the ipsilateral hand flat on the iliac crest/waist, elbow directed posteriorly.”,
+      “This internally rotates and slightly extends the humerus, rotating the greater tuberosity anteriorly and pulling the supraspinatus footprint out from under the acromial shadow.”,
+      “Compared to the original Crass position (dorsum of hand on lumbar spine), this modified version is better tolerated in patients with painful or stiff shoulders while still providing adequate exposure of the supraspinatus critical zone.”
     ],
-    "probe": [
-      "High‑frequency linear probe (6-13 MHz) (best for superficial structures)"
+    “probe”: [
+      “High‑frequency linear probe (6-13 MHz) (best for superficial structures)”
     ],
-    "landmarking": [
-      "Place the probe transversely just anterior to the lateral acromial edge.",
-      "Slide anterior-posterior to find the supraspinatus tendon passing under the acromion.",
-      "Center the lateral acromion at the screen edge while keeping the tendon in long-axis.",
-      "Identify the “Bursal Stripe”: the thin hypoechoic plane between the deltoid and supraspinatus."
+    “landmarking”: [
+      “Place the probe transversely just anterior to the lateral acromial edge.”,
+      “Slide anterior-posterior to find the supraspinatus tendon passing under the acromion.”,
+      “Center the lateral acromion at the screen edge while keeping the tendon in long-axis.”,
+      “Identify the “Bursal Stripe”: the thin hypoechoic plane between the deltoid and supraspinatus.”
     ],
     "correctImage": [
       "Acromion at screen edge; supraspinatus fibers parallel and uniform",
