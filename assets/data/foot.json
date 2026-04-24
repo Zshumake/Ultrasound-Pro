@@ -4,8 +4,8 @@
     "title": "Tibiotalar (Ankle) Joint Injection",
     "category": "Foot",
     "videoUrl": null,
-    "anatomyModelId": "2e2d0f64ecb743c8844304ff5cf693cf",
-    "anatomyModelTitle": "Foot, Ankle & Ligaments (Soma3D)",
+    "anatomyModelId": "f97847160e4a47409309050f0e269626",
+    "anatomyModelTitle": "Foot Muscles \u2014 Intrinsic & Extrinsic (Ebers)",
     "tags": [
       "ankle",
       "tibiotalar",
@@ -19,41 +19,41 @@
     ],
     "contraindications": [
       "Active local skin infection at entry site (absolute)",
-      "Suspected septic joint (absolute — aspirate first, do not inject steroid)",
+      "Suspected septic joint (absolute \u2014 aspirate first, do not inject steroid)",
       "Bacteremia (absolute)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation — review case-by-case",
+      "Therapeutic anticoagulation \u2014 review case-by-case",
       "Uncontrolled diabetes (relative)",
       "Ankle prosthesis at the target site (relative)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
-      "Confirm procedure, side, and site — mark with patient awake",
+      "Confirm procedure, side, and site \u2014 mark with patient awake",
       "Review allergies and anticoagulation",
       "Confirm informed consent",
       "Pre-scan: identify TA, EHL, EDL tendons; Doppler the deep peroneal nerve and dorsalis pedis artery (lateral to EHL); plan medial-to-EHL entry",
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Supine; knee ~90°; foot flat; ankle slightly plantarflexed"
+      "Supine; knee ~90\u00b0; foot flat; ankle slightly plantarflexed"
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
-      "Visual Cue: The 'Talar Dome Profile' — identify the smooth convex curve of the talus.",
+      "Visual Cue: The 'Talar Dome Profile' \u2014 identify the smooth convex curve of the talus.",
       "Short-Axis Scan: identify the anterior tendons (TA, EHL, EDL).",
-      "Doppler Survey: Map the 'No-Fly Zone' — deep peroneal nerve and dorsalis pedis artery (lying between EHL and EDL on the lateral side).",
+      "Doppler Survey: Map the 'No-Fly Zone' \u2014 deep peroneal nerve and dorsalis pedis artery (lying between EHL and EDL on the lateral side).",
       "Identify the joint capsule as a distinct dark plane just above the talar cartilage."
     ],
     "correctImage": [
       "Identify the talar dome (curved line) with distinct dark capsular line above; tendons are superficial and out of path"
     ],
     "corridor": [
-      "Anteromedial entry, MEDIAL TO THE TIBIALIS ANTERIOR TENDON, in-plane along the medial gutter. Keep the deep peroneal nerve and dorsalis pedis artery (lying between EHL and EDL on the lateral side) OUT of the needle path — do not advance toward the lateral compartment."
+      "Anteromedial entry, MEDIAL TO THE TIBIALIS ANTERIOR TENDON, in-plane along the medial gutter. Keep the deep peroneal nerve and dorsalis pedis artery (lying between EHL and EDL on the lateral side) OUT of the needle path \u2014 do not advance toward the lateral compartment."
     ],
     "avoid": [
-      "Deep peroneal nerve and dorsalis pedis artery (lateral to EHL — stay medial of them throughout)",
+      "Deep peroneal nerve and dorsalis pedis artery (lateral to EHL \u2014 stay medial of them throughout)",
       "Intratendinous injection of TA, EHL, or EDL"
     ],
     "steps": [
@@ -63,16 +63,16 @@
     ],
     "tips": [
       "Small tilts separate capsule from cartilage and improve needle visualization.",
-      "Limit corticosteroid to ≤ 3 per joint per year.",
+      "Limit corticosteroid to \u2264 3 per joint per year.",
       "If color Doppler shows the DPA in the planned path, abandon and re-plan."
     ],
     "pearls": [
-      "Enter MEDIAL to tibialis anterior. The DPA/DPN bundle lies LATERAL to EHL — stay medial of it throughout.",
+      "Enter MEDIAL to tibialis anterior. The DPA/DPN bundle lies LATERAL to EHL \u2014 stay medial of it throughout.",
       "The target is the space between the joint capsule and the talar hyaline cartilage."
     ],
     "supplies": [
       "For injection only: 25G 1.5\" needle",
-      "For aspiration ± injection (suspected effusion, synovitis workup, septic rule-out): 20G or 22G 1.5\" needle",
+      "For aspiration \u00b1 injection (suspected effusion, synovitis workup, septic rule-out): 20G or 22G 1.5\" needle",
       "5 mL Syringe",
       "18G Drawing Needle",
       "1% Lidocaine (3-5 mL)",
@@ -90,7 +90,7 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest the ankle 24-48 hours; resume normal activity as tolerated thereafter.",
       "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR new foot numbness or weakness.",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
@@ -140,8 +140,8 @@
     "id": "ankle-peroneal",
     "title": "Peroneal Tendon Sheath Injection",
     "videoUrl": null,
-    "anatomyModelId": "2e2d0f64ecb743c8844304ff5cf693cf",
-    "anatomyModelTitle": "Foot, Ankle & Ligaments (Soma3D)",
+    "anatomyModelId": "f97847160e4a47409309050f0e269626",
+    "anatomyModelTitle": "Foot Muscles \u2014 Intrinsic & Extrinsic (Ebers)",
     "category": "Foot",
     "tags": [
       "ankle",
@@ -157,9 +157,9 @@
       "Active local skin infection at entry site (absolute)",
       "Suspected septic tenosynovitis (absolute)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation — review case-by-case",
+      "Therapeutic anticoagulation \u2014 review case-by-case",
       "Uncontrolled diabetes (relative)",
-      "High-grade peroneus brevis longitudinal split or tear (relative — favor non-particulate steroid or alternative therapy)"
+      "High-grade peroneus brevis longitudinal split or tear (relative \u2014 favor non-particulate steroid or alternative therapy)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
@@ -177,26 +177,26 @@
       "High-frequency linear probe (6-13 MHz) (short footprint ideal)"
     ],
     "landmarking": [
-      "Probe over posterior aspect of lateral malleolus → identify peroneus longus and brevis tendons sharing a sheath → see superior peroneal retinaculum overlying"
+      "Probe over posterior aspect of lateral malleolus \u2192 identify peroneus longus and brevis tendons sharing a sheath \u2192 see superior peroneal retinaculum overlying"
     ],
     "correctImage": [
       "Two tendons in shared anechoic rim (sheath) behind the fibula"
     ],
     "corridor": [
-      "Anterior → posterior under retinaculum (above) into sheath around tendons (below)"
+      "Anterior \u2192 posterior under retinaculum (above) into sheath around tendons (below)"
     ],
     "avoid": [
-      "Sural nerve — runs posterior to the peroneal tendons in the same fascial plane and is the most common iatrogenic injury at this site. Map it with US BEFORE every injection. Do not proceed if the nerve crosses the planned path.",
-      "Intratendinous steroid — particularly dangerous if peroneus brevis longitudinal split is present (rupture risk)"
+      "Sural nerve \u2014 runs posterior to the peroneal tendons in the same fascial plane and is the most common iatrogenic injury at this site. Map it with US BEFORE every injection. Do not proceed if the nerve crosses the planned path.",
+      "Intratendinous steroid \u2014 particularly dangerous if peroneus brevis longitudinal split is present (rupture risk)"
     ],
     "steps": [
       "In-plane into sheath; surround both tendons with injectate.",
-      "If injectate fails to spread freely around both tendons, WITHDRAW and reposition — do not increase injection pressure (failure to spread may indicate intratendinous placement).",
+      "If injectate fails to spread freely around both tendons, WITHDRAW and reposition \u2014 do not increase injection pressure (failure to spread may indicate intratendinous placement).",
       "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations along the lateral foot or sural distribution."
     ],
     "tips": [
       "Short needle gives fine control; low volumes suffice.",
-      "Limit to ≤ 2-3 injections per tendon per lifetime.",
+      "Limit to \u2264 2-3 injections per tendon per lifetime.",
       "If color Doppler shows a vessel in the planned path, abandon and re-plan."
     ],
     "pearls": [
@@ -210,7 +210,7 @@
       "25G 1.5\" Needle",
       "18G Drawing Needle",
       "1% Lidocaine (1-2 mL)",
-      "Dexamethasone 4-8 mg (PREFERRED — non-particulate, lower rupture risk near a split tendon) OR triamcinolone 20-40 mg",
+      "Dexamethasone 4-8 mg (PREFERRED \u2014 non-particulate, lower rupture risk near a split tendon) OR triamcinolone 20-40 mg",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
       "Sterile Gloves",
@@ -224,7 +224,7 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest the ankle 24-48 hours; avoid heavy loading or running for 1 week.",
       "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR sudden 'pop' or weakness with push-off (concern for tendon rupture).",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
@@ -274,8 +274,8 @@
     "id": "foot-plantar",
     "title": "Plantar Fascia (Perifascial) Injection",
     "videoUrl": null,
-    "anatomyModelId": "fb4f3aefda654bffbac2510ed7869871",
-    "anatomyModelTitle": "Human Foot Anatomy (3dPiX)",
+    "anatomyModelId": "f97847160e4a47409309050f0e269626",
+    "anatomyModelTitle": "Foot Muscles \u2014 Intrinsic & Extrinsic (Ebers)",
     "category": "Foot",
     "tags": [
       "foot",
@@ -286,12 +286,12 @@
     ],
     "treats": [
       "Plantar fasciitis (heel pain) requiring perifascial therapy",
-      "NOT for plantar fibromatosis, retrocalcaneal bursitis, or tarsal tunnel syndrome — re-diagnose if US shows a mass lesion or tunnel-level pathology"
+      "NOT for plantar fibromatosis, retrocalcaneal bursitis, or tarsal tunnel syndrome \u2014 re-diagnose if US shows a mass lesion or tunnel-level pathology"
     ],
     "contraindications": [
       "Active local skin infection at entry site (absolute)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation — review case-by-case",
+      "Therapeutic anticoagulation \u2014 review case-by-case",
       "Uncontrolled diabetes (relative)",
       "Plantar fibromatosis or other mass lesion (re-diagnose, not for this procedure)"
     ],
@@ -299,7 +299,7 @@
       "Confirm patient identity (two identifiers)",
       "Confirm procedure, side, and site",
       "Review allergies and anticoagulation",
-      "Confirm informed consent — DISCUSS fat pad atrophy and fascial rupture risks",
+      "Confirm informed consent \u2014 DISCUSS fat pad atrophy and fascial rupture risks",
       "Pre-scan: identify plantar fascia thickness, fat pad, calcaneus; map medial calcaneal nerve and Baxter's nerve; Doppler the medial NV bundle",
       "Time-out immediately before needle entry"
     ],
@@ -310,13 +310,13 @@
       "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
-      "Short-axis over plantar heel at calcaneal origin → identify bright plantar fascia on calcaneus → find thin dark plane between fascia and fat pad"
+      "Short-axis over plantar heel at calcaneal origin \u2192 identify bright plantar fascia on calcaneus \u2192 find thin dark plane between fascia and fat pad"
     ],
     "correctImage": [
       "Bright fascia with thin anechoic plane separating it from fat pad"
     ],
     "corridor": [
-      "Medial → lateral within thin plane: fat pad (above), plantar fascia (below) — do not enter fascia"
+      "Medial \u2192 lateral within thin plane: fat pad (above), plantar fascia (below) \u2014 do not enter fascia"
     ],
     "avoid": [
       "Intrafascial steroid (rupture risk)",
@@ -330,8 +330,8 @@
       "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations into the heel or sole."
     ],
     "tips": [
-      "Use smallest effective volume; total injectate ≤ 3 mL.",
-      "Stop if resistance — correct plane opens smoothly. If you meet resistance and push harder, steroid can extravasate INTO the fascia (rupture risk).",
+      "Use smallest effective volume; total injectate \u2264 3 mL.",
+      "Stop if resistance \u2014 correct plane opens smoothly. If you meet resistance and push harder, steroid can extravasate INTO the fascia (rupture risk).",
       "Limit to 1-2 steroid injections at this site lifetime (cumulative rupture and atrophy risk).",
       "If color Doppler shows the medial NV bundle in the planned path, abandon and re-plan."
     ],
@@ -339,14 +339,14 @@
       "The target is the hypoechoic plane between the fat pad (superficial) and fascia (deep).",
       "Avoid intrafascial or fat pad injection to prevent rupture or atrophy.",
       "Approach medial-to-lateral to avoid the medial neurovascular bundle.",
-      "Watch out for Baxter's nerve entrapment as a separate cause of heel pain — distinct diagnosis requiring different treatment."
+      "Watch out for Baxter's nerve entrapment as a separate cause of heel pain \u2014 distinct diagnosis requiring different treatment."
     ],
     "supplies": [
       "5 mL Syringe",
-      "25G 1.5\" Needle (default; 27G only with non-particulate steroid — triamcinolone can clog 27G)",
+      "25G 1.5\" Needle (default; 27G only with non-particulate steroid \u2014 triamcinolone can clog 27G)",
       "18G Drawing Needle",
       "1% Lidocaine (1-2 mL)",
-      "Dexamethasone 4 mg (PREFERRED — lower atrophy/rupture risk) OR triamcinolone 20 mg (single low dose)",
+      "Dexamethasone 4 mg (PREFERRED \u2014 lower atrophy/rupture risk) OR triamcinolone 20 mg (single low dose)",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
       "Sterile Gloves",
@@ -360,7 +360,7 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest the heel 48-72 hours; avoid running and prolonged standing for 1 week.",
       "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR sudden tearing sensation in the heel (concern for fascial rupture).",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
@@ -410,8 +410,8 @@
     "id": "foot-mortons-neuroma",
     "title": "Morton's Neuroma Injection (Dorsal Approach)",
     "videoUrl": null,
-    "anatomyModelId": "fb4f3aefda654bffbac2510ed7869871",
-    "anatomyModelTitle": "Human Foot Anatomy (3dPiX)",
+    "anatomyModelId": "f97847160e4a47409309050f0e269626",
+    "anatomyModelTitle": "Foot Muscles \u2014 Intrinsic & Extrinsic (Ebers)",
     "category": "Foot",
     "tags": [
       "foot",
@@ -426,12 +426,12 @@
     "contraindications": [
       "Active local skin infection at entry site (absolute)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation — review case-by-case",
+      "Therapeutic anticoagulation \u2014 review case-by-case",
       "Uncontrolled diabetes (relative)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
-      "Confirm procedure, side, and TARGET WEB SPACE — mark with patient awake",
+      "Confirm procedure, side, and TARGET WEB SPACE \u2014 mark with patient awake",
       "Review allergies and anticoagulation",
       "Confirm informed consent",
       "Pre-scan: identify the neuroma in the target web space; perform Mulder's maneuver to confirm; identify the deep transverse intermetatarsal ligament; Doppler deep plantar metatarsal vessels",
@@ -444,7 +444,7 @@
       "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
-      "Mulder's Maneuver: Squeeze the forefoot transversely (medial-lateral compression of the metatarsal heads) while simultaneously applying plantar pressure on the suspect interspace. Watch in real-time for the hypoechoic neuroma to 'pop' dorsally between the metatarsal heads — this is the sonographic Mulder's click and confirms target identification.",
+      "Mulder's Maneuver: Squeeze the forefoot transversely (medial-lateral compression of the metatarsal heads) while simultaneously applying plantar pressure on the suspect interspace. Watch in real-time for the hypoechoic neuroma to 'pop' dorsally between the metatarsal heads \u2014 this is the sonographic Mulder's click and confirms target identification.",
       "Transverse Scan: Identify the target web space (usually 2nd-3rd or 3rd-4th).",
       "Identify the hypoechoic 'dumbbell' or round mass as it 'pops' dorsally during compression.",
       "Identify and avoid the intermetatarsal bursa, which often sits just superficial to the neuroma."
@@ -457,7 +457,7 @@
     ],
     "avoid": [
       "Deep plantar metatarsal vessels",
-      "Adjacent (non-target) digital nerves in neighboring web spaces. Note: target IS the common plantar digital nerve — aim for PERI-NEURAL placement around the hypoechoic mass, not intraneural."
+      "Adjacent (non-target) digital nerves in neighboring web spaces. Note: target IS the common plantar digital nerve \u2014 aim for PERI-NEURAL placement around the hypoechoic mass, not intraneural."
     ],
     "steps": [
       "Advance dorsal-to-plantar under real-time US.",
@@ -476,14 +476,14 @@
       "Mulder's = medial-lateral squeeze + plantar push. Don't rely on plantar-only pressure.",
       "The neuroma sits PLANTAR to the deep transverse intermetatarsal ligament. From a dorsal approach, feel for a subtle 'pop' through the ligament and confirm tip is deep to it. Stopping above the ligament deposits steroid in the intermetatarsal bursa instead of around the neuroma.",
       "Identify and avoid the intermetatarsal bursa, which may also be inflamed.",
-      "Steroid in the plantar fat pad can cause atrophy — the dorsal approach minimizes this risk."
+      "Steroid in the plantar fat pad can cause atrophy \u2014 the dorsal approach minimizes this risk."
     ],
     "supplies": [
       "3 mL Syringe",
-      "25G 1\" or 1.5\" Needle (use ≥ 25G if injecting triamcinolone — 27G can clog with particulate suspension)",
+      "25G 1\" or 1.5\" Needle (use \u2265 25G if injecting triamcinolone \u2014 27G can clog with particulate suspension)",
       "18G Drawing Needle",
       "1% Lidocaine (0.5 mL)",
-      "Dexamethasone 4 mg (PREFERRED — non-particulate, no clog risk, no fat atrophy) OR triamcinolone 20 mg",
+      "Dexamethasone 4 mg (PREFERRED \u2014 non-particulate, no clog risk, no fat atrophy) OR triamcinolone 20 mg",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
       "Sterile Gloves",
@@ -497,7 +497,7 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest the foot 24-48 hours; avoid tight footwear and wear cushioned shoes.",
       "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR new toe numbness or color change.",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",

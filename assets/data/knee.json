@@ -68,8 +68,8 @@
         }
       ]
     },
-    "anatomyModelId": "0a2d68c6ec1f4ca783336c96f3c0a5fd",
-    "anatomyModelTitle": "Knee Anatomy (University of Dundee)",
+    "anatomyModelId": "765feaaebb4743dab7eeabb35c89cf10",
+    "anatomyModelTitle": "Knee Anatomy: Muscles & Ligaments (University of Dundee)",
     "tags": [
       "knee",
       "suprapatellar",
@@ -85,58 +85,58 @@
     ],
     "contraindications": [
       "Active local skin infection at entry site (absolute)",
-      "Suspected septic joint (absolute — aspirate first, do not inject steroid)",
+      "Suspected septic joint (absolute \u2014 aspirate first, do not inject steroid)",
       "Bacteremia (absolute)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation — review case-by-case",
+      "Therapeutic anticoagulation \u2014 review case-by-case",
       "Uncontrolled diabetes (relative)",
-      "Knee prosthesis at the target site (relative — coordinate with orthopedics)"
+      "Knee prosthesis at the target site (relative \u2014 coordinate with orthopedics)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
-      "Confirm procedure, side, and site — mark with patient awake",
+      "Confirm procedure, side, and site \u2014 mark with patient awake",
       "Review allergies and anticoagulation",
       "Confirm informed consent",
       "Pre-scan: identify quadriceps fat pad, prefemoral fat pad, and the recess between them; Doppler genicular vessels",
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Supine; small towel under knee for 20-30° flexion"
+      "Supine; small towel under knee for 20-30\u00b0 flexion"
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
-      "Short-axis (transverse) probe across the suprapatellar recess just proximal to the patella → identify femoral cortex deep, prefemoral fat pad above, suprapatellar recess (target) above that, quadriceps fat pad and quadriceps tendon most superficial.",
+      "Short-axis (transverse) probe across the suprapatellar recess just proximal to the patella \u2192 identify femoral cortex deep, prefemoral fat pad above, suprapatellar recess (target) above that, quadriceps fat pad and quadriceps tendon most superficial.",
       "Slide the probe to find the deepest part of the recess for easier access."
     ],
     "correctImage": [
-      "Two distinct fat pads with anechoic space between — quadriceps fat pad (above) and prefemoral fat pad (below)."
+      "Two distinct fat pads with anechoic space between \u2014 quadriceps fat pad (above) and prefemoral fat pad (below)."
     ],
     "corridor": [
-      "Lateral → medial in-plane approach across the recess (with probe in transverse / short-axis orientation)"
+      "Lateral \u2192 medial in-plane approach across the recess (with probe in transverse / short-axis orientation)"
     ],
     "avoid": [
       "Avoid traversing the quadriceps tendon or patellar tendon",
       "Genicular vessels (screen with Doppler)"
     ],
     "steps": [
-      "Position patient supine with knee in 20-30° flexion.",
+      "Position patient supine with knee in 20-30\u00b0 flexion.",
       "Place probe in SHORT-AXIS (transverse) orientation across the suprapatellar recess just proximal to the patella.",
       "Identify the anechoic effusion or the hypoechoic plane between fat pads.",
-      "Advance in-plane LATERAL → MEDIAL across the recess.",
+      "Advance in-plane LATERAL \u2192 MEDIAL across the recess.",
       "Confirm spread with a small test bolus of local anesthetic.",
       "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
     "tips": [
       "Gentle probe compression pools fluid at your entry site; keep needle parallel to cartilage.",
-      "Limit corticosteroid to ≤ 3 per joint per year.",
+      "Limit corticosteroid to \u2264 3 per joint per year.",
       "If color Doppler shows a genicular vessel directly in the planned path, abandon and re-plan."
     ],
     "pearls": [
       "The 'Two-Pad Sandwich': The target is the 'filling' between the Quadriceps Fat Pad (the top bun) and Prefemoral Fat Pad (the bottom bun).",
-      "20-30° Flexion: This 'pools' fluid into the suprapatellar space and relaxes the quad tendon.",
-      "Short-axis transverse probe + lateral-to-medial in-plane = the standard approach. (A long-axis sagittal probe would require a superior-to-inferior in-plane entry instead — choose one, do not mix.)",
+      "20-30\u00b0 Flexion: This 'pools' fluid into the suprapatellar space and relaxes the quad tendon.",
+      "Short-axis transverse probe + lateral-to-medial in-plane = the standard approach. (A long-axis sagittal probe would require a superior-to-inferior in-plane entry instead \u2014 choose one, do not mix.)",
       "Gentle pressure with the probe can 'milk' fluid towards your needle tip."
     ],
     "supplies": [
@@ -159,7 +159,7 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
       "Rest the knee 24-48 hours; resume normal activity as tolerated thereafter.",
       "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
@@ -205,8 +205,8 @@
         "seconds": 145
       }
     ],
-    "anatomyModelId": "0a2d68c6ec1f4ca783336c96f3c0a5fd",
-    "anatomyModelTitle": "Knee Anatomy (University of Dundee)",
+    "anatomyModelId": "765feaaebb4743dab7eeabb35c89cf10",
+    "anatomyModelTitle": "Knee Anatomy: Muscles & Ligaments (University of Dundee)",
     "tags": [
       "knee",
       "IT band",
@@ -222,7 +222,7 @@
       "distal ITB"
     ],
     "treats": [
-      "Iliotibial band syndrome (ITBS) — lateral knee pain from inflammation of innervated loose connective/fat tissue deep to the distal ITB at the lateral femoral epicondyle (impingement zone at 20–30° flexion)",
+      "Iliotibial band syndrome (ITBS) \u2014 lateral knee pain from inflammation of innervated loose connective/fat tissue deep to the distal ITB at the lateral femoral epicondyle (impingement zone at 20\u201330\u00b0 flexion)",
       "Distal ITB tendinopathy or insertional enthesopathy at Gerdy tubercle (peritendinous approach)",
       "Diagnostic anesthetic block to confirm LFE as pain generator vs lateral meniscus, popliteus, LCL, or biceps femoris pathology",
       "Snapping IT band over the LFE with associated peritendinous fluid"
@@ -231,84 +231,84 @@
       "Active cellulitis or skin infection over the lateral knee entry site (absolute)",
       "Known allergy to planned local anesthetic, corticosteroid, or antiseptic prep (absolute)",
       "Bacteremia or systemic sepsis (absolute)",
-      "Septic bursitis or septic joint — aspirate and culture first; do not inject steroid (absolute)",
-      "Therapeutic anticoagulation — 25G peritendinous injection is low-risk but individualize per ASRA/AIUM guidance (relative)",
-      "Poorly controlled diabetes (HbA1c >8–9%) — counsel on transient glycemic rise (relative)",
-      "Prior corticosteroid injection to the same site within 3 months — risk of fat atrophy and skin depigmentation is elevated given how superficial the ITB target is (relative)"
+      "Septic bursitis or septic joint \u2014 aspirate and culture first; do not inject steroid (absolute)",
+      "Therapeutic anticoagulation \u2014 25G peritendinous injection is low-risk but individualize per ASRA/AIUM guidance (relative)",
+      "Poorly controlled diabetes (HbA1c >8\u20139%) \u2014 counsel on transient glycemic rise (relative)",
+      "Prior corticosteroid injection to the same site within 3 months \u2014 risk of fat atrophy and skin depigmentation is elevated given how superficial the ITB target is (relative)"
     ],
     "preChecklist": [
       "Confirm patient identity with two identifiers (name and DOB)",
       "Confirm procedure, laterality, and mark the site with the patient awake",
       "Review allergies (local anesthetic, corticosteroid, latex, chlorhexidine/iodine) and anticoagulation status",
-      "Confirm and document informed consent — warn specifically about fat atrophy and skin depigmentation given the superficial target",
+      "Confirm and document informed consent \u2014 warn specifically about fat atrophy and skin depigmentation given the superficial target",
       "Pre-scan the lateral knee over the LFE: identify the hyperechoic fibrillar ITB, hypoechoic peritendinous fat/fluid, and bony LFE contour",
       "Apply color/power Doppler to map the lateral superior and lateral inferior genicular arteries before planning the trajectory",
       "Time-out immediately before needle insertion (patient, site, laterality, procedure, medication, dose confirmed aloud)"
     ],
     "positioning": [
       "Patient lying on side (lateral decubitus), affected side UP on the exam table.",
-      "Contralateral hip and knee flexed ~45–60° for stability; place a pillow between the knees.",
-      "Affected knee flexed to approximately 20–30° — the impingement angle where the ITB tensions over the LFE and peritendinous fluid is maximally accessible.",
+      "Contralateral hip and knee flexed ~45\u201360\u00b0 for stability; place a pillow between the knees.",
+      "Affected knee flexed to approximately 20\u201330\u00b0 \u2014 the impingement angle where the ITB tensions over the LFE and peritendinous fluid is maximally accessible.",
       "Support the lower leg on a pillow so the tibia is parallel to the table; lateral aspect of the knee faces directly upward toward the operator."
     ],
     "probe": [
-      "High-frequency linear probe, 10–18 MHz (12–18 MHz hockey-stick small-footprint preferred for the superficial lateral LFE target)",
-      "Depth 2.0–3.0 cm; focal zone at 5–10 mm (target lies within 3–8 mm of skin in most patients)"
+      "High-frequency linear probe, 10\u201318 MHz (12\u201318 MHz hockey-stick small-footprint preferred for the superficial lateral LFE target)",
+      "Depth 2.0\u20133.0 cm; focal zone at 5\u201310 mm (target lies within 3\u20138 mm of skin in most patients)"
     ],
     "landmarking": [
-      "Palpate the lateral femoral epicondyle (LFE) — the prominent bony ridge on the lateral distal femur, proximal to the lateral joint line.",
+      "Palpate the lateral femoral epicondyle (LFE) \u2014 the prominent bony ridge on the lateral distal femur, proximal to the lateral joint line.",
       "Place the probe in long axis (longitudinal) to the ITB fibers centered over the LFE; identify the thin hyperechoic fibrillar ITB running parallel to skin.",
       "Deep to the ITB, identify the hypoechoic loose connective tissue / fat (or discrete anechoic pseudo-bursa in active ITBS) between the ITB and the convex LFE cortex.",
-      "Slide the probe proximal and distal to find the point of maximal peritendinous thickening or fluid — usually just proximal to or directly over the LFE apex.",
-      "Rotate 90° to short axis to confirm the crescentic fluid collection between ITB and bone.",
+      "Slide the probe proximal and distal to find the point of maximal peritendinous thickening or fluid \u2014 usually just proximal to or directly over the LFE apex.",
+      "Rotate 90\u00b0 to short axis to confirm the crescentic fluid collection between ITB and bone.",
       "Apply color Doppler (low PRF) to map the lateral superior genicular artery (proximal to LFE) and lateral inferior genicular artery (near joint line/fibular head) before planning the needle trajectory."
     ],
     "correctImage": [
       "Long axis: convex hyperechoic LFE cortex deep; immediately superficial, a hypoechoic layer of loose connective tissue or anechoic fluid (the injection target); superficial to that, the thin linear hyperechoic fibrillar ITB running parallel to skin.",
-      "On dynamic scan through 0–60° flexion, the ITB should glide smoothly over the LFE; restricted glide or tethering supports the diagnosis.",
-      "With color Doppler, the peritendinous plane should be avascular — any vessel crossing the planned trajectory requires re-planning."
+      "On dynamic scan through 0\u201360\u00b0 flexion, the ITB should glide smoothly over the LFE; restricted glide or tethering supports the diagnosis.",
+      "With color Doppler, the peritendinous plane should be avascular \u2014 any vessel crossing the planned trajectory requires re-planning."
     ],
     "corridor": [
-      "Peritendinous plane between the deep surface of the ITB and the cortex of the lateral femoral epicondyle — specifically into the hypoechoic loose connective tissue / fat / pseudo-bursa.",
+      "Peritendinous plane between the deep surface of the ITB and the cortex of the lateral femoral epicondyle \u2014 specifically into the hypoechoic loose connective tissue / fat / pseudo-bursa.",
       "Injectate should hydrodissect (lift) the ITB off the LFE cortex on real-time imaging.",
-      "Do NOT inject intratendinously into the ITB substance — this risks tendon weakening and misses the pain generator.",
-      "Do NOT inject into subcutaneous tissue superficial to the ITB — risk of fat atrophy and skin depigmentation."
+      "Do NOT inject intratendinously into the ITB substance \u2014 this risks tendon weakening and misses the pain generator.",
+      "Do NOT inject into subcutaneous tissue superficial to the ITB \u2014 risk of fat atrophy and skin depigmentation."
     ],
     "avoid": [
-      "Lateral superior genicular artery — runs transversely across the distal-lateral femur just proximal to the LFE; always Doppler before entry",
-      "Lateral inferior genicular artery — near the fibular head and lateral joint line; at risk with distal trajectories",
-      "Common peroneal (fibular) nerve — wraps the fibular neck posterolaterally, 3–5 cm distal/posterior to the LFE; avoid posterior and distal trajectories",
-      "Lateral collateral ligament (LCL) — runs from LFE to fibular head; do not traverse",
-      "Biceps femoris tendon — inserts on fibular head posterior to LCL",
-      "Subcutaneous fat superficial to the ITB — high risk of steroid-induced fat atrophy and skin hypopigmentation"
+      "Lateral superior genicular artery \u2014 runs transversely across the distal-lateral femur just proximal to the LFE; always Doppler before entry",
+      "Lateral inferior genicular artery \u2014 near the fibular head and lateral joint line; at risk with distal trajectories",
+      "Common peroneal (fibular) nerve \u2014 wraps the fibular neck posterolaterally, 3\u20135 cm distal/posterior to the LFE; avoid posterior and distal trajectories",
+      "Lateral collateral ligament (LCL) \u2014 runs from LFE to fibular head; do not traverse",
+      "Biceps femoris tendon \u2014 inserts on fibular head posterior to LCL",
+      "Subcutaneous fat superficial to the ITB \u2014 high risk of steroid-induced fat atrophy and skin hypopigmentation"
     ],
     "steps": [
-      "Position patient in lateral decubitus with affected knee flexed 20–30°.",
+      "Position patient in lateral decubitus with affected knee flexed 20\u201330\u00b0.",
       "Pre-scan, map genicular vessels with color Doppler, mark skin entry, and complete time-out.",
       "Sterile prep and drape the lateral knee; apply sterile probe cover and gel.",
       "Place probe in long axis to the ITB over the LFE.",
-      "Raise a small skin wheal of 1% lidocaine (0.5–1 mL) with a 27–30G needle at the planned entry point — inject only into skin, not into the peritendinous plane.",
-      "Advance a 25G 1.5-inch needle in-plane along the ITB long axis at a shallow angle (20–40° to skin), entering from distal-to-proximal or proximal-to-distal based on vessel map.",
+      "Raise a small skin wheal of 1% lidocaine (0.5\u20131 mL) with a 27\u201330G needle at the planned entry point \u2014 inject only into skin, not into the peritendinous plane.",
+      "Advance a 25G 1.5-inch needle in-plane along the ITB long axis at a shallow angle (20\u201340\u00b0 to skin), entering from distal-to-proximal or proximal-to-distal based on vessel map.",
       "Walk the needle tip through the ITB fibers and park the bevel in the hypoechoic peritendinous plane between the deep ITB surface and the LFE cortex.",
-      "Inject a test bolus of 0.2–0.5 mL: the ITB should visibly lift off the bone with smooth anechoic spread. Tissue balling within the ITB = intratendinous; skin bleb = subcutaneous — reposition before continuing.",
-      "Aspirate, then slowly inject the remaining 3–5 mL total over 20–30 seconds watching real-time spread.",
+      "Inject a test bolus of 0.2\u20130.5 mL: the ITB should visibly lift off the bone with smooth anechoic spread. Tissue balling within the ITB = intratendinous; skin bleb = subcutaneous \u2014 reposition before continuing.",
+      "Aspirate, then slowly inject the remaining 3\u20135 mL total over 20\u201330 seconds watching real-time spread.",
       "STOP IMMEDIATELY if patient reports shooting, electric, or paresthetic pain into the lower leg (common peroneal nerve proximity) or if resistance suddenly rises.",
-      "Withdraw needle, apply pressure for 1–2 minutes, place adhesive bandage.",
+      "Withdraw needle, apply pressure for 1\u20132 minutes, place adhesive bandage.",
       "Post-injection dynamic scan to confirm smooth ITB glide over the LFE through full range of motion."
     ],
     "tips": [
-      "Shallow angle is critical — the target is 5–8 mm deep, so entry must be 1.5–2.5 cm away from the probe edge at 20–40° to the skin. A steep angle reduces needle visibility and risks plunging into cortex.",
-      "Hydrodissect first, inject second — always confirm the plane opens with a 0.2–0.5 mL test bolus before committing the full volume.",
-      "Doppler every time — lateral superior genicular artery anatomy is highly variable and frequently courses directly over the LFE.",
-      "The ITB is one of the most superficial steroid targets at the knee — warn the patient specifically about fat atrophy and skin depigmentation; consider dexamethasone (non-particulate) if this is a concern.",
-      "25G is sufficient — the low-viscosity steroid/anesthetic mix does not require a larger bore; a smaller needle causes less post-procedure soreness in this superficial target."
+      "Shallow angle is critical \u2014 the target is 5\u20138 mm deep, so entry must be 1.5\u20132.5 cm away from the probe edge at 20\u201340\u00b0 to the skin. A steep angle reduces needle visibility and risks plunging into cortex.",
+      "Hydrodissect first, inject second \u2014 always confirm the plane opens with a 0.2\u20130.5 mL test bolus before committing the full volume.",
+      "Doppler every time \u2014 lateral superior genicular artery anatomy is highly variable and frequently courses directly over the LFE.",
+      "The ITB is one of the most superficial steroid targets at the knee \u2014 warn the patient specifically about fat atrophy and skin depigmentation; consider dexamethasone (non-particulate) if this is a concern.",
+      "25G is sufficient \u2014 the low-viscosity steroid/anesthetic mix does not require a larger bore; a smaller needle causes less post-procedure soreness in this superficial target."
     ],
     "pearls": [
-      "\"Lift the Band, Don't Stab the Band\" — correct placement hydrodissects the ITB off the LFE. If the band doesn't lift, the tip is intratendinous.",
-      "The 20–30° Rule — the ITB impinges on the LFE at this flexion angle (Orchard 1996, Fairclough 2006). Position the knee here to distend the peritendinous space.",
-      "There is NO true bursa — Fairclough et al. (2006) showed the 'ITB bursa' is actually highly innervated loose connective/fat tissue, not a synovial bursa. The pain generator is this innervated fat layer.",
-      "Injections treat symptoms, not mechanics — ITBS is fundamentally a hip-abductor weakness and overuse problem. Always refer to PT for gluteus medius strengthening and gait retraining, or symptoms recur in 6–12 weeks.",
-      "Diagnostic anesthetic trick: inject 0.5–1 mL lidocaine alone first; resolution of pain on Noble compression test at 10 minutes confirms the ITB-LFE interface as the pain generator."
+      "\"Lift the Band, Don't Stab the Band\" \u2014 correct placement hydrodissects the ITB off the LFE. If the band doesn't lift, the tip is intratendinous.",
+      "The 20\u201330\u00b0 Rule \u2014 the ITB impinges on the LFE at this flexion angle (Orchard 1996, Fairclough 2006). Position the knee here to distend the peritendinous space.",
+      "There is NO true bursa \u2014 Fairclough et al. (2006) showed the 'ITB bursa' is actually highly innervated loose connective/fat tissue, not a synovial bursa. The pain generator is this innervated fat layer.",
+      "Injections treat symptoms, not mechanics \u2014 ITBS is fundamentally a hip-abductor weakness and overuse problem. Always refer to PT for gluteus medius strengthening and gait retraining, or symptoms recur in 6\u201312 weeks.",
+      "Diagnostic anesthetic trick: inject 0.5\u20131 mL lidocaine alone first; resolution of pain on Noble compression test at 10 minutes confirms the ITB-LFE interface as the pain generator."
     ],
     "supplies": [
       "25G 1.5\" Needle (injection)",
@@ -316,8 +316,8 @@
       "18G Drawing Needle",
       "3 mL or 5 mL Syringe",
       "1 mL Syringe (skin wheal)",
-      "1% Lidocaine (2–3 mL for injectate + 0.5–1 mL for skin wheal)",
-      "Triamcinolone 20–40 mg OR Dexamethasone 4–8 mg (non-particulate preferred given superficial target)",
+      "1% Lidocaine (2\u20133 mL for injectate + 0.5\u20131 mL for skin wheal)",
+      "Triamcinolone 20\u201340 mg OR Dexamethasone 4\u20138 mg (non-particulate preferred given superficial target)",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
       "Sterile Gloves",
@@ -331,15 +331,15 @@
     ],
     "postProcedure": [
       "Apply a clean adhesive bandage; keep it dry for 24 hours.",
-      "Local anesthetic relief within 5–15 minutes, lasting 1–4 hours (lidocaine) or up to 6–8 hours (bupivacaine). Corticosteroid effect begins 24–72 hours after injection and peaks at 5–10 days.",
-      "Steroid flare (2–10% of patients, typically 6–48 hours): manage with ice 15–20 minutes every 2–3 hours and acetaminophen or a short course of NSAIDs.",
-      "Rest from impact activity (running, cycling, plyometrics) for 48–72 hours; gentle walking is fine immediately.",
+      "Local anesthetic relief within 5\u201315 minutes, lasting 1\u20134 hours (lidocaine) or up to 6\u20138 hours (bupivacaine). Corticosteroid effect begins 24\u201372 hours after injection and peaks at 5\u201310 days.",
+      "Steroid flare (2\u201310% of patients, typically 6\u201348 hours): manage with ice 15\u201320 minutes every 2\u20133 hours and acetaminophen or a short course of NSAIDs.",
+      "Rest from impact activity (running, cycling, plyometrics) for 48\u201372 hours; gentle walking is fine immediately.",
       "Begin prescribed PT program: hip abductor/gluteus medius strengthening, single-leg stance, foam rolling the lateral thigh (avoid rolling directly over the LFE), and running-gait/cadence retraining.",
-      "Diabetic patients: expect a 50–150 mg/dL rise in blood glucose for 3–7 days; monitor more frequently.",
-      "Watch for and return immediately for: spreading redness, warmth, fever >38°C, purulent drainage, or disproportionate pain not controlled with ice and OTC analgesics.",
-      "Warn the patient about possible skin depigmentation or a 1–2 cm area of subcutaneous fat atrophy appearing 1–3 months post-injection; usually cosmetic only and partially reverses over 6–12 months.",
+      "Diabetic patients: expect a 50\u2013150 mg/dL rise in blood glucose for 3\u20137 days; monitor more frequently.",
+      "Watch for and return immediately for: spreading redness, warmth, fever >38\u00b0C, purulent drainage, or disproportionate pain not controlled with ice and OTC analgesics.",
+      "Warn the patient about possible skin depigmentation or a 1\u20132 cm area of subcutaneous fat atrophy appearing 1\u20133 months post-injection; usually cosmetic only and partially reverses over 6\u201312 months.",
       "Maximum of 3 corticosteroid injections per year at the same site, separated by at least 3 months.",
-      "Follow-up at 4–6 weeks to reassess, confirm PT adherence, and plan next steps."
+      "Follow-up at 4\u20136 weeks to reassess, confirm PT adherence, and plan next steps."
     ],
     "positioningImg": "assets/images/positions/Patient lying on side.png",
     "probeImg": "assets/images/probes/Linear.png"
@@ -381,8 +381,8 @@
         "seconds": 140
       }
     ],
-    "anatomyModelId": "0a2d68c6ec1f4ca783336c96f3c0a5fd",
-    "anatomyModelTitle": "Knee Anatomy (University of Dundee)",
+    "anatomyModelId": "765feaaebb4743dab7eeabb35c89cf10",
+    "anatomyModelTitle": "Knee Anatomy: Muscles & Ligaments (University of Dundee)",
     "tags": [
       "knee",
       "pes anserine",
@@ -398,93 +398,93 @@
       "tendinopathy"
     ],
     "treats": [
-      "Pes anserine bursitis — inflammation of the anserine bursa deep to the conjoined sartorius, gracilis, and semitendinosus (SGT) tendons at the proximal medial tibia",
+      "Pes anserine bursitis \u2014 inflammation of the anserine bursa deep to the conjoined sartorius, gracilis, and semitendinosus (SGT) tendons at the proximal medial tibia",
       "Pes anserine tendinopathy or insertional enthesopathy of the conjoined SGT tendons",
-      "Medial knee pain superimposed on osteoarthritis — pes anserine pain is present in 20–75% of patients with medial compartment OA",
+      "Medial knee pain superimposed on osteoarthritis \u2014 pes anserine pain is present in 20\u201375% of patients with medial compartment OA",
       "Post-traumatic or post-surgical pes anserine pain, including after hamstring harvest for ACL reconstruction",
       "Diagnostic blockade to confirm the pes anserine as the pain generator before escalating management"
     ],
     "contraindications": [
       "Overlying cellulitis, abscess, or skin breakdown at the planned needle entry site (absolute)",
-      "Known or suspected septic bursitis or septic arthritis of the adjacent knee — aspirate first and culture (absolute)",
+      "Known or suspected septic bursitis or septic arthritis of the adjacent knee \u2014 aspirate first and culture (absolute)",
       "Documented allergy to planned local anesthetic, corticosteroid, or skin prep (absolute)",
       "Bacteremia or active systemic infection (absolute)",
       "Anticoagulation with supratherapeutic INR (>3.0) or recent therapeutic-dose DOAC (relative)",
-      "Poorly controlled diabetes (HbA1c >8–9%) — corticosteroid will transiently raise glucose; counsel the patient (relative)",
+      "Poorly controlled diabetes (HbA1c >8\u20139%) \u2014 corticosteroid will transiently raise glucose; counsel the patient (relative)",
       "Prior corticosteroid injection to the same site within 3 months (relative)"
     ],
     "preChecklist": [
-      "Confirm patient identity (two identifiers) and verify the diagnosis — tenderness 5–7 cm below the medial joint line at the pes insertion, pain with resisted internal rotation of the flexed knee",
+      "Confirm patient identity (two identifiers) and verify the diagnosis \u2014 tenderness 5\u20137 cm below the medial joint line at the pes insertion, pain with resisted internal rotation of the flexed knee",
       "Confirm procedure, laterality, and mark the site with the patient awake",
       "Review allergies (lidocaine, chlorhexidine/iodine, latex, corticosteroid preservatives) and anticoagulation status",
       "Confirm and document informed consent (infection, bleeding, post-injection flare, fat atrophy, skin hypopigmentation, tendon weakening, glycemic elevation in diabetics, vasovagal)",
-      "Verify supplies and draw up medications into a labeled syringe; select needle length based on habitus (typically 22–25G 1.5 inch)",
+      "Verify supplies and draw up medications into a labeled syringe; select needle length based on habitus (typically 22\u201325G 1.5 inch)",
       "Pre-injection diagnostic scan (non-sterile): identify the conjoined SGT tendons, pes anserine bursa (if distended), superficial MCL, and map the saphenous vein and inferior medial genicular vessels with color Doppler. Plan needle trajectory before sterile prep.",
       "Time-out immediately before needle insertion"
     ],
     "positioning": [
-      "Patient supine on exam table; hip externally rotated approximately 20–30° (frog-leg position) so the medial tibia faces upward — a small pillow under the lateral thigh maintains this.",
-      "Knee slightly flexed (15–30°) with a rolled towel under the popliteal fossa to relax the pes tendons and open the SGT-MCL interface.",
+      "Patient supine on exam table; hip externally rotated approximately 20\u201330\u00b0 (frog-leg position) so the medial tibia faces upward \u2014 a small pillow under the lateral thigh maintains this.",
+      "Knee slightly flexed (15\u201330\u00b0) with a rolled towel under the popliteal fossa to relax the pes tendons and open the SGT-MCL interface.",
       "Operator stands or sits at the medial side of the target knee; ultrasound machine on the contralateral side of the bed with screen at eye level."
     ],
     "probe": [
-      "High-frequency linear probe, 10–18 MHz (12–15 MHz standard linear or small-footprint hockey-stick preferred)",
-      "Depth 2–4 cm; focal zone at 1–1.5 cm; MSK-superficial preset with compound imaging and needle enhancement enabled"
+      "High-frequency linear probe, 10\u201318 MHz (12\u201315 MHz standard linear or small-footprint hockey-stick preferred)",
+      "Depth 2\u20134 cm; focal zone at 1\u20131.5 cm; MSK-superficial preset with compound imaging and needle enhancement enabled"
     ],
     "landmarking": [
       "Find the medial joint line: probe in coronal long-axis over the medial knee, identify medial femoral condyle, medial meniscus, and medial tibial plateau.",
-      "Slide distally along the proximal medial tibia approximately 4–6 cm below the joint line in the coronal plane.",
-      "Identify the superficial MCL — a thin crisp hyperechoic bilaminar band; this is the reference floor. The pes bursa lies superficial to the MCL.",
+      "Slide distally along the proximal medial tibia approximately 4\u20136 cm below the joint line in the coronal plane.",
+      "Identify the superficial MCL \u2014 a thin crisp hyperechoic bilaminar band; this is the reference floor. The pes bursa lies superficial to the MCL.",
       "Rotate to short axis of the SGT tendons: three tendons appear as a single oval hyperechoic structure (sartorius most anterior/superficial, gracilis middle, semitendinosus most posterior/deep).",
-      "Rotate 90° into long axis of the conjoined SGT tendon: fibrillar hyperechoic band coursing obliquely from posteromedial thigh to insert on the anteromedial proximal tibia ~5–7 cm below joint line.",
+      "Rotate 90\u00b0 into long axis of the conjoined SGT tendon: fibrillar hyperechoic band coursing obliquely from posteromedial thigh to insert on the anteromedial proximal tibia ~5\u20137 cm below joint line.",
       "Identify the pes anserine bursa (if pathologic): anechoic or hypoechoic fluid collection between the deep SGT surface and the MCL/tibial periosteum. Normal bursae are often not visible.",
       "Apply color Doppler to locate the saphenous vein (anterior and superficial to the pes) and inferior medial genicular artery. Plan the entry from the posterior side to keep the trajectory away from the saphenous neurovascular bundle."
     ],
     "correctImage": [
-      "Long axis of SGT tendon: from superficial to deep — skin/fat, conjoined SGT tendon (fibrillar hyperechoic band coursing obliquely to tibial insertion), pes anserine bursa (anechoic crescentic space if distended), superficial MCL (crisp hyperechoic bilaminar band), proximal medial tibial cortex (bright hyperechoic line with posterior shadowing).",
+      "Long axis of SGT tendon: from superficial to deep \u2014 skin/fat, conjoined SGT tendon (fibrillar hyperechoic band coursing obliquely to tibial insertion), pes anserine bursa (anechoic crescentic space if distended), superficial MCL (crisp hyperechoic bilaminar band), proximal medial tibial cortex (bright hyperechoic line with posterior shadowing).",
       "Short axis of SGT: three tendons as a flattened hyperechoic oval lying on top of the MCL, with the bursa as a thin hypoechoic half-moon deep to the tendon ensemble.",
       "Color Doppler should show no pulsatile vessel crossing the planned needle path."
     ],
     "corridor": [
-      "Potential space between the deep surface of the conjoined SGT tendon and the superficial surface of the MCL/tibial periosteum at the pes insertion (~5–7 cm distal to the medial joint line).",
+      "Potential space between the deep surface of the conjoined SGT tendon and the superficial surface of the MCL/tibial periosteum at the pes insertion (~5\u20137 cm distal to the medial joint line).",
       "Needle enters from the posteromedial skin in-plane, directing distally and anteriorly along the deep surface of the tendon. This posterior-to-anterior trajectory keeps the trajectory away from the saphenous vein and nerve anteriorly.",
       "Do NOT inject into the SGT tendon substance (intratendinous = rupture risk and ineffective), deep to the MCL (joint entry), or into the saphenous vein/nerve territory."
     ],
     "avoid": [
-      "Saphenous vein — superficial and anterior to the pes insertion; compressible on US, map with color Doppler",
-      "Saphenous nerve (infrapatellar branch) — travels with the saphenous vein; inadvertent intraneural injection causes severe neuralgia",
-      "Superficial MCL — the 'floor' of the bursa; do not pierce it. If the needle dimples MCL fibers, withdraw 1–2 mm.",
-      "Medial meniscus and medial joint capsule — more proximal and deeper; avoid advancing too proximally",
-      "Inferior medial genicular artery and vein — near the joint line; visible with Doppler in thin patients",
-      "SGT tendon substance — inject peritendinously or into the bursa, never intratendinously",
-      "Tibial cortex / periosteum — withdraw 1–2 mm if needle tip contacts bone before injecting"
+      "Saphenous vein \u2014 superficial and anterior to the pes insertion; compressible on US, map with color Doppler",
+      "Saphenous nerve (infrapatellar branch) \u2014 travels with the saphenous vein; inadvertent intraneural injection causes severe neuralgia",
+      "Superficial MCL \u2014 the 'floor' of the bursa; do not pierce it. If the needle dimples MCL fibers, withdraw 1\u20132 mm.",
+      "Medial meniscus and medial joint capsule \u2014 more proximal and deeper; avoid advancing too proximally",
+      "Inferior medial genicular artery and vein \u2014 near the joint line; visible with Doppler in thin patients",
+      "SGT tendon substance \u2014 inject peritendinously or into the bursa, never intratendinously",
+      "Tibial cortex / periosteum \u2014 withdraw 1\u20132 mm if needle tip contacts bone before injecting"
     ],
     "steps": [
       "Sterile prep and drape: wide prep with 2% chlorhexidine/70% isopropyl alcohol; apply sterile probe cover and gel.",
       "Re-identify the target under the sterile probe in long-axis view of the SGT tendon; confirm the bursa, MCL, and absence of vessels in the planned path.",
-      "Anesthetize: 25–27G needle with 1–2 mL of 1% lidocaine raises a skin wheal at the posteromedial entry site; infiltrate subcutaneously along the planned track without depositing into the bursa.",
-      "Swap to the procedure needle: 22–25G 1.5-inch needle on a 3–5 mL syringe.",
-      "Advance in-plane from the posteromedial aspect at a shallow angle (20–30° to skin); track the needle deep to the SGT tendon and superficial to the MCL, directing distally and anteriorly toward the pes insertion.",
-      "Watch the needle tip at all times — if the shaft disappears, hold still and slide/tilt the probe to reacquire it before advancing further.",
-      "Confirm bursal placement with hydrodissection: inject 0.5–1 mL anesthetic as a test bolus. Fluid should spread as a thin anechoic crescent between the tendon and MCL. If fluid disappears into the tendon (intratendinous) or spreads superficially (subcutaneous), reposition 1–2 mm and retest.",
-      "Inject the therapeutic mixture: aspirate first, then inject slowly over 15–30 seconds (3–5 mL total). Injection should be low-resistance; high resistance means incorrect position — stop and reposition.",
+      "Anesthetize: 25\u201327G needle with 1\u20132 mL of 1% lidocaine raises a skin wheal at the posteromedial entry site; infiltrate subcutaneously along the planned track without depositing into the bursa.",
+      "Swap to the procedure needle: 22\u201325G 1.5-inch needle on a 3\u20135 mL syringe.",
+      "Advance in-plane from the posteromedial aspect at a shallow angle (20\u201330\u00b0 to skin); track the needle deep to the SGT tendon and superficial to the MCL, directing distally and anteriorly toward the pes insertion.",
+      "Watch the needle tip at all times \u2014 if the shaft disappears, hold still and slide/tilt the probe to reacquire it before advancing further.",
+      "Confirm bursal placement with hydrodissection: inject 0.5\u20131 mL anesthetic as a test bolus. Fluid should spread as a thin anechoic crescent between the tendon and MCL. If fluid disappears into the tendon (intratendinous) or spreads superficially (subcutaneous), reposition 1\u20132 mm and retest.",
+      "Inject the therapeutic mixture: aspirate first, then inject slowly over 15\u201330 seconds (3\u20135 mL total). Injection should be low-resistance; high resistance means incorrect position \u2014 stop and reposition.",
       "STOP IMMEDIATELY if patient reports electric, shooting, or paresthetic pain into the lower leg (saphenous nerve proximity).",
-      "Withdraw slowly while scanning for hematoma along the track; apply sterile bandage and firm local compression for 1–2 minutes.",
+      "Withdraw slowly while scanning for hematoma along the track; apply sterile bandage and firm local compression for 1\u20132 minutes.",
       "Immediate reassessment: have the patient perform the reproducing movement (seated-to-standing, stair step). >50% pain reduction within 10 minutes confirms the pes anserine as the pain generator."
     ],
     "tips": [
-      "Enter posterior-to-anterior — the saphenous neurovascular bundle is anterior to the pes; entering from behind keeps the trajectory safely away from nerve and vein.",
-      "Use hydrodissection as your tip-confirmation step, not anatomical confidence — a 0.5 mL test bolus of anesthetic shows you exactly where the tip is before committing the full dose.",
-      "Defeat anisotropy before diagnosing pathology — the oblique SGT tendon course means small heel-toe probe tilts dramatically change tendon echogenicity. A 'hypoechoic' tendon that brightens with a 5° tilt is normal; one that stays dark is tendinopathic.",
+      "Enter posterior-to-anterior \u2014 the saphenous neurovascular bundle is anterior to the pes; entering from behind keeps the trajectory safely away from nerve and vein.",
+      "Use hydrodissection as your tip-confirmation step, not anatomical confidence \u2014 a 0.5 mL test bolus of anesthetic shows you exactly where the tip is before committing the full dose.",
+      "Defeat anisotropy before diagnosing pathology \u2014 the oblique SGT tendon course means small heel-toe probe tilts dramatically change tendon echogenicity. A 'hypoechoic' tendon that brightens with a 5\u00b0 tilt is normal; one that stays dark is tendinopathic.",
       "Use color Doppler twice: once at the pre-scan to map the saphenous vein and genicular vessels, and again after injection to confirm no new hematoma.",
-      "If no bursa is visible, inject peritendinously along the deep and superficial surfaces of the SGT tendon at the insertion — many patients with pes anserine syndrome have tendinopathy without a visible fluid collection."
+      "If no bursa is visible, inject peritendinously along the deep and superficial surfaces of the SGT tendon at the insertion \u2014 many patients with pes anserine syndrome have tendinopathy without a visible fluid collection."
     ],
     "pearls": [
-      "\"Say Grace before Tea\" — Sartorius (anterior/superficial), Gracilis (middle), semiTendinosus (posterior/deepest). The bursa lies deep to all three at their common tibial insertion.",
-      "Pes pain is 5–7 cm BELOW the medial joint line — lower than most residents expect. Medial joint line tenderness = meniscus or MCL, not pes. Palpating 4 fingerbreadths below the joint line along the anteromedial tibia reliably identifies the pes.",
-      "'Knees touching on the mattress' at night is a classic pes anserine history — the patient reports nocturnal medial knee pain when the painful knee presses into the bed or the other knee. A useful screening question.",
-      "The bursa is often NOT visible on US even in symptomatic patients — a normal-appearing pes on ultrasound does not exclude bursitis. Correlate with the clinical exam and reproduction of the patient's pain.",
-      "The superficial MCL is your floor — if your needle is above the MCL and the bursal space distends with your test bolus, you are in the correct plane. MCL fibers deforming = too deep, pull back 1–2 mm."
+      "\"Say Grace before Tea\" \u2014 Sartorius (anterior/superficial), Gracilis (middle), semiTendinosus (posterior/deepest). The bursa lies deep to all three at their common tibial insertion.",
+      "Pes pain is 5\u20137 cm BELOW the medial joint line \u2014 lower than most residents expect. Medial joint line tenderness = meniscus or MCL, not pes. Palpating 4 fingerbreadths below the joint line along the anteromedial tibia reliably identifies the pes.",
+      "'Knees touching on the mattress' at night is a classic pes anserine history \u2014 the patient reports nocturnal medial knee pain when the painful knee presses into the bed or the other knee. A useful screening question.",
+      "The bursa is often NOT visible on US even in symptomatic patients \u2014 a normal-appearing pes on ultrasound does not exclude bursitis. Correlate with the clinical exam and reproduction of the patient's pain.",
+      "The superficial MCL is your floor \u2014 if your needle is above the MCL and the bursal space distends with your test bolus, you are in the correct plane. MCL fibers deforming = too deep, pull back 1\u20132 mm."
     ],
     "supplies": [
       "22-25G 1.5\" Needle (injection; 22G if aspirating thick fluid)",
@@ -492,8 +492,8 @@
       "18G Drawing Needle",
       "3-5 mL Luer-lock Syringe",
       "3 mL Syringe (skin wheal)",
-      "1% Lidocaine (2–4 mL for injectate + 1–2 mL for skin wheal/subcutaneous track)",
-      "Triamcinolone 20–40 mg OR Dexamethasone 4–10 mg (non-particulate preferred if skin pigmentation is a concern)",
+      "1% Lidocaine (2\u20134 mL for injectate + 1\u20132 mL for skin wheal/subcutaneous track)",
+      "Triamcinolone 20\u201340 mg OR Dexamethasone 4\u201310 mg (non-particulate preferred if skin pigmentation is a concern)",
       "Alcohol Swabs (vial tops)",
       "Betadine/Chloraprep",
       "Sterile Gloves",
@@ -505,16 +505,16 @@
       "Sterile probe cover & gel"
     ],
     "postProcedure": [
-      "Observe 10–15 minutes post-injection for vasovagal reaction, allergic response, or immediate hematoma.",
-      "Apply ice over the site 15–20 minutes, 2–3 times in the first 24 hours to reduce local soreness.",
-      "Local anesthetic relief within 1–4 hours; pain may transiently return as anesthetic wears off before corticosteroid effect begins at 24–72 hours. Maximal benefit at 1–2 weeks.",
-      "Steroid flare in 2–10% of patients — increased pain for 24–48 hours, peaking at 12–24 hours. Manage with ice and acetaminophen. Flare is NOT an infection.",
-      "Return immediately for: redness spreading beyond the entry site, fever >38°C, increasing pain after 48 hours, purulent drainage, or systemic symptoms.",
+      "Observe 10\u201315 minutes post-injection for vasovagal reaction, allergic response, or immediate hematoma.",
+      "Apply ice over the site 15\u201320 minutes, 2\u20133 times in the first 24 hours to reduce local soreness.",
+      "Local anesthetic relief within 1\u20134 hours; pain may transiently return as anesthetic wears off before corticosteroid effect begins at 24\u201372 hours. Maximal benefit at 1\u20132 weeks.",
+      "Steroid flare in 2\u201310% of patients \u2014 increased pain for 24\u201348 hours, peaking at 12\u201324 hours. Manage with ice and acetaminophen. Flare is NOT an infection.",
+      "Return immediately for: redness spreading beyond the entry site, fever >38\u00b0C, increasing pain after 48 hours, purulent drainage, or systemic symptoms.",
       "Relative rest for 48 hours: avoid strenuous lower-extremity activity, running, deep squats, and stair climbing. Normal walking and daily activities are encouraged.",
-      "Diabetic patients: monitor blood glucose 4 times daily for 5–7 days. Triamcinolone/methylprednisolone can raise glucose by 50–150 mg/dL for up to a week.",
-      "Begin targeted rehabilitation at day 3–5: hamstring and adductor stretching, eccentric medial hamstring strengthening, gluteus medius activation, and correction of contributing biomechanics (valgus alignment, overpronation, weak hip abductors).",
+      "Diabetic patients: monitor blood glucose 4 times daily for 5\u20137 days. Triamcinolone/methylprednisolone can raise glucose by 50\u2013150 mg/dL for up to a week.",
+      "Begin targeted rehabilitation at day 3\u20135: hamstring and adductor stretching, eccentric medial hamstring strengthening, gluteus medius activation, and correction of contributing biomechanics (valgus alignment, overpronation, weak hip abductors).",
       "Limit corticosteroid injections at this site to no more than 3 per year, separated by at least 3 months.",
-      "Follow-up at 4–6 weeks. If <50% relief and exam still localizes to the pes, repeat ultrasound for occult pathology or reconsider alternate diagnosis."
+      "Follow-up at 4\u20136 weeks. If <50% relief and exam still localizes to the pes, repeat ultrasound for occult pathology or reconsider alternate diagnosis."
     ],
     "positioningImg": "assets/images/positions/Lying Supine.png",
     "probeImg": "assets/images/probes/Linear.png"
