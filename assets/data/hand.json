@@ -132,7 +132,8 @@
     ],
     "positioningImg": "assets/images/positions/Seated hand supine hand on table.webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/wrist-carpal-injection.webp"
+    "injectionImg": "assets/images/injections/wrist-carpal-injection.webp",
+    "injectionImgShort": "assets/images/injections/wrist-carpal-injection-short.webp"
   },
   {
     "id": "wrist-dequervain",

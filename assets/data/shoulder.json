@@ -550,7 +550,8 @@
     ],
     "positioningImg": "assets/images/positions/Seated Patient.webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/shoulder-ac-injection.webp"
+    "injectionImg": "assets/images/injections/shoulder-ac-injection.webp",
+    "injectionImgShort": "assets/images/injections/shoulder-ac-injection-short.webp"
   },
   {
     "id": "shoulder-biceps",
@@ -686,6 +687,7 @@
     ],
     "positioningImg": "assets/images/positions/Seated Patient Supine Hand Bicep.webp",
     "probeImg": "assets/images/probes/Narrow.webp",
-    "injectionImg": "assets/images/injections/shoulder-biceps-injection.webp"
+    "injectionImg": "assets/images/injections/shoulder-biceps-injection.webp",
+    "injectionImgShort": "assets/images/injections/shoulder-biceps-injection-short.webp"
   }
 ]

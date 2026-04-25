@@ -270,7 +270,8 @@
     ],
     "positioningImg": "assets/images/positions/Patient lying on side.webp",
     "probeImg": "assets/images/probes/Narrow.webp",
-    "injectionImg": "assets/images/injections/ankle-peroneal-injection.webp"
+    "injectionImg": "assets/images/injections/ankle-peroneal-injection.webp",
+    "injectionImgShort": "assets/images/injections/ankle-peroneal-injection-short.webp"
   },
   {
     "id": "foot-plantar",

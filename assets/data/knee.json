@@ -344,7 +344,8 @@
     ],
     "positioningImg": "assets/images/positions/Patient lying on side.webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/knee-itband-injection.webp"
+    "injectionImg": "assets/images/injections/knee-itband-injection.webp",
+    "injectionImgShort": "assets/images/injections/knee-itband-injection-short.webp"
   },
   {
     "id": "knee-pes-anserine",
@@ -519,6 +520,7 @@
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/knee-pes-injection.webp"
+    "injectionImg": "assets/images/injections/knee-pes-injection.webp",
+    "injectionImgShort": "assets/images/injections/knee-pes-injection-short.webp"
   }
 ]

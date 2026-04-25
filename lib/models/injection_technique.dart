@@ -102,7 +102,8 @@ class InjectionTechnique {
   final String? probeImg;
   final String? landmarkImg;
   final String? ultrasoundImg;
-  final String? injectionImg;
+  final String? injectionImg;       // long-axis (or only) view
+  final String? injectionImgShort;  // short-axis view when both exist
 
   // Optional video URL for procedure demonstration
   final String? videoUrl;
@@ -147,6 +148,7 @@ class InjectionTechnique {
     this.landmarkImg,
     this.ultrasoundImg,
     this.injectionImg,
+    this.injectionImgShort,
     this.videoUrl,
     this.anatomyModelId,
     this.anatomyModelTitle,
@@ -184,6 +186,7 @@ class InjectionTechnique {
       landmarkImg: json['landmarkImg'] as String?,
       ultrasoundImg: json['ultrasoundImg'] as String?,
       injectionImg: json['injectionImg'] as String?,
+      injectionImgShort: json['injectionImgShort'] as String?,
       videoUrl: json['videoUrl'] as String?,
       anatomyModelId: json['anatomyModelId'] as String?,
       anatomyModelTitle: json['anatomyModelTitle'] as String?,

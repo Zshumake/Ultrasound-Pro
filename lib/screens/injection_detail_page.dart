@@ -812,7 +812,11 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
         const SizedBox(height: 16),
         // Injection site illustration (probe = blue bar, needle entry = red dot)
         if (widget.technique.injectionImg != null)
-          _buildInjectionIllustration(context, widget.technique.injectionImg!, catColor),
+          _InjectionIllustration(
+            longImg: widget.technique.injectionImg!,
+            shortImg: widget.technique.injectionImgShort,
+            catColor: catColor,
+          ),
         if (widget.technique.injectionImg != null) const SizedBox(height: 16),
         MedicalInfoBox(
           title: 'NEEDLE CORRIDOR',
@@ -826,67 +830,6 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
         ...widget.technique.steps.asMap().entries.map((e) => NumberedStepItem(number: e.key + 1, text: e.value)),
         const SizedBox(height: 24),
         _buildAlertBox(context, 'AVOID', widget.technique.avoid),
-      ],
-    );
-  }
-
-  Widget _buildInjectionIllustration(BuildContext context, String imagePath, Color catColor) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Container(
-              width: 8,
-              height: 8,
-              decoration: const BoxDecoration(
-                color: Color(0xFFE53935), // red dot = needle entry
-                shape: BoxShape.circle,
-              ),
-            ),
-            const SizedBox(width: 6),
-            Container(
-              width: 22,
-              height: 4,
-              decoration: BoxDecoration(
-                color: const Color(0xFF1565C0), // blue bar = probe
-                borderRadius: BorderRadius.circular(2),
-              ),
-            ),
-            const SizedBox(width: 8),
-            Text(
-              'NEEDLE ENTRY  ·  PROBE PLACEMENT',
-              style: GoogleFonts.jetBrainsMono(
-                fontSize: 8,
-                fontWeight: FontWeight.w600,
-                letterSpacing: 1.2,
-                color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: catColor.withValues(alpha: 0.2),
-                width: 1,
-              ),
-              borderRadius: BorderRadius.circular(AppTheme.radiusMd),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(AppTheme.radiusMd - 1),
-              child: Image.asset(
-                imagePath,
-                width: double.infinity,
-                fit: BoxFit.fitWidth, // portrait images grow tall, landscape stay proportional
-              ),
-            ),
-          ),
-        ),
       ],
     );
   }
@@ -1105,6 +1048,167 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
           const SizedBox(height: 6),
           Text(content, style: GoogleFonts.inter(fontSize: 12, height: 1.7, color: Colors.black87)),
         ],
+      ),
+    );
+  }
+}
+
+/// Injection site illustration with optional long/short axis toggle.
+class _InjectionIllustration extends StatefulWidget {
+  final String longImg;
+  final String? shortImg;
+  final Color catColor;
+
+  const _InjectionIllustration({
+    required this.longImg,
+    this.shortImg,
+    required this.catColor,
+  });
+
+  @override
+  State<_InjectionIllustration> createState() => _InjectionIllustrationState();
+}
+
+class _InjectionIllustrationState extends State<_InjectionIllustration> {
+  bool _isLong = true;
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final hasToggle = widget.shortImg != null;
+    final currentImg = _isLong ? widget.longImg : widget.shortImg!;
+    final labelColor = isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            // Legend
+            Container(
+              width: 8,
+              height: 8,
+              decoration: const BoxDecoration(
+                color: Color(0xFFE53935),
+                shape: BoxShape.circle,
+              ),
+            ),
+            const SizedBox(width: 6),
+            Container(
+              width: 22,
+              height: 4,
+              decoration: BoxDecoration(
+                color: const Color(0xFF1565C0),
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Text(
+              'NEEDLE ENTRY  ·  PROBE',
+              style: GoogleFonts.jetBrainsMono(
+                fontSize: 8,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 1.2,
+                color: labelColor,
+              ),
+            ),
+            // Long / Short axis toggle
+            if (hasToggle) ...[
+              const Spacer(),
+              Container(
+                decoration: BoxDecoration(
+                  color: isDark ? AppTheme.surfaceDark : AppTheme.borderLight,
+                  borderRadius: BorderRadius.circular(6),
+                  border: Border.all(
+                    color: isDark ? AppTheme.borderDark : AppTheme.borderLight,
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    _AxisTab(
+                      label: 'IN PLANE',
+                      selected: _isLong,
+                      color: widget.catColor,
+                      onTap: () => setState(() => _isLong = true),
+                    ),
+                    _AxisTab(
+                      label: 'OUT OF PLANE',
+                      selected: !_isLong,
+                      color: widget.catColor,
+                      onTap: () => setState(() => _isLong = false),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ],
+        ),
+        const SizedBox(height: 8),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: widget.catColor.withValues(alpha: 0.2),
+              ),
+              borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(AppTheme.radiusMd - 1),
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 220),
+                child: Image.asset(
+                  currentImg,
+                  key: ValueKey(currentImg),
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _AxisTab extends StatelessWidget {
+  final String label;
+  final bool selected;
+  final Color color;
+  final VoidCallback onTap;
+
+  const _AxisTab({
+    required this.label,
+    required this.selected,
+    required this.color,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return GestureDetector(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 150),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        decoration: BoxDecoration(
+          color: selected ? color : Colors.transparent,
+          borderRadius: BorderRadius.circular(5),
+        ),
+        child: Text(
+          label,
+          style: GoogleFonts.jetBrainsMono(
+            fontSize: 9,
+            fontWeight: FontWeight.w700,
+            letterSpacing: 1.0,
+            color: selected
+                ? Colors.white
+                : (isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight),
+          ),
+        ),
       ),
     );
   }
