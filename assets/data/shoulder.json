@@ -142,7 +142,8 @@
       "Maximum frequency: typically no more than 3 injections per shoulder per year."
     ],
     "positioningImg": "assets/images/positions/Modified Kras.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/shoulder-sasd-injection.webp"
   },
   {
     "id": "shoulder-gh-posterior",
@@ -280,7 +281,8 @@
       "Maximum frequency: typically no more than 3 injections per joint per year."
     ],
     "positioningImg": "assets/images/positions/Seated facing away.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/shoulder-gh-posterior-injection.webp"
   },
   {
     "id": "shoulder-gh-anterior",
@@ -412,7 +414,8 @@
       }
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/shoulder-gh-anterior-injection.webp"
   },
   {
     "id": "shoulder-ac",
@@ -546,7 +549,8 @@
       }
     ],
     "positioningImg": "assets/images/positions/Seated Patient.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/shoulder-ac-injection.webp"
   },
   {
     "id": "shoulder-biceps",
@@ -681,6 +685,7 @@
       }
     ],
     "positioningImg": "assets/images/positions/Seated Patient Supine Hand Bicep.webp",
-    "probeImg": "assets/images/probes/Narrow.webp"
+    "probeImg": "assets/images/probes/Narrow.webp",
+    "injectionImg": "assets/images/injections/shoulder-biceps-injection.webp"
   }
 ]

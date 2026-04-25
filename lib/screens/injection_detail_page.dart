@@ -810,6 +810,10 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
           ],
         ),
         const SizedBox(height: 16),
+        // Injection site illustration (probe = blue bar, needle entry = red dot)
+        if (widget.technique.injectionImg != null)
+          _buildInjectionIllustration(context, widget.technique.injectionImg!, catColor),
+        if (widget.technique.injectionImg != null) const SizedBox(height: 16),
         MedicalInfoBox(
           title: 'NEEDLE CORRIDOR',
           text: widget.technique.corridor.join('\n'),
@@ -822,6 +826,67 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
         ...widget.technique.steps.asMap().entries.map((e) => NumberedStepItem(number: e.key + 1, text: e.value)),
         const SizedBox(height: 24),
         _buildAlertBox(context, 'AVOID', widget.technique.avoid),
+      ],
+    );
+  }
+
+  Widget _buildInjectionIllustration(BuildContext context, String imagePath, Color catColor) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Container(
+              width: 8,
+              height: 8,
+              decoration: const BoxDecoration(
+                color: Color(0xFFE53935), // red dot = needle entry
+                shape: BoxShape.circle,
+              ),
+            ),
+            const SizedBox(width: 6),
+            Container(
+              width: 22,
+              height: 4,
+              decoration: BoxDecoration(
+                color: const Color(0xFF1565C0), // blue bar = probe
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Text(
+              'NEEDLE ENTRY  ·  PROBE PLACEMENT',
+              style: GoogleFonts.jetBrainsMono(
+                fontSize: 8,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 1.2,
+                color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: catColor.withValues(alpha: 0.2),
+                width: 1,
+              ),
+              borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(AppTheme.radiusMd - 1),
+              child: Image.asset(
+                imagePath,
+                width: double.infinity,
+                fit: BoxFit.fitWidth, // portrait images grow tall, landscape stay proportional
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

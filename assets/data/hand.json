@@ -131,7 +131,8 @@
       }
     ],
     "positioningImg": "assets/images/positions/Seated hand supine hand on table.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/wrist-carpal-injection.webp"
   },
   {
     "id": "wrist-dequervain",
@@ -267,7 +268,8 @@
       }
     ],
     "positioningImg": "assets/images/positions/Dequrevains positioning.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/wrist-dequervain-injection.webp"
   },
   {
     "id": "hand-1stmcp",
@@ -399,7 +401,8 @@
       }
     ],
     "positioningImg": "assets/images/positions/Dequrevains positioning.webp",
-    "probeImg": "assets/images/probes/Narrow.webp"
+    "probeImg": "assets/images/probes/Narrow.webp",
+    "injectionImg": "assets/images/injections/hand-1stmcp-injection.webp"
   },
   {
     "id": "hand-trigger-finger",

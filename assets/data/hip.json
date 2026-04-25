@@ -272,7 +272,8 @@
       }
     ],
     "positioningImg": "assets/images/positions/Patient lying on side.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/hip-gtb-injection.webp"
   },
   {
     "id": "hip-piriformis",

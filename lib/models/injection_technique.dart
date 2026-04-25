@@ -102,6 +102,7 @@ class InjectionTechnique {
   final String? probeImg;
   final String? landmarkImg;
   final String? ultrasoundImg;
+  final String? injectionImg;
 
   // Optional video URL for procedure demonstration
   final String? videoUrl;
@@ -145,6 +146,7 @@ class InjectionTechnique {
     this.probeImg,
     this.landmarkImg,
     this.ultrasoundImg,
+    this.injectionImg,
     this.videoUrl,
     this.anatomyModelId,
     this.anatomyModelTitle,
@@ -181,6 +183,7 @@ class InjectionTechnique {
       probeImg: json['probeImg'] as String?,
       landmarkImg: json['landmarkImg'] as String?,
       ultrasoundImg: json['ultrasoundImg'] as String?,
+      injectionImg: json['injectionImg'] as String?,
       videoUrl: json['videoUrl'] as String?,
       anatomyModelId: json['anatomyModelId'] as String?,
       anatomyModelTitle: json['anatomyModelTitle'] as String?,

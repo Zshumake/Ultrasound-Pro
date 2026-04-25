@@ -166,7 +166,8 @@
       "Maximum 3 injections per joint per year."
     ],
     "positioningImg": "assets/images/positions/Supine knee flexed 30 degrees.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/knee-suprapatellar-injection.webp"
   },
   {
     "id": "knee-itband",
@@ -342,7 +343,8 @@
       "Follow-up at 4\u20136 weeks to reassess, confirm PT adherence, and plan next steps."
     ],
     "positioningImg": "assets/images/positions/Patient lying on side.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/knee-itband-injection.webp"
   },
   {
     "id": "knee-pes-anserine",
@@ -516,6 +518,7 @@
       "Follow-up at 4\u20136 weeks. If <50% relief and exam still localizes to the pes, repeat ultrasound for occult pathology or reconsider alternate diagnosis."
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/knee-pes-injection.webp"
   }
 ]

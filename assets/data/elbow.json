@@ -131,7 +131,8 @@
       }
     ],
     "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/elbow-lateral-injection.webp"
   },
   {
     "id": "elbow-cet",
@@ -263,6 +264,7 @@
       }
     ],
     "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/elbow-lateral-injection.webp"
   }
 ]
