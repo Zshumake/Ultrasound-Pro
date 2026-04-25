@@ -98,19 +98,69 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 ),
               ),
 
-              // 4. FIND THE VIEW
+              // 4. APPROACH — illustration anchors both probe placement and
+              //    needle corridor in one compact section.
               _buildSection(
                 context,
                 isDark: isDark,
-                label: 'FIND THE VIEW',
+                label: 'APPROACH',
                 icon: Icons.search_rounded,
                 color: catColor,
                 sectionId: 'landmarking',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: t.landmarking.asMap().entries.map((e) =>
-                    _compactNumbered(e.key + 1, e.value, isDark),
-                  ).toList(),
+                  children: [
+                    // Illustration: blue bar = probe, red dot = needle entry
+                    if (t.injectionImg != null) ...[
+                      InjectionIllustration(
+                        longImg: t.injectionImg!,
+                        shortImg: t.injectionImgShort,
+                        catColor: catColor,
+                      ),
+                      const SizedBox(height: 10),
+                    ] else ...[
+                      _buildImageSlot(isDark, t.landmarkImg, _landmarkPhotoDescription()),
+                      const SizedBox(height: 10),
+                    ],
+                    // Probe placement steps
+                    ...t.landmarking.asMap().entries.map((e) =>
+                      _compactNumbered(e.key + 1, e.value, isDark),
+                    ),
+                    // Needle corridor — grouped here rather than a separate card
+                    if (t.corridor.isNotEmpty) ...[
+                      const SizedBox(height: 10),
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: AppTheme.accentTeal.withValues(alpha: isDark ? 0.06 : 0.04),
+                          borderRadius: BorderRadius.circular(6),
+                          border: Border.all(color: AppTheme.accentTeal.withValues(alpha: 0.2)),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.straighten_outlined, size: 10, color: AppTheme.accentTeal),
+                                const SizedBox(width: 5),
+                                Text(
+                                  'NEEDLE CORRIDOR',
+                                  style: GoogleFonts.jetBrainsMono(
+                                    fontSize: 8,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 1.2,
+                                    color: AppTheme.accentTeal,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 6),
+                            ...t.corridor.map((c) => _compactBullet(c, isDark)),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
               ),
 
@@ -128,30 +178,6 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                     _buildImageSlot(isDark, t.ultrasoundImg, _usImagePhotoDescription()),
                     const SizedBox(height: 8),
                     ...t.correctImage.map((c) => _compactBullet(c, isDark)),
-                  ],
-                ),
-              ),
-
-              // 6. NEEDLE CORRIDOR
-              _buildSection(
-                context,
-                isDark: isDark,
-                label: 'NEEDLE CORRIDOR',
-                icon: Icons.straighten_outlined,
-                color: AppTheme.accentTeal,
-                sectionId: 'corridor',
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (t.injectionImg != null) ...[
-                      InjectionIllustration(
-                        longImg: t.injectionImg!,
-                        shortImg: t.injectionImgShort,
-                        catColor: AppTheme.accentTeal,
-                      ),
-                      const SizedBox(height: 8),
-                    ],
-                    ...t.corridor.map((c) => _compactBullet(c, isDark)),
                   ],
                 ),
               ),
@@ -324,6 +350,13 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
         'Placement: $firstLandmark\n'
         'Frame: Close-up of probe on skin with visible anatomical landmarks. '
         'Show probe orientation and hand grip position.';
+  }
+
+  String _landmarkPhotoDescription() {
+    final firstLandmark = t.landmarking.isNotEmpty ? t.landmarking.first : '';
+    return 'PHOTO NEEDED: Probe on skin\n'
+        'Step 1: $firstLandmark\n'
+        'Frame: Close-up of probe on skin with visible anatomical landmarks.';
   }
 
   String _usImagePhotoDescription() {

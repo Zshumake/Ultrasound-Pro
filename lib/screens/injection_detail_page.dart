@@ -209,8 +209,6 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                     _buildIntroSection(context, catColor, isDark),
                     const SizedBox(height: 48),
                     _buildVisualSetupGrid(context),
-                    const SizedBox(height: 24),
-                    _buildLandmarkingSection(context),
                     const SizedBox(height: 48),
                     _buildUSViewSection(context),
                     const SizedBox(height: 48),
@@ -228,8 +226,8 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                       ),
                     ],
                     const SizedBox(height: 48),
-                    // Needle insertion — comes after US views and anatomy
-                    _buildProcedureSection(context),
+                    // Illustration + probe placement + injection — all in one section
+                    _buildApproachSection(context),
                     const SizedBox(height: 48),
                     ResidentPearlsCard(pearls: widget.technique.pearls),
                     if (widget.technique.videoUrl != null) ...[
@@ -734,48 +732,113 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
     );
   }
 
-  Widget _buildLandmarkingSection(BuildContext context) {
+  /// Combined approach section: illustration anchors probe placement steps
+  /// and injection procedure steps together in one visual block.
+  Widget _buildApproachSection(BuildContext context) {
     final bool isMobile = MediaQuery.of(context).size.width < 700;
     final catColor = AppTheme.categoryColor(widget.technique.category);
-    return Column(
+    final hasIllustration = widget.technique.injectionImg != null;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    // --- Left column: probe placement ---
+    Widget findingTheView() => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            const Expanded(child: MedicalSectionHeader(title: 'FINDING THE VIEW')),
+            const Expanded(child: MedicalSectionHeader(title: 'FINDING THE VIEW', fontSize: 9)),
             _buildTimestampBadge('landmarking', catColor),
           ],
         ),
-        const SizedBox(height: 16),
-        if (isMobile) ...[
-          MedicalPlaceholderImage(label: 'Probe Positioning on Skin', height: 200, imagePath: widget.technique.landmarkImg),
-          const SizedBox(height: 16),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: widget.technique.landmarking.asMap().entries.map((e) => NumberedStepItem(number: e.key + 1, text: e.value)).toList(),
-          ),
-        ] else
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 3,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: widget.technique.landmarking.asMap().entries.map((e) => NumberedStepItem(number: e.key + 1, text: e.value)).toList(),
-                ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                flex: 2,
-                child: MedicalPlaceholderImage(label: 'Probe Positioning on Skin', height: 180, imagePath: widget.technique.landmarkImg),
-              ),
-            ],
-          ),
+        const SizedBox(height: 12),
+        ...widget.technique.landmarking.asMap().entries.map(
+          (e) => NumberedStepItem(number: e.key + 1, text: e.value),
+        ),
         if (widget.technique.tips.isNotEmpty) ...[
           const SizedBox(height: 16),
           _buildTipsBox(context),
         ],
+      ],
+    );
+
+    // --- Right column: needle corridor + steps + avoid ---
+    Widget injectionSteps() => Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Expanded(child: MedicalSectionHeader(title: 'INJECTION STEPS', fontSize: 9)),
+            _buildTimestampBadge('steps', catColor),
+          ],
+        ),
+        const SizedBox(height: 12),
+        MedicalInfoBox(
+          title: 'NEEDLE CORRIDOR',
+          text: widget.technique.corridor.join('\n'),
+          icon: Icons.straighten_outlined,
+          color: AppTheme.accentTeal,
+        ),
+        const SizedBox(height: 12),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 2),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'STEPS',
+                style: GoogleFonts.jetBrainsMono(
+                  fontSize: 9,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.5,
+                  color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
+                ),
+              ),
+              const SizedBox(height: 8),
+              ...widget.technique.steps.asMap().entries.map(
+                (e) => NumberedStepItem(number: e.key + 1, text: e.value),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 16),
+        _buildAlertBox(context, 'AVOID', widget.technique.avoid),
+      ],
+    );
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Illustration spans full width — reference for both probe and needle
+        if (hasIllustration) ...[
+          InjectionIllustration(
+            longImg: widget.technique.injectionImg!,
+            shortImg: widget.technique.injectionImgShort,
+            catColor: catColor,
+          ),
+          const SizedBox(height: 28),
+        ] else if (widget.technique.landmarkImg != null) ...[
+          // No illustration yet — show landmark photo as fallback
+          MedicalPlaceholderImage(
+            label: 'Probe Positioning on Skin',
+            height: 200,
+            imagePath: widget.technique.landmarkImg,
+          ),
+          const SizedBox(height: 28),
+        ],
+        // Two columns on desktop, stacked on mobile
+        if (isMobile) ...[
+          findingTheView(),
+          const SizedBox(height: 32),
+          injectionSteps(),
+        ] else
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(child: findingTheView()),
+              const SizedBox(width: 32),
+              Expanded(child: injectionSteps()),
+            ],
+          ),
       ],
     );
   }
@@ -795,42 +858,6 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
         MedicalPlaceholderImage(label: 'Main Ultrasound Target View', height: 300, isMain: true, imagePath: widget.technique.ultrasoundImg),
         const SizedBox(height: 16),
         MedicalInfoBox(title: 'CORRECT IMAGE CRITERIA', text: widget.technique.correctImage.join('\n'), icon: Icons.image_search_outlined),
-      ],
-    );
-  }
-
-  Widget _buildProcedureSection(BuildContext context) {
-    final catColor = AppTheme.categoryColor(widget.technique.category);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            const Expanded(child: MedicalSectionHeader(title: 'INJECTION PROCEDURE')),
-            _buildTimestampBadge('steps', catColor),
-          ],
-        ),
-        const SizedBox(height: 16),
-        // Injection site illustration (probe = blue bar, needle entry = red dot)
-        if (widget.technique.injectionImg != null)
-          InjectionIllustration(
-            longImg: widget.technique.injectionImg!,
-            shortImg: widget.technique.injectionImgShort,
-            catColor: catColor,
-          ),
-        if (widget.technique.injectionImg != null) const SizedBox(height: 16),
-        MedicalInfoBox(
-          title: 'NEEDLE CORRIDOR',
-          text: widget.technique.corridor.join('\n'),
-          icon: Icons.straighten_outlined,
-          color: AppTheme.accentTeal,
-        ),
-        const SizedBox(height: 16),
-        const MedicalSectionHeader(title: 'STEPS', fontSize: 9),
-        const SizedBox(height: 8),
-        ...widget.technique.steps.asMap().entries.map((e) => NumberedStepItem(number: e.key + 1, text: e.value)),
-        const SizedBox(height: 24),
-        _buildAlertBox(context, 'AVOID', widget.technique.avoid),
       ],
     );
   }
