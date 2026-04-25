@@ -133,7 +133,7 @@
         "seconds": 166
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Linear.webp"
   },
   {
@@ -267,7 +267,7 @@
         "seconds": 133
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Narrow.webp"
   },
   {
@@ -403,7 +403,7 @@
         "seconds": 124
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Linear.webp"
   },
   {
@@ -540,7 +540,7 @@
         "seconds": 141
       }
     ],
-    "positioningImg": "assets/images/positions/Lying Supine.webp",
+    "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Linear.webp"
   }
 ]
