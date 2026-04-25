@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/injection_technique.dart';
 import '../theme/app_theme.dart';
+import 'injection_illustration.dart';
 
 /// Compact, bedside-optimized single-screen view of a procedure.
 /// Shows only: Supplies, Patient Positioning, Probe Placement,
@@ -72,7 +73,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildImageSlot(isDark, _positioningPhotoDescription()),
+                    _buildImageSlot(isDark, t.positioningImg, _positioningPhotoDescription()),
                     const SizedBox(height: 8),
                     ...t.positioning.map((p) => _compactBullet(p, isDark)),
                   ],
@@ -90,7 +91,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildImageSlot(isDark, _probePhotoDescription()),
+                    _buildImageSlot(isDark, t.probeImg, _probePhotoDescription()),
                     const SizedBox(height: 8),
                     ...t.probe.map((p) => _compactBullet(p, isDark)),
                   ],
@@ -124,7 +125,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildImageSlot(isDark, _usImagePhotoDescription()),
+                    _buildImageSlot(isDark, t.ultrasoundImg, _usImagePhotoDescription()),
                     const SizedBox(height: 8),
                     ...t.correctImage.map((c) => _compactBullet(c, isDark)),
                   ],
@@ -141,7 +142,17 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 sectionId: 'corridor',
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: t.corridor.map((c) => _compactBullet(c, isDark)).toList(),
+                  children: [
+                    if (t.injectionImg != null) ...[
+                      InjectionIllustration(
+                        longImg: t.injectionImg!,
+                        shortImg: t.injectionImgShort,
+                        catColor: AppTheme.accentTeal,
+                      ),
+                      const SizedBox(height: 8),
+                    ],
+                    ...t.corridor.map((c) => _compactBullet(c, isDark)),
+                  ],
                 ),
               ),
 
@@ -246,9 +257,21 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
     );
   }
 
-  // ── Image slot with photo description ───────────────────────────
+  // ── Image slot: shows real photo if available, placeholder otherwise ──
 
-  Widget _buildImageSlot(bool isDark, String photoDescription) {
+  Widget _buildImageSlot(bool isDark, String? imagePath, String photoDescription) {
+    if (imagePath != null) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+        child: Image.asset(
+          imagePath,
+          width: double.infinity,
+          fit: BoxFit.cover,
+          alignment: const Alignment(0.0, -0.3),
+        ),
+      );
+    }
+    // Placeholder when no image is available yet
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
