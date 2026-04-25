@@ -35,7 +35,7 @@
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Supine; knee ~90\u00b0; foot flat; ankle slightly plantarflexed"
+      "Supine; leg extended; ankle in slight plantarflexion"
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz)"
@@ -267,7 +267,7 @@
         "seconds": 133
       }
     ],
-    "positioningImg": "assets/images/positions/Supine patient.webp",
+    "positioningImg": "assets/images/positions/Patient lying on side.webp",
     "probeImg": "assets/images/probes/Narrow.webp"
   },
   {
@@ -304,7 +304,7 @@
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Supine with hip externally rotated (frog-leg) so the medial heel faces up, OR prone with foot off the bed edge \u2014 either exposes the medial calcaneal insertion for the medial-to-lateral needle approach."
+      "Supine; leg extended; foot resting flat on the table"
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz)"
