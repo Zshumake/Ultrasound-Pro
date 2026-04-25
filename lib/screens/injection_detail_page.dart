@@ -204,19 +204,33 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // === STUDY SECTION (top) ===
-                    // Flow: Indications → Setup → Landmarking → US View →
-                    //       Anatomy/Placement/Gallery → Needle Procedure → Pearls → Video
+                    // Flow: Indications → Setup → Approach (illustration + steps)
+                    //       → US View → Tips → Pearls → Video
                     _buildIntroSection(context, catColor, isDark),
                     const SizedBox(height: 48),
+                    // 1. Positioning + probe images/text
                     _buildVisualSetupGrid(context),
                     const SizedBox(height: 48),
-                    _buildUSViewSection(context),
+                    // 2. Illustration (blue bar = probe, red dot = needle) +
+                    //    probe placement steps + injection steps side-by-side
+                    _buildApproachSection(context),
                     const SizedBox(height: 48),
-                    USImageGallery(
-                      imagePaths: widget.technique.usGalleryImages,
-                      imageLabels: widget.technique.usGalleryLabels,
-                      accentColor: catColor,
-                    ),
+                    // 3. Target US view — single image slot (no duplicate gallery)
+                    _buildUSViewSection(context),
+                    // 4. Gallery only rendered when actual images exist
+                    if (widget.technique.usGalleryImages.isNotEmpty) ...[
+                      const SizedBox(height: 32),
+                      USImageGallery(
+                        imagePaths: widget.technique.usGalleryImages,
+                        imageLabels: widget.technique.usGalleryLabels,
+                        accentColor: catColor,
+                      ),
+                    ],
+                    // 5. Pro tips sit right below the ultrasound picture
+                    if (widget.technique.tips.isNotEmpty) ...[
+                      const SizedBox(height: 24),
+                      _buildTipsBox(context),
+                    ],
                     if (widget.technique.anatomyModelId != null) ...[
                       const SizedBox(height: 48),
                       SketchfabViewer(
@@ -225,9 +239,6 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
                         accentColor: catColor,
                       ),
                     ],
-                    const SizedBox(height: 48),
-                    // Illustration + probe placement + injection — all in one section
-                    _buildApproachSection(context),
                     const SizedBox(height: 48),
                     ResidentPearlsCard(pearls: widget.technique.pearls),
                     if (widget.technique.videoUrl != null) ...[
@@ -740,7 +751,7 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
     final hasIllustration = widget.technique.injectionImg != null;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    // --- Left column: probe placement ---
+    // --- Left column: probe placement steps ---
     Widget findingTheView() => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -754,10 +765,6 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
         ...widget.technique.landmarking.asMap().entries.map(
           (e) => NumberedStepItem(number: e.key + 1, text: e.value),
         ),
-        if (widget.technique.tips.isNotEmpty) ...[
-          const SizedBox(height: 16),
-          _buildTipsBox(context),
-        ],
       ],
     );
 
