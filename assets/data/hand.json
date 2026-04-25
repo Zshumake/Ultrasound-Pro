@@ -130,8 +130,8 @@
         "seconds": 282
       }
     ],
-    "positioningImg": "assets/images/positions/Seated hand supine hand on table.png",
-    "probeImg": "assets/images/probes/Narrow.png"
+    "positioningImg": "assets/images/positions/Seated hand supine hand on table.webp",
+    "probeImg": "assets/images/probes/Narrow.webp"
   },
   {
     "id": "wrist-dequervain",
@@ -266,8 +266,8 @@
         "seconds": 139
       }
     ],
-    "positioningImg": "assets/images/positions/Dequrevains positioning.png",
-    "probeImg": "assets/images/probes/Linear.png"
+    "positioningImg": "assets/images/positions/Dequrevains positioning.webp",
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "hand-1stmcp",
@@ -398,8 +398,8 @@
         "seconds": 286
       }
     ],
-    "positioningImg": "assets/images/positions/Dequrevains positioning.png",
-    "probeImg": "assets/images/probes/Narrow.png"
+    "positioningImg": "assets/images/positions/Dequrevains positioning.webp",
+    "probeImg": "assets/images/probes/Narrow.webp"
   },
   {
     "id": "hand-trigger-finger",
@@ -536,7 +536,7 @@
         "seconds": 106
       }
     ],
-    "positioningImg": "assets/images/positions/Seated hand supine hand on table.png",
-    "probeImg": "assets/images/probes/Narrow.png"
+    "positioningImg": "assets/images/positions/Seated hand supine hand on table.webp",
+    "probeImg": "assets/images/probes/Narrow.webp"
   }
 ]
