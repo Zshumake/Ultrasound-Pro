@@ -35,7 +35,7 @@
       "Seated preferred (or supine if vasovagal); forearm supinated; wrist slightly extended"
     ],
     "probe": [
-      "High-frequency linear probe; short footprint helpful"
+      "High-frequency linear probe (15\u201318 MHz); full footprint allows visualization of the entire carpal tunnel in a single view"
     ],
     "landmarking": [
       "Probe transversely at proximal wrist crease \u2192 identify median nerve under retinaculum \u2192 identify flexor tendons \u2192 map ulnar bundle \u2192 check for bifid nerve/persistent median artery"
@@ -131,7 +131,7 @@
       }
     ],
     "positioningImg": "assets/images/positions/Seated hand supine hand on table.webp",
-    "probeImg": "assets/images/probes/Narrow.webp"
+    "probeImg": "assets/images/probes/Linear.webp"
   },
   {
     "id": "wrist-dequervain",
