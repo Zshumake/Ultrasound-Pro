@@ -134,7 +134,8 @@
       }
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
-    "probeImg": "assets/images/probes/Linear.webp"
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/ankle-ttj-injection.webp"
   },
   {
     "id": "ankle-peroneal",
@@ -544,6 +545,7 @@
       }
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
-    "probeImg": "assets/images/probes/Narrow.webp"
+    "probeImg": "assets/images/probes/Narrow.webp",
+    "injectionImg": "assets/images/injections/foot-mortons-injection.webp"
   }
 ]
