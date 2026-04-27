@@ -143,7 +143,8 @@
     ],
     "positioningImg": "assets/images/positions/Modified Kras.webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/shoulder-sasd-injection.webp"
+    "injectionImg": "assets/images/injections/shoulder-sasd-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/shoulder-sasd-us.webp"
   },
   {
     "id": "shoulder-gh-posterior",
@@ -282,7 +283,8 @@
     ],
     "positioningImg": "assets/images/positions/Seated facing away.webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/shoulder-gh-posterior-injection.webp"
+    "injectionImg": "assets/images/injections/shoulder-gh-posterior-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/shoulder-gh-posterior-us.webp"
   },
   {
     "id": "shoulder-gh-anterior",
@@ -415,7 +417,8 @@
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/shoulder-gh-anterior-injection.webp"
+    "injectionImg": "assets/images/injections/shoulder-gh-anterior-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/shoulder-gh-anterior-us.webp"
   },
   {
     "id": "shoulder-ac",
@@ -551,7 +554,8 @@
     "positioningImg": "assets/images/positions/Seated Patient.webp",
     "probeImg": "assets/images/probes/Linear.webp",
     "injectionImg": "assets/images/injections/shoulder-ac-injection.webp",
-    "injectionImgShort": "assets/images/injections/shoulder-ac-injection-short.webp"
+    "injectionImgShort": "assets/images/injections/shoulder-ac-injection-short.webp",
+    "ultrasoundImg": "assets/images/ultrasound/shoulder-ac-us.webp"
   },
   {
     "id": "shoulder-biceps",
@@ -688,6 +692,7 @@
     "positioningImg": "assets/images/positions/Seated Patient Supine Hand Bicep.webp",
     "probeImg": "assets/images/probes/Linear.webp",
     "injectionImg": "assets/images/injections/shoulder-biceps-injection.webp",
-    "injectionImgShort": "assets/images/injections/shoulder-biceps-injection-short.webp"
+    "injectionImgShort": "assets/images/injections/shoulder-biceps-injection-short.webp",
+    "ultrasoundImg": "assets/images/ultrasound/shoulder-biceps-us.webp"
   }
 ]

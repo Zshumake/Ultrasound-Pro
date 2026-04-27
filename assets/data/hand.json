@@ -133,7 +133,8 @@
     "positioningImg": "assets/images/positions/Seated hand supine hand on table.webp",
     "probeImg": "assets/images/probes/Linear.webp",
     "injectionImg": "assets/images/injections/wrist-carpal-injection.webp",
-    "injectionImgShort": "assets/images/injections/wrist-carpal-injection-short.webp"
+    "injectionImgShort": "assets/images/injections/wrist-carpal-injection-short.webp",
+    "ultrasoundImg": "assets/images/ultrasound/wrist-carpal-us.webp"
   },
   {
     "id": "wrist-dequervain",
@@ -403,7 +404,8 @@
     ],
     "positioningImg": "assets/images/positions/Dequrevains positioning.webp",
     "probeImg": "assets/images/probes/Narrow.webp",
-    "injectionImg": "assets/images/injections/hand-1stmcp-injection.webp"
+    "injectionImg": "assets/images/injections/hand-1stmcp-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/hand-1stmcp-us.webp"
   },
   {
     "id": "hand-trigger-finger",
