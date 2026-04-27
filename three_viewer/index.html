@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Body Viewer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #1a1a2e; }
+    #canvas-container { width: 100%; height: 100%; position: relative; }
+    canvas { display: block; width: 100%; height: 100%; }
+    #loading {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: #1a1a2e; color: #8892b0; font-family: -apple-system, sans-serif;
+      font-size: 14px; z-index: 10; transition: opacity 0.3s;
+    }
+    #loading.hidden { opacity: 0; pointer-events: none; }
+    .spinner {
+      width: 32px; height: 32px; border: 3px solid #2a2a4e;
+      border-top-color: #64ffda; border-radius: 50%;
+      animation: spin 0.8s linear infinite; margin-right: 12px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #error {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      color: #ff6b6b; font-family: -apple-system, sans-serif;
+      font-size: 14px; text-align: center; display: none; z-index: 20;
+      background: rgba(26, 26, 46, 0.95); padding: 20px; border-radius: 8px;
+    }
+    #debug {
+      position: absolute; bottom: 8px; left: 8px; right: 8px;
+      color: #64ffda; font-family: monospace; font-size: 11px;
+      z-index: 30; background: rgba(0,0,0,0.7); padding: 8px;
+      border-radius: 4px; max-height: 150px; overflow-y: auto;
+      white-space: pre-wrap;
+    }
+    #pose-buttons {
+      position: absolute; top: 8px; left: 8px;
+      z-index: 30; display: flex; flex-wrap: wrap; gap: 4px;
+    }
+    #pose-buttons button {
+      background: rgba(100, 255, 218, 0.15); color: #64ffda;
+      border: 1px solid rgba(100, 255, 218, 0.3); border-radius: 4px;
+      padding: 4px 8px; font-size: 10px; font-family: monospace;
+      cursor: pointer; transition: background 0.2s;
+    }
+    #pose-buttons button:hover { background: rgba(100, 255, 218, 0.3); }
+    #pose-buttons button.active { background: rgba(100, 255, 218, 0.5); }
+    #bone-panel {
+      position: absolute; top: 8px; right: 8px; width: 280px;
+      z-index: 30; background: rgba(0,0,0,0.85); padding: 10px;
+      border-radius: 6px; color: #ccd6f6; font-family: monospace;
+      font-size: 10px; max-height: 90vh; overflow-y: auto;
+    }
+    #bone-panel h3 { color: #64ffda; margin: 8px 0 4px; font-size: 11px; }
+    #bone-panel label { display: block; margin: 2px 0; }
+    #bone-panel input[type=range] { width: 160px; vertical-align: middle; }
+    #bone-panel .val { display: inline-block; width: 35px; text-align: right; color: #64ffda; }
+    #bone-panel button {
+      background: #64ffda; color: #0a192f; border: none; border-radius: 3px;
+      padding: 4px 10px; margin: 4px 2px; cursor: pointer; font-size: 10px; font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="canvas-container">
+    <div id="loading"><div class="spinner"></div>Loading model...</div>
+    <div id="error"></div>
+    <div id="debug"></div>
+    <div id="pose-buttons"></div>
+    <div id="bone-panel" style="display:none;"></div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    window.THREE = THREE; // expose for debugging
+
+    // ── Debug ──────────────────────────────────────────────────────
+    function dbg(msg) {
+      console.log('[3DViewer] ' + msg);
+      const el = document.getElementById('debug');
+      if (el) el.textContent += msg + '\n';
+    }
+    window.onerror = (msg, src, line) => dbg('ERROR: ' + msg + ' @ line ' + line);
+    window.onunhandledrejection = (e) => dbg('REJECT: ' + e.reason);
+
+    // ── State ──────────────────────────────────────────────────────
+    let scene, camera, renderer, controls;
+    let bodyMesh = null;
+    let probeMesh = null;
+    let needleMesh = null;
+    let skeleton = null;
+    let posesData = null;
+    let currentProcedureId = null;
+    let examTable = null;
+    let armTable = null;
+    let towelRoll = null;
+
+    // Animation state
+    let probeAnim = null;  // { keyframes, startTime, duration, currentStep, playing }
+
+    const MODEL_BASE = 'models/';
+    const DATA_BASE = 'data/';
+
+    // ═══════════════════════════════════════════════════════════════
+    // POSE DEFINITIONS — inline for reliability
+    // Body orientation is done by rotating the WHOLE MODEL, not bones.
+    // Bone rotations are only for limb adjustments (arms, knees).
+    //
+    // GLB coordinate system (Y-up):
+    //   - Model stands upright, facing -Z
+    //   - Y is up, X is right, Z is toward camera
+    //
+    // modelRotation: [rx, ry, rz] in radians applied to bodyMesh
+    //   supine (on back):  rotate -90° around X
+    //   prone (face down):  rotate +90° around X
+    //   side-lying (on right side): rotate -90° around Z
+    //   seated/standing: no rotation (or minimal)
+    // ═══════════════════════════════════════════════════════════════
+
+    const POSES = {
+      'standing': {
+        label: 'Standing (Rest Pose)',
+        modelRotation: [0, 0, 0],
+        modelPosition: [0, 0, 0],
+        cameraPos: [0, 0.85, 1.5],
+        cameraTarget: [0, 0.85, 0],
+        boneRotations: {},
+      },
+
+      // ── SUPINE POSES (Blender-exported quaternions) ──────────────
+      'supine-arms-side': {
+        label: 'Supine, Arms at Side',
+        modelRotation: [-Math.PI / 2, 0, 0],
+        modelPosition: [0, 0, 0],
+        cameraPos: [0.5, 2.0, 0.2],
+        cameraTarget: [0, 0, -0.1],
+        boneRotations: {
+          'upperleg01L':  { quaternion: [0, 0, 0.01745, 0.99985] },
+          'footL':        { quaternion: [0.08716, 0, 0, 0.99619] },
+          'upperleg01R':  { quaternion: [0, 0, -0.01745, 0.99985] },
+          'footR':        { quaternion: [0.08716, 0, 0, 0.99619] },
+          'upperarm01L':  { quaternion: [0.06615, -0.11824, -0.34654, 0.9282] },
+          'upperarm02L':  { quaternion: [0, 0, -0.04362, 0.99905] },
+          'lowerarm01L':  { quaternion: [-0.35803, -0.01563, 0.04072, 0.93269] },
+          'lowerarm02L':  { quaternion: [0, 0.46175, 0, 0.88701] },
+          'wristL':       { quaternion: [0, 0, 0.08716, 0.99619] },
+          'upperarm01R':  { quaternion: [0.06615, 0.11824, 0.34654, 0.9282] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [-0.35803, 0.01563, -0.04072, 0.93269] },
+          'lowerarm02R':  { quaternion: [0, -0.46175, 0, 0.88701] },
+          'wristR':       { quaternion: [0, 0, -0.08716, 0.99619] },
+        },
+      },
+      'supine-arm-supinated': {
+        label: 'Supine, Arm Supinated',
+        modelRotation: [-Math.PI / 2, 0, 0],
+        modelPosition: [0, 0, 0],
+        cameraPos: [0.5, 2.0, 0.2],
+        cameraTarget: [0.05, 0, 0.1],
+        boneRotations: {
+          'upperleg01L':  { quaternion: [0, 0, 0.01745, 0.99985] },
+          'footL':        { quaternion: [0.08716, 0, 0, 0.99619] },
+          'upperleg01R':  { quaternion: [0, 0, -0.01745, 0.99985] },
+          'footR':        { quaternion: [0.08716, 0, 0, 0.99619] },
+          'upperarm01L':  { quaternion: [0.0756, -0.06127, -0.2117, 0.97248] },
+          'upperarm02L':  { quaternion: [0, 0, -0.02618, 0.99966] },
+          'lowerarm01L':  { quaternion: [-0.21637, -0.00567, 0.02556, 0.97596] },
+          'lowerarm02L':  { quaternion: [0, -0.34202, 0, 0.93969] },
+          'upperarm01R':  { quaternion: [0.06615, 0.11824, 0.34654, 0.9282] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [-0.35803, 0.01563, -0.04072, 0.93269] },
+          'lowerarm02R':  { quaternion: [0, -0.46175, 0, 0.88701] },
+          'wristR':       { quaternion: [0, 0, -0.08716, 0.99619] },
+        },
+      },
+      'supine-knee-bent': {
+        label: 'Supine, Knee Slightly Flexed',
+        modelRotation: [-Math.PI / 2, 0, 0],
+        modelPosition: [0, 0, 0],
+        cameraPos: [0.6, 1.8, 0.3],
+        cameraTarget: [0, 0, -0.2],
+        boneRotations: {
+          'upperleg01L':  { quaternion: [-0.21641, -0.00378, 0.01704, 0.97615] },
+          'lowerleg01L':  { quaternion: [0.38268, 0, 0, 0.92388] },
+          'footL':        { quaternion: [-0.17365, 0, 0, 0.98481] },
+          'upperleg01R':  { quaternion: [0, 0, -0.01745, 0.99985] },
+          'footR':        { quaternion: [0.08716, 0, 0, 0.99619] },
+          'upperarm01L':  { quaternion: [0.06615, -0.11824, -0.34654, 0.9282] },
+          'upperarm02L':  { quaternion: [0, 0, -0.04362, 0.99905] },
+          'lowerarm01L':  { quaternion: [-0.35803, -0.01563, 0.04072, 0.93269] },
+          'lowerarm02L':  { quaternion: [0, 0.46175, 0, 0.88701] },
+          'wristL':       { quaternion: [0, 0, 0.08716, 0.99619] },
+          'upperarm01R':  { quaternion: [0.06615, 0.11824, 0.34654, 0.9282] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [-0.35803, 0.01563, -0.04072, 0.93269] },
+          'lowerarm02R':  { quaternion: [0, -0.46175, 0, 0.88701] },
+          'wristR':       { quaternion: [0, 0, -0.08716, 0.99619] },
+        },
+      },
+      'supine-elbow-flexed': {
+        label: 'Supine, Elbow Flexed 90°',
+        modelRotation: [-Math.PI / 2, 0, 0],
+        modelPosition: [0, 0, 0],
+        cameraPos: [0.5, 2.0, 0.2],
+        cameraTarget: [0.15, 0, 0.1],
+        boneRotations: {
+          'upperleg01L':  { quaternion: [0, 0, 0.01745, 0.99985] },
+          'footL':        { quaternion: [0.08716, 0, 0, 0.99619] },
+          'upperleg01R':  { quaternion: [0, 0, -0.01745, 0.99985] },
+          'footR':        { quaternion: [0.08716, 0, 0, 0.99619] },
+          'upperarm01L':  { quaternion: [0.06818, -0.06943, -0.32043, 0.94226] },
+          'upperarm02L':  { quaternion: [0, 0, -0.04362, 0.99905] },
+          'lowerarm01L':  { quaternion: [0.46131, 0.02014, 0.03869, 0.88617] },
+          'lowerarm02L':  { quaternion: [0, 0.46175, 0, 0.88701] },
+          'upperarm01R':  { quaternion: [0.06615, 0.11824, 0.34654, 0.9282] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [-0.35803, 0.01563, -0.04072, 0.93269] },
+          'lowerarm02R':  { quaternion: [0, -0.46175, 0, 0.88701] },
+          'wristR':       { quaternion: [0, 0, -0.08716, 0.99619] },
+        },
+      },
+      'supine-ankle-neutral': {
+        label: 'Supine, Ankle Accessible',
+        modelRotation: [-Math.PI / 2, 0, 0],
+        modelPosition: [0, 0, 0],
+        cameraPos: [0.3, 1.5, 0.3],
+        cameraTarget: [0.05, 0, -0.75],
+        boneRotations: {
+          'upperleg01L':  { quaternion: [-0.53722, -0.00938, 0.01472, 0.84326] },
+          'lowerleg01L':  { quaternion: [0.64279, 0, 0, 0.76604] },
+          'footL':        { quaternion: [-0.13053, 0, 0, 0.99144] },
+          'upperleg01R':  { quaternion: [0, 0, -0.01745, 0.99985] },
+          'footR':        { quaternion: [0.08716, 0, 0, 0.99619] },
+          'upperarm01L':  { quaternion: [0.06615, -0.11824, -0.34654, 0.9282] },
+          'upperarm02L':  { quaternion: [0, 0, -0.04362, 0.99905] },
+          'lowerarm01L':  { quaternion: [-0.35803, -0.01563, 0.04072, 0.93269] },
+          'lowerarm02L':  { quaternion: [0, 0.46175, 0, 0.88701] },
+          'wristL':       { quaternion: [0, 0, 0.08716, 0.99619] },
+          'upperarm01R':  { quaternion: [0.06615, 0.11824, 0.34654, 0.9282] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [-0.35803, 0.01563, -0.04072, 0.93269] },
+          'lowerarm02R':  { quaternion: [0, -0.46175, 0, 0.88701] },
+          'wristR':       { quaternion: [0, 0, -0.08716, 0.99619] },
+        },
+      },
+
+      // ── PRONE POSES (Blender-exported quaternions) ───────────────
+      'prone': {
+        label: 'Prone',
+        modelRotation: [Math.PI / 2, 0, 0],
+        modelPosition: [0, 0, 0],
+        cameraPos: [0.5, 2.0, -0.2],
+        cameraTarget: [0, 0, 0.1],
+        boneRotations: {
+          'upperleg01L':  { quaternion: [0, 0, 0.01745, 0.99985] },
+          'footL':        { quaternion: [-0.08716, 0, 0, 0.99619] },
+          'upperleg01R':  { quaternion: [0, 0, -0.01745, 0.99985] },
+          'footR':        { quaternion: [-0.08716, 0, 0, 0.99619] },
+          'upperarm01L':  { quaternion: [0.06615, -0.11824, -0.34654, 0.9282] },
+          'upperarm02L':  { quaternion: [0, 0, -0.04362, 0.99905] },
+          'lowerarm01L':  { quaternion: [-0.35803, -0.01563, 0.04072, 0.93269] },
+          'lowerarm02L':  { quaternion: [0, 0.46175, 0, 0.88701] },
+          'wristL':       { quaternion: [0, 0, 0.08716, 0.99619] },
+          'upperarm01R':  { quaternion: [0.06615, 0.11824, 0.34654, 0.9282] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [-0.35803, 0.01563, -0.04072, 0.93269] },
+          'lowerarm02R':  { quaternion: [0, -0.46175, 0, 0.88701] },
+          'wristR':       { quaternion: [0, 0, -0.08716, 0.99619] },
+          'neck01':       { quaternion: [0, -0.17365, 0, 0.98481] },
+          'neck02':       { quaternion: [0, -0.13053, 0, 0.99144] },
+          'head':         { quaternion: [0, -0.08716, 0, 0.99619] },
+        },
+      },
+
+      // ── SIDE-LYING POSES (Blender-exported quaternions) ──────────
+      'side-lying': {
+        label: 'Side-Lying (Right Side Down)',
+        modelRotation: [0, 0, -Math.PI / 2],
+        modelPosition: [0, 0, 0],
+        cameraPos: [0.6, 0.6, 2.0],
+        cameraTarget: [0.6, 0.15, 0],
+        boneRotations: {
+          'upperleg01L':  { quaternion: [-0.04361, -0.00076, 0.01744, 0.9989] },
+          'footL':        { quaternion: [0.04362, 0, 0, 0.99905] },
+          'upperleg01R':  { quaternion: [-0.17362, 0.00303, -0.01719, 0.98466] },
+          'lowerleg01R':  { quaternion: [0.25882, 0, 0, 0.96593] },
+          'upperarm01L':  { quaternion: [0.06615, -0.11824, -0.34654, 0.9282] },
+          'upperarm02L':  { quaternion: [0, 0, -0.04362, 0.99905] },
+          'lowerarm01L':  { quaternion: [-0.1304, -0.00569, 0.04325, 0.9905] },
+          'lowerarm02L':  { quaternion: [0, 0.25882, 0, 0.96593] },
+          'upperarm01R':  { quaternion: [0.43796, 0.24897, 0.26849, 0.82104] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [-0.17348, 0.00757, -0.04296, 0.98387] },
+          'lowerarm02R':  { quaternion: [0, -0.25882, 0, 0.96593] },
+        },
+      },
+      'lateral-decubitus': {
+        label: 'Lateral Decubitus (Shoulder Up)',
+        modelRotation: [0, 0, -Math.PI / 2],
+        modelPosition: [0, 0, 0],
+        cameraPos: [1.0, 0.6, 1.4],
+        cameraTarget: [0.8, 0.2, 0],
+        boneRotations: {
+          'upperleg01L':  { quaternion: [-0.04361, -0.00076, 0.01744, 0.9989] },
+          'footL':        { quaternion: [0.04362, 0, 0, 0.99905] },
+          'upperleg01R':  { quaternion: [-0.17362, 0.00303, -0.01719, 0.98466] },
+          'lowerleg01R':  { quaternion: [0.25882, 0, 0, 0.96593] },
+          'upperarm01L':  { quaternion: [0.22726, -0.14805, -0.22726, 0.9353] },
+          'upperarm02L':  { quaternion: [0, 0, -0.02618, 0.99966] },
+          'lowerarm01L':  { quaternion: [0.1304, 0.00569, 0.04325, 0.9905] },
+          'upperarm01R':  { quaternion: [0.43796, 0.24897, 0.26849, 0.82104] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [-0.17348, 0.00757, -0.04296, 0.98387] },
+          'lowerarm02R':  { quaternion: [0, -0.25882, 0, 0.96593] },
+        },
+      },
+
+      // ── SEATED POSES (Blender-exported quaternions) ──────────────
+      'seated-forearm-on-table': {
+        label: 'Seated, Forearm on Table',
+        modelRotation: [0, 0, 0],
+        modelPosition: [0, -0.05, 0],
+        cameraPos: [0.7, 1.0, 1.8],
+        cameraTarget: [0.05, 0.55, 0],
+        boneRotations: {
+          'spine01':      { quaternion: [-0.04362, 0, 0, 0.99905] },
+          'upperleg01L':  { quaternion: [-0.67549, -0.01179, 0.01287, 0.73717] },
+          'lowerleg01L':  { quaternion: [0.67559, 0, 0, 0.73728] },
+          'upperleg01R':  { quaternion: [-0.67549, 0.01179, -0.01287, 0.73717] },
+          'lowerleg01R':  { quaternion: [0.67559, 0, 0, 0.73728] },
+          'upperarm01L':  { quaternion: [0.2607, -0.16935, -0.2607, 0.914] },
+          'upperarm02L':  { quaternion: [0, 0, -0.04362, 0.99905] },
+          'lowerarm01L':  { quaternion: [0.42222, 0.01843, 0.03953, 0.90545] },
+          'upperarm01R':  { quaternion: [0.09043, 0.12727, 0.34333, 0.92615] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [0.17348, -0.00757, -0.04296, 0.98387] },
+          'lowerarm02R':  { quaternion: [0, -0.25882, 0, 0.96593] },
+        },
+      },
+      'seated-forearm-supinated': {
+        label: 'Seated, Forearm Supinated on Table',
+        modelRotation: [0, 0, 0],
+        modelPosition: [0, -0.05, 0],
+        cameraPos: [0.7, 1.0, 1.8],
+        cameraTarget: [0.05, 0.55, 0],
+        boneRotations: {
+          'spine01':      { quaternion: [-0.04362, 0, 0, 0.99905] },
+          'upperleg01L':  { quaternion: [-0.67549, -0.01179, 0.01287, 0.73717] },
+          'lowerleg01L':  { quaternion: [0.67559, 0, 0, 0.73728] },
+          'upperleg01R':  { quaternion: [-0.67549, 0.01179, -0.01287, 0.73717] },
+          'lowerleg01R':  { quaternion: [0.67559, 0, 0, 0.73728] },
+          'upperarm01L':  { quaternion: [0.2607, -0.16935, -0.2607, 0.914] },
+          'upperarm02L':  { quaternion: [0, 0, -0.04362, 0.99905] },
+          'lowerarm01L':  { quaternion: [0.42222, 0.01843, 0.03953, 0.90545] },
+          'lowerarm02L':  { quaternion: [0, -0.42262, 0, 0.90631] },
+          'upperarm01R':  { quaternion: [0.09043, 0.12727, 0.34333, 0.92615] },
+          'upperarm02R':  { quaternion: [0, 0, 0.04362, 0.99905] },
+          'lowerarm01R':  { quaternion: [0.17348, -0.00757, -0.04296, 0.98387] },
+          'lowerarm02R':  { quaternion: [0, -0.25882, 0, 0.96593] },
+        },
+      },
+    };
+
+    // All procedures use nude male body.
+    // Each entry has: basePose, probeType, cameraPos, cameraTarget,
+    // and optional boneOverrides applied ON TOP of the base pose.
+    // Coordinate reference (supine = rotated -PI/2 around X):
+    //   Standing Y → supine -Z (head at Z≈-1.42, feet at Z≈0)
+    //   Standing X → supine X  (left side = +X)
+    //   Body front faces up (Y+)
+    // Coordinate reference (prone = rotated +PI/2 around X):
+    //   Head at Z≈+1.42, feet at Z≈0, back faces up (Y+)
+    // Coordinate reference (side-lying = rotated -PI/2 around Z):
+    //   Left side faces up (Y+), head at X≈+1.42
+    const PROCEDURES = {
+      // ── Shoulder ───────────────────────────────────────────────────
+      'shoulder-sasd': {
+        basePose: 'supine-arms-side',
+        probeType: 'linear',
+        cameraPos: [0.6, 1.2, -1.1],
+        cameraTarget: [0.18, 0.08, -1.35],
+      },
+      'shoulder-gh-posterior': {
+        basePose: 'lateral-decubitus',
+        probeType: 'linear',
+        cameraPos: [1.3, 0.8, -0.6],
+        cameraTarget: [0.85, 0.18, 0.05],
+      },
+      'shoulder-gh-anterior': {
+        basePose: 'supine-arms-side',
+        probeType: 'linear',
+        cameraPos: [0.5, 1.4, -1.1],
+        cameraTarget: [0.15, 0.1, -1.35],
+        boneOverrides: {
+          // Slight external rotation for anterior GH access
+          'upperarm01L':  { euler: [0, -15, 20] },
+        },
+      },
+      'shoulder-ac': {
+        basePose: 'supine-arms-side',
+        probeType: 'linear',
+        cameraPos: [0.3, 1.5, -1.15],
+        cameraTarget: [0.12, 0.15, -1.4],
+      },
+      'shoulder-biceps': {
+        basePose: 'supine-arm-supinated',
+        probeType: 'linear',
+        cameraPos: [0.6, 1.3, -1.1],
+        cameraTarget: [0.22, 0.08, -1.3],
+      },
+
+      // ── Elbow ──────────────────────────────────────────────────────
+      'elbow-radiocapitellar': {
+        basePose: 'supine-elbow-flexed',
+        probeType: 'linear',
+        cameraPos: [0.7, 1.0, -0.85],
+        cameraTarget: [0.3, 0.05, -1.05],
+      },
+      'elbow-cet': {
+        basePose: 'supine-elbow-flexed',
+        probeType: 'linear',
+        cameraPos: [0.7, 1.0, -0.85],
+        cameraTarget: [0.3, 0.05, -1.05],
+      },
+      'elbow-cfet': {
+        basePose: 'supine-arm-supinated',
+        probeType: 'linear',
+        cameraPos: [-0.2, 1.0, -0.85],
+        cameraTarget: [0.2, 0.05, -1.05],
+        boneOverrides: {
+          // Elbow slightly more flexed for medial access
+          'lowerarm01L':  { euler: [60, 0, 0] },
+        },
+      },
+
+      // ── Wrist/Hand ─────────────────────────────────────────────────
+      'wrist-carpal': {
+        basePose: 'seated-forearm-supinated',
+        probeType: 'linear',
+        cameraPos: [0.5, 0.9, 0.7],
+        cameraTarget: [0.25, 0.55, 0.15],
+      },
+      'wrist-dequervain': {
+        basePose: 'seated-forearm-on-table',
+        probeType: 'linear',
+        cameraPos: [0.6, 0.9, 0.6],
+        cameraTarget: [0.28, 0.55, 0.1],
+      },
+      'hand-1stmcp': {
+        basePose: 'seated-forearm-on-table',
+        probeType: 'hockey_stick',
+        cameraPos: [0.5, 0.85, 0.5],
+        cameraTarget: [0.3, 0.5, 0.05],
+      },
+      'hand-trigger-finger': {
+        basePose: 'seated-forearm-supinated',
+        probeType: 'linear',
+        cameraPos: [0.5, 0.85, 0.5],
+        cameraTarget: [0.3, 0.5, 0.05],
+      },
+
+      // ── Hip ────────────────────────────────────────────────────────
+      'hip-anterior': {
+        basePose: 'supine-arms-side',
+        probeType: 'curvilinear',
+        cameraPos: [0.5, 1.6, -0.55],
+        cameraTarget: [0.1, 0.05, -0.82],
+      },
+      'hip-gtb': {
+        basePose: 'side-lying',
+        probeType: 'curvilinear',
+        cameraPos: [0.5, 0.9, 1.6],
+        cameraTarget: [0.5, 0.25, 0.15],
+      },
+      'hip-piriformis': {
+        basePose: 'prone',
+        probeType: 'curvilinear',
+        cameraPos: [0.5, 1.5, 0.65],
+        cameraTarget: [0.1, 0.05, 0.85],
+      },
+      'si-joint': {
+        basePose: 'prone',
+        probeType: 'curvilinear',
+        cameraPos: [0.4, 1.5, 0.75],
+        cameraTarget: [0.0, 0.05, 0.9],
+      },
+      'hip-hamstring-proximal': {
+        basePose: 'prone',
+        probeType: 'curvilinear',
+        cameraPos: [0.5, 1.5, 0.55],
+        cameraTarget: [0.1, 0.05, 0.78],
+      },
+
+      // ── Knee ───────────────────────────────────────────────────────
+      'knee-suprapatellar': {
+        basePose: 'supine-knee-bent',
+        probeType: 'linear',
+        cameraPos: [0.5, 1.3, -0.2],
+        cameraTarget: [0.08, 0.1, -0.42],
+      },
+
+      // ── Ankle/Foot ─────────────────────────────────────────────────
+      'ankle-ttj': {
+        basePose: 'supine-ankle-neutral',
+        probeType: 'linear',
+        cameraPos: [0.4, 1.0, 0.15],
+        cameraTarget: [0.06, 0.08, -0.05],
+      },
+      'ankle-peroneal': {
+        basePose: 'side-lying',
+        probeType: 'linear',
+        cameraPos: [-0.3, 0.5, 1.2],
+        cameraTarget: [-0.15, 0.1, -0.1],
+        boneOverrides: {
+          // Slight ankle inversion to expose peroneal tendons
+          'footL':  { euler: [0, 0, 15] },
+        },
+      },
+      'foot-plantar': {
+        basePose: 'prone',
+        probeType: 'linear',
+        cameraPos: [0.3, 1.0, -0.15],
+        cameraTarget: [0.08, 0.05, 0.05],
+        boneOverrides: {
+          // Slight dorsiflexion to expose plantar surface
+          'footL':  { euler: [-10, 0, 0] },
+        },
+      },
+      'foot-mortons-neuroma': {
+        basePose: 'supine-ankle-neutral',
+        probeType: 'linear',
+        cameraPos: [0.35, 0.8, 0.2],
+        cameraTarget: [0.06, 0.06, -0.02],
+      },
+    };
+
+    // ── Furniture ───────────────────────────────────────────────────
+    function createExamTable() {
+      const group = new THREE.Group();
+      group.name = 'examTable';
+
+      // Materials
+      const frameMat = new THREE.MeshStandardMaterial({ color: 0x4a4a5a, roughness: 0.6, metalness: 0.3 });
+      const padMat = new THREE.MeshStandardMaterial({ color: 0x2a4a6a, roughness: 0.85, metalness: 0.0 });
+
+      // Padded surface (2.1 x 0.62 x 0.06)
+      const pad = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.06, 2.1), padMat);
+      pad.position.y = 0;
+      group.add(pad);
+
+      // Metal frame under pad
+      const frame = new THREE.Mesh(new THREE.BoxGeometry(0.58, 0.03, 2.06), frameMat);
+      frame.position.y = -0.045;
+      group.add(frame);
+
+      // 4 legs
+      const legH = 0.72;
+      const legGeo = new THREE.BoxGeometry(0.04, legH, 0.04);
+      const positions = [
+        [-0.26, -0.045 - legH / 2, -0.95],
+        [0.26, -0.045 - legH / 2, -0.95],
+        [-0.26, -0.045 - legH / 2, 0.95],
+        [0.26, -0.045 - legH / 2, 0.95],
+      ];
+      positions.forEach(([x, y, z]) => {
+        const leg = new THREE.Mesh(legGeo, frameMat);
+        leg.position.set(x, y, z);
+        group.add(leg);
+      });
+
+      // Cross braces for stability (visual)
+      const braceGeo = new THREE.BoxGeometry(0.52, 0.03, 0.03);
+      [-0.95, 0.95].forEach(z => {
+        const brace = new THREE.Mesh(braceGeo, frameMat);
+        brace.position.set(0, -0.045 - legH + 0.08, z);
+        group.add(brace);
+      });
+
+      group.visible = false;
+      return group;
+    }
+
+    function createArmTable() {
+      const group = new THREE.Group();
+      group.name = 'armTable';
+
+      const frameMat = new THREE.MeshStandardMaterial({ color: 0x4a4a5a, roughness: 0.6, metalness: 0.3 });
+      const padMat = new THREE.MeshStandardMaterial({ color: 0x2a4a6a, roughness: 0.85, metalness: 0.0 });
+
+      // Small padded surface (0.45 x 0.35)
+      const pad = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.04, 0.35), padMat);
+      pad.position.y = 0;
+      group.add(pad);
+
+      // Frame
+      const frame = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.02, 0.32), frameMat);
+      frame.position.y = -0.03;
+      group.add(frame);
+
+      // 4 legs
+      const legH = 0.55;
+      const legGeo = new THREE.BoxGeometry(0.03, legH, 0.03);
+      [[-0.19, -0.03 - legH / 2, -0.14],
+       [0.19, -0.03 - legH / 2, -0.14],
+       [-0.19, -0.03 - legH / 2, 0.14],
+       [0.19, -0.03 - legH / 2, 0.14],
+      ].forEach(([x, y, z]) => {
+        const leg = new THREE.Mesh(legGeo, frameMat);
+        leg.position.set(x, y, z);
+        group.add(leg);
+      });
+
+      group.visible = false;
+      return group;
+    }
+
+    // Position furniture based on pose type.
+    // The exam table surface is at Y=0 (matching TABLE_SURFACE_Y).
+    // The body auto-offsets to rest on this surface.
+    function createTowelRoll() {
+      const group = new THREE.Group();
+      group.name = 'towelRoll';
+
+      // Cylindrical towel roll — white/cream colored
+      const rollGeo = new THREE.CylinderGeometry(0.07, 0.07, 0.22, 16);
+      const rollMat = new THREE.MeshStandardMaterial({
+        color: 0xf0ebe0, roughness: 0.8, metalness: 0.0,
+      });
+      const roll = new THREE.Mesh(rollGeo, rollMat);
+      // Rotate so cylinder lies along X axis (across under the knee)
+      roll.rotation.z = Math.PI / 2;
+      group.add(roll);
+
+      // Slight fabric texture wrinkle lines via a darker ring
+      const bandGeo = new THREE.TorusGeometry(0.07, 0.003, 8, 32);
+      const bandMat = new THREE.MeshStandardMaterial({
+        color: 0xd8d0c0, roughness: 0.9,
+      });
+      const band1 = new THREE.Mesh(bandGeo, bandMat);
+      band1.position.x = 0.04;
+      band1.rotation.y = Math.PI / 2;
+      group.add(band1);
+      const band2 = band1.clone();
+      band2.position.x = -0.04;
+      group.add(band2);
+
+      group.visible = false;
+      return group;
+    }
+
+    function updateFurniture(poseId) {
+      const pose = POSES[poseId];
+      if (!pose) return;
+
+      const [rx, ry, rz] = pose.modelRotation;
+      const isSupine = Math.abs(rx + Math.PI / 2) < 0.1;
+      const isProne = Math.abs(rx - Math.PI / 2) < 0.1;
+      const isSideLying = Math.abs(rz + Math.PI / 2) < 0.1;
+      const isSeated = poseId.includes('seated');
+
+      if (isSupine || isProne || isSideLying) {
+        examTable.visible = true;
+        examTable.rotation.set(0, 0, 0);
+
+        // Table surface pad is at local Y=0. Position group so surface = TABLE_SURFACE_Y.
+        if (isSupine) {
+          examTable.position.set(0, TABLE_SURFACE_Y, -0.7);
+        } else if (isProne) {
+          examTable.position.set(0, TABLE_SURFACE_Y, 0.7);
+        } else if (isSideLying) {
+          examTable.position.set(0.7, TABLE_SURFACE_Y, 0);
+          examTable.rotation.y = Math.PI / 2;
+        }
+      } else {
+        examTable.visible = false;
+      }
+
+      if (isSeated) {
+        armTable.visible = true;
+        armTable.position.set(0.45, 0.48, 0.35);
+      } else {
+        armTable.visible = false;
+      }
+
+      // Towel roll under knee for supine-knee-bent poses
+      if (towelRoll) {
+        if (poseId === 'supine-knee-bent') {
+          towelRoll.visible = true;
+          // Position under the popliteal fossa (behind the knee)
+          // Use lowerleg01L bone position but place at table surface level
+          const kneePos = getBoneWorldPos('lowerleg01L');
+          towelRoll.position.set(kneePos.x, TABLE_SURFACE_Y + 0.07, kneePos.z + 0.03);
+        } else {
+          towelRoll.visible = false;
+        }
+      }
+    }
+
+    // ── Initialize Three.js ────────────────────────────────────────
+    function init() {
+      dbg('init()');
+      const container = document.getElementById('canvas-container');
+
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x1a1a2e);
+
+      camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.01, 100);
+      camera.position.set(0, 0.85, 1.8);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.2;
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      container.appendChild(renderer.domElement);
+      dbg('renderer OK: ' + container.clientWidth + 'x' + container.clientHeight);
+
+      // Lights — soft clinical lighting for medical visualization
+      // Hemisphere light provides natural sky/ground color gradient
+      const hemi = new THREE.HemisphereLight(0xffeedd, 0x8899aa, 0.5);
+      scene.add(hemi);
+      scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+      const key = new THREE.DirectionalLight(0xfff5ee, 1.0);
+      key.position.set(1, 2, 2);
+      scene.add(key);
+      const fill = new THREE.DirectionalLight(0xd4e0ed, 0.5);
+      fill.position.set(-1, 1, -1);
+      scene.add(fill);
+      const rim = new THREE.DirectionalLight(0xc8e6ff, 0.25);
+      rim.position.set(0, -1, -2);
+      scene.add(rim);
+
+      // Ground (floor level)
+      const ground = new THREE.Mesh(
+        new THREE.PlaneGeometry(8, 8),
+        new THREE.MeshStandardMaterial({ color: 0x16213e, roughness: 0.9 })
+      );
+      ground.rotation.x = -Math.PI / 2;
+      ground.position.y = -0.85;
+      scene.add(ground);
+
+      // Exam table and arm table
+      examTable = createExamTable();
+      scene.add(examTable);
+      armTable = createArmTable();
+      scene.add(armTable);
+      towelRoll = createTowelRoll();
+      scene.add(towelRoll);
+      needleMesh = createNeedle();
+      scene.add(needleMesh);
+
+      // Controls
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.08;
+      controls.minDistance = 0.2;
+      controls.maxDistance = 4.0;
+      controls.target.set(0, 0.85, 0);
+      controls.update();
+
+      window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+
+      animate();
+      dbg('animation loop started');
+
+      // Build pose switcher buttons (standalone mode only)
+      if (window.parent === window) {
+        buildPoseButtons();
+      }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const now = performance.now() / 1000;
+      updateProbeAnimation(now);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    // ── Pose Buttons (dev/standalone mode) ─────────────────────────
+    function buildPoseButtons() {
+      const container = document.getElementById('pose-buttons');
+
+      // Add procedure buttons
+      const procs = Object.keys(PROCEDURES);
+      procs.forEach(procId => {
+        const btn = document.createElement('button');
+        btn.textContent = procId;
+        btn.onclick = () => {
+          container.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          loadProcedure(procId);
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    // ── Clean Helper Geometry ─────────────────────────────────────
+    // MPFB helper objects (eyeballs, teeth, tongue, eyelashes) are exported
+    // as part of the same mesh but use distinct materials. We detect these
+    // by checking material color: helpers are typically red, pink, or white
+    // objects that contrast sharply with skin tones.
+    //
+    // Strategy: for meshes with multiple material groups, remove groups
+    // whose material has a distinctly non-skin hue (high red, low green).
+    // For meshes with a single material, check by name or color.
+    // ── Create Eye Material ─────────────────────────────────────────
+    // Creates a procedural eye texture (sclera + iris + pupil) and returns
+    // a MeshStandardMaterial. This works with SkinnedMesh out of the box.
+    function createEyeShaderMaterial() {
+      // Procedural eye using onBeforeCompile to inject iris/pupil into
+      // MeshStandardMaterial's fragment shader. This preserves automatic
+      // skinning support, lighting, and SkinnedMesh compatibility.
+      const mat = new THREE.MeshStandardMaterial({
+        color: 0xf0eeea,  // Sclera white
+        roughness: 0.1,
+        metalness: 0.0,
+      });
+
+      mat.onBeforeCompile = (shader) => {
+        // Add varying for object-space normal (passed from vertex shader)
+        shader.vertexShader = shader.vertexShader.replace(
+          'void main() {',
+          'varying vec3 vObjNormal;\nvoid main() {'
+        );
+        // After begin_vertex, save the object-space normal
+        shader.vertexShader = shader.vertexShader.replace(
+          '#include <beginnormal_vertex>',
+          '#include <beginnormal_vertex>\nvObjNormal = objectNormal;'
+        );
+
+        // In fragment shader, override the diffuseColor based on normal direction
+        shader.fragmentShader = shader.fragmentShader.replace(
+          'void main() {',
+          'varying vec3 vObjNormal;\nvoid main() {'
+        );
+
+        // Procedural iris/pupil based on object-space normal.
+        // Front of MPFB eyeball points along +Z in object space (confirmed via debug).
+        shader.fragmentShader = shader.fragmentShader.replace(
+          '#include <color_fragment>',
+          `#include <color_fragment>
+          {
+            vec3 n = normalize(vObjNormal);
+            // Angular distance from front pole (+Z)
+            float angle = acos(clamp(n.z, -1.0, 1.0));
+
+            // Radii in radians (~0 = dead center, PI = back pole)
+            float pupilR   = 0.15;
+            float irisR    = 0.42;
+            float limbalR  = 0.48;
+
+            // Base sclera color (slightly warm white)
+            vec3 sclera = vec3(0.96, 0.94, 0.92);
+            // Subtle red veins toward edges
+            float veinFactor = smoothstep(0.5, 1.4, angle);
+            sclera = mix(sclera, vec3(0.94, 0.88, 0.87), veinFactor * 0.3);
+
+            // Iris color (brown-hazel with radial variation)
+            float irisT = smoothstep(pupilR, irisR, angle);
+            vec3 irisInner = vec3(0.25, 0.15, 0.06);  // Dark brown center
+            vec3 irisOuter = vec3(0.45, 0.30, 0.12);   // Lighter hazel edge
+            vec3 iris = mix(irisInner, irisOuter, irisT);
+            // Add subtle radial streaks using a simple pattern
+            float streaks = sin(atan(n.y, n.x) * 16.0) * 0.05;
+            iris += streaks;
+
+            // Pupil (near-black)
+            vec3 pupil = vec3(0.02, 0.02, 0.02);
+
+            // Compose: pupil → iris → limbal ring → sclera
+            vec3 eyeColor = sclera;
+            // Limbal ring (dark border around iris)
+            float limbalMix = 1.0 - smoothstep(irisR - 0.03, irisR, angle);
+            float limbalDark = smoothstep(irisR - 0.06, irisR, angle);
+            // Iris fill
+            float irisMix = 1.0 - smoothstep(irisR - 0.02, irisR + 0.02, angle);
+            eyeColor = mix(eyeColor, iris, irisMix);
+            // Darken limbal ring
+            eyeColor = mix(eyeColor, vec3(0.08, 0.06, 0.04), limbalDark * irisMix * 0.6);
+            // Pupil fill
+            float pupilMix = 1.0 - smoothstep(pupilR - 0.02, pupilR + 0.02, angle);
+            eyeColor = mix(eyeColor, pupil, pupilMix);
+
+            // Corneal specular highlight (fake)
+            float specDist = length(vec2(n.x - 0.12, n.y - 0.15));
+            float spec = smoothstep(0.08, 0.03, specDist);
+            eyeColor += vec3(1.0) * spec * 0.6;
+
+            diffuseColor.rgb = eyeColor;
+          }`
+        );
+      };
+
+      return mat;
+    }
+
+    function cleanHelperGeometry(root) {
+      // Hide teeth/tongue meshes and eye sclera mesh (replaced by shader eyeballs).
+      // For skin meshes, create an invisible depth-only occluder that renders first,
+      // so interior cavity faces (mouth lining, eye socket backing) always lose
+      // the depth test and never bleed through the skin surface.
+      const skinMeshes = [];
+      root.traverse(child => {
+        if (!child.isMesh && !child.isSkinnedMesh) return;
+        dbg('mesh: "' + child.name + '" verts=' +
+            (child.geometry ? child.geometry.attributes.position.count : '?'));
+
+        const mat = Array.isArray(child.material) ? child.material[0] : child.material;
+        const matName = (mat && mat.name || '').toLowerCase();
+
+        // Hide teeth and tongue meshes entirely
+        if (matName.includes('teeth') || matName.includes('tongue')) {
+          child.visible = false;
+          dbg('  hidden mesh: ' + child.name + ' (material: ' + (mat && mat.name) + ')');
+          return;
+        }
+
+        // Replace Eye_Sclera with iris/pupil shader material
+        if (matName.includes('eye')) {
+          child.material = createEyeShaderMaterial();
+          dbg('  eye shader applied: ' + child.name);
+          return;
+        }
+
+        // This is a skin mesh — upgrade material for realistic skin rendering
+        dbg('  skin mesh: ' + child.name);
+        // Upgrade to MeshPhysicalMaterial with subsurface scattering
+        const oldMat = Array.isArray(child.material) ? child.material[0] : child.material;
+        const skinMat = new THREE.MeshPhysicalMaterial({
+          map: oldMat.map,
+          normalMap: oldMat.normalMap || null,
+          roughness: 0.6,
+          metalness: 0.0,
+          // Subsurface scattering: warm light penetrates through skin
+          thickness: 0.8,
+          transmission: 0.0,
+          sheen: 0.3,
+          sheenRoughness: 0.6,
+          sheenColor: new THREE.Color(0.8, 0.5, 0.4),  // Warm pinkish sheen
+          clearcoat: 0.05,       // Subtle skin gloss
+          clearcoatRoughness: 0.4,
+          side: THREE.FrontSide,
+        });
+        skinMat.name = oldMat.name;
+        child.material = skinMat;
+        skinMeshes.push(child);
+      });
+
+      // Create depth-only occluders for skin meshes.
+      // The occluder shares the same geometry and skeleton but uses an invisible
+      // material (colorWrite=false) that only writes to the depth buffer.
+      // By rendering it first (renderOrder=-1), interior cavity faces behind
+      // the skin surface will fail the depth test and become invisible.
+      skinMeshes.forEach(skin => {
+        const occluderMat = new THREE.MeshBasicMaterial({
+          colorWrite: false,   // Don't draw any pixels
+          depthWrite: true,    // DO write to depth buffer
+          side: THREE.FrontSide,
+        });
+
+        let occluder;
+        if (skin.isSkinnedMesh) {
+          occluder = new THREE.SkinnedMesh(skin.geometry, occluderMat);
+          occluder.skeleton = skin.skeleton;
+          occluder.bindMatrix.copy(skin.bindMatrix);
+          occluder.bindMatrixInverse.copy(skin.bindMatrixInverse);
+        } else {
+          occluder = new THREE.Mesh(skin.geometry, occluderMat);
+        }
+
+        occluder.name = skin.name + '_occluder';
+        occluder.renderOrder = -1;  // Render before everything else
+        skin.renderOrder = 0;
+
+        // Add occluder as sibling of the skin mesh
+        skin.parent.add(occluder);
+        dbg('  occluder added: ' + occluder.name);
+      });
+    }
+
+    function isHelperPixel(r, g, b, a) {
+      if (r > 150 && g < 90 && b < 90) return true;                 // Bright red
+      if (r > 70 && r > g * 1.9 && g < 65 && b < 65) return true;  // Dark red/maroon
+      if (r > 120 && r > g * 1.7 && r > b * 1.7 && g < 110) return true; // Red-dominant
+      if (r > 230 && g > 230 && b > 230) return true;               // White (sclera)
+      if (r < 25 && g < 25 && b < 25 && a > 200) return true;       // Very dark
+      // Light pink helper pixels (genital/perineal area)
+      if (r > 170 && g > 140 && b > 130 && r > g * 1.15 && g < 170 && Math.abs(g - b) < 20) return true;
+      return false;
+    }
+
+    function neutralizeHelperTexture(texture) {
+      const img = texture.image;
+      if (!img) return;
+
+      const canvas = document.createElement('canvas');
+      const w = img.width || img.naturalWidth;
+      const h = img.height || img.naturalHeight;
+      canvas.width = w;
+      canvas.height = h;
+      if (!w || !h) return;
+
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+
+      const imageData = ctx.getImageData(0, 0, w, h);
+      const data = imageData.data;
+
+      // Pass 1: compute average skin color from non-helper pixels
+      let skinR = 0, skinG = 0, skinB = 0, skinCount = 0;
+      let helperCount = 0;
+
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i], g = data[i + 1], b = data[i + 2], a = data[i + 3];
+        if (a < 10) continue;
+        if (isHelperPixel(r, g, b, a)) {
+          helperCount++;
+        } else if (r > 50 && g > 30 && b > 20 && r < 250) {
+          skinR += r; skinG += g; skinB += b; skinCount++;
+        }
+      }
+
+      if (skinCount > 0) {
+        skinR = Math.round(skinR / skinCount);
+        skinG = Math.round(skinG / skinCount);
+        skinB = Math.round(skinB / skinCount);
+      } else {
+        skinR = 200; skinG = 160; skinB = 140;
+      }
+
+      dbg('  texture: ' + w + 'x' + h +
+          ' helperPixels=' + helperCount + ' skinAvg=rgb(' + skinR + ',' + skinG + ',' + skinB + ')');
+
+      if (helperCount === 0) return;
+
+      // Pass 2: build a mask of which pixels are helpers
+      const mask = new Uint8Array(w * h);
+      for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+          const i = (y * w + x) * 4;
+          if (isHelperPixel(data[i], data[i+1], data[i+2], data[i+3])) {
+            mask[y * w + x] = 1;
+          }
+        }
+      }
+
+      // Pass 3: dilate the mask by a few pixels to catch border artifacts
+      const dilated = new Uint8Array(mask);
+      const DILATE = 3;
+      for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+          if (mask[y * w + x]) continue; // already marked
+          for (let dy = -DILATE; dy <= DILATE && !dilated[y * w + x]; dy++) {
+            for (let dx = -DILATE; dx <= DILATE; dx++) {
+              const nx = x + dx, ny = y + dy;
+              if (nx < 0 || nx >= w || ny < 0 || ny >= h) continue;
+              if (mask[ny * w + nx]) {
+                dilated[y * w + x] = 1;
+                break;
+              }
+            }
+          }
+        }
+      }
+
+      // Pass 4: iterative inward fill — replace border helper pixels first
+      // (small radius), then work inward on subsequent passes. This ensures
+      // even large helper regions get smooth, skin-like fill from the edges in.
+      let replaced = 0;
+      const remaining = new Uint8Array(dilated);
+      const PASSES = 5;
+      const RADII = [8, 16, 30, 50, 80];
+
+      for (let pass = 0; pass < PASSES; pass++) {
+        const src = new Uint8Array(data); // snapshot current state for lookups
+        const radius = RADII[pass];
+        let passReplaced = 0;
+
+        for (let y = 0; y < h; y++) {
+          for (let x = 0; x < w; x++) {
+            if (!remaining[y * w + x]) continue;
+
+            let sumR = 0, sumG = 0, sumB = 0, sumW = 0;
+            // Search for non-helper neighbors (including previously fixed pixels)
+            for (let dy = -radius; dy <= radius; dy++) {
+              for (let dx = -radius; dx <= radius; dx++) {
+                const nx = x + dx, ny = y + dy;
+                if (nx < 0 || nx >= w || ny < 0 || ny >= h) continue;
+                if (remaining[ny * w + nx]) continue; // skip unfixed helper pixels
+                const ni = (ny * w + nx) * 4;
+                if (src[ni + 3] < 10) continue;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist > radius) continue;
+                const weight = 1.0 / (1.0 + dist * dist); // stronger distance falloff
+                sumR += src[ni] * weight;
+                sumG += src[ni + 1] * weight;
+                sumB += src[ni + 2] * weight;
+                sumW += weight;
+              }
+            }
+
+            if (sumW > 0) {
+              const i = (y * w + x) * 4;
+              data[i]     = Math.round(sumR / sumW);
+              data[i + 1] = Math.round(sumG / sumW);
+              data[i + 2] = Math.round(sumB / sumW);
+              remaining[y * w + x] = 0; // mark as fixed
+              replaced++;
+              passReplaced++;
+            }
+          }
+        }
+        dbg('  neutralize pass ' + (pass + 1) + ': radius=' + radius + ' fixed=' + passReplaced);
+        if (passReplaced === 0) break; // all done
+      }
+
+      // Final fallback: anything still remaining gets global average
+      for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+          if (!remaining[y * w + x]) continue;
+          const i = (y * w + x) * 4;
+          data[i] = skinR;
+          data[i + 1] = skinG;
+          data[i + 2] = skinB;
+          remaining[y * w + x] = 0;
+          replaced++;
+        }
+      }
+
+      if (replaced > 0) {
+        ctx.putImageData(imageData, 0, 0);
+        texture.image = canvas;
+        texture.needsUpdate = true;
+        dbg('  replaced ' + replaced + ' helper pixels (neighbor-blended)');
+      }
+    }
+
+    // ── Load Body Model ────────────────────────────────────────────
+    function loadBody() {
+      return new Promise((resolve, reject) => {
+        const filename = 'male_body.glb';
+        dbg('loadBody: ' + filename);
+        const loader = new GLTFLoader();
+
+        loader.load(MODEL_BASE + filename,
+          (gltf) => {
+            dbg('GLB loaded: ' + filename);
+            if (bodyMesh) {
+              scene.remove(bodyMesh);
+              bodyMesh.traverse(child => {
+                if (child.geometry) child.geometry.dispose();
+                if (child.material) {
+                  (Array.isArray(child.material) ? child.material : [child.material]).forEach(m => m.dispose());
+                }
+              });
+            }
+
+            bodyMesh = gltf.scene;
+            scene.add(bodyMesh);
+
+            skeleton = null;
+            bodyMesh.traverse(child => {
+              if (child.isSkinnedMesh && child.skeleton) {
+                skeleton = child.skeleton;
+              }
+            });
+            dbg('skeleton: ' + (skeleton ? skeleton.bones.length + ' bones' : 'NONE'));
+
+            // Log mesh info (eyes, teeth, tongue are now proper materials in the GLB)
+            cleanHelperGeometry(bodyMesh);
+
+            // Neutralize any remaining red/pink helper pixels in skin texture
+            bodyMesh.traverse(child => {
+              if ((child.isMesh || child.isSkinnedMesh) && child.material) {
+                const mats = Array.isArray(child.material) ? child.material : [child.material];
+                mats.forEach(mat => {
+                  if (mat.map) neutralizeHelperTexture(mat.map);
+                });
+              }
+            });
+
+            // Save the rest pose from the GLB (critical — never reset to identity!)
+            saveRestPose();
+            resolve(gltf);
+          },
+          (p) => {
+            if (p.total > 0) {
+              const pct = Math.round((p.loaded / p.total) * 100);
+              dbg('loading... ' + pct + '%');
+            }
+          },
+          (err) => {
+            dbg('LOAD ERROR: ' + err.message);
+            reject(err);
+          }
+        );
+      });
+    }
+
+    // ── Load Probe Model ───────────────────────────────────────────
+    // ── Procedural Probe Creation ──────────────────────────────
+    // Built in Three.js for better appearance and no GLB dependency.
+    // Probe orientation: handle along +Y, face at bottom (-Y).
+    //   Width (transducer face) along X.
+    //   At identity rotation [0,0,0]: face points -Y (down toward skin),
+    //   width across X — perfect for transverse placement on supine body.
+
+    function createProbe(probeType) {
+      const group = new THREE.Group();
+      group.name = 'probe_' + probeType;
+
+      const bodyMat = new THREE.MeshStandardMaterial({
+        color: 0xe0e0e4, roughness: 0.35, metalness: 0.05,
+      });
+      const faceMat = new THREE.MeshStandardMaterial({
+        color: 0x1a1a22, roughness: 0.8, metalness: 0.0,
+      });
+      const indicatorMat = new THREE.MeshStandardMaterial({
+        color: 0x2299dd, roughness: 0.4, metalness: 0.0,
+      });
+      const cableMat = new THREE.MeshStandardMaterial({
+        color: 0x333333, roughness: 0.7, metalness: 0.0,
+      });
+
+      if (probeType === 'linear') {
+        // Linear probe: ~4cm face, ~12cm body, tapered handle
+        // Body — tapered from wider bottom to narrower top
+        const bodyShape = new THREE.Shape();
+        const bw = 0.018, tw = 0.012, h = 0.10, r = 0.004;
+        // Rounded rectangle cross-section via extrusion isn't easy;
+        // use a box + bevel approach with BufferGeometry
+        const bodyGeo = new THREE.BoxGeometry(bw * 2, h, 0.012, 1, 4, 1);
+        // Taper: scale top vertices narrower
+        const posAttr = bodyGeo.attributes.position;
+        for (let i = 0; i < posAttr.count; i++) {
+          const y = posAttr.getY(i);
+          const t = (y + h / 2) / h; // 0 at bottom, 1 at top
+          const scale = 1.0 - t * 0.35; // taper to 65% at top
+          posAttr.setX(i, posAttr.getX(i) * scale);
+          posAttr.setZ(i, posAttr.getZ(i) * scale);
+        }
+        posAttr.needsUpdate = true;
+        bodyGeo.computeVertexNormals();
+
+        const body = new THREE.Mesh(bodyGeo, bodyMat);
+        body.position.y = h / 2 + 0.003; // lift above face
+        group.add(body);
+
+        // Transducer face — dark rubber strip at bottom
+        const faceGeo = new THREE.BoxGeometry(bw * 2, 0.004, 0.012);
+        const face = new THREE.Mesh(faceGeo, faceMat);
+        face.position.y = 0.001; // just at bottom
+        group.add(face);
+
+        // Indicator dot (orientation marker) — one end of the face
+        const dotGeo = new THREE.SphereGeometry(0.003, 8, 8);
+        const dot = new THREE.Mesh(dotGeo, indicatorMat);
+        dot.position.set(bw - 0.002, 0.006, 0.008);
+        group.add(dot);
+
+        // Cable coming out the top
+        const cableGeo = new THREE.CylinderGeometry(0.004, 0.005, 0.03, 8);
+        const cable = new THREE.Mesh(cableGeo, cableMat);
+        cable.position.y = h + 0.018;
+        group.add(cable);
+
+      } else if (probeType === 'curvilinear') {
+        // Wider body, curved face
+        const bw = 0.024, h = 0.11;
+        const bodyGeo = new THREE.BoxGeometry(bw * 2, h, 0.016, 1, 4, 1);
+        const posAttr = bodyGeo.attributes.position;
+        for (let i = 0; i < posAttr.count; i++) {
+          const y = posAttr.getY(i);
+          const t = (y + h / 2) / h;
+          const scale = 1.0 - t * 0.3;
+          posAttr.setX(i, posAttr.getX(i) * scale);
+          posAttr.setZ(i, posAttr.getZ(i) * scale);
+        }
+        posAttr.needsUpdate = true;
+        bodyGeo.computeVertexNormals();
+
+        const body = new THREE.Mesh(bodyGeo, bodyMat);
+        body.position.y = h / 2 + 0.005;
+        group.add(body);
+
+        // Curved face — use a cylinder segment
+        const faceGeo = new THREE.CylinderGeometry(0.03, 0.03, bw * 2, 16, 1, false, 0, Math.PI);
+        const face = new THREE.Mesh(faceGeo, faceMat);
+        face.rotation.z = Math.PI / 2;
+        face.rotation.y = Math.PI / 2;
+        face.position.y = -0.002;
+        group.add(face);
+
+        const dotGeo = new THREE.SphereGeometry(0.004, 8, 8);
+        const dot = new THREE.Mesh(dotGeo, indicatorMat);
+        dot.position.set(bw - 0.003, 0.01, 0.01);
+        group.add(dot);
+
+        const cableGeo = new THREE.CylinderGeometry(0.005, 0.006, 0.03, 8);
+        const cable = new THREE.Mesh(cableGeo, cableMat);
+        cable.position.y = h + 0.02;
+        group.add(cable);
+
+      } else {
+        // Hockey stick — small angled head
+        const h = 0.08;
+        const bodyGeo = new THREE.BoxGeometry(0.02, h, 0.01, 1, 4, 1);
+        const posAttr = bodyGeo.attributes.position;
+        for (let i = 0; i < posAttr.count; i++) {
+          const y = posAttr.getY(i);
+          const t = (y + h / 2) / h;
+          const scale = 1.0 - t * 0.3;
+          posAttr.setX(i, posAttr.getX(i) * scale);
+          posAttr.setZ(i, posAttr.getZ(i) * scale);
+        }
+        posAttr.needsUpdate = true;
+        bodyGeo.computeVertexNormals();
+
+        const body = new THREE.Mesh(bodyGeo, bodyMat);
+        body.position.y = h / 2 + 0.012;
+        group.add(body);
+
+        // Angled neck
+        const neckGeo = new THREE.BoxGeometry(0.018, 0.015, 0.009);
+        const neck = new THREE.Mesh(neckGeo, bodyMat);
+        neck.position.set(0.005, 0.008, 0);
+        neck.rotation.z = -0.3;
+        group.add(neck);
+
+        // Small face
+        const faceGeo = new THREE.BoxGeometry(0.018, 0.003, 0.009);
+        const face = new THREE.Mesh(faceGeo, faceMat);
+        face.position.set(0.007, 0.0);
+        group.add(face);
+
+        const dotGeo = new THREE.SphereGeometry(0.002, 8, 8);
+        const dot = new THREE.Mesh(dotGeo, indicatorMat);
+        dot.position.set(0.015, 0.005, 0.006);
+        group.add(dot);
+
+        const cableGeo = new THREE.CylinderGeometry(0.003, 0.004, 0.025, 8);
+        const cable = new THREE.Mesh(cableGeo, cableMat);
+        cable.position.y = h + 0.025;
+        group.add(cable);
+      }
+
+      group.visible = false;
+      return group;
+    }
+
+    function loadProbe(probeType) {
+      return new Promise((resolve) => {
+        if (probeMesh) scene.remove(probeMesh);
+        probeMesh = createProbe(probeType);
+        // Scale to match body model proportions (~65% life-size)
+        probeMesh.scale.setScalar(0.65);
+        scene.add(probeMesh);
+        dbg('probe created: ' + probeType);
+        resolve();
+      });
+    }
+
+    // ── Apply Pose ─────────────────────────────────────────────────
+    // Store original bone quaternions from the GLB rest pose
+    let restBoneQuats = {};
+
+    function saveRestPose() {
+      if (!skeleton) return;
+      restBoneQuats = {};
+      skeleton.bones.forEach(b => {
+        restBoneQuats[b.name] = b.quaternion.clone();
+      });
+      dbg('saved rest pose for ' + Object.keys(restBoneQuats).length + ' bones');
+    }
+
+    function resetToRestPose() {
+      if (!skeleton) return;
+      skeleton.bones.forEach(b => {
+        const rest = restBoneQuats[b.name];
+        if (rest) {
+          b.quaternion.copy(rest);
+        }
+      });
+    }
+
+    // Compute the lowest Y point of the skinned mesh after posing,
+    // then return the offset needed to place that point on the table.
+    const TABLE_SURFACE_Y = 0.0; // top of the exam table pad
+
+    function computeBodyYOffset(mesh, targetY) {
+      mesh.updateMatrixWorld(true);
+      if (skeleton) skeleton.update();
+
+      // Use Box3.setFromObject which handles SkinnedMesh in Three.js r140+
+      const box = new THREE.Box3().setFromObject(mesh);
+      const offset = targetY - box.min.y;
+      dbg('body bounds: minY=' + box.min.y.toFixed(3) +
+          ' maxY=' + box.max.y.toFixed(3) + ' → offset=' + offset.toFixed(3));
+      return offset;
+    }
+
+    // ── Bone-Relative Positioning Utilities ───────────────────────
+    // These resolve positions/rotations relative to a named bone,
+    // so probe/needle placement works regardless of body offset/rotation.
+
+    function getBoneByName(name) {
+      if (!skeleton) return null;
+      return skeleton.bones.find(b => b.name === name) || null;
+    }
+
+    function getBoneWorldPos(boneName) {
+      const bone = getBoneByName(boneName);
+      if (!bone) { dbg('bone not found: ' + boneName); return new THREE.Vector3(); }
+      bone.updateWorldMatrix(true, false);
+      const pos = new THREE.Vector3();
+      pos.setFromMatrixPosition(bone.matrixWorld);
+      return pos;
+    }
+
+    function getBoneWorldQuat(boneName) {
+      const bone = getBoneByName(boneName);
+      if (!bone) return new THREE.Quaternion();
+      bone.updateWorldMatrix(true, false);
+      const quat = new THREE.Quaternion();
+      bone.matrixWorld.decompose(new THREE.Vector3(), quat, new THREE.Vector3());
+      return quat;
+    }
+
+    /** Convert a bone-relative offset [x,y,z] to world-space position.
+     *  The offset is in the bone's local coordinate frame. */
+    function boneRelativeToWorld(boneName, offset) {
+      const bone = getBoneByName(boneName);
+      if (!bone) return new THREE.Vector3(offset[0], offset[1], offset[2]);
+      bone.updateWorldMatrix(true, false);
+      const localPos = new THREE.Vector3(offset[0], offset[1], offset[2]);
+      return localPos.applyMatrix4(bone.matrixWorld);
+    }
+
+    /** Convert bone-relative Euler rotation [rx,ry,rz] (degrees) to world-space Euler.
+     *  Composes the bone's world rotation with the local rotation offset. */
+    function boneRelativeRotToWorld(boneName, rotDeg) {
+      const bone = getBoneByName(boneName);
+      const localQuat = new THREE.Quaternion().setFromEuler(
+        new THREE.Euler(
+          rotDeg[0] * Math.PI / 180,
+          rotDeg[1] * Math.PI / 180,
+          rotDeg[2] * Math.PI / 180
+        )
+      );
+      if (!bone) {
+        const e = new THREE.Euler();
+        e.setFromQuaternion(localQuat);
+        return e;
+      }
+      bone.updateWorldMatrix(true, false);
+      const boneQuat = new THREE.Quaternion();
+      bone.matrixWorld.decompose(new THREE.Vector3(), boneQuat, new THREE.Vector3());
+      // World rotation = bone world rotation * local rotation
+      const worldQuat = boneQuat.multiply(localQuat);
+      const worldEuler = new THREE.Euler();
+      worldEuler.setFromQuaternion(worldQuat);
+      return worldEuler;
+    }
+
+    // ── Debug: Bone Markers ──────────────────────────────────────
+    let boneMarkers = [];
+
+    function showBoneMarkers() {
+      clearBoneMarkers();
+      if (!skeleton) { dbg('No skeleton for bone markers'); return; }
+
+      const geo = new THREE.SphereGeometry(0.008, 8, 8);
+      skeleton.bones.forEach(bone => {
+        const mat = new THREE.MeshBasicMaterial({ color: 0xff4444 });
+        const sphere = new THREE.Mesh(geo, mat);
+        const pos = new THREE.Vector3();
+        bone.updateWorldMatrix(true, false);
+        pos.setFromMatrixPosition(bone.matrixWorld);
+        sphere.position.copy(pos);
+        sphere.name = 'marker_' + bone.name;
+        scene.add(sphere);
+        boneMarkers.push(sphere);
+      });
+      dbg('Showing ' + boneMarkers.length + ' bone markers (red spheres)');
+    }
+
+    function clearBoneMarkers() {
+      boneMarkers.forEach(m => scene.remove(m));
+      boneMarkers = [];
+    }
+
+    // Expose for console debugging
+    window._getBoneWorldPos = (name) => {
+      const p = getBoneWorldPos(name);
+      console.log(name, '→', p.x.toFixed(4), p.y.toFixed(4), p.z.toFixed(4));
+      return p;
+    };
+    window._showBoneMarkers = showBoneMarkers;
+    window._clearBoneMarkers = clearBoneMarkers;
+
+    // ── Skin Surface Detection via Raycasting ───────────────────
+    // Casts a ray onto the SkinnedMesh to find exactly where the
+    // skin surface is. Called once after posing; results cached.
+    const _skinRaycaster = new THREE.Raycaster();
+    _skinRaycaster.firstHitOnly = true;
+    let _skinSurfaceCache = {};
+
+    function getSkinMesh() {
+      let skinMesh = null;
+      if (bodyMesh) {
+        bodyMesh.traverse(child => {
+          if (child.isSkinnedMesh && child.skeleton && !skinMesh) {
+            skinMesh = child;
+          }
+        });
+      }
+      return skinMesh;
+    }
+
+    /**
+     * Find the skin surface by raycasting from a point in a direction.
+     * @param {THREE.Vector3} origin - Ray start (should be outside the body)
+     * @param {THREE.Vector3} direction - Ray direction (toward body surface)
+     * @returns {{ point: Vector3, normal: Vector3, distance: number } | null}
+     */
+    function findSkinSurface(origin, direction) {
+      const skinMesh = getSkinMesh();
+      if (!skinMesh) return null;
+
+      _skinRaycaster.set(origin, direction.clone().normalize());
+      const hits = _skinRaycaster.intersectObject(skinMesh, false);
+      if (hits.length > 0) {
+        return {
+          point: hits[0].point.clone(),
+          normal: hits[0].face ? hits[0].face.normal.clone()
+            .transformDirection(skinMesh.matrixWorld) : direction.clone().negate(),
+          distance: hits[0].distance,
+        };
+      }
+      return null;
+    }
+
+    /**
+     * Find skin surface by casting a ray toward the body from outside.
+     * @param {string} boneName
+     * @param {number[]} approachDir - Direction FROM OUTSIDE toward body surface
+     *                                  e.g., [0,-1,0] = from above, shooting down
+     * @param {number} standoff - How far outside the bone to start the ray
+     */
+    function findSkinFromBone(boneName, approachDir, standoff) {
+      if (standoff === undefined) standoff = 0.20;
+      const bonePos = getBoneWorldPos(boneName);
+      const dir = new THREE.Vector3(approachDir[0], approachDir[1], approachDir[2]).normalize();
+      // Start ray OUTSIDE the body (opposite direction), shoot toward body
+      const origin = bonePos.clone().sub(dir.clone().multiplyScalar(standoff));
+      return findSkinSurface(origin, dir);
+    }
+
+    /**
+     * Cache skin surface hits for a procedure's anchor bone.
+     * Called once after posing. Uses the pose to determine "outward" direction.
+     */
+    function cacheSkinSurface(procedureId) {
+      _skinSurfaceCache = {};
+      const animDef = PROBE_ANIMATIONS[procedureId];
+      if (!animDef || !animDef.anchorBone) return;
+
+      const proc = PROCEDURES[procedureId];
+      if (!proc) return;
+      const pose = POSES[proc.basePose];
+      if (!pose) return;
+
+      // Determine approach direction (from outside, toward body surface)
+      // Supine: probe approaches from above → ray shoots down [0,-1,0]
+      // Prone: probe approaches from above back → ray shoots down [0,-1,0]
+      // Side-lying: probe from exposed side → [0,-1,0]
+      // The ray starts above the bone and shoots down to find the first skin hit.
+      const approachDir = [0, -1, 0]; // from above, toward body
+
+      // Cast ray from above the bone downward to find anterior skin surface
+      const hit = findSkinFromBone(animDef.anchorBone, approachDir);
+      if (hit) {
+        _skinSurfaceCache[animDef.anchorBone] = hit;
+        dbg('skin surface: bone=' + animDef.anchorBone +
+            ' skinY=' + hit.point.y.toFixed(4) +
+            ' dist=' + hit.distance.toFixed(4));
+      } else {
+        dbg('skin raycast MISS for ' + animDef.anchorBone);
+      }
+    }
+
+    /**
+     * Get the Y distance from a bone to the skin surface (cached).
+     * Returns 0 if no cached data.
+     */
+    function getSkinOffsetY(boneName) {
+      const cached = _skinSurfaceCache[boneName];
+      if (!cached) return 0;
+      const bonePos = getBoneWorldPos(boneName);
+      return cached.point.y - bonePos.y;
+    }
+
+    // Expose for console debugging
+    window._findSkinFromBone = (name, dir) => {
+      dir = dir || [0, 1, 0];
+      const hit = findSkinFromBone(name, dir);
+      if (hit) console.log(name, '→ skin at', hit.point.x.toFixed(4), hit.point.y.toFixed(4), hit.point.z.toFixed(4), 'dist:', hit.distance.toFixed(4));
+      else console.log(name, '→ no skin hit');
+      return hit;
+    };
+
+    function applyPose(poseId) {
+      const pose = POSES[poseId];
+      if (!pose) { dbg('Unknown pose: ' + poseId); return; }
+      if (!bodyMesh) { dbg('No body mesh to pose'); return; }
+
+      dbg('applying pose: ' + poseId + ' (' + pose.label + ')');
+
+      // 1. Rotate the entire model for body orientation
+      const [rx, ry, rz] = pose.modelRotation;
+      bodyMesh.rotation.set(rx, ry, rz);
+
+      // 2. Set initial position (X/Z from pose, Y will be auto-computed)
+      const [px, py, pz] = pose.modelPosition;
+      bodyMesh.position.set(px, 0, pz);
+
+      // 3. Reset bones to rest pose first (preserve GLB bind pose)
+      resetToRestPose();
+
+      // 4. Apply bone adjustments ON TOP of rest pose (if any)
+      if (skeleton && pose.boneRotations && Object.keys(pose.boneRotations).length > 0) {
+        skeleton.bones.forEach(bone => {
+          const adj = pose.boneRotations[bone.name];
+          if (!adj) return;
+          if (adj.quaternion) {
+            // Blender-exported quaternion (relative to rest pose) — multiply on top
+            const [qx, qy, qz, qw] = adj.quaternion;
+            const deltaQ = new THREE.Quaternion(qx, qy, qz, qw);
+            bone.quaternion.multiply(deltaQ);
+          } else if (adj.euler) {
+            const [ex, ey, ez] = adj.euler;
+            const adjustQ = new THREE.Quaternion().setFromEuler(
+              new THREE.Euler(ex * Math.PI / 180, ey * Math.PI / 180, ez * Math.PI / 180)
+            );
+            bone.quaternion.multiply(adjustQ);
+          }
+        });
+      }
+
+      // 5. Auto-position: compute body's lowest Y and offset to rest on table/floor
+      const isLying = Math.abs(rx + Math.PI / 2) < 0.1 ||   // supine
+                      Math.abs(rx - Math.PI / 2) < 0.1 ||   // prone
+                      Math.abs(rz + Math.PI / 2) < 0.1;     // side-lying
+
+      if (isLying) {
+        // Rest on the exam table surface
+        const yOffset = computeBodyYOffset(bodyMesh, TABLE_SURFACE_Y);
+        bodyMesh.position.y = yOffset;
+      } else {
+        // Seated/standing: use pose-defined Y
+        bodyMesh.position.y = py;
+      }
+
+      // 6. Position furniture
+      updateFurniture(poseId);
+
+      // 7. Set camera
+      if (pose.cameraPos) {
+        camera.position.set(...pose.cameraPos);
+      }
+      if (pose.cameraTarget) {
+        controls.target.set(...pose.cameraTarget);
+      }
+      controls.update();
+
+      dbg('pose applied: ' + poseId);
+    }
+
+    // ── Bone Control Panel (Dev Tool) ────────────────────────────
+    const CONTROLLABLE_BONES = [
+      'shoulder01L', 'upperarm01L', 'upperarm02L', 'lowerarm01L', 'lowerarm02L', 'wristL', 'handL',
+      'shoulder01R', 'upperarm01R', 'upperarm02R', 'lowerarm01R', 'lowerarm02R', 'wristR', 'handR',
+      'upperleg01L', 'upperleg02L', 'lowerleg01L', 'lowerleg02L', 'footL',
+      'upperleg01R', 'upperleg02R', 'lowerleg01R', 'lowerleg02R', 'footR',
+      'spine01', 'spine02', 'spine03', 'spine04', 'spine05',
+      'neck01', 'neck02', 'head',
+    ];
+
+    function buildBonePanel() {
+      const panel = document.getElementById('bone-panel');
+      panel.style.display = 'block';
+      panel.innerHTML = '<h3>BONE CONTROLS</h3>';
+
+      // Export button
+      const exportBtn = document.createElement('button');
+      exportBtn.textContent = 'EXPORT ROTATIONS';
+      exportBtn.onclick = exportBoneRotations;
+      panel.appendChild(exportBtn);
+
+      // Reset button
+      const resetBtn = document.createElement('button');
+      resetBtn.textContent = 'RESET ALL';
+      resetBtn.onclick = () => {
+        if (!skeleton) return;
+        resetToRestPose();
+        boneSliderValues = {};
+        panel.querySelectorAll('input[type=range]').forEach(s => { s.value = 0; });
+        panel.querySelectorAll('.val').forEach(v => { v.textContent = '0'; });
+      };
+      panel.appendChild(resetBtn);
+
+      // Group bones
+      const groups = {
+        'Left Arm': CONTROLLABLE_BONES.filter(n => (n.includes('arm') || n.includes('shoulder') || n.includes('wrist') || n.includes('hand')) && n.endsWith('L')),
+        'Right Arm': CONTROLLABLE_BONES.filter(n => (n.includes('arm') || n.includes('shoulder') || n.includes('wrist') || n.includes('hand')) && n.endsWith('R')),
+        'Left Leg': CONTROLLABLE_BONES.filter(n => (n.includes('leg') || n.includes('foot')) && n.endsWith('L')),
+        'Right Leg': CONTROLLABLE_BONES.filter(n => (n.includes('leg') || n.includes('foot')) && n.endsWith('R')),
+        'Spine/Head': CONTROLLABLE_BONES.filter(n => n.includes('spine') || n.includes('neck') || n === 'head'),
+      };
+
+      for (const [groupName, bones] of Object.entries(groups)) {
+        const h = document.createElement('h3');
+        h.textContent = groupName;
+        panel.appendChild(h);
+
+        bones.forEach(boneName => {
+          ['X', 'Y', 'Z'].forEach(axis => {
+            const label = document.createElement('label');
+            const shortName = boneName.replace('upperarm', 'uarm').replace('lowerarm', 'larm')
+              .replace('upperleg', 'uleg').replace('lowerleg', 'lleg').replace('shoulder', 'shld');
+            label.innerHTML = `${shortName}.${axis} `;
+
+            const slider = document.createElement('input');
+            slider.type = 'range';
+            slider.min = -180;
+            slider.max = 180;
+            slider.value = 0;
+            slider.step = 1;
+
+            const valSpan = document.createElement('span');
+            valSpan.className = 'val';
+            valSpan.textContent = '0';
+
+            slider.oninput = () => {
+              valSpan.textContent = slider.value;
+              applyBoneSlider(boneName, axis, parseFloat(slider.value));
+            };
+
+            label.appendChild(slider);
+            label.appendChild(valSpan);
+            panel.appendChild(label);
+          });
+        });
+      }
+    }
+
+    // Track slider values per bone so we can compose all 3 axes
+    let boneSliderValues = {};
+
+    window._applyBoneSlider = applyBoneSlider;
+    function applyBoneSlider(boneName, axis, degrees) {
+      if (!skeleton) return;
+      const bone = skeleton.bones.find(b => b.name === boneName);
+      if (!bone) return;
+
+      // Store slider value
+      if (!boneSliderValues[boneName]) boneSliderValues[boneName] = { X: 0, Y: 0, Z: 0 };
+      boneSliderValues[boneName][axis] = degrees;
+
+      // Start from rest pose quaternion
+      const rest = restBoneQuats[boneName];
+      if (rest) {
+        bone.quaternion.copy(rest);
+      }
+
+      // Apply slider adjustments on top
+      const sv = boneSliderValues[boneName];
+      if (sv.X !== 0 || sv.Y !== 0 || sv.Z !== 0) {
+        const adjustQ = new THREE.Quaternion().setFromEuler(
+          new THREE.Euler(sv.X * Math.PI / 180, sv.Y * Math.PI / 180, sv.Z * Math.PI / 180)
+        );
+        bone.quaternion.multiply(adjustQ);
+      }
+    }
+
+    function exportBoneRotations() {
+      if (!skeleton) return;
+      const result = {};
+      skeleton.bones.forEach(bone => {
+        const rx = Math.round(bone.rotation.x * 180 / Math.PI);
+        const ry = Math.round(bone.rotation.y * 180 / Math.PI);
+        const rz = Math.round(bone.rotation.z * 180 / Math.PI);
+        if (rx !== 0 || ry !== 0 || rz !== 0) {
+          result[bone.name] = { euler: [rx, ry, rz] };
+        }
+      });
+      const json = JSON.stringify(result, null, 2);
+      dbg('EXPORTED BONE ROTATIONS:\n' + json);
+
+      // Also copy to clipboard
+      navigator.clipboard.writeText(json).then(() => {
+        dbg('Copied to clipboard!');
+      }).catch(() => {
+        dbg('(clipboard copy failed — check debug panel)');
+      });
+    }
+
+    // ── Needle Creation ──────────────────────────────────────────────
+    function createNeedle() {
+      const group = new THREE.Group();
+      group.name = 'needle';
+
+      // Needle shaft — thin cylinder
+      const shaftGeo = new THREE.CylinderGeometry(0.0008, 0.0008, 0.12, 8);
+      const shaftMat = new THREE.MeshStandardMaterial({ color: 0xcccccc, metalness: 0.8, roughness: 0.2 });
+      const shaft = new THREE.Mesh(shaftGeo, shaftMat);
+      shaft.position.y = 0.06; // center along length
+      group.add(shaft);
+
+      // Hub — small colored cylinder at the base
+      const hubGeo = new THREE.CylinderGeometry(0.003, 0.003, 0.015, 8);
+      const hubMat = new THREE.MeshStandardMaterial({ color: 0x2277cc, roughness: 0.5 });
+      const hub = new THREE.Mesh(hubGeo, hubMat);
+      hub.position.y = 0.1275;
+      group.add(hub);
+
+      // Syringe barrel
+      const barrelGeo = new THREE.CylinderGeometry(0.006, 0.006, 0.06, 12);
+      const barrelMat = new THREE.MeshStandardMaterial({
+        color: 0xffffff, transparent: true, opacity: 0.4, roughness: 0.1,
+      });
+      const barrel = new THREE.Mesh(barrelGeo, barrelMat);
+      barrel.position.y = 0.165;
+      group.add(barrel);
+
+      // Plunger
+      const plungerGeo = new THREE.CylinderGeometry(0.002, 0.002, 0.04, 8);
+      const plungerMat = new THREE.MeshStandardMaterial({ color: 0x444444, roughness: 0.5 });
+      const plunger = new THREE.Mesh(plungerGeo, plungerMat);
+      plunger.position.y = 0.215;
+      group.add(plunger);
+
+      group.visible = false;
+      return group;
+    }
+
+    // ── Probe Animation System ────────────────────────────────────
+    // Keyframe-based animation for probe approach, placement, and needle insertion.
+    // Each keyframe: { t: 0-1, pos: [x,y,z], rot: [rx,ry,rz] (degrees),
+    //                   needle: { pos, rot, visible }, label }
+    // Interpolation is linear between keyframes.
+
+    // Procedural probe orientation: handle along +Y, face at bottom pointing -Y.
+    // Width (transducer face) along X.
+    // At rotation [0,0,0]: face down (-Y), width across X (transverse on thigh).
+    // At rotation [0,90,0]: width rotated to align along Z (sagittal/longitudinal).
+    //
+    // Supine coordinate reference:
+    // ── BONE-ANCHORED PROBE ANIMATIONS ─────────────────────────
+    //
+    // Each procedure specifies an `anchorBone`. The bone's WORLD
+    // POSITION is used as origin; offsets are in WORLD SPACE from
+    // that point. This means offsets work regardless of auto-offset
+    // but are intuitive: you work in the same coordinate system
+    // you see on screen.
+    //
+    // World-space axes (supine poses):
+    //   +X = lateral (left side of body)
+    //   +Y = up from table (anterior surface)
+    //   -Z = toward head (proximal), +Z = toward feet (distal)
+    //
+    // Rotation: [rx, ry, rz] in degrees, applied in world space.
+    //   Probe GLB: handle along +Y, face at bottom (-Y).
+    //   To lay probe flat on skin (face down): rotate ~90° around X
+    //   so handle points toward +Z and face points -Y.
+    //
+    // Knee suprapatellar recess — SUPEROLATERAL approach:
+    //   Probe sagittal on anterior thigh just above patella
+    //   Long axis aligned along thigh (Z axis)
+    //   Needle enters from lateral (+X), angled medially toward midline
+
+    const PROBE_ANIMATIONS = {
+      'knee-suprapatellar': {
+        anchorBone: 'lowerleg01L',
+        duration: 14.0,
+        loop: true,
+        keyframes: [
+          // lowerleg01L ≈ knee joint at (0.131, 0.188, -0.480).
+          // Suprapatellar recess is ~3-5cm proximal (−Z from knee).
+          // Skin surface ≈ Y+0.06 above bone center.
+          //
+          // Probe at rot [0,0,0]: face down (−Y), width across thigh (X).
+          // This is transverse/short-axis — perpendicular to the leg.
+          //
+          // Needle: shaft along +Y. To angle it from lateral toward medial:
+          //   rot [0, 0, Z] rolls around Z — positive Z tilts tip toward -X (medial).
+          //   A shallow insertion angle of ~20-30° from horizontal.
+
+          // lowerleg01L ≈ knee joint. Skin surface detected via raycast.
+          //
+          // Clinical technique (ACEP/NYSORA):
+          //   1. Start LONG AXIS (sagittal) to identify anatomy
+          //   2. Rotate to SHORT AXIS (transverse) to find largest pocket
+          //   3. Needle in-plane, lateral→medial, nearly parallel to floor
+          //   4. Target depth ~1.5-2cm (suprapatellar recess)
+          //
+          // Probe rot [0,90,0] = LONG AXIS (width along Z, sagittal)
+          // Probe rot [0, 0,0] = SHORT AXIS (width along X, transverse)
+          //
+          // Needle rot [0,0,-82]: nearly horizontal, hub lateral, tip medial
+          //   ~8° from horizontal = ~10-15° angle from skin
+
+          // ── Phase 1: Long-axis survey ──
+          // 1. Probe approaches in LONG AXIS (sagittal) above distal femur
+          { t: 0.0,
+            probe: { offset: [0.0, 0.10, -0.06], rot: [0, 90, 0] },
+            needle: null,
+            label: 'Approach (long axis)' },
+          // 2. Probe contacts skin — long axis over distal anterior femur
+          { t: 0.08,
+            probe: { offset: [0.0, 0.03, -0.06], rot: [0, 90, 0] },
+            needle: null,
+            label: 'Long axis on skin' },
+          // 3. Slide proximal — identify femoral cortex, fat pads, recess
+          { t: 0.15,
+            probe: { offset: [0.0, 0.03, -0.10], rot: [0, 90, 0] },
+            needle: null,
+            label: 'Scan: identify anatomy' },
+          // 4. Slide back to optimal long-axis position over recess
+          { t: 0.22,
+            probe: { offset: [0.0, 0.03, -0.08], rot: [0, 90, 0] },
+            needle: null,
+            label: 'Recess identified' },
+
+          // ── Phase 2: Rotate to short axis ──
+          // 5. Rotate 90° from long axis to short axis (transverse)
+          { t: 0.30,
+            probe: { offset: [0.0, 0.03, -0.08], rot: [0, 0, 0] },
+            needle: null,
+            label: 'Rotate to short axis' },
+          // 6. Optimize — slide to find largest recess pocket
+          { t: 0.35,
+            probe: { offset: [0.0, 0.03, -0.10], rot: [0, 0, 0] },
+            needle: null,
+            label: 'Find largest pocket' },
+          // 7. Settle on final position for injection
+          { t: 0.40,
+            probe: { offset: [0.0, 0.03, -0.08], rot: [0, 0, 0] },
+            needle: null,
+            label: 'Optimal short-axis view' },
+
+          // ── Phase 3: Needle insertion (lateral→medial, in-plane) ──
+          // 8. Needle appears from lateral, nearly parallel to floor
+          { t: 0.47,
+            probe: { offset: [0.0, 0.03, -0.08], rot: [0, 0, 0] },
+            needle: { offset: [0.14, 0.04, -0.08], rot: [0, 0, -82], visible: true },
+            label: 'Needle approach' },
+          // 9. Needle at skin — lateral edge of probe
+          { t: 0.55,
+            probe: { offset: [0.0, 0.03, -0.08], rot: [0, 0, 0] },
+            needle: { offset: [0.07, 0.035, -0.08], rot: [0, 0, -82], visible: true },
+            label: 'Needle at skin' },
+          // 10. Needle advances deep into suprapatellar recess (~1.5-2cm depth)
+          //     Tip passes medial, reaching between fat pads at recess level
+          { t: 0.65,
+            probe: { offset: [0.0, 0.03, -0.08], rot: [0, 0, 0] },
+            needle: { offset: [-0.02, 0.025, -0.08], rot: [0, 0, -82], visible: true },
+            label: 'In recess' },
+          // 11. Hold — aspirate or inject, watching recess distend on US
+          { t: 0.80,
+            probe: { offset: [0.0, 0.03, -0.08], rot: [0, 0, 0] },
+            needle: { offset: [-0.02, 0.025, -0.08], rot: [0, 0, -82], visible: true },
+            label: 'Injecting' },
+          // 12. Needle withdraws back out laterally
+          { t: 0.90,
+            probe: { offset: [0.0, 0.03, -0.08], rot: [0, 0, 0] },
+            needle: { offset: [0.14, 0.04, -0.08], rot: [0, 0, -82], visible: true },
+            label: 'Withdraw' },
+          // 13. Probe lifts off, needle hidden
+          { t: 1.0,
+            probe: { offset: [0.0, 0.10, -0.06], rot: [0, 0, 0] },
+            needle: null,
+            label: 'Complete' },
+        ],
+      },
+    };
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function lerpArray(a, b, t) {
+      return a.map((v, i) => lerp(v, b[i], t));
+    }
+
+    function startProbeAnimation(procedureId) {
+      const animDef = PROBE_ANIMATIONS[procedureId];
+      if (!animDef) {
+        dbg('No probe animation for: ' + procedureId);
+        return;
+      }
+
+      if (needleMesh) needleMesh.visible = false;
+      if (probeMesh) probeMesh.visible = true;
+
+      probeAnim = {
+        def: animDef,
+        startTime: performance.now() / 1000,
+        playing: true,
+      };
+      dbg('started probe animation: ' + procedureId);
+    }
+
+    function stopProbeAnimation() {
+      probeAnim = null;
+      if (needleMesh) needleMesh.visible = false;
+      if (probeMesh) probeMesh.visible = false;
+    }
+
+    function updateProbeAnimation(now) {
+      if (!probeAnim || !probeAnim.playing) return;
+
+      const def = probeAnim.def;
+      const elapsed = now - probeAnim.startTime;
+      let t = elapsed / def.duration;
+
+      if (def.loop) {
+        t = t % 1.0;
+      } else if (t >= 1.0) {
+        t = 1.0;
+        probeAnim.playing = false;
+      }
+
+      // Find the two keyframes we're between
+      const kfs = def.keyframes;
+      let ki = 0;
+      for (let i = 0; i < kfs.length - 1; i++) {
+        if (t >= kfs[i].t && t <= kfs[i + 1].t) {
+          ki = i;
+          break;
+        }
+      }
+      if (t >= kfs[kfs.length - 1].t) ki = kfs.length - 2;
+
+      const kf0 = kfs[ki];
+      const kf1 = kfs[ki + 1];
+      const segT = (kf1.t > kf0.t) ? (t - kf0.t) / (kf1.t - kf0.t) : 0;
+      // Smooth step for nicer easing
+      const st = segT * segT * (3 - 2 * segT);
+
+      const anchorBone = def.anchorBone;
+
+      // Get anchor bone world position (recomputed each frame so it
+      // tracks the bone even if the body moves or auto-offsets)
+      let anchorPos = new THREE.Vector3();
+      if (anchorBone) {
+        anchorPos = getBoneWorldPos(anchorBone);
+      }
+
+      // Use cached skin surface Y if available
+      const skinHit = anchorBone ? _skinSurfaceCache[anchorBone] : null;
+      const skinY = skinHit ? skinHit.point.y : null;
+
+      // Helper: place mesh at bone position + world-space offset, with world-space rotation.
+      // If we have a skin surface raycast, use it for Y when the offset Y is small
+      // (i.e., the keyframe intends to place the object "on the skin").
+      function applyBoneAnchored(mesh, offsetArr, rotArr, snapToSkin) {
+        if (!mesh) return;
+        let worldY = anchorPos.y + offsetArr[1];
+
+        // If snapToSkin and we have a raycast hit, place at skin surface
+        // instead of bone + offset. Add a tiny lift so probe face doesn't clip.
+        if (snapToSkin && skinY !== null && offsetArr[1] <= 0.04) {
+          worldY = skinY + 0.002; // 2mm above skin surface
+        }
+
+        mesh.position.set(
+          anchorPos.x + offsetArr[0],
+          worldY,
+          anchorPos.z + offsetArr[2]
+        );
+        mesh.rotation.set(
+          rotArr[0] * Math.PI / 180,
+          rotArr[1] * Math.PI / 180,
+          rotArr[2] * Math.PI / 180
+        );
+      }
+
+      // Interpolate probe
+      if (probeMesh && kf0.probe && kf1.probe) {
+        const off0 = kf0.probe.offset || kf0.probe.pos || [0,0,0];
+        const off1 = kf1.probe.offset || kf1.probe.pos || [0,0,0];
+        const interpOffset = lerpArray(off0, off1, st);
+        const interpRot = lerpArray(kf0.probe.rot, kf1.probe.rot, st);
+        probeMesh.visible = true;
+        applyBoneAnchored(probeMesh, interpOffset, interpRot, true);
+      }
+
+      // Interpolate needle
+      if (needleMesh) {
+        const n0 = kf0.needle;
+        const n1 = kf1.needle;
+
+        if (n0 && n1 && n0.visible && n1.visible) {
+          needleMesh.visible = true;
+          const nOff0 = n0.offset || n0.pos || [0,0,0];
+          const nOff1 = n1.offset || n1.pos || [0,0,0];
+          const nPos = lerpArray(nOff0, nOff1, st);
+          const nRot = lerpArray(n0.rot, n1.rot, st);
+          applyBoneAnchored(needleMesh, nPos, nRot);
+        } else if (n1 && n1.visible && !n0) {
+          // Needle just appearing
+          needleMesh.visible = true;
+          const nOff = n1.offset || n1.pos || [0,0,0];
+          applyBoneAnchored(needleMesh, nOff, n1.rot);
+        } else if (!n1 || !n1.visible) {
+          needleMesh.visible = false;
+        }
+      }
+    }
+
+    // ── Position Probe (static) ───────────────────────────────────
+    function positionProbe(config) {
+      if (!probeMesh) return;
+      if (config) {
+        probeMesh.visible = true;
+        probeMesh.position.set(config.x || 0, config.y || 0, config.z || 0);
+        probeMesh.rotation.set(
+          (config.rx || 0) * Math.PI / 180,
+          (config.ry || 0) * Math.PI / 180,
+          (config.rz || 0) * Math.PI / 180
+        );
+      } else {
+        probeMesh.visible = false;
+      }
+    }
+
+    // ── Load Full Procedure ────────────────────────────────────────
+    async function loadProcedure(procedureId) {
+      const proc = PROCEDURES[procedureId];
+      if (!proc) { showError('Unknown procedure: ' + procedureId); return; }
+
+      currentProcedureId = procedureId;
+      showLoading();
+      dbg('--- loadProcedure: ' + procedureId + ' ---');
+
+      try {
+        await loadBody();
+        await loadProbe(proc.probeType);
+        applyPose(proc.basePose);
+
+        // Apply per-procedure bone overrides on top of base pose
+        if (proc.boneOverrides && skeleton) {
+          skeleton.bones.forEach(bone => {
+            const adj = proc.boneOverrides[bone.name];
+            if (!adj) return;
+            if (adj.quaternion) {
+              const [qx, qy, qz, qw] = adj.quaternion;
+              const deltaQ = new THREE.Quaternion(qx, qy, qz, qw);
+              bone.quaternion.multiply(deltaQ);
+            } else if (adj.euler) {
+              const [ex, ey, ez] = adj.euler;
+              const adjustQ = new THREE.Quaternion().setFromEuler(
+                new THREE.Euler(ex * Math.PI / 180, ey * Math.PI / 180, ez * Math.PI / 180)
+              );
+              bone.quaternion.multiply(adjustQ);
+            }
+          });
+        }
+
+        // Apply per-procedure camera position (overrides base pose camera)
+        if (proc.cameraPos) {
+          camera.position.set(...proc.cameraPos);
+        }
+        if (proc.cameraTarget) {
+          controls.target.set(...proc.cameraTarget);
+        }
+        controls.update();
+
+        if (proc.probePosition) positionProbe(proc.probePosition);
+
+        // Cache skin surface location via raycasting (once, after posing)
+        cacheSkinSurface(procedureId);
+
+        // Start probe animation if one exists for this procedure
+        stopProbeAnimation();
+        if (PROBE_ANIMATIONS[procedureId]) {
+          startProbeAnimation(procedureId);
+        }
+
+        // Show bone control panel in standalone mode
+        if (window.parent === window) buildBonePanel();
+
+        hideLoading();
+        notifyParent({ type: 'loaded', procedureId });
+      } catch (err) {
+        dbg('LOAD FAILED: ' + err.message);
+        showError('Failed to load: ' + err.message);
+      }
+    }
+
+    // Make functions available globally for console testing
+    window.loadProcedure = loadProcedure;
+    window.applyPose = applyPose;
+    window._getScene = () => scene;
+    window._getCamera = () => camera;
+    window._getControls = () => controls;
+    window._getSkeleton = () => skeleton;
+    window._getBodyMesh = () => bodyMesh;
+    window._getRenderer = () => renderer;
+    window.viewFace = () => {
+      if (bodyMesh) { bodyMesh.rotation.set(0, 0, 0); bodyMesh.position.set(0, 0, 0); }
+      camera.position.set(0, 1.42, 0.25);
+      controls.target.set(0, 1.42, 0);
+      controls.update();
+    };
+    window.viewFullBody = () => {
+      if (bodyMesh) { bodyMesh.rotation.set(0, 0, 0); bodyMesh.position.set(0, 0, 0); }
+      camera.position.set(0, 0.85, 2.2);
+      controls.target.set(0, 0.85, 0);
+      controls.update();
+    };
+
+    // ── UI Helpers ─────────────────────────────────────────────────
+    function showLoading() {
+      document.getElementById('loading').classList.remove('hidden');
+    }
+    function hideLoading() {
+      document.getElementById('loading').classList.add('hidden');
+    }
+    function showError(msg) {
+      const el = document.getElementById('error');
+      el.textContent = msg; el.style.display = 'block';
+      hideLoading();
+    }
+    function notifyParent(data) {
+      if (window.parent !== window) {
+        window.parent.postMessage(JSON.stringify(data), '*');
+      }
+    }
+
+    // ── PostMessage Communication ──────────────────────────────────
+    window.addEventListener('message', (event) => {
+      let msg;
+      try { msg = typeof event.data === 'string' ? JSON.parse(event.data) : event.data; } catch { return; }
+      dbg('message: ' + msg.type);
+      switch (msg.type) {
+        case 'loadProcedure': loadProcedure(msg.procedureId); break;
+        case 'setProbePosition': positionProbe(msg.probePosition); break;
+        case 'resetView': controls.reset(); break;
+        case 'setBackground': if (msg.color) scene.background = new THREE.Color(msg.color); break;
+      }
+    });
+
+    // ── Startup ────────────────────────────────────────────────────
+    init();
+
+    if (window.parent === window) {
+      // Standalone — load first procedure as demo
+      loadProcedure('shoulder-sasd');
+    } else {
+      hideLoading();
+      notifyParent({ type: 'ready' });
+    }
+  </script>
+</body>
+</html>

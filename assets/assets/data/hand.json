@@ -1,0 +1,553 @@
+[
+  {
+    "id": "wrist-carpal",
+    "title": "Carpal Tunnel Injection",
+    "category": "Hand",
+    "videoUrl": null,
+    "anatomyModelId": "abe41da6b7c245a09f90fd52cb9c31e0",
+    "anatomyModelTitle": "Carpal Tunnel (Bluelink — U of Michigan)",
+    "tags": [
+      "wrist",
+      "carpal tunnel",
+      "median nerve"
+    ],
+    "treats": [
+      "Median nerve compression (carpal tunnel syndrome)"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic compartment (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case (closed-compartment hematoma risk)",
+      "Persistent median artery in the planned corridor (relative — re-plan or defer)",
+      "Severe denervation atrophy with thenar wasting (relative — refer for surgical release)",
+      "Uncontrolled diabetes (relative)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan: identify median nerve, ulnar bundle, and Doppler-screen for persistent median artery and bifid nerve variant",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Seated preferred (or supine if vasovagal); forearm supinated; wrist slightly extended"
+    ],
+    "probe": [
+      "High-frequency linear probe (15–18 MHz); full footprint allows visualization of the entire carpal tunnel in a single view"
+    ],
+    "landmarking": [
+      "Probe transversely at proximal wrist crease → identify median nerve under retinaculum → identify flexor tendons → map ulnar bundle → check for bifid nerve/persistent median artery"
+    ],
+    "correctImage": [
+      "Median nerve centered; retinaculum as bright roof; adequate perineural space"
+    ],
+    "corridor": [
+      "In-plane ulnar entry (ulnar to the ulnar artery and nerve — map both first). Advance the needle tip to lie immediately ulnar to the median nerve, deep to the flexor retinaculum. DO NOT cross the tip past the nerve to the radial side."
+    ],
+    "avoid": [
+      "Median nerve — identify and keep the needle tip ulnar to the nerve at all times; never inject into the nerve substance",
+      "Ulnar nerve/artery",
+      "Persistent median artery (if in path: ABANDON, re-plan, or defer)",
+      "Intraneural injection of the median nerve",
+      "Bifid median nerve variant — injecting between halves risks arterial laceration"
+    ],
+    "steps": [
+      "In-plane ulnar entry; position the tip immediately ulnar to the median nerve, deep to retinaculum.",
+      "Inject 1-2 mL slowly, hydrodissecting the ulnar margin of the nerve — watch for circumferential 'target sign' spread.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations into the hand or fingers — withdraw 1-2 mm and reposition before any further injection."
+    ],
+    "tips": [
+      "Use low volume — total injectate ≤ 3 mL to avoid further median nerve compression in this tight compartment.",
+      "Confirm small fluid rings around nerve — do not advance the needle tip past the nerve to the radial side.",
+      "If color Doppler shows a persistent median artery in the planned path, ABANDON the ulnar approach and either use a different angle or defer the procedure."
+    ],
+    "pearls": [
+      "The “Oven Mitt” Rule: The flexor retinaculum is a tight mitt. Slide the needle UNDER the mitt, not into the hand (nerve).",
+      "Target Sign: Create a circumferential halo by hydrodissecting the ulnar margin of the nerve.",
+      "Persistent median artery + bifid median nerve occurs in 5-10%. Injection between the two halves can lacerate the artery and cause hematoma in a closed compartment — re-plan or defer.",
+      "The ulnar approach (medial-to-lateral) is safest to avoid the radial neurovascular bundle — but stop the tip ulnar to the median nerve."
+    ],
+    "supplies": [
+      "3 mL Syringe",
+      "25G or 27G 1\" Needle (1.5\" is unnecessarily long for this superficial target)",
+      "18G Drawing Needle",
+      "1% Lidocaine (1-2 mL)",
+      "Dexamethasone 4-10 mg (PREFERRED — non-particulate, safer near nerve) OR methylprednisolone 40 mg",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile Gloves",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Rest the wrist 24-48 hours; resume normal activity as tolerated thereafter.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR new/worsening numbness or weakness.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per year. If symptoms recur quickly, discuss surgical release."
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 10
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 42
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 77
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 134
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 194
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 218
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 282
+      }
+    ],
+    "positioningImg": "assets/images/positions/Seated hand supine hand on table.webp",
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/wrist-carpal-injection.webp",
+    "injectionImgShort": "assets/images/injections/wrist-carpal-injection-short.webp",
+    "ultrasoundImg": "assets/images/ultrasound/wrist-carpal-us.webp"
+  },
+  {
+    "id": "wrist-dequervain",
+    "title": "First Dorsal Compartment Injection (De Quervain's)",
+    "category": "Hand",
+    "videoUrl": null,
+    "anatomyModelId": "011b4ba102cb478eb5d361ea7401d1c0",
+    "anatomyModelTitle": "Wrist: De Quervain's / Finkelstein Anatomy (IU Indianapolis)",
+    "tags": [
+      "wrist",
+      "de quervain",
+      "apl",
+      "epb"
+    ],
+    "treats": [
+      "De Quervain's tenosynovitis (APL/EPB)"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic tenosynovitis (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)",
+      "Prior steroid injection at this site within 3 months (relative — fat atrophy/depigmentation cumulative risk)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent — DISCUSS subcutaneous fat atrophy and skin depigmentation risk at the radial styloid",
+      "Pre-scan: identify APL/EPB tendons, septum (if present), superficial radial nerve branches, radial artery",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Seated or supine; forearm neutral; thumb up"
+    ],
+    "probe": [
+      "High-frequency linear probe (6-13 MHz)"
+    ],
+    "landmarking": [
+      "Visual Cue: 'Two eyes in one socket' — identify the APL and EPB tendons together in short-axis over the radial styloid.",
+      "Slide the probe slightly proximal and distal to identify any vertical septum (a wall) between the tendons.",
+      "Check for any small fluid collections or 'halo' around the pair.",
+      "Map the superficial radial nerve branches — they are frequently very close to the entry site.",
+      "Identify the radial artery on the volar side — DO NOT use a volar trajectory."
+    ],
+    "correctImage": [
+      "Two tendons within sheath; septum visible if present"
+    ],
+    "corridor": [
+      "Dorsal in-plane approach: enter from the dorsal/dorsoradial aspect distal-to-proximal, advancing into the sheath superficial to the APL/EPB tendons. AVOID any volar trajectory — the radial artery lies on the volar side of the radial styloid."
+    ],
+    "avoid": [
+      "Superficial radial nerve branches",
+      "Radial artery (volar — never use a volar approach)",
+      "Intratendinous injection"
+    ],
+    "steps": [
+      "Dorsal in-plane entry into the sheath; inject ≤ 1.5 mL total; ensure spread around BOTH tendons.",
+      "If a septum is present, perform TWO separate injections — one in the APL sub-sheath and one in the EPB sub-sheath. A single injection into the APL alone is the most common cause of treatment failure.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations along the dorsoradial hand or thumb."
+    ],
+    "tips": [
+      "Always identify the superficial radial nerve first and adjust approach.",
+      "Use a short 27G needle for better control in this superficial space — but only with non-particulate steroid (27G can clog with triamcinolone suspension).",
+      "Counsel patient about subcutaneous fat atrophy and depigmentation risk at the radial styloid (well-documented particulate steroid complication).",
+      "Limit to 1-2 steroid injections per year at this site."
+    ],
+    "pearls": [
+      "EPB sub-compartmentalization (vertical septum) is present in 20-60% of symptomatic cases and is THE single most common cause of treatment failure — actively seek it and inject both sub-sheaths.",
+      "Wrist in neutral to slight ulnar deviation avoids anisotropy artifacts."
+    ],
+    "supplies": [
+      "3 mL Syringe",
+      "27G 0.5\" or 1\" Needle (use ≥ 25G if injecting triamcinolone — particulate can clog 27G)",
+      "18G Drawing Needle",
+      "1% Lidocaine (0.5-1 mL)",
+      "Dexamethasone 4 mg (PREFERRED — non-particulate, no fat atrophy risk near SRN) OR triamcinolone 10-20 mg",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile Gloves",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Rest the thumb 24-48 hours; brief thumb spica splint optional for 1 week.",
+      "Return for: spreading redness, swelling, fever, disproportionate pain, OR new skin depigmentation/dimpling at the injection site.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 1-2 injections per year at this site."
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 5
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 20
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 38
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 66
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 95
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 107
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 139
+      }
+    ],
+    "positioningImg": "assets/images/positions/Dequrevains positioning.webp",
+    "probeImg": "assets/images/probes/Narrow.webp",
+    "injectionImg": "assets/images/injections/wrist-dequervain-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/wrist-dequervain-us.webp"
+  },
+  {
+    "id": "hand-1stmcp",
+    "title": "First Carpometacarpal (CMC) Joint Injection (Thumb Base / Basal Joint)",
+    "category": "Hand",
+    "videoUrl": null,
+    "anatomyModelId": "c7d73bce6d5a42b2a8ca57e380c4e648",
+    "anatomyModelTitle": "Wrist & Thumb Anatomy: Finkelstein (IU Indianapolis)",
+    "tags": [
+      "hand",
+      "cmc",
+      "thumb base",
+      "basal joint",
+      "arthritis"
+    ],
+    "treats": [
+      "Thumb basal joint (1st CMC) arthritis or synovitis"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic joint (absolute — aspirate first)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan: identify the trapezium-1st metacarpal joint between APL and EPL tendons; Doppler-screen for radial artery",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Hand on table; thumb in relaxed/neutral position with radial aspect up; slight wrist ulnar deviation to open the anatomical snuffbox; small towel under wrist"
+    ],
+    "probe": [
+      "High-frequency linear probe (15+ MHz hockey-stick if available)"
+    ],
+    "landmarking": [
+      "Slide distal to the radial styloid and identify the trapezium → 1st metacarpal base joint, between the APL/EPL tendons.",
+      "Center the joint cleft and Doppler the radial artery (lies just deep/dorsal in the snuffbox)."
+    ],
+    "correctImage": [
+      "Two cortical bones (trapezium and 1st MC base) with thin anechoic joint line; APL/EPL on either side"
+    ],
+    "corridor": [
+      "Dorsal in-plane approach distal-to-proximal along the joint plane, between APL and EPL tendons"
+    ],
+    "avoid": [
+      "Radial artery (deep in the snuffbox — Doppler before entry)",
+      "Dorsal sensory branches of the radial nerve",
+      "Intratendinous APL or EPL placement"
+    ],
+    "steps": [
+      "Advance in-plane into the joint cleft; inject up to 1 mL slowly.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations into the thumb."
+    ],
+    "tips": [
+      "Tiny joint — total injectate ≤ 1 mL. Don't waste space with too much local first.",
+      "Limit to ≤ 3 injections per joint per year.",
+      "If color Doppler shows the radial artery in the planned path, abandon and re-plan."
+    ],
+    "pearls": [
+      "Identify the 1st CMC joint by sliding distal to the radial styloid; avoid the radial artery in the snuffbox.",
+      "The target is the 'joint gap' — confirm flow with capsular distension.",
+      "Limited volume — pre-mix steroid and a tiny lidocaine aliquot in the same syringe."
+    ],
+    "supplies": [
+      "3 mL Syringe",
+      "27G 0.5-1\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (0.3-0.5 mL)",
+      "Dexamethasone 4 mg (PREFERRED — non-particulate, avoids digital artery embolization risk in end-artery territory) OR triamcinolone 10-20 mg",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile Gloves",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Rest the thumb 24-48 hours; thumb spica splint optional for comfort.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR thumb/finger color change or coolness (concern for vascular compromise).",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per year."
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 10
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 42
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 78
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 136
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 196
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 221
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 286
+      }
+    ],
+    "positioningImg": "assets/images/positions/Dequrevains positioning.webp",
+    "probeImg": "assets/images/probes/Narrow.webp",
+    "injectionImg": "assets/images/injections/hand-1stmcp-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/hand-1stmcp-us.webp"
+  },
+  {
+    "id": "hand-trigger-finger",
+    "title": "Trigger Finger (A1 Pulley) Injection",
+    "category": "Hand",
+    "videoUrl": null,
+    "anatomyModelId": "cfe197a0e2054cc2ac4fae85f96258d4",
+    "anatomyModelTitle": "Hand Pulleys & Tendons (A1-A5)",
+    "tags": [
+      "hand",
+      "trigger finger",
+      "a1 pulley",
+      "flexor tendon"
+    ],
+    "treats": [
+      "Trigger finger (stenosing tenosynovitis)",
+      "Tendon locking/catching"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic tenosynovitis (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Diabetics — relative; counsel about reduced response rate (~50% vs 80%)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan: identify FDS/FDP, A1 pulley, dynamic triggering, digital NV bundles on radial and ulnar sides",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Hand supinated; arm on table; fingers extended"
+    ],
+    "probe": [
+      "High-frequency linear probe (6-13 MHz) (short footprint ideal)"
+    ],
+    "landmarking": [
+      "Short-axis over the MCP head to identify the FDS/FDP tendons.",
+      "The A1 pulley is the thickened hyperechoic band just superficial to the tendons.",
+      "Use dynamic flexion/extension to witness 'triggering' and tendon nodularity.",
+      "Map digital NV bundles on radial and ulnar sides of the tendon."
+    ],
+    "correctImage": [
+      "Thickened A1 pulley centered over the round flexor tendons in short-axis."
+    ],
+    "corridor": [
+      "Short-axis in-plane from the radial OR ulnar side (whichever has a clearer window away from the digital neurovascular bundle), targeting the space between the A1 pulley and the flexor tendons. Avoid a perpendicular volar approach."
+    ],
+    "avoid": [
+      "Digital nerves/arteries on radial and ulnar sides of the tendon (end-artery territory)",
+      "Intratendinous injection",
+      "Perpendicular volar approach"
+    ],
+    "steps": [
+      "Advance in-plane in short-axis from the radial or ulnar side, whichever side has a clearer window.",
+      "Direct the needle between the pulley and the tendon.",
+      "Inject 0.5-1 mL total; stop at the first sign of sheath distension or back-pressure.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations into the finger."
+    ],
+    "tips": [
+      "If you meet resistance, you are likely in the tendon — re-position.",
+      "Apply ethyl chloride spray (if used) BEFORE chlorhexidine prep; never over a sterile field.",
+      "Limit to ≤ 3 injections per finger per year."
+    ],
+    "pearls": [
+      "Dynamic visualization is diagnostic: look for disconjugate tendon motion or nodule catching.",
+      "Injecting the synovial sheath is the goal; the steroid will track to the pulley.",
+      "Trigger finger is 4-5× more common in diabetics; injection success is ~50% vs 80% in non-diabetics. Discuss realistic expectations and earlier referral for A1 release if injection fails.",
+      "Digital arteries are end-arteries — particulate steroid carries a small reported risk of digital ischemia/necrosis. Dexamethasone preferred."
+    ],
+    "supplies": [
+      "3 mL Syringe",
+      "27G 0.5\" Needle (use ≥ 25G if injecting triamcinolone)",
+      "18G Drawing Needle",
+      "1% Lidocaine (0.3-0.5 mL)",
+      "Dexamethasone 4 mg (PREFERRED — non-particulate, avoids digital artery embolization in end-artery territory) OR triamcinolone 10-20 mg",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile Gloves",
+      "Ethyl Chloride spray (optional topical analgesic — apply BEFORE chlorhexidine prep; never over a sterile field)",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Rest the finger 24-48 hours.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR finger color change or coolness (concern for vascular compromise).",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days; success rate is lower (~50%) — discuss surgical release if injection fails.",
+      "Maximum 3 injections per finger per year."
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 3
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 15
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 29
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 50
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 73
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 82
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 106
+      }
+    ],
+    "positioningImg": "assets/images/positions/Seated hand supine hand on table.webp",
+    "probeImg": "assets/images/probes/Narrow.webp",
+    "injectionImg": "assets/images/injections/wrist-a1pulley-injection.webp",
+    "injectionImgShort": "assets/images/injections/wrist-a1pulley-injection-short.webp",
+    "ultrasoundImg": "assets/images/ultrasound/hand-trigger-finger-us.webp"
+  }
+]

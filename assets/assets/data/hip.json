@@ -1,0 +1,695 @@
+[
+  {
+    "id": "hip-anterior",
+    "title": "Anterior Intra-articular Injection (Femoral Head–Neck Junction)",
+    "category": "Hip",
+    "videoUrl": null,
+    "anatomyModelId": "cae0a062e6674e9b98aa7aa1ced4f30e",
+    "anatomyModelTitle": "Hip Joint: Deep Muscles & Iliopsoas (LivingLab)",
+    "tags": [
+      "hip",
+      "intra-articular",
+      "iliopsoas",
+      "lfca"
+    ],
+    "treats": [
+      "Hip osteoarthritis",
+      "Labral irritation",
+      "Diagnostic anesthetic"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic joint (absolute — aspirate first)",
+      "Bacteremia (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case (deep injection)",
+      "Uncontrolled diabetes (relative)",
+      "Hip prosthesis at the target site (relative — coordinate with orthopedics)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan: identify femoral NV bundle medial to target; NAVEL runs lateral-to-medial at the groin — Nerve (most lateral), Artery, Vein, Empty space, Lymphatics; needle entry is just lateral to the femoral nerve.",
+      "Confirm needle length adequate for depth — BMI > 35 may require 22G 5\" / 127 mm",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Supine; hip neutral (often ~20° abduction)"
+    ],
+    "probe": [
+      "Low-frequency curvilinear probe (2-5 MHz)"
+    ],
+    "landmarking": [
+      "Visual Cue: The “Head-Neck Slope” — identify the round femoral head transitioning into the flatter neck.",
+      "Identify the iliopsoas muscle/tendon directly superficial to the capsule.",
+      "Oblique Transverse Scan: Align the probe with the long-axis of the femoral neck.",
+      "Doppler Survey: Identify the ascending branch of the lateral femoral circumflex artery (LFCA)."
+    ],
+    "correctImage": [
+      "Round head narrowing into neck; thin capsule; iliopsoas superficial"
+    ],
+    "corridor": [
+      "Inferolateral → superomedial under iliopsoas (above) to capsule at head-neck junction (below)"
+    ],
+    "avoid": [
+      "Femoral nerve, artery, vein (medial to needle entry) — NAVEL lateral-to-medial: Nerve · Artery · Vein · Empty space · Lymphatics",
+      "Ascending branch of lateral femoral circumflex artery"
+    ],
+    "steps": [
+      "In-plane to capsule; test inject to lift capsule.",
+      "Stop the needle tip exactly at the capsule of the head-neck junction — do NOT advance past the capsule. Overpenetration directs the tip toward the femoral head articular cartilage or acetabulum, not toward the femoral vessels (which are medial at the femoral triangle).",
+      "Complete injection as indicated; confirm intra-articular placement by seeing injectate distend the capsule and track along the femoral neck.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations in the leg."
+    ],
+    "tips": [
+      "Continuously track needle tip; small tilts help follow it through iliopsoas.",
+      "Limit corticosteroid to ≤ 3 per joint per year.",
+      "If color Doppler shows the LFCA ascending branch in the planned path, abandon and re-plan."
+    ],
+    "pearls": [
+      "Visualizing Depth: Use a spinal needle (22G 3.5\" standard, 5\"/127 mm if BMI > 35); the depth can be surprising. If the needle disappears, use a slight 'jiggle' to find it in the iliopsoas.",
+      "Scan the femoral head-neck junction using an oblique transverse plane.",
+      "Confirmation of intra-articular placement requires seeing injectate DISTEND THE CAPSULE and track along the femoral neck under the capsule — not simply pool under the iliopsoas (which would indicate iliopsoas bursa placement, ~15% communicate with the joint but this is bursa-only).",
+      "Identify the ascending branch of the lateral femoral circumflex artery with Doppler before entry."
+    ],
+    "supplies": [
+      "10 mL Syringe",
+      "22G 3.5\" Spinal Needle (use 22G 5\" / 127 mm in patients with BMI > 35)",
+      "18G Drawing Needle",
+      "1% Lidocaine (5-10 mL)",
+      "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile Gloves",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Rest the hip 24-48 hours; resume normal activity as tolerated thereafter.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR new leg weakness or numbness.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per joint per year."
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 8
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 33
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 61
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 106
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 154
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 173
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 224
+      }
+    ],
+    "positioningImg": "assets/images/positions/Supine patient.webp",
+    "probeImg": "assets/images/probes/Curvelinear.webp",
+    "ultrasoundImg": "assets/images/ultrasound/hip-anterior-us.webp"
+  },
+  {
+    "id": "hip-gtb",
+    "title": "Greater Trochanteric Pain Syndrome — Peritendinous Injection",
+    "videoUrl": null,
+    "anatomyModelId": "47f13681a0cc45d5872bbc7c4f4373fa",
+    "anatomyModelTitle": "Thigh & Gluteal Muscles (Ebers)",
+    "category": "Hip",
+    "tags": [
+      "hip",
+      "gluteus medius",
+      "tendinopathy",
+      "trochanteric"
+    ],
+    "treats": [
+      "Greater trochanteric pain syndrome (gluteus medius/minimus tendinopathy ± peritendinous fluid). True isolated bursitis is uncommon."
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic bursa (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)",
+      "High-grade gluteus medius/minimus tendon tear (relative — favor regenerative injectate over particulate steroid)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan: identify GMx, IT band, gluteus medius/minimus tendons; Doppler superior gluteal branches",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Side-lying, symptomatic side up"
+    ],
+    "probe": [
+      "Linear or curvilinear depending on habitus"
+    ],
+    "landmarking": [
+      "Visual Cue: The 'Apex of the Hill' — Identify the bright convex prominence of the greater trochanter.",
+      "Slide posteriorly to visualize the gluteus medius and minimus tendons.",
+      "Identify the IT Band as the superficial 'roof' over the trochanteric hill.",
+      "Find the hypoechoic plane (the bursa/peritendinous space) between the IT band and the gluteus medius/minimus tendons."
+    ],
+    "correctImage": [
+      "Distinct dark plane separating superficial IT band/GMx from deep gluteus medius/minimus tendon"
+    ],
+    "corridor": [
+      "In-plane into the peritendinous plane: IT band/GMx (above), gluteus medius/minimus tendon (below)"
+    ],
+    "avoid": [
+      "Superior gluteal artery branches (ascending/transverse branches cross the peritrochanteric region variably) — Doppler before every entry. No large bundles cross directly over the trochanteric apex, but branches are variable.",
+      "Sciatic nerve — runs posteriorly in the gluteal region; if the needle angles too deep or posteriorly during the lateral approach, the sciatic nerve may be approached. Keep the probe and needle trajectory lateral and superficial to the peritendinous plane."
+    ],
+    "steps": [
+      "In-plane into peritendinous plane.",
+      "Inject 3-5 mL into the peritendinous plane (tendinopathy target); up to 8 mL only for true bursal hydrodissection.",
+      "Confirm smooth spread; ensure the IT band lifts off the tendon.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations into the leg."
+    ],
+    "tips": [
+      "Slight rotation in line with GMx fibers may increase conspicuity.",
+      "Limit corticosteroid to ≤ 3 per site per year.",
+      "If color Doppler shows a vessel directly in the planned path, abandon and re-plan."
+    ],
+    "pearls": [
+      "The peritendinous plane is the hypoechoic space between the IT band and the gluteus medius/minimus tendons.",
+      "Rotate the probe to align with gluteus maximus fibers to see the plane more clearly.",
+      "Ensure the IT band 'lifts off' the tendon during injection.",
+      "Modern terminology: 'greater trochanteric pain syndrome' (gluteal tendinopathy ± peritendinous fluid) — true isolated bursitis is uncommon."
+    ],
+    "supplies": [
+      "10 mL Syringe",
+      "22G 1.5\" or 3.5\" Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (3-5 mL)",
+      "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile Gloves",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Rest the hip 24-48 hours; resume normal activity as tolerated thereafter.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, or new leg weakness.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per site per year."
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 6
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 24
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 44
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 76
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 110
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 124
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 160
+      }
+    ],
+    "positioningImg": "assets/images/positions/Patient lying on side.webp",
+    "probeImg": "assets/images/probes/Linear.webp",
+    "injectionImg": "assets/images/injections/hip-gtb-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/hip-gtb-us.webp"
+  },
+  {
+    "id": "hip-piriformis",
+    "title": "Piriformis Injection",
+    "videoUrl": null,
+    "anatomyModelId": "a0648f5826594773aea233f9b9ee30d3",
+    "anatomyModelTitle": "Piriformis Anatomy (Medical Univ of Lublin)",
+    "category": "Hip",
+    "tags": [
+      "hip",
+      "piriformis",
+      "sciatic nerve",
+      "deep gluteal pain"
+    ],
+    "treats": [
+      "Piriformis syndrome with sciatic irritation",
+      "Deep gluteal pain / non-spinal sciatica"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case (deep gluteal injection)",
+      "Uncontrolled diabetes (relative)",
+      "Beaton-Anson sciatic variant with sciatic nerve or its peroneal division passing through the piriformis belly (relative — abandon intramuscular injection, use peri-fascial only)",
+      "Active sciatic neuropathy from another cause (relative — re-evaluate diagnosis)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan: identify piriformis (confirm sacral attachment to distinguish from gemelli/obturator internus); identify sciatic nerve completely; check for Beaton-Anson variant (~15-20%); Doppler inferior gluteal vessels",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Prone with neutral pelvis; pillow under iliac crests to improve visualization"
+    ],
+    "probe": [
+      "Curvilinear probe (2-5 MHz) for depth; low-frequency linear in thin patients"
+    ],
+    "landmarking": [
+      "Probe over PSIS → slide inferior to see sacrum medially and PIIS laterally",
+      "Continue distally until ilium disappears (greater sciatic notch)",
+      "Identify piriformis deep to gluteus maximus, coursing sacrum → greater trochanter",
+      "Internally/externally rotate hip to confirm piriformis motion",
+      "Identify sciatic nerve deep/inferior to piriformis along its full length before injection",
+      "Confirm muscle is piriformis by tracing fibers MEDIALLY to the lateral sacrum (only piriformis attaches there — gemelli/obturator internus do not)"
+    ],
+    "correctImage": [
+      "Gluteus maximus superficial; fusiform piriformis belly oblique with clear sacral attachment; sciatic nerve deep (honeycomb)"
+    ],
+    "corridor": [
+      "Medial → lateral so the needle terminates lateral to the sciatic nerve and lateral to the inferior gluteal vessels. Between gluteus maximus (above) and piriformis (below); avoid sciatic nerve."
+    ],
+    "avoid": [
+      "Sciatic nerve (always identify before injection — in Beaton-Anson variants the nerve passes through the muscle)",
+      "Inferior gluteal artery/vein",
+      "Inferior gluteal nerve (L5, S1, S2 — exits through greater sciatic foramen below piriformis and innervates gluteus maximus; injury causes gluteus maximus weakness)",
+      "Posterior femoral cutaneous nerve (runs with inferior gluteal vessels)",
+      "Pudendal NV bundle (if advancing medially toward ischial spine)"
+    ],
+    "steps": [
+      "Advance in-plane (medial → lateral) under real-time US.",
+      "Stop at piriformis belly or perifascial plane lateral to the sciatic nerve; aspirate gently.",
+      "Test inject a small bolus; then inject anesthetic ± steroid or botulinum toxin as indicated.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations down the leg — this indicates intraneural or perineural sciatic placement. Withdraw 1-2 mm and reposition."
+    ],
+    "tips": [
+      "Map vessels with Doppler; if sciatic nerve not clearly visualized along its full course, do not inject.",
+      "If color Doppler shows a vessel in the planned path, abandon and re-plan.",
+      "Limit corticosteroid to ≤ 3 per site per year."
+    ],
+    "pearls": [
+      "Beaton-Anson variants: In ~15-20% of patients the sciatic nerve or its peroneal division courses THROUGH the piriformis belly. Before any intramuscular injection, scan the entire piriformis and trace the sciatic nerve continuously — if the nerve passes through the muscle, abandon intramuscular injection and use a peri-fascial approach only.",
+      "The most common identification error is confusing piriformis with the superior/inferior gemellus or obturator internus immediately caudal. All four look similar. The piriformis is the ONLY one whose fibers clearly attach to the lateral sacrum — always trace medially to confirm.",
+      "Confirm the piriformis muscle by having the patient internally/externally rotate the hip.",
+      "Approach medial-to-lateral so the needle terminates lateral to the sciatic and lateral to the inferior gluteal vessels."
+    ],
+    "supplies": [
+      "10 mL Syringe",
+      "22G 3.5\" Spinal Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (5-10 mL)",
+      "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
+      "If using botulinum toxin: onabotulinumtoxin A 100 U typical (range 50-200 U). Dosing is product-specific and NOT interchangeable between brands (Botox ≠ Dysport ≠ Xeomin) — confirm product, dilution, and dose with attending before drawing up.",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile Gloves",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Rest 24-48 hours; resume normal activity as tolerated thereafter.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR new leg weakness, foot drop, or worsening sciatica.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per site per year."
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 8
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 32
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 59
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 102
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 148
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 167
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 216
+      }
+    ],
+    "probeImg": "assets/images/probes/Curvelinear.webp"
+  },
+  {
+    "id": "si-joint",
+    "title": "Sacroiliac (SI) Joint Injection",
+    "videoUrl": null,
+    "anatomyModelId": "cf5425eee19b449bb5bd83ccb81a5a7d",
+    "anatomyModelTitle": "Pelvis & Sacroiliac Joint",
+    "category": "Hip",
+    "tags": [
+      "hip",
+      "si joint",
+      "sacroiliac",
+      "low back pain",
+      "diagnostic injection"
+    ],
+    "treats": [
+      "Suspected SIJ-mediated pain (single intra-articular block is one of several diagnostic tools — fluoroscopic confirmation with contrast remains more rigorous than US for true intra-articular placement)",
+      "Therapeutic injection after failed conservative care"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)",
+      "Active sacroiliitis from inflammatory arthropathy in flare (relative — coordinate with rheumatology)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan: identify the synovial portion in the inferior third (S2-S3) and the dorsal sacral foramina to avoid",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Prone; pillow under abdomen to minimize lumbar lordosis"
+    ],
+    "probe": [
+      "Curvilinear 2-5 MHz; linear may suffice in thin patients"
+    ],
+    "landmarking": [
+      "Visual Cue: The 'Synovial Cleft' — Identify the sacroiliac gap in the inferior 1/3 of the joint.",
+      "Transverse over sacral hiatus → move laterally to sacral edge → follow cephalad ONLY to the inferior third (approx S2-S3) where the SI cleft becomes visible. Do NOT go higher — the upper two-thirds of the posterior SIJ is a ligamentous syndesmosis with no synovial space.",
+      "Rock the probe to maximize the 'opening' of the posterior joint cleft.",
+      "Identify the thick posterior sacroiliac ligaments overlying the cleft."
+    ],
+    "correctImage": [
+      "Two bony lines (sacrum medial, ilium lateral) with posterior SI joint cleft between; posterior SI ligament complex superficial"
+    ],
+    "corridor": [
+      "In-plane lateral → medial through posterior SI ligament complex into synovial cleft (inferior third — S2-S3 level — most accessible)"
+    ],
+    "avoid": [
+      "S1–S4 sacral nerve roots (exit via posterior sacral foramina medially — intraforaminal injection delivers anesthetic/steroid directly onto a nerve root and can cause transient lower extremity weakness, sensory change, or bowel/bladder dysfunction). If the sacral cortex disappears from view on the medial side of the needle path, stop and re-scan — you may be over a foramen.",
+      "Superior and middle cluneal nerves (posterior rami crossing the posterior iliac crest and sacral region — direct injection may cause persistent posterior hip/buttock pain)",
+      "Superior gluteal artery/vein and gluteal nerve branches laterally"
+    ],
+    "steps": [
+      "Advance in-plane to joint cleft; test inject a small bolus for separation.",
+      "Inject therapeutic volume (often ~1-2 mL) under real-time visualization.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations into the leg or pelvis."
+    ],
+    "tips": [
+      "Success improves with experience; aim for inferior synovial region if cleft is narrowed in older adults.",
+      "If color Doppler shows a vessel directly in the planned path, abandon and re-plan.",
+      "Limit corticosteroid to ≤ 3 per joint per year."
+    ],
+    "pearls": [
+      "Approach lateral-to-medial through the posterior SI ligament complex.",
+      "The inferior synovial cleft (S2-S3 level) is the most reproducible entry point — the upper two-thirds is posterior syndesmosis only (no synovial target).",
+      "Confirm positioning by visualizing the cleft opening during test bolus."
+    ],
+    "supplies": [
+      "5 mL Syringe",
+      "22G 3.5\" (89 mm) spinal needle — standard for SI joint depth in most adults",
+      "18G Drawing Needle",
+      "1% Lidocaine (1-2 mL)",
+      "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile Gloves",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Rest 24-48 hours; resume normal activity as tolerated thereafter.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR new leg weakness, foot drop, or numbness.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per joint per year."
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 11
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 44
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 80
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 139
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 201
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 227
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 293
+      }
+    ],
+    "probeImg": "assets/images/probes/Curvelinear.webp"
+  },
+  {
+    "id": "hip-hamstring-proximal",
+    "title": "Proximal Hamstring (Ischial Tuberosity) Injection",
+    "videoUrl": null,
+    "anatomyModelId": "2b641cabe35e4c39a008fda0b8f32122",
+    "anatomyModelTitle": "Posterior Thigh Compartment — Hamstring Muscles (theanatomycode)",
+    "category": "Hip",
+    "tags": [
+      "hip",
+      "hamstring",
+      "ischial tuberosity",
+      "tendinopathy"
+    ],
+    "treats": [
+      "Proximal hamstring tendinopathy",
+      "Ischiogluteal bursitis"
+    ],
+    "contraindications": [
+      "Active local skin infection at entry site (absolute)",
+      "Suspected septic bursa (absolute)",
+      "Known allergy to local anesthetic, steroid, or antiseptic prep",
+      "Therapeutic anticoagulation — review case-by-case",
+      "Uncontrolled diabetes (relative)",
+      "High-grade hamstring tendon tear (relative — favor regenerative injectate)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm procedure, side, and site — mark with patient awake",
+      "Review allergies and anticoagulation",
+      "Confirm informed consent",
+      "Pre-scan: identify ischial tuberosity facets (conjoined tendon on inferomedial; semimembranosus on superolateral); locate sciatic nerve lateral to the tendon; Doppler inferior gluteal artery",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Prone; leg slightly abducted and neutral"
+    ],
+    "probe": [
+      "Curvilinear probe (2-5 MHz) for depth"
+    ],
+    "landmarking": [
+      "Transverse over the gluteal fold to identify the bright curved ischial tuberosity.",
+      "Identify the conjoined tendon (biceps femoris long head + semitendinosus) originating from the INFEROMEDIAL FACET of the ischial tuberosity, and the semimembranosus originating from the SUPEROLATERAL FACET as a separate tendon. Confirm which tendon is being targeted before injection.",
+      "Locate the Sciatic Nerve lateral and posterior to the hamstring origin."
+    ],
+    "correctImage": [
+      "Hyperechoic bony tuberosity with thick fibrillar tendon origin; Sciatic nerve clear laterally."
+    ],
+    "corridor": [
+      "In-plane medial-to-lateral OR caudal-to-cranial approach, keeping the sciatic nerve in view at all times and the needle tip MEDIAL to the nerve."
+    ],
+    "avoid": [
+      "Sciatic nerve (lateral — always identify first and keep needle MEDIAL to it throughout)",
+      "Inferior gluteal artery (Doppler survey)",
+      "Inferior gluteal nerve (L5, S1, S2 — courses from the greater sciatic foramen to gluteus maximus; injury causes gluteus maximus weakness)",
+      "Posterior femoral cutaneous nerve (S1-S3 — runs medial to the sciatic nerve at the ischial tuberosity level; injury causes posterior thigh numbness)"
+    ],
+    "steps": [
+      "Identify the sciatic nerve first and stay medial to it.",
+      "Advance to the tendon origin or the bursa superficial to it.",
+      "Inject 4-6 mL; confirm spread at the bone-tendon interface.",
+      "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations down the leg."
+    ],
+    "tips": [
+      "A longer spinal needle (22G 3.5\") is often required for the gluteal depth.",
+      "For true proximal hamstring TENDINOPATHY (not bursitis), corticosteroid is generally NOT recommended as first-line — PRP or hyperosmolar dextrose are preferred. Corticosteroid at a load-bearing tendon origin carries risk of further tendon degeneration and potential partial or complete rupture. If steroid is used, single low dose only (≤ 3 per year) and counsel the patient accordingly.",
+      "If color Doppler shows the inferior gluteal artery in the planned path, abandon and re-plan."
+    ],
+    "pearls": [
+      "The Sciatic Nerve is your 'No-Fly Zone' — always keep it in view and stay MEDIAL.",
+      "The ischial tuberosity shadows heavily; use this shadow to orient your depth.",
+      "Differentiating between tendinopathy and ischiogluteal bursitis is key for therapeutic effect.",
+      "Conjoined tendon = inferomedial facet; semimembranosus = superolateral facet (separate tendon)."
+    ],
+    "supplies": [
+      "10 mL Syringe",
+      "22G 3.5\" Spinal Needle",
+      "18G Drawing Needle",
+      "1% Lidocaine (3-5 mL)",
+      "Triamcinolone 40 mg OR Dexamethasone 4-10 mg",
+      "Alcohol Swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile Gloves",
+      "Sterile 4x4 Gauze Pads",
+      "Sterile Towels & Drapes",
+      "Adhesive Bandage (Band-Aid)",
+      "Washcloth/Towel (gel cleanup)",
+      "Needle Disposal Safety Cap",
+      "Sterile probe cover & gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Rest 24-48 hours; avoid prolonged sitting and heavy hamstring loading for 1 week.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR new leg weakness, foot drop, or sciatica.",
+      "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
+      "Maximum 3 injections per site per year."
+    ],
+    "videoTimestamps": [
+      {
+        "label": "Patient Position",
+        "section": "positioning",
+        "seconds": 3
+      },
+      {
+        "label": "Probe Placement",
+        "section": "probe",
+        "seconds": 13
+      },
+      {
+        "label": "Finding the View",
+        "section": "landmarking",
+        "seconds": 25
+      },
+      {
+        "label": "US Image",
+        "section": "us_view",
+        "seconds": 43
+      },
+      {
+        "label": "Needle Corridor",
+        "section": "corridor",
+        "seconds": 62
+      },
+      {
+        "label": "Injection Steps",
+        "section": "steps",
+        "seconds": 70
+      },
+      {
+        "label": "Structures to Avoid",
+        "section": "avoid",
+        "seconds": 91
+      }
+    ],
+    "probeImg": "assets/images/probes/Curvelinear.webp"
+  }
+]

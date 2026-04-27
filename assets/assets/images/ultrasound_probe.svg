@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Ultrasound Probe -->
+  <rect x="35" y="10" width="30" height="50" rx="5" fill="#3B82F6" stroke="#1D4ED8" stroke-width="2"/>
+  <rect x="30" y="60" width="40" height="20" rx="10" fill="#60A5FA" stroke="#1D4ED8" stroke-width="2"/>
+  <!-- Probe face indicator (active edge) -->
+  <line x1="35" y1="80" x2="65" y2="80" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
+  <!-- Cable -->
+  <path d="M50 10 Q 50 0 40 -10" fill="none" stroke="#4B5563" stroke-width="4"/>
+</svg>
