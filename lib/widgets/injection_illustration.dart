@@ -4,16 +4,22 @@ import '../theme/app_theme.dart';
 
 /// Injection site illustration with optional in-plane / out-of-plane toggle.
 /// Red dot = needle entry point. Blue bar = probe placement.
+///
+/// Pass [onAxisChanged] to be notified when the user switches tabs.
+/// Receives `true` for IN PLANE (long-axis image), `false` for OUT OF PLANE.
 class InjectionIllustration extends StatefulWidget {
   final String longImg;
   final String? shortImg;
   final Color catColor;
+  /// Optional callback fired whenever the axis tab changes.
+  final ValueChanged<bool>? onAxisChanged;
 
   const InjectionIllustration({
     super.key,
     required this.longImg,
     this.shortImg,
     required this.catColor,
+    this.onAxisChanged,
   });
 
   @override
@@ -82,13 +88,19 @@ class _InjectionIllustrationState extends State<InjectionIllustration> {
                       label: 'IN PLANE',
                       selected: _isLong,
                       color: widget.catColor,
-                      onTap: () => setState(() => _isLong = true),
+                      onTap: () {
+                        setState(() => _isLong = true);
+                        widget.onAxisChanged?.call(true);
+                      },
                     ),
                     _AxisTab(
                       label: 'OUT OF PLANE',
                       selected: !_isLong,
                       color: widget.catColor,
-                      onTap: () => setState(() => _isLong = false),
+                      onTap: () {
+                        setState(() => _isLong = false);
+                        widget.onAxisChanged?.call(false);
+                      },
                     ),
                   ],
                 ),

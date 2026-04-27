@@ -28,6 +28,9 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
     with SingleTickerProviderStateMixin {
   final Set<int> _checkedSupplies = {};
   bool _isProcedureMode = false;
+  /// Tracks which axis is currently shown in the illustration toggle.
+  /// true = IN PLANE (long image), false = OUT OF PLANE (short image).
+  bool _axisIsInPlane = true;
   late final AnimationController _entryController;
   late final Animation<double> _fadeIn;
   final _videoSectionKey = GlobalKey();
@@ -769,6 +772,23 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
     );
 
     // --- Right column: needle corridor + steps + avoid ---
+    // Determine which step list to show.
+    final hasAxisSteps = widget.technique.stepsInPlane.isNotEmpty ||
+        widget.technique.stepsOutOfPlane.isNotEmpty;
+    final hasBothImages = widget.technique.injectionImgShort != null;
+    final activeSteps = (hasAxisSteps && hasBothImages)
+        ? (_axisIsInPlane
+            ? (widget.technique.stepsInPlane.isNotEmpty
+                ? widget.technique.stepsInPlane
+                : widget.technique.steps)
+            : (widget.technique.stepsOutOfPlane.isNotEmpty
+                ? widget.technique.stepsOutOfPlane
+                : widget.technique.steps))
+        : widget.technique.steps;
+    final axisStepsLabel = (hasAxisSteps && hasBothImages)
+        ? (_axisIsInPlane ? 'IN PLANE STEPS' : 'OUT OF PLANE STEPS')
+        : 'STEPS';
+
     Widget injectionSteps() => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -788,23 +808,51 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
         const SizedBox(height: 12),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 2),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'STEPS',
-                style: GoogleFonts.jetBrainsMono(
-                  fontSize: 9,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 1.5,
-                  color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
+          child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 200),
+            child: Column(
+              key: ValueKey(axisStepsLabel),
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      axisStepsLabel,
+                      style: GoogleFonts.jetBrainsMono(
+                        fontSize: 9,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.5,
+                        color: (hasAxisSteps && hasBothImages)
+                            ? catColor
+                            : (isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight),
+                      ),
+                    ),
+                    if (hasAxisSteps && hasBothImages) ...[
+                      const SizedBox(width: 6),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                        decoration: BoxDecoration(
+                          color: catColor.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          _axisIsInPlane ? 'matches illustration' : 'matches illustration',
+                          style: GoogleFonts.inter(
+                            fontSize: 8,
+                            color: catColor,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
-              ),
-              const SizedBox(height: 8),
-              ...widget.technique.steps.asMap().entries.map(
-                (e) => NumberedStepItem(number: e.key + 1, text: e.value),
-              ),
-            ],
+                const SizedBox(height: 8),
+                ...activeSteps.asMap().entries.map(
+                  (e) => NumberedStepItem(number: e.key + 1, text: e.value),
+                ),
+              ],
+            ),
           ),
         ),
         const SizedBox(height: 16),
@@ -821,6 +869,7 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
             longImg: widget.technique.injectionImg!,
             shortImg: widget.technique.injectionImgShort,
             catColor: catColor,
+            onAxisChanged: (isInPlane) => setState(() => _axisIsInPlane = isInPlane),
           ),
           const SizedBox(height: 28),
         ] else if (widget.technique.landmarkImg != null) ...[

@@ -93,6 +93,12 @@ class InjectionTechnique {
   final List<String> corridor;
   final List<String> avoid;
   final List<String> steps;
+  /// Axis-specific steps shown when the user selects IN PLANE in the toggle.
+  /// Falls back to [steps] when empty.
+  final List<String> stepsInPlane;
+  /// Axis-specific steps shown when the user selects OUT OF PLANE in the toggle.
+  /// Falls back to [steps] when empty.
+  final List<String> stepsOutOfPlane;
   final List<String> tips;
   final List<String> pearls;
   final List<String> supplies;
@@ -140,6 +146,8 @@ class InjectionTechnique {
     required this.corridor,
     required this.avoid,
     required this.steps,
+    this.stepsInPlane = const [],
+    this.stepsOutOfPlane = const [],
     required this.tips,
     required this.pearls,
     required this.supplies,
@@ -178,6 +186,8 @@ class InjectionTechnique {
       corridor: _strings(json['corridor']),
       avoid: _strings(json['avoid']),
       steps: _strings(json['steps']),
+      stepsInPlane: _strings(json['stepsInPlane']),
+      stepsOutOfPlane: _strings(json['stepsOutOfPlane']),
       tips: _strings(json['tips']),
       pearls: _strings(json['pearls']),
       supplies: _strings(json['supplies']),

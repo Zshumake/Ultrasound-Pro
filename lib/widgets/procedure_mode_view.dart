@@ -25,6 +25,7 @@ class ProcedureModeView extends StatefulWidget {
 
 class _ProcedureModeViewState extends State<ProcedureModeView> {
   final Set<int> _checkedSupplies = {};
+  bool _axisIsInPlane = true;
 
   InjectionTechnique get t => widget.technique;
   Color get catColor => widget.catColor;
@@ -116,6 +117,8 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                         longImg: t.injectionImg!,
                         shortImg: t.injectionImgShort,
                         catColor: catColor,
+                        onAxisChanged: (isInPlane) =>
+                            setState(() => _axisIsInPlane = isInPlane),
                       ),
                       const SizedBox(height: 10),
                     ] else ...[
@@ -181,6 +184,45 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                   ],
                 ),
               ),
+
+              // 6. INJECTION STEPS (axis-aware when both views exist)
+              Builder(builder: (context) {
+                final hasAxisSteps = t.stepsInPlane.isNotEmpty ||
+                    t.stepsOutOfPlane.isNotEmpty;
+                final hasBothImages = t.injectionImgShort != null;
+                final activeSteps = (hasAxisSteps && hasBothImages)
+                    ? (_axisIsInPlane
+                        ? (t.stepsInPlane.isNotEmpty
+                            ? t.stepsInPlane
+                            : t.steps)
+                        : (t.stepsOutOfPlane.isNotEmpty
+                            ? t.stepsOutOfPlane
+                            : t.steps))
+                    : t.steps;
+                final axisLabel = (hasAxisSteps && hasBothImages)
+                    ? (_axisIsInPlane ? 'INJECTION STEPS · IN PLANE' : 'INJECTION STEPS · OUT OF PLANE')
+                    : 'INJECTION STEPS';
+                return _buildSection(
+                  context,
+                  isDark: isDark,
+                  label: axisLabel,
+                  icon: Icons.vaccines_outlined,
+                  color: catColor,
+                  sectionId: 'steps',
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 200),
+                    child: Column(
+                      key: ValueKey(axisLabel),
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ...activeSteps.asMap().entries.map(
+                          (e) => _compactNumbered(e.key + 1, e.value, isDark),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
 
               // 7. AVOID
               _buildAvoidSection(isDark),
