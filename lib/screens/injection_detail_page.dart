@@ -862,7 +862,27 @@ class _InjectionDetailPageState extends State<InjectionDetailPage>
           ],
         ),
         const SizedBox(height: 16),
-        MedicalPlaceholderImage(label: 'Main Ultrasound Target View', height: 300, isMain: true, imagePath: widget.technique.ultrasoundImg),
+        if (widget.technique.ultrasoundImg != null)
+          Container(
+            width: double.infinity,
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+              border: Border.all(color: AppTheme.cyan.withValues(alpha: 0.2)),
+            ),
+            child: Image.asset(
+              widget.technique.ultrasoundImg!,
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+              errorBuilder: (context, error, stackTrace) => MedicalPlaceholderImage(
+                label: 'Main Ultrasound Target View',
+                height: 300,
+                isMain: true,
+              ),
+            ),
+          )
+        else
+          MedicalPlaceholderImage(label: 'Main Ultrasound Target View', height: 300, isMain: true),
         const SizedBox(height: 16),
         MedicalInfoBox(title: 'CORRECT IMAGE CRITERIA', text: widget.technique.correctImage.join('\n'), icon: Icons.image_search_outlined),
       ],

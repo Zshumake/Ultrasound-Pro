@@ -175,7 +175,7 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildImageSlot(isDark, t.ultrasoundImg, _usImagePhotoDescription()),
+                    _buildImageSlot(isDark, t.ultrasoundImg, _usImagePhotoDescription(), cropFit: false),
                     const SizedBox(height: 8),
                     ...t.correctImage.map((c) => _compactBullet(c, isDark)),
                   ],
@@ -285,15 +285,15 @@ class _ProcedureModeViewState extends State<ProcedureModeView> {
 
   // ── Image slot: shows real photo if available, placeholder otherwise ──
 
-  Widget _buildImageSlot(bool isDark, String? imagePath, String photoDescription) {
+  Widget _buildImageSlot(bool isDark, String? imagePath, String photoDescription, {bool cropFit = true}) {
     if (imagePath != null) {
       return ClipRRect(
         borderRadius: BorderRadius.circular(AppTheme.radiusSm),
         child: Image.asset(
           imagePath,
           width: double.infinity,
-          fit: BoxFit.cover,
-          alignment: const Alignment(0.0, -0.3),
+          fit: cropFit ? BoxFit.cover : BoxFit.fitWidth,
+          alignment: cropFit ? const Alignment(0.0, -0.3) : Alignment.center,
         ),
       );
     }

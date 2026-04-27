@@ -271,7 +271,8 @@
     ],
     "positioningImg": "assets/images/positions/Dequrevains positioning.webp",
     "probeImg": "assets/images/probes/Narrow.webp",
-    "injectionImg": "assets/images/injections/wrist-dequervain-injection.webp"
+    "injectionImg": "assets/images/injections/wrist-dequervain-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/wrist-dequervain-us.webp"
   },
   {
     "id": "hand-1stmcp",

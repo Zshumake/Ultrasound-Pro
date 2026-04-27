@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../data/injection_provider.dart';
 import '../models/injection_technique.dart';
 import '../theme/app_theme.dart';
@@ -38,6 +39,104 @@ class _DashboardPageState extends State<DashboardPage> {
     super.initState();
     _selectedCategory = widget.initialCategory ?? 'All';
     _searchFocusNode.addListener(() => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => _maybeShowDisclaimer());
+  }
+
+  Future<void> _maybeShowDisclaimer() async {
+    final prefs = await SharedPreferences.getInstance();
+    final seen = prefs.getBool('disclaimer_seen_v1') ?? false;
+    if (!seen && mounted) {
+      await _showDisclaimerDialog();
+      await prefs.setBool('disclaimer_seen_v1', true);
+    }
+  }
+
+  Future<void> _showDisclaimerDialog() async {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    await showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) {
+        return AlertDialog(
+          backgroundColor: isDark ? AppTheme.surfaceElevated : Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppTheme.radiusMd),
+            side: BorderSide(color: AppTheme.cyan.withValues(alpha: 0.25)),
+          ),
+          title: Row(
+            children: [
+              Icon(Icons.school_outlined, color: AppTheme.cyan, size: 20),
+              const SizedBox(width: 10),
+              Text(
+                'Educational Use Only',
+                style: GoogleFonts.inter(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                  color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight,
+                ),
+              ),
+            ],
+          ),
+          content: SizedBox(
+            width: 420,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: AppTheme.cyan.withValues(alpha: 0.06),
+                    borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+                    border: Border.all(color: AppTheme.cyan.withValues(alpha: 0.15)),
+                  ),
+                  child: Text(
+                    'Ultrasound-Pro is intended for educational and training purposes only. '
+                    'The content in this application — including procedural descriptions, '
+                    'illustrations, and reference images — does not constitute medical advice '
+                    'and is not a substitute for formal clinical training, direct supervision, '
+                    'or professional judgment.\n\n'
+                    'Always follow your institution\'s protocols and seek guidance from '
+                    'a qualified supervisor before performing any procedure.',
+                    style: GoogleFonts.inter(
+                      fontSize: 13,
+                      height: 1.55,
+                      color: isDark ? AppTheme.textSecondary : AppTheme.textSecondaryLight,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  'By continuing, you acknowledge that this application is for learning purposes only.',
+                  style: GoogleFonts.inter(
+                    fontSize: 11,
+                    color: isDark ? AppTheme.textTertiary : const Color(0xFF9098A3),
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            FilledButton(
+              onPressed: () => Navigator.of(ctx).pop(),
+              style: FilledButton.styleFrom(
+                backgroundColor: AppTheme.cyan,
+                foregroundColor: Colors.black,
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+                ),
+              ),
+              child: Text(
+                'I Understand',
+                style: GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 13),
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
