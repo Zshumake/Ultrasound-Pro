@@ -10,12 +10,15 @@ class InjectionCard extends StatefulWidget {
   final InjectionTechnique technique;
   final bool isSelected;
   final int index;
+  /// When true, renders as a compact thin list row (for mobile phones).
+  final bool compact;
 
   const InjectionCard({
     super.key,
     required this.technique,
     this.isSelected = false,
     this.index = 0,
+    this.compact = false,
   });
 
   @override
@@ -72,6 +75,112 @@ class _InjectionCardState extends State<InjectionCard>
       _entryController.value = 1.0;
     }
 
+    // ── Compact list-row mode (mobile phones) ──────────────────────
+    if (widget.compact) {
+      return FadeTransition(
+        opacity: _entryOpacity,
+        child: SlideTransition(
+          position: _entrySlide,
+          child: Semantics(
+            button: true,
+            label: '${widget.technique.title}, ${widget.technique.category} injection',
+            child: Material(
+              color: isDark ? AppTheme.surfaceDark : AppTheme.surfaceLight,
+              borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+              clipBehavior: Clip.antiAlias,
+              child: InkWell(
+                onTap: () => context.go('/procedure/${widget.technique.id}'),
+                borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+                child: Container(
+                  height: 56,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(AppTheme.radiusSm),
+                    border: Border.all(
+                      color: widget.isSelected
+                          ? catColor
+                          : (isDark ? AppTheme.borderDark : AppTheme.borderLight),
+                      width: widget.isSelected ? 1.5 : 1,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      // Left accent bar
+                      Container(
+                        width: 3,
+                        decoration: BoxDecoration(
+                          color: catColor,
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(AppTheme.radiusSm),
+                            bottomLeft: Radius.circular(AppTheme.radiusSm),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      // Text content
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.technique.category.toUpperCase(),
+                              style: GoogleFonts.jetBrainsMono(
+                                fontSize: 9,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 1.2,
+                                color: catColor,
+                              ),
+                            ),
+                            const SizedBox(height: 2),
+                            Text(
+                              widget.technique.title,
+                              style: GoogleFonts.inter(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 13,
+                                height: 1.2,
+                                color: isDark ? AppTheme.textPrimary : AppTheme.textPrimaryLight,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
+                      ),
+                      // Favorite button
+                      SizedBox(
+                        width: 40,
+                        height: 56,
+                        child: IconButton(
+                          padding: EdgeInsets.zero,
+                          tooltip: isFav ? 'Remove from favorites' : 'Add to favorites',
+                          onPressed: () => favManager.toggleFavorite(widget.technique.id),
+                          icon: Icon(
+                            isFav ? Icons.star_rounded : Icons.star_outline_rounded,
+                            color: isFav ? AppTheme.amber : (isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight),
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                      // Chevron
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Icon(
+                          Icons.chevron_right_rounded,
+                          size: 18,
+                          color: isDark ? AppTheme.textTertiary : AppTheme.textSecondaryLight,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    // ── Full card mode (tablet / desktop) ──────────────────────────
     return FadeTransition(
       opacity: _entryOpacity,
       child: SlideTransition(

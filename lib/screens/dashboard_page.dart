@@ -429,32 +429,41 @@ class _DashboardPageState extends State<DashboardPage> {
                 padding: const EdgeInsets.only(bottom: 16),
                 child: _UsIntroEntryCard(isDark: isDark),
               ),
-              // Grid — ValueKey forces re-stagger when category changes
-              GridView.builder(
-                key: ValueKey(_selectedCategory),
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: MediaQuery.of(context).size.width > 1400
-                      ? 4
-                      : (MediaQuery.of(context).size.width > 900
-                          ? 3
-                          : (MediaQuery.of(context).size.width > 600 ? 2 : 1)),
-                  childAspectRatio: MediaQuery.of(context).size.width < 600
-                      ? 3.2
-                      : (MediaQuery.of(context).size.width < 900 ? 1.8 : 1.6),
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                ),
-                itemCount: injections.length,
-                itemBuilder: (context, index) {
-                  return InjectionCard(
+              // Phone: compact list rows. Tablet/desktop: card grid.
+              if (MediaQuery.of(context).size.width < 600)
+                ListView.separated(
+                  key: ValueKey('list-$_selectedCategory'),
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: injections.length,
+                  separatorBuilder: (context, index) => const SizedBox(height: 6),
+                  itemBuilder: (context, index) => InjectionCard(
                     technique: injections[index],
                     isSelected: index == _selectedIndex,
                     index: index,
-                  );
-                },
-              ),
+                    compact: true,
+                  ),
+                )
+              else
+                GridView.builder(
+                  key: ValueKey('grid-$_selectedCategory'),
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: MediaQuery.of(context).size.width > 1400
+                        ? 4
+                        : (MediaQuery.of(context).size.width > 900 ? 3 : 2),
+                    childAspectRatio: MediaQuery.of(context).size.width < 900 ? 1.8 : 1.6,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemCount: injections.length,
+                  itemBuilder: (context, index) => InjectionCard(
+                    technique: injections[index],
+                    isSelected: index == _selectedIndex,
+                    index: index,
+                  ),
+                ),
               // Context-aware empty state
               if (injections.isEmpty)
                 Padding(
