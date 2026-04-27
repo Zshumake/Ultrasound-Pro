@@ -545,6 +545,8 @@
     ],
     "positioningImg": "assets/images/positions/Seated hand supine hand on table.webp",
     "probeImg": "assets/images/probes/Narrow.webp",
+    "injectionImg": "assets/images/injections/wrist-a1pulley-injection.webp",
+    "injectionImgShort": "assets/images/injections/wrist-a1pulley-injection-short.webp",
     "ultrasoundImg": "assets/images/ultrasound/hand-trigger-finger-us.webp"
   }
 ]
