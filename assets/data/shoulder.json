@@ -93,7 +93,8 @@
     ],
     "avoid": [
       "Cephalic vein near anterior deltoid",
-      "Intratendinous rotator cuff injection"
+      "Intratendinous rotator cuff injection",
+      "Axillary nerve (quadrilateral space ~5-7 cm inferoposterior to the acromial corner — do not direct needle inferiorly or posteriorly beyond the bursal plane)"
     ],
     "steps": [
       "Use an in-plane lateral-to-medial approach along the probe long-axis (parallel to supraspinatus fibers), advancing from distal-lateral under the deltoid into the bursal plane under the acromion.",
@@ -221,7 +222,7 @@
       "Slight internal rotation opens the posterior joint recess"
     ],
     "probe": [
-      "Linear 6–9 MHz as default (posterior GH joint 3–5 cm deep in most adults); curvilinear 2–5 MHz if BMI elevated or depth >4 cm; 9–15 MHz only for very lean patients for most adults; switch to curvilinear (5-8 MHz) only if joint depth exceeds linear penetration (obese patients)."
+      "High-frequency linear probe (6–9 MHz) for most adults (posterior GH joint typically 3–5 cm deep). Use 9–15 MHz for very lean patients. Switch to curvilinear (5–8 MHz) only if joint depth exceeds linear probe penetration (e.g., high BMI patients)."
     ],
     "landmarking": [
       "Visual Cue: The \"Wine Glass\" — the humeral head sits in the cup; the glenoid/labrum form the rim/stem.",
@@ -236,7 +237,7 @@
       "Through the infraspinatus muscle → posterior glenohumeral joint recess (intra-articular), with the needle tip at the junction of the humeral head cartilage and posterior labrum, deep to the posterior capsule."
     ],
     "avoid": [
-      "Axillary nerve/arterial branches medially/inferiorly — stay lateral with a steep trajectory",
+      "Axillary nerve — exits the quadrilateral space ~2 cm inferior to the posterior joint line and runs deep to the posterior capsule. Keep needle entry at or above the joint line and use a steep superior trajectory; overpenetration through the joint directs the tip toward articular cartilage, not the femoral vessels.",
       "Intralabral needle placement"
     ],
     "steps": [
@@ -301,7 +302,10 @@
       "biceps"
     ],
     "treats": [
-      "Same as posterior approach; convenient when combining with biceps sheath injection"
+      "Glenohumeral osteoarthritis or synovitis",
+      "Adhesive capsulitis",
+      "Diagnostic intra-articular anesthesia",
+      "Convenient anterior alternative when combining with biceps tendon sheath injection"
     ],
     "contraindications": [
       "Active local skin infection or cellulitis at the entry site (absolute)",
@@ -339,6 +343,8 @@
     "avoid": [
       "Ascending branch of the anterior humeral circumflex artery (runs transverse across the bicipital groove — Doppler before every entry)",
       "Cephalic vein (medial deltopectoral groove)",
+      "Musculocutaneous nerve (enters coracobrachialis 3–8 cm distal to the coracoid process — stay lateral to the coracoid at all times)",
+      "Brachial plexus and axillary vessels (medial to the coracoid — confirm needle entry point is lateral to the coracoid process)",
       "Intratendinous subscapularis or long head biceps placement"
     ],
     "steps": [

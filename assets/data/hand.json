@@ -47,6 +47,7 @@
       "In-plane ulnar entry (ulnar to the ulnar artery and nerve — map both first). Advance the needle tip to lie immediately ulnar to the median nerve, deep to the flexor retinaculum. DO NOT cross the tip past the nerve to the radial side."
     ],
     "avoid": [
+      "Median nerve — identify and keep the needle tip ulnar to the nerve at all times; never inject into the nerve substance",
       "Ulnar nerve/artery",
       "Persistent median artery (if in path: ABANDON, re-plan, or defer)",
       "Intraneural injection of the median nerve",
@@ -307,7 +308,7 @@
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Hand on table; thumb adducted with the radial aspect up; small towel under wrist"
+      "Hand on table; thumb in relaxed/neutral position with radial aspect up; slight wrist ulnar deviation to open the anatomical snuffbox; small towel under wrist"
     ],
     "probe": [
       "High-frequency linear probe (15+ MHz hockey-stick if available)"

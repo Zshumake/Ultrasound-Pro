@@ -59,7 +59,7 @@
     ],
     "steps": [
       "In-plane to capsule; test inject to lift capsule.",
-      "Stop the needle tip exactly at the capsule of the head-neck junction — do NOT advance past the capsule or the tip will approach the femoral vessels.",
+      "Stop the needle tip exactly at the capsule of the head-neck junction — do NOT advance past the capsule. Overpenetration directs the tip toward the femoral head articular cartilage or acetabulum, not toward the femoral vessels (which are medial at the femoral triangle).",
       "Complete injection as indicated; confirm intra-articular placement by seeing injectate distend the capsule and track along the femoral neck.",
       "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations in the leg."
     ],
@@ -191,7 +191,8 @@
       "In-plane into the peritendinous plane: IT band/GMx (above), gluteus medius/minimus tendon (below)"
     ],
     "avoid": [
-      "Superior gluteal artery branches (ascending/transverse branches cross the peritrochanteric region variably) — Doppler before every entry. No large bundles cross directly over the trochanteric apex, but branches are variable."
+      "Superior gluteal artery branches (ascending/transverse branches cross the peritrochanteric region variably) — Doppler before every entry. No large bundles cross directly over the trochanteric apex, but branches are variable.",
+      "Sciatic nerve — runs posteriorly in the gluteal region; if the needle angles too deep or posteriorly during the lateral approach, the sciatic nerve may be approached. Keep the probe and needle trajectory lateral and superficial to the peritendinous plane."
     ],
     "steps": [
       "In-plane into peritendinous plane.",
@@ -333,6 +334,7 @@
     "avoid": [
       "Sciatic nerve (always identify before injection — in Beaton-Anson variants the nerve passes through the muscle)",
       "Inferior gluteal artery/vein",
+      "Inferior gluteal nerve (L5, S1, S2 — exits through greater sciatic foramen below piriformis and innervates gluteus maximus; injury causes gluteus maximus weakness)",
       "Posterior femoral cutaneous nerve (runs with inferior gluteal vessels)",
       "Pudendal NV bundle (if advancing medially toward ischial spine)"
     ],
@@ -467,11 +469,12 @@
       "Two bony lines (sacrum medial, ilium lateral) with posterior SI joint cleft between; posterior SI ligament complex superficial"
     ],
     "corridor": [
-      "In-plane lateral → medial through posterior SI ligament complex into synovial cleft (inferior half most accessible)"
+      "In-plane lateral → medial through posterior SI ligament complex into synovial cleft (inferior third — S2-S3 level — most accessible)"
     ],
     "avoid": [
-      "Dorsal sacral foramina (S1-S4) medially — accidental intraforaminal injection delivers anesthetic/steroid directly to sacral nerve roots and can cause transient lower extremity weakness or sensory change. If the sacral cortex disappears from view on the medial side of the needle path, stop and re-scan — you may be over a foramen.",
-      "Gluteal vessels/nerves laterally"
+      "S1–S4 sacral nerve roots (exit via posterior sacral foramina medially — intraforaminal injection delivers anesthetic/steroid directly onto a nerve root and can cause transient lower extremity weakness, sensory change, or bowel/bladder dysfunction). If the sacral cortex disappears from view on the medial side of the needle path, stop and re-scan — you may be over a foramen.",
+      "Superior and middle cluneal nerves (posterior rami crossing the posterior iliac crest and sacral region — direct injection may cause persistent posterior hip/buttock pain)",
+      "Superior gluteal artery/vein and gluteal nerve branches laterally"
     ],
     "steps": [
       "Advance in-plane to joint cleft; test inject a small bolus for separation.",
@@ -603,8 +606,10 @@
       "In-plane medial-to-lateral OR caudal-to-cranial approach, keeping the sciatic nerve in view at all times and the needle tip MEDIAL to the nerve."
     ],
     "avoid": [
-      "Sciatic nerve (lateral)",
-      "Inferior gluteal artery (Doppler survey)"
+      "Sciatic nerve (lateral — always identify first and keep needle MEDIAL to it throughout)",
+      "Inferior gluteal artery (Doppler survey)",
+      "Inferior gluteal nerve (L5, S1, S2 — courses from the greater sciatic foramen to gluteus maximus; injury causes gluteus maximus weakness)",
+      "Posterior femoral cutaneous nerve (S1-S3 — runs medial to the sciatic nerve at the ischial tuberosity level; injury causes posterior thigh numbness)"
     ],
     "steps": [
       "Identify the sciatic nerve first and stay medial to it.",
@@ -614,7 +619,7 @@
     ],
     "tips": [
       "A longer spinal needle (22G 3.5\") is often required for the gluteal depth.",
-      "Limit corticosteroid to ≤ 3 per site per year (and consider non-steroid options for true tendinopathy).",
+      "For true proximal hamstring TENDINOPATHY (not bursitis), corticosteroid is generally NOT recommended as first-line — PRP or hyperosmolar dextrose are preferred. Corticosteroid at a load-bearing tendon origin carries risk of further tendon degeneration and potential partial or complete rupture. If steroid is used, single low dose only (≤ 3 per year) and counsel the patient accordingly.",
       "If color Doppler shows the inferior gluteal artery in the planned path, abandon and re-plan."
     ],
     "pearls": [

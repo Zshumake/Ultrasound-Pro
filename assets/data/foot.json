@@ -50,14 +50,14 @@
       "Identify the talar dome (curved line) with distinct dark capsular line above; tendons are superficial and out of path"
     ],
     "corridor": [
-      "Anteromedial entry, MEDIAL TO THE TIBIALIS ANTERIOR TENDON, in-plane along the medial gutter. Keep the deep peroneal nerve and dorsalis pedis artery (lying just lateral to EHL — stay medial to tibialis anterior throughout) OUT of the needle path — do not advance toward the lateral compartment."
+      "Anteromedial entry BETWEEN the tibialis anterior tendon (medially) and the extensor hallucis longus tendon (laterally), targeting the medial gutter of the tibiotalar joint. Keep the needle medial to the EHL at all times — the dorsalis pedis artery and deep peroneal nerve lie lateral to EHL. Do not advance toward the lateral compartment."
     ],
     "avoid": [
       "Deep peroneal nerve and dorsalis pedis artery (lateral to EHL — stay medial of them throughout)",
       "Intratendinous injection of TA, EHL, or EDL"
     ],
     "steps": [
-      "In-plane medial-to-tibialis-anterior entry; hug capsule superficial to cartilage.",
+      "In-plane entry between the tibialis anterior and EHL tendons (medial to EHL); hug capsule superficial to cartilage.",
       "Inject as indicated; confirm intra-articular distension.",
       "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations into the foot."
     ],
@@ -67,7 +67,7 @@
       "If color Doppler shows the DPA in the planned path, abandon and re-plan."
     ],
     "pearls": [
-      "Enter MEDIAL to tibialis anterior. The DPA/DPN bundle lies LATERAL to EHL — stay medial of it throughout.",
+      "Enter between the tibialis anterior and EHL tendons (medial to EHL). The DPA/DPN bundle lies LATERAL to EHL — stay medial to EHL throughout.",
       "The target is the space between the joint capsule and the talar hyaline cartilage."
     ],
     "supplies": [
@@ -153,6 +153,7 @@
       "longus"
     ],
     "treats": [
+      "Peroneal tenosynovitis (primary indication — inflammation of the shared tendon sheath)",
       "Peroneal tendinopathy (peroneus longus/brevis)"
     ],
     "contraindications": [
@@ -189,6 +190,7 @@
     ],
     "avoid": [
       "Sural nerve — runs posterior to the peroneal tendons in the same fascial plane and is the most common iatrogenic injury at this site. Map it with US BEFORE every injection. Do not proceed if the nerve crosses the planned path.",
+      "Small saphenous vein — accompanies the sural nerve posteriorly; identify with Doppler alongside the nerve survey",
       "Intratendinous steroid — particularly dangerous if peroneus brevis longitudinal split is present (rupture risk)"
     ],
     "steps": [
@@ -309,7 +311,7 @@
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Supine; leg extended; foot resting flat on the table"
+      "Prone or seated with the foot hanging off the table edge (preferred — provides direct plantar access and places the fascia under slight tension for better visualization). Supine with the foot flat on the table is an acceptable alternative for the medial approach but limits direct plantar heel access."
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz)"
@@ -505,6 +507,7 @@
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
       "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
+      "Post-injection neuritis: transient burning or aching in the toes for 24-72 hours is well-recognized after interdigital nerve injection — counsel the patient before the procedure.",
       "Rest the foot 24-48 hours; avoid tight footwear and wear cushioned shoes.",
       "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR new toe numbness or color change.",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",

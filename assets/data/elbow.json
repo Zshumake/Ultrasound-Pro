@@ -51,7 +51,8 @@
     ],
     "avoid": [
       "Radial nerve and its posterior interosseous nerve (PIN) branch — the PIN wraps around the radial neck through the supinator (arcade of Frohse) immediately distal to the radiocapitellar joint. Identify and trace before needle entry.",
-      "Radial recurrent vessels"
+      "Radial recurrent vessels",
+      "Lateral ulnar collateral ligament (LUCL) — located at the posteroinferior aspect of the lateral joint; repeated needle trauma or intralesional injection risks posterolateral rotatory instability (PLRI)"
     ],
     "steps": [
       "Preferred: in-plane lateral approach into the joint cleft. Out-of-plane walk-down is an alternative for clinicians comfortable with the technique.",
@@ -184,8 +185,9 @@
       "Distal → proximal path between skin/fat (above) and tendon surface (below) for peritendinous steroid"
     ],
     "avoid": [
-      "Radial nerve",
+      "Radial nerve (superficial branch runs anterior to the radial head at this level — identify before entry)",
       "Radial recurrent artery",
+      "Lateral ulnar collateral ligament (LUCL) — originates at the lateral epicondyle; deep injection into or through the LUCL risks posterolateral rotatory instability (PLRI). Keep needle superficial to the tendon surface.",
       "Intratendinous steroid"
     ],
     "steps": [
