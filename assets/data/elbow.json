@@ -20,37 +20,37 @@
     ],
     "contraindications": [
       "Active local skin infection at entry site (absolute)",
-      "Suspected septic joint (absolute \u2014 aspirate first)",
+      "Suspected septic joint (absolute — aspirate first)",
       "Bacteremia (absolute)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation \u2014 review case-by-case",
+      "Therapeutic anticoagulation — review case-by-case",
       "Uncontrolled diabetes (relative)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
-      "Confirm procedure, side, and site \u2014 mark with patient awake",
+      "Confirm procedure, side, and site — mark with patient awake",
       "Review allergies and anticoagulation",
       "Confirm informed consent",
       "Pre-scan to identify and trace the radial nerve and PIN around the radial neck",
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Supine; elbow flexed 20-40\u00b0; hand on abdomen; small pillow under elbow"
+      "Supine; elbow flexed 20-40°; hand on abdomen; small pillow under elbow"
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
-      "Find lateral epicondyle \u2192 slide distally to radial head \u2192 tilt anteriorly to view capitellum \u2192 identify wedge-shaped joint space"
+      "Find lateral epicondyle → slide distally to radial head → tilt anteriorly to view capitellum → identify wedge-shaped joint space"
     ],
     "correctImage": [
-      "Clear radial head\u2013capitellum interface with a thin dark joint space"
+      "Clear radial head–capitellum interface with a thin dark joint space"
     ],
     "corridor": [
       "Preferred: in-plane lateral approach with the needle parallel to the probe long-axis, advancing into the joint cleft under continuous visualization."
     ],
     "avoid": [
-      "Radial nerve and its posterior interosseous nerve (PIN) branch \u2014 the PIN wraps around the radial neck through the supinator (arcade of Frohse) immediately distal to the radiocapitellar joint. Identify and trace before needle entry.",
+      "Radial nerve and its posterior interosseous nerve (PIN) branch — the PIN wraps around the radial neck through the supinator (arcade of Frohse) immediately distal to the radiocapitellar joint. Identify and trace before needle entry.",
       "Radial recurrent vessels"
     ],
     "steps": [
@@ -59,14 +59,14 @@
       "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
     "tips": [
-      "Walk-down (when used) intentionally uses gentle periosteal contact on the capitellum to localize the joint cleft \u2014 this is different from advancing blindly through soft tissue. Never force against articular cartilage.",
+      "Walk-down (when used) intentionally uses gentle periosteal contact on the capitellum to localize the joint cleft — this is different from advancing blindly through soft tissue. Never force against articular cartilage.",
       "Pronate/supinate the forearm to confirm the radial head moves while the lateral epicondyle stays stationary.",
-      "Limit corticosteroid to \u2264 3 per joint per year.",
+      "Limit corticosteroid to ≤ 3 per joint per year.",
       "If color Doppler shows a vessel directly in the planned path, abandon and re-plan."
     ],
     "pearls": [
-      "Visual Orientation: Think of the joint as a \u201ccleft\u201d between two hills. The capitellum is the rounded hill, and the radial head is the flatter hill.",
-      "Native radiocapitellar joint capacity is ~1-3 mL \u2014 total injectate \u2264 3 mL. Over-distension risks capsular rupture and steroid extravasation toward the PIN/radial nerve."
+      "Visual Orientation: Think of the joint as a “cleft” between two hills. The capitellum is the rounded hill, and the radial head is the flatter hill.",
+      "Native radiocapitellar joint capacity is ~1-3 mL — total injectate ≤ 3 mL. Over-distension risks capsular rupture and steroid extravasation toward the PIN/radial nerve."
     ],
     "supplies": [
       "5 mL Syringe",
@@ -87,7 +87,7 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
       "Rest the elbow 24-48 hours.",
       "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
@@ -132,7 +132,8 @@
     ],
     "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/elbow-lateral-injection.webp"
+    "injectionImg": "assets/images/injections/elbow-lateral-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/elbow-radiocapitellar-us.webp"
   },
   {
     "id": "elbow-cet",
@@ -152,35 +153,35 @@
     "contraindications": [
       "Active local skin infection at entry site (absolute)",
       "Known allergy to local anesthetic, steroid, or antiseptic prep",
-      "Therapeutic anticoagulation \u2014 review case-by-case",
+      "Therapeutic anticoagulation — review case-by-case",
       "Uncontrolled diabetes (relative)",
-      "High-grade tendon tear (relative \u2014 favor regenerative injectate over steroid)"
+      "High-grade tendon tear (relative — favor regenerative injectate over steroid)"
     ],
     "preChecklist": [
       "Confirm patient identity (two identifiers)",
-      "Confirm procedure, side, and site \u2014 mark with patient awake",
+      "Confirm procedure, side, and site — mark with patient awake",
       "Review allergies and anticoagulation",
       "Confirm informed consent",
       "Pre-scan to map radial nerve and radial recurrent artery",
       "Time-out immediately before needle entry"
     ],
     "positioning": [
-      "Supine; elbow 20-40\u00b0 flexed; hand on abdomen"
+      "Supine; elbow 20-40° flexed; hand on abdomen"
     ],
     "probe": [
       "High-frequency linear probe (6-13 MHz)"
     ],
     "landmarking": [
-      "Visual Cue: The \u201cFibrillar Footprint\u201d \u2014 Identify the bright, organized fibers of the CET attaching to the lateral epicondyle.",
+      "Visual Cue: The “Fibrillar Footprint” — Identify the bright, organized fibers of the CET attaching to the lateral epicondyle.",
       "Slide the probe slightly anteriorly to identify the landmark bony contour of the radial head.",
-      "Check for any hypoechoic \u201ctears\u201d or calcifications within the footprint.",
+      "Check for any hypoechoic “tears” or calcifications within the footprint.",
       "Map the radial nerve and the radial recurrent artery before choosing your needle path."
     ],
     "correctImage": [
       "Crisp fibrillar tendon superficial to thin bright ligament band"
     ],
     "corridor": [
-      "Distal \u2192 proximal path between skin/fat (above) and tendon surface (below) for peritendinous steroid"
+      "Distal → proximal path between skin/fat (above) and tendon surface (below) for peritendinous steroid"
     ],
     "avoid": [
       "Radial nerve",
@@ -188,17 +189,17 @@
       "Intratendinous steroid"
     ],
     "steps": [
-      "Peritendinous steroid: deposit aliquots in the plane BETWEEN the fascial/fat layer and the tendon surface \u2014 NOT within the fibrillar tendon itself.",
-      "For regenerative injectates (PRP, percutaneous tenotomy), target intratendinous diseased zones \u2014 this is a different technique and not for steroid.",
+      "Peritendinous steroid: deposit aliquots in the plane BETWEEN the fascial/fat layer and the tendon surface — NOT within the fibrillar tendon itself.",
+      "For regenerative injectates (PRP, percutaneous tenotomy), target intratendinous diseased zones — this is a different technique and not for steroid.",
       "STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations."
     ],
     "tips": [
-      "Limit corticosteroid to \u2264 3 per site per year \u2014 and consider non-steroid alternatives first (see pearls).",
+      "Limit corticosteroid to ≤ 3 per site per year — and consider non-steroid alternatives first (see pearls).",
       "If color Doppler shows the radial recurrent artery in the planned path, abandon and re-plan."
     ],
     "pearls": [
       "Corticosteroid for tendinopathy provides short-term relief but is associated with WORSE long-term outcomes in published RCTs (Coombes BK et al. JAMA 2013;309:461). Consider PRP, percutaneous tenotomy, or peritendinous saline as alternatives. If steroid is used, single low-dose injection only.",
-      "The radial collateral ligament is deep \u2014 forming the deep 30-50% of this region.",
+      "The radial collateral ligament is deep — forming the deep 30-50% of this region.",
       "Avoid placing corticosteroid directly into the tendon fibers to prevent future rupture."
     ],
     "supplies": [
@@ -220,11 +221,11 @@
     "postProcedure": [
       "Apply a clean dressing; remove after 24 hours.",
       "Local anesthetic relief for 1-4 hours; steroid begins 24-72 hours.",
-      "Steroid 'flare' in 2\u201310% \u2014 manage with ice and acetaminophen.",
+      "Steroid 'flare' in 2–10% — manage with ice and acetaminophen.",
       "Rest the forearm 24-48 hours; avoid heavy gripping for 1 week.",
       "Return immediately for: spreading redness, swelling, fever, or disproportionate pain.",
       "Diabetics: expect 50-100 mg/dL glucose rise for 3-5 days.",
-      "Maximum 1-2 steroid injections at this site lifetime \u2014 recurrent dosing worsens outcomes."
+      "Maximum 1-2 steroid injections at this site lifetime — recurrent dosing worsens outcomes."
     ],
     "videoTimestamps": [
       {
@@ -265,6 +266,7 @@
     ],
     "positioningImg": "assets/images/positions/supinated arm on abdomen (elbow).webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/elbow-lateral-injection.webp"
+    "injectionImg": "assets/images/injections/elbow-lateral-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/elbow-cet-us.webp"
   }
 ]

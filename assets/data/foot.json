@@ -135,7 +135,8 @@
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/ankle-ttj-injection.webp"
+    "injectionImg": "assets/images/injections/ankle-ttj-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/ankle-ttj-us.webp"
   },
   {
     "id": "ankle-peroneal",
@@ -271,7 +272,8 @@
     "positioningImg": "assets/images/positions/Patient lying on side.webp",
     "probeImg": "assets/images/probes/Narrow.webp",
     "injectionImg": "assets/images/injections/ankle-peroneal-injection.webp",
-    "injectionImgShort": "assets/images/injections/ankle-peroneal-injection-short.webp"
+    "injectionImgShort": "assets/images/injections/ankle-peroneal-injection-short.webp",
+    "ultrasoundImg": "assets/images/ultrasound/ankle-peroneal-us.webp"
   },
   {
     "id": "foot-plantar",
@@ -408,7 +410,8 @@
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Linear.webp",
-    "injectionImg": "assets/images/injections/foot-plantar-injection.webp"
+    "injectionImg": "assets/images/injections/foot-plantar-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/foot-plantar-us.webp"
   },
   {
     "id": "foot-mortons-neuroma",
@@ -546,6 +549,7 @@
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Narrow.webp",
-    "injectionImg": "assets/images/injections/foot-mortons-injection.webp"
+    "injectionImg": "assets/images/injections/foot-mortons-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/foot-mortons-us.webp"
   }
 ]

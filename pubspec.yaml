@@ -68,6 +68,7 @@ flutter:
     - assets/images/positions/
     - assets/images/probes/
     - assets/images/injections/
+    - assets/images/ultrasound/
     - assets/data/
 
   fonts:
