@@ -168,7 +168,9 @@
     "positioningImg": "assets/images/positions/Supine knee flexed 30 degrees.webp",
     "probeImg": "assets/images/probes/Linear.webp",
     "injectionImg": "assets/images/injections/knee-suprapatellar-injection.webp",
-    "ultrasoundImg": "assets/images/ultrasound/knee-suprapatellar-us.webp"
+    "injectionImgShort": "assets/images/injections/knee-suprapatellar-injection-short.webp",
+    "ultrasoundImg": "assets/images/ultrasound/knee-suprapatellar-us.webp",
+    "ultrasoundImgLabel": "IN PLANE"
   },
   {
     "id": "knee-itband",

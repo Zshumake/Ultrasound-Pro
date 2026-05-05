@@ -133,7 +133,7 @@
         "seconds": 166
       }
     ],
-    "positioningImg": "assets/images/positions/Supine patient.webp",
+    "positioningImg": "assets/images/positions/Tibiotalar position.webp",
     "probeImg": "assets/images/probes/Linear.webp",
     "injectionImg": "assets/images/injections/ankle-ttj-injection.webp",
     "ultrasoundImg": "assets/images/ultrasound/ankle-ttj-us.webp"
@@ -554,5 +554,148 @@
     "probeImg": "assets/images/probes/Narrow.webp",
     "injectionImg": "assets/images/injections/foot-mortons-injection.webp",
     "ultrasoundImg": "assets/images/ultrasound/foot-mortons-us.webp"
+  },
+  {
+    "id": "ankle-tarsal",
+    "title": "Tarsal Tunnel (Posterior Tibial Nerve) Injection",
+    "category": "Foot",
+    "videoUrl": null,
+    "anatomyModelId": "f97847160e4a47409309050f0e269626",
+    "anatomyModelTitle": "Foot Muscles — Intrinsic & Extrinsic (Ebers)",
+    "tags": [
+      "tarsal tunnel",
+      "tibial nerve",
+      "ankle injection",
+      "nerve block",
+      "plantar neuropathy",
+      "medial ankle",
+      "flexor retinaculum",
+      "posterior tibial"
+    ],
+    "treats": [
+      "Tarsal tunnel syndrome with burning pain, numbness, and paresthesia in the heel and plantar foot",
+      "Entrapment neuropathy of the posterior tibial nerve beneath the flexor retinaculum",
+      "Medial and lateral plantar nerve compression at the porta pedis",
+      "Post-traumatic tarsal tunnel syndrome from ankle fractures or space-occupying lesions",
+      "Idiopathic tarsal tunnel syndrome with positive Tinel sign at the medial malleolus",
+      "Diabetic peripheral neuropathy with tibial nerve entrapment component"
+    ],
+    "contraindications": [
+      "Active infection at the injection site or within the tarsal tunnel (absolute)",
+      "Systemic infection or bacteremia (absolute)",
+      "Allergy to local anesthetic or corticosteroid preparations (absolute)",
+      "Severe anticoagulation therapy with elevated INR or bleeding diathesis (relative)",
+      "Uncontrolled diabetes mellitus with poor glycemic control (relative)",
+      "Previous multiple failed injections (>3–4 per year) at the same site (relative)",
+      "Peripheral vascular disease with absent distal pulses (relative)",
+      "Medical instability precluding elective procedures (relative)"
+    ],
+    "preChecklist": [
+      "Confirm patient identity (two identifiers)",
+      "Confirm diagnosis of tarsal tunnel syndrome with positive Tinel's sign and characteristic symptom distribution",
+      "Review MRI if available to identify space-occupying lesions or anomalous muscles",
+      "Verify no allergy to local anesthetic or corticosteroid",
+      "Document baseline pain score (0–10 scale) and neurological symptom distribution",
+      "Ensure anticoagulation reviewed/held per protocol if applicable",
+      "Pre-scan: identify tibial nerve honeycomb pattern; use color Doppler to map posterior tibial artery anterior to nerve",
+      "Time-out immediately before needle entry"
+    ],
+    "positioning": [
+      "Patient supine with leg externally rotated, knee slightly flexed",
+      "Foot resting on examination table with ankle in neutral position",
+      "Place a small towel roll or gel pad under the lateral ankle to elevate the medial side for optimal probe and needle access"
+    ],
+    "probe": [
+      "High-frequency linear transducer, 12–18 MHz",
+      "Transverse (short-axis) orientation posterior to the medial malleolus"
+    ],
+    "landmarking": [
+      "1. Place the probe transversely at the level of the medial malleolus tip",
+      "2. Identify the tibial nerve as a honeycomb-pattern oval structure posterior to the posterior tibial artery",
+      "3. Locate the FDL tendon anteromedially and the FHL tendon posterolaterally relative to the nerve",
+      "4. Trace the nerve proximally 1–2 cm above the malleolus for the optimal injection window",
+      "5. Confirm nerve position between FDL (medial) and FHL (lateral) within the flexor retinaculum"
+    ],
+    "correctImage": [
+      "Tibial nerve: oval structure with honeycomb/fascicular echotexture — the key landmark",
+      "Posterior tibial artery: pulsatile anechoic vessel immediately anterior to the nerve (confirm with color Doppler)",
+      "FDL tendon: hyperechoic fibrillar structure anteromedial to the nerve",
+      "FHL tendon: hyperechoic fibrillar structure posterolateral to the nerve",
+      "Flexor retinaculum: thin hyperechoic band superficial to all structures"
+    ],
+    "corridor": [
+      "Insert a 22–25 gauge needle 1–2 cm posterior to the medial malleolus, directing anteriorly in-plane with the transducer on short axis. Advance deep to the flexor retinaculum and position the tip adjacent to (not within) the tibial nerve epineurium. Target depth is typically 1–2 cm. Total injectate: 0.5–1 mL local anesthetic with 20–40 mg triamcinolone acetonide or 4–8 mg dexamethasone."
+    ],
+    "avoid": [
+      "Posterior tibial artery — runs immediately anterior to the tibial nerve; puncture causes hematoma and potential compartment syndrome. Confirm with color Doppler before inserting the needle.",
+      "Posterior tibial veins — accompany the artery anterior to the nerve; injury causes ecchymosis and potential thrombophlebitis.",
+      "Medial calcaneal nerve branches — arise 1 cm distal to 3 cm proximal to the medial malleolus tip; damage causes permanent heel numbness and neuroma formation.",
+      "Medial plantar nerve at its bifurcation — injury causes loss of sensation to the medial plantar foot and first web space.",
+      "Lateral plantar nerve at its bifurcation — damage causes numbness of the lateral plantar foot and intrinsic muscle weakness.",
+      "Flexor hallucis longus tendon — lies posterior to the nerve; inadvertent intratendinous injection causes stenosing tenosynovitis.",
+      "Flexor digitorum longus tendon — anterior to the neurovascular bundle; intratendinous injection leads to tendinopathy.",
+      "Tibialis posterior tendon — most anterior structure in the tunnel; injection causes inflammation and potential acquired flatfoot deformity.",
+      "Direct intraneural injection — causes immediate sharp paresthetic pain and potential permanent nerve injury. STOP immediately if the patient reports electric or shooting sensations."
+    ],
+    "steps": [
+      "1. Position patient supine, externally rotate the ankle, and apply high-frequency linear transducer (12–18 MHz) transversely posterior to the medial malleolus to visualize the tibial nerve.",
+      "2. Use color Doppler to identify and map the posterior tibial artery immediately anterior to the nerve — plan the needle path to stay posterior to it.",
+      "3. Prep skin with antiseptic; apply a skin wheal of 1% lidocaine at the needle entry site if desired.",
+      "4. Insert a 22–25 gauge needle using an in-plane approach from posterior to anterior, advancing under real-time ultrasound guidance.",
+      "5. Position the needle tip adjacent to (not within) the tibial nerve epineurium; aspirate to confirm non-vascular placement.",
+      "6. Inject slowly (0.5–1 mL total) while monitoring for an anechoic fluid halo surrounding the nerve — confirms perineural spread without intraneural injection.",
+      "7. STOP IMMEDIATELY if the patient reports electric, shooting, or paresthetic sensations in the heel or plantar foot."
+    ],
+    "stepsInPlane": [
+      "1. Align the needle trajectory from posterior to anterior in the same plane as the ultrasound beam for continuous visualization of the full needle shaft.",
+      "2. Advance the needle parallel to the transducer face, maintaining constant visualization of the needle tip approaching the tibial nerve from its posterior aspect.",
+      "3. Stop advancement when the needle tip reaches the epifascicular epineurium; confirm position lateral or medial to the nerve fascicles before injecting.",
+      "4. Monitor for circumferential anechoic halo formation around the nerve during injection — confirms adequate perineural spread and rules out intraneural placement."
+    ],
+    "stepsOutOfPlane": [],
+    "tips": [
+      "Use color Doppler to identify and avoid the posterior tibial artery before needle insertion — it is immediately anterior to the nerve.",
+      "Employ hydrodissection: inject 0.5–1 mL of normal saline first to create perineural space before the steroid/anesthetic mixture.",
+      "Keep total injection volume to 1–2 mL to avoid excessive pressure in the confined tarsal tunnel.",
+      "The honeycomb fascicular pattern on ultrasound is the key landmark — confirm the tibial nerve before injecting.",
+      "Advance the needle in-plane from posterior to anterior for optimal continuous needle tip visualization."
+    ],
+    "pearls": [
+      "Complete symptom relief with a diagnostic block predicts an 84% success rate with subsequent surgical decompression.",
+      "No response after 2 properly performed injections should prompt reconsideration of the diagnosis or evaluation for surgical release.",
+      "Concurrent plantar fasciitis is present in 38% of cases — consider dual pathology if the response is incomplete.",
+      "Positive response to a sub-anesthetic lidocaine dose (0.5 mL of 1%) suggests viable nerve function and a better surgical prognosis.",
+      "Repeat injections may be considered at 3–6 month intervals with a maximum of 3 per year."
+    ],
+    "supplies": [
+      "High-frequency linear ultrasound probe (12–18 MHz) with sterile cover",
+      "22–25 gauge 1.5\" needle (short bevel preferred)",
+      "3 mL syringe",
+      "18G drawing needle",
+      "1% Lidocaine (0.5–1 mL) OR 0.25% Bupivacaine (0.5–1 mL)",
+      "Triamcinolone acetonide 20–40 mg OR Dexamethasone 4–8 mg",
+      "Normal saline 2 mL (for hydrodissection)",
+      "Alcohol swabs (vial tops)",
+      "Betadine/Chloraprep",
+      "Sterile gloves",
+      "Sterile 4×4 gauze pads",
+      "Sterile towels & drapes",
+      "Adhesive bandage (Band-Aid)",
+      "Sterile probe cover & sterile gel"
+    ],
+    "postProcedure": [
+      "Apply a clean dressing; remove after 24 hours.",
+      "Local anesthetic relief onset: 5–10 minutes; corticosteroid benefit peaks at 48–72 hours.",
+      "Rest and limit weight-bearing activities for 24 hours; apply ice 15 minutes every 2–3 hours for the first day.",
+      "Patient may experience transient plantar foot numbness lasting 1–4 hours from local anesthetic — counsel before the procedure.",
+      "Schedule follow-up at 2–4 weeks to assess response and document pain scores.",
+      "Return immediately for: spreading redness, swelling, fever, disproportionate pain, OR new or worsening plantar numbness/weakness.",
+      "Diabetics: expect 50–100 mg/dL glucose rise for 3–5 days.",
+      "Maximum 3 injections per year at this site."
+    ],
+    "videoTimestamps": [],
+    "positioningImg": "assets/images/positions/Supine patient.webp",
+    "probeImg": "assets/images/probes/Linear.webp",
+    "ultrasoundImg": "assets/images/ultrasound/ankle-tarsal-us.webp"
   }
 ]

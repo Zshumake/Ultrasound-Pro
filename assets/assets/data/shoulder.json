@@ -41,8 +41,8 @@
         "seconds": 170
       }
     ],
-    "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
-    "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
+    "anatomyModelId": "66155856c76d47948a15bff0d1a18cc3",
+    "anatomyModelTitle": "Rotator Cuff Tendonitis (IU Indianapolis)",
     "tags": [
       "shoulder",
       "subacromial",
@@ -184,8 +184,8 @@
         "seconds": 155
       }
     ],
-    "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
-    "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
+    "anatomyModelId": "66155856c76d47948a15bff0d1a18cc3",
+    "anatomyModelTitle": "Rotator Cuff Tendonitis (IU Indianapolis)",
     "tags": [
       "shoulder",
       "glenohumeral",
@@ -292,8 +292,8 @@
     "title": "Glenohumeral Joint Injection (Anterior Rotator Interval)",
     "category": "Shoulder",
     "videoUrl": null,
-    "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
-    "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
+    "anatomyModelId": "66155856c76d47948a15bff0d1a18cc3",
+    "anatomyModelTitle": "Rotator Cuff Tendonitis (IU Indianapolis)",
     "tags": [
       "shoulder",
       "glenohumeral",
@@ -421,7 +421,7 @@
         "seconds": 210
       }
     ],
-    "positioningImg": "assets/images/positions/Supine patient GH anterior.webp",
+    "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Linear.webp",
     "injectionImg": "assets/images/injections/shoulder-gh-anterior-injection.webp",
     "ultrasoundImg": "assets/images/ultrasound/shoulder-gh-anterior-us.webp"
@@ -431,8 +431,8 @@
     "title": "Acromioclavicular (AC) Joint Injection",
     "category": "Shoulder",
     "videoUrl": null,
-    "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
-    "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
+    "anatomyModelId": "66155856c76d47948a15bff0d1a18cc3",
+    "anatomyModelTitle": "Rotator Cuff Tendonitis (IU Indianapolis)",
     "tags": [
       "shoulder",
       "ac joint",
@@ -568,8 +568,8 @@
     "title": "Long Head of the Biceps Tendon Sheath Injection",
     "category": "Shoulder",
     "videoUrl": null,
-    "anatomyModelId": "861913da6b6a45ffb6e2396749d26a4c",
-    "anatomyModelTitle": "Rotator Cuff Anatomy (Soma3D)",
+    "anatomyModelId": "66155856c76d47948a15bff0d1a18cc3",
+    "anatomyModelTitle": "Rotator Cuff Tendonitis (IU Indianapolis)",
     "tags": [
       "shoulder",
       "biceps",

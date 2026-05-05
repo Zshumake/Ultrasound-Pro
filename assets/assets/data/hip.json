@@ -4,8 +4,8 @@
     "title": "Anterior Intra-articular Injection (Femoral Head–Neck Junction)",
     "category": "Hip",
     "videoUrl": null,
-    "anatomyModelId": "cae0a062e6674e9b98aa7aa1ced4f30e",
-    "anatomyModelTitle": "Hip Joint: Deep Muscles & Iliopsoas (LivingLab)",
+    "anatomyModelId": "fff87688a5b942fe903dc2dfc1c51ae1",
+    "anatomyModelTitle": "Iliopsoas Tendonitis (IU Indianapolis)",
     "tags": [
       "hip",
       "intra-articular",
@@ -138,6 +138,7 @@
     ],
     "positioningImg": "assets/images/positions/Supine patient.webp",
     "probeImg": "assets/images/probes/Curvelinear.webp",
+    "injectionImg": "assets/images/injections/hip-anterior-injection.webp",
     "ultrasoundImg": "assets/images/ultrasound/hip-anterior-us.webp"
   },
   {
@@ -282,8 +283,8 @@
     "id": "hip-piriformis",
     "title": "Piriformis Injection",
     "videoUrl": null,
-    "anatomyModelId": "a0648f5826594773aea233f9b9ee30d3",
-    "anatomyModelTitle": "Piriformis Anatomy (Medical Univ of Lublin)",
+    "anatomyModelId": "824eb9e06f58422eb711ed91f97524dc",
+    "anatomyModelTitle": "Piriformis — Flip Test (IU Indianapolis)",
     "category": "Hip",
     "tags": [
       "hip",
@@ -418,7 +419,10 @@
         "seconds": 216
       }
     ],
-    "probeImg": "assets/images/probes/Curvelinear.webp"
+    "positioningImg": "assets/images/positions/Prone patient.webp",
+    "probeImg": "assets/images/probes/Curvelinear.webp",
+    "injectionImg": "assets/images/injections/hip-piriformis-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/hip-piriformis-us.webp"
   },
   {
     "id": "si-joint",
@@ -553,7 +557,10 @@
         "seconds": 293
       }
     ],
-    "probeImg": "assets/images/probes/Curvelinear.webp"
+    "positioningImg": "assets/images/positions/Prone patient.webp",
+    "probeImg": "assets/images/probes/Curvelinear.webp",
+    "injectionImg": "assets/images/injections/si-joint-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/si-joint-us.webp"
   },
   {
     "id": "hip-hamstring-proximal",
@@ -690,6 +697,9 @@
         "seconds": 91
       }
     ],
-    "probeImg": "assets/images/probes/Curvelinear.webp"
+    "positioningImg": "assets/images/positions/Prone patient.webp",
+    "probeImg": "assets/images/probes/Curvelinear.webp",
+    "injectionImg": "assets/images/injections/hip-hamstring-proximal-injection.webp",
+    "ultrasoundImg": "assets/images/ultrasound/hip-hamstring-proximal-us.webp"
   }
 ]
